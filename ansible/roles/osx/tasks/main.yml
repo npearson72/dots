@@ -1,7 +1,3 @@
-- name: update osx software
-  become: yes
-  command: softwareupdate -i -a
-
 - name: close system preferences
   command: osascript -e 'tell application "System Preferences" to quit'
 
@@ -83,7 +79,6 @@
   command: "{{ item }}"
   with_items:
     - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
     - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 - name: use list view in all finder windows by default

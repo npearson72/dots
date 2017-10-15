@@ -6,7 +6,6 @@
     full_name: "{{ lookup('env', 'FULL_NAME') }}"
   roles:
     - { role: pre_build, tags: pre_build }
-    - { role: osx, tags: osx }
     - { role: homebrew, tags: homebrew }
     - { role: zsh, tags: zsh }
     - { role: git, tags: git }
@@ -14,4 +13,5 @@
     - { role: neovim, tags: neovim }
     - { role: misc, tags: misc }
     - { role: ssh, tags: ssh }
+    - { role: osx, tags: osx }
     - { role: post_build, tags: post_build }

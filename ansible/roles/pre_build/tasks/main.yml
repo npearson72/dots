@@ -2,3 +2,7 @@
   file:
     path: "{{ home }}/.config"
     state: directory
+
+- name: update osx software
+  become: yes
+  command: softwareupdate -i -a

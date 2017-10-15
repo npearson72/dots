@@ -1,7 +1,7 @@
 - name: find garbage files
   find:
     paths: "{{ home }}"
-    patterns: "^.*(bash|DS_Store).*$"
+    patterns: "^.*(bash|DS_Store|oracle|vim).*$"
     use_regex: true
     hidden: true
     file_type: any
