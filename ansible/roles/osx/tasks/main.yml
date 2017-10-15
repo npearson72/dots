@@ -1,6 +1,27 @@
+# User this to check if settings have been applied before
+- name: check hostname
+  command: hostname
+  register: hostname_is
+  tags: osx_required
+
 - name: close system preferences
   command: osascript -e 'tell application "System Preferences" to quit'
+  tags: osx_required
 
+- include_tasks: menu.yml
+  tags: osx_menu
+- include_tasks: dock.yml
+  tags: osx_dock
+- include_tasks: finder.yml
+  tags: osx_finder
+- include_tasks: trackpad.yml
+  tags: osx_trackpad
+- include_tasks: keyboard.yml
+  tags: osx_keyboard
+- include_tasks: misc.yml
+  tags: osx_misc
+
+# Make this nearly the last thing you do since it's used to check if settings have been applied before
 - name: set computer name, hostname, etc
   become: yes
   command: "scutil --set {{ item }} {{ computer_name }}"
@@ -8,156 +29,20 @@
     - ComputerName
     - HostName
     - LocalHostName
+  when: hostname_is.stdout != computer_name
+  tags: osx_required
 
 - name: set NetBIOSName
   become: yes
-  command: "defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string {{ computer_name }}"
+  command: "defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server \
+    NetBIOSName -string {{ computer_name }}"
+  when: hostname_is.stdout != computer_name
+  tags: osx_required
 
-- name: set sidebar icon size to medium
-  command: defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
-
-- name: set scrollbars
-  command: defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
-
-- name: automatically quit printer app once the print jobs complete
-  command: defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-- name: disable the 'Are you sure you want to open this application?' dialog
-  command: defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-- name: disable resume system-wide
-  command: defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
-
-- name: disable the crash reporter
-  command: defaults write com.apple.CrashReporter DialogType -string "none"
-
-- name: disable auto-correct
-  command: defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-- name: disable natural scrolling
-  command: defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-
-- name: enable full keyboard access for all controls (i.e. tab in modal dialogs)
-  command: defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-- name: set fast keyboard repeat rate
-  command: "{{ item }}"
-  with_items:
-    - defaults write NSGlobalDomain KeyRepeat -int 2
-    - defaults write NSGlobalDomain InitialKeyRepeat -int 15
-
-- name: require password immediately after sleep or screen saver begins
-  command: "{{ item }}"
-  with_items:
-    - defaults write com.apple.screensaver askForPassword -int 1
-    - defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-- name: set home as the default location for new finder windows
-  command: "{{ item }}"
-  with_items:
-    - defaults write com.apple.finder NewWindowTarget -string "PfHm"
-    - defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
-
-- name: show icons for hard drives, servers, and removable media on the desktop
-  command: "{{ item }}"
-  with_items:
-    - defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-    - defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
-    - defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
-    - defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-- name: show all filename extensions
-  command: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-- name: when performing a search, search the current folder by default
-  command: defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
-- name: disable the warning when changing a file extension
-  command: defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-- name: enable snap-to-grid for icons on the desktop and in other icon views
-  command: "{{ item }}"
-  with_items:
-    - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-- name: use list view in all finder windows by default
-  command: defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
-- name: show the ~/Library folder
-  command: chflags nohidden ~/Library
-
-- name: show the /Volumes folder
-  become: yes
-  command: chflags nohidden /Volumes
-
-- name: disable dashboard
-  command: defaults write com.apple.dashboard mcx-disabled -bool true
-
-- name: automatically hide and show the dock
-  command: defaults write com.apple.dock autohide -bool true
-
-- name: enable dock magnification
-  command: defaults write com.apple.dock magnification -bool true
-
-- name: set trackpad right corner as right click
-  command: "{{ item }}"
-  with_items:
-    - defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-    - defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-    - defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-    - defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-
-- name: disable trackpad gestures
-  command: "defaults write com.apple.dock {{ item }} -int 0"
-  with_items:
-    - showLaunchpadGestureEnabled
-    - showDesktopGestureEnabled
-    - showMissionControlGestureEnabled
-
-- name: set hot corners
-  command: "{{ item }}"
-  with_items:
-    - defaults write com.apple.dock wvous-bl-corner -int 2
-    - defaults write com.apple.dock wvous-bl-modifier -int 0
-    - defaults write com.apple.dock wvous-br-corner -int 4
-    - defaults write com.apple.dock wvous-br-modifier -int 0
-
-- name: prevent time machine from prompting to use new hard drives as backup volume
-  command: defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-- name: prevent photos from opening automatically when devices are plugged in
-  command: defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-- name: disable continuous spell checking in imessages
-  command: defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
-
-- name: set clock look & feel
-  command: defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm a"
-
-- name: remove default icons from dock
-  command: defaults write com.apple.dock persistent-apps -array
-
-- name: enable batter percent in menu
-  command: defaults write com.apple.menuextra.battery ShowPercent YES
-
-- name: add items to menu bar
-  command: "defaults write com.apple.systemuiserver menuExtras -array {{ item }}"
-  with_items:
-    - /System/Library/CoreServices/Menu Extras/Volume.menu
-    - /System/Library/CoreServices/Menu Extras/Bluetooth.menu
-
-- name: add icons to dock
-  command: "defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'"
-  with_items:
-    - Launchpad
-    - Google Chrome
-    - Calendar
-    - iTerm
-    - System Preferences
-
-- name: restart services
+- name: kill services
   command: "killall {{ item }}"
   with_items:
     - "-KILL SystemUIServer"
     - Dock
+    - Finder
+  tags: osx_required
