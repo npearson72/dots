@@ -1,4 +1,2 @@
 git:
-  first_name: "{{ lookup('env', 'GIT_FIRST_NAME') }}"
-  last_name: "{{ lookup('env', 'GIT_LAST_NAME') }}"
   email: "{{ lookup('env', 'GIT_EMAIL') }}"
