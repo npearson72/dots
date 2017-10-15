@@ -9,7 +9,6 @@ brew "autojump"
 brew "cmake"
 brew "ctags"
 brew "diff-so-fancy"
-brew "elasticsearch"
 brew "fswatch"
 brew "ghostscript"
 brew "git"
@@ -53,6 +52,11 @@ mas "1Password", id: 443987910
 mas "BetterSnapTool", id: 417375580
 mas "Kaleidoscope", id: 587512244
 
+#====================#
+#= HAS DEPENDENCIES =#
+#====================#
+
+brew "elasticsearch" # Depends on Java
 
 #========#
 #= WORK =#
