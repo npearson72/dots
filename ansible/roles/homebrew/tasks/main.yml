@@ -8,9 +8,10 @@
   command: brew doctor
 
 - name: copy Brewfile
-  copy:
+  file:
     src: "{{ role_path }}/files/Brewfile"
     dest: "{{ brewfile_path }}"
+    state: link
 
 - name: bundle dependencies
   command: "brew bundle --file={{ brewfile_path }}"

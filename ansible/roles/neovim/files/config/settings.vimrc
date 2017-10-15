@@ -53,7 +53,7 @@ set undoreload=10000
 
 set backupdir=$HOME/.local/share/nvim/backup//
 
-" Make those folders automatically if they don't already exist.
+" Make folders automatically if they don't already exist.
 if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
@@ -61,9 +61,9 @@ endif
 " Misc
 set shellpipe=>
 
-"===================
-"= Plugin settings =
-"===================
+"=================
+" Plugin settings
+"=================
 
 " Ag (The Silver Searcher)
 if executable('ag')

@@ -4,7 +4,6 @@
 # Set global envs
 export ZSH={{ role_path }}
 export ZSH_FILES=$ZSH/files
-export ZSH_FUNCTIONS=$ZSH/functions
 
 typeset -U config_files
 config_files=($ZSH_FILES/*.zsh)
@@ -25,13 +24,6 @@ for file in ${${config_files:#*/path.zsh}:#*/env.zsh}; do
 done
 
 unset config_files
-
-# Autoload custom functions
-fpath=($ZSH_FUNCTIONS $fpath)
-
-for file ($ZSH_FUNCTIONS/*); do
-  if [ -f $file ]; then; autoload $file; fi
-done
 
 # Local configs
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local

@@ -1,11 +1,13 @@
-- name: check zsh was brewed
+- name: check if zsh was brewed
   shell: brew info zsh
   register: zsh_brewed
   ignore_errors: true
 
-- name: get path to zsh binary
-  shell: which zsh
-  register: zsh_path
+- name: get brewed zsh binary path
+  stat:
+    path: "{{ zsh_path }}"
+  register: brewed_zsh_path
+  ignore_errors: true
   when: zsh_brewed|succeeded
 
 - name: replace path to zsh in /etc/shells
@@ -13,16 +15,28 @@
   become_user: root
   lineinfile:
     path: /etc/shells
-    regexp: '^/bin/zsh$'
-    line: "{{ zsh_path.stdout }}"
-  when: zsh_brewed|succeeded
+    regexp: '.*zsh$'
+    line: "{{ zsh_path }}"
+  when: brewed_zsh_path.stat.exists
 
 - name: "switch {{ user }}'s shell to zsh"
   become: yes
   become_user: root
   user:
     name: "{{ user }}"
-    shell: "{{ zsh_path.stdout }}"
-  when: zsh_brewed|succeeded
+    shell: "{{ zsh_path }}"
+  when: brewed_zsh_path.stat.exists
 
-- include_tasks: symlinks.yml
+- name: copy .zshrc
+  template:
+    src: "{{ role_path }}/templates/zshrc.j2"
+    dest: "{{ home }}/.zshrc"
+  when: brewed_zsh_path.stat.exists
+
+- name: create .zshrc.local
+  become: true
+  file:
+    path: "{{ home }}/.zshrc.local"
+    state: touch
+    owner: "{{ user }}"
+  when: brewed_zsh_path.stat.exists

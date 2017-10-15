@@ -94,9 +94,9 @@ cnoremap w!! w !sudo tee % >/dev/null
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
-"===================
-"= Plugin mappings =
-"===================
+"=================
+" Plugin mappings
+"=================
 
 " Buffergator fix
 nnoremap [b :BuffergatorMruCyclePrev<cr>
