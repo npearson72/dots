@@ -1,0 +1,23 @@
+- name: create an .ssh dir
+  file:
+    path: "{{ home }}/.ssh"
+    state: directory
+    mode: 0700
+
+- name: create a blank public key
+  file:
+    path: "{{ home }}/.ssh/id_rsa.pub"
+    state: touch
+    mode: 0644
+
+- name: create a blank private key
+  file:
+    path: "{{ home }}/.ssh/id_rsa"
+    state: touch
+    mode: 0600
+
+- name: create a blank config file
+  file:
+    path: "{{ home }}/.ssh/config"
+    state: touch
+    mode: 0600

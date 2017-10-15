@@ -1,8 +1,14 @@
-- name: clean up files
+- name: find garbage files
+  find:
+    paths: "{{ home }}"
+    patterns: "^.*(bash|DS_Store).*$"
+    use_regex: true
+    hidden: true
+    file_type: any
+  register: garbage_files
+
+- name: delete garbage files
   file:
-    path: "{{ home }}/{{ item }}"
+    path: "{{ item.path }}"
     state: absent
-  with_items:
-    - .bash_history
-    - .profile
-    - .bash_profile
+  with_items: "{{ garbage_files.files }}"

@@ -12,4 +12,5 @@
     - { role: ruby, tags: ruby }
     - { role: neovim, tags: neovim }
     - { role: misc, tags: misc }
+    - { role: ssh, tags: ssh }
     - { role: post_build, tags: post_build }

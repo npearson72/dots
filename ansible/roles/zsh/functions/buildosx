@@ -15,7 +15,7 @@ buildosx () {
     shift
   done
 
-  installHomeBrew () {
+  _installHomeBrew () {
     if ! [[ $(which brew) ]]; then
       echo "\n=> Installing Homebrew\n"
 
@@ -23,13 +23,13 @@ buildosx () {
     fi
   }
 
-  installAnsible () {
+  _installAnsible () {
     echo "\n=> Installing Ansible\n"
 
     brew install ansible
   }
 
-  buildAnsible () {
+  _buildAnsible () {
     echo "\n=> Building Ansible Playbooks\n"
 
     cd $HOME/.dots
@@ -41,12 +41,18 @@ buildosx () {
     fi
   }
 
-  if ! [[ $(which ansible) ]]; then
-    installAnsible
-    buildAnsible
-  else
-    buildAnsible
-  fi
+  _run () {
+    _installHomeBrew
 
-  echo "\n=> Finished!\n"
+    if ! [[ $(which ansible) ]]; then
+      _installAnsible
+      _buildAnsible
+    else
+      _buildAnsible
+    fi
+
+    echo "\n=> Finished!\n"
+  }
+
+  _run
 }
