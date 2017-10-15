@@ -1,0 +1,4 @@
+- name: "make sure '{{ home }}/.config' dir exists"
+  file:
+    path: "{{ home }}/.config"
+    state: directory

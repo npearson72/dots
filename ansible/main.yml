@@ -1,0 +1,15 @@
+- hosts: all
+  connection: local
+  vars:
+    user: "{{ lookup('env', 'USER') }}"
+    home: "{{ lookup('env', 'HOME') }}"
+  roles:
+    - { role: pre_build, tags: pre_build }
+    - { role: osx, tags: osx }
+    - { role: homebrew, tags: homebrew }
+    - { role: zsh, tags: zsh }
+    - { role: git, tags: git }
+    - { role: ruby, tags: ruby }
+    - { role: neovim, tags: neovim }
+    - { role: misc, tags: misc }
+    - { role: post_build, tags: post_build }

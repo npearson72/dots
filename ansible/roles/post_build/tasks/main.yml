@@ -1,0 +1,8 @@
+- name: clean up files
+  file:
+    path: "{{ home }}/{{ item }}"
+    state: absent
+  with_items:
+    - .bash_history
+    - .profile
+    - .bash_profile

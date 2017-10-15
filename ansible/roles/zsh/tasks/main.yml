@@ -1,0 +1,28 @@
+- name: check zsh was brewed
+  shell: brew info zsh
+  register: zsh_brewed
+  ignore_errors: true
+
+- name: get path to zsh binary
+  shell: which zsh
+  register: zsh_path
+  when: zsh_brewed|succeeded
+
+- name: replace path to zsh in /etc/shells
+  become: yes
+  become_user: root
+  lineinfile:
+    path: /etc/shells
+    regexp: '^/bin/zsh$'
+    line: "{{ zsh_path.stdout }}"
+  when: zsh_brewed|succeeded
+
+- name: "switch {{ user }}'s shell to zsh"
+  become: yes
+  become_user: root
+  user:
+    name: "{{ user }}"
+    shell: "{{ zsh_path.stdout }}"
+  when: zsh_brewed|succeeded
+
+- include_tasks: symlinks.yml

@@ -1,0 +1,2 @@
+Pry.config.color = true
+Pry.config.history.file = "#{ENV['HOME']}/.config/history/pry"

@@ -1,0 +1,64 @@
+tap "homebrew/bundle"
+
+#============#
+#= PERSONAL =#
+#============#
+
+brew "ansible"
+brew "autojump"
+brew "cmake"
+brew "ctags"
+brew "diff-so-fancy"
+brew "elasticsearch"
+brew "fswatch"
+brew "ghostscript"
+brew "git"
+brew "gnu-sed"
+brew "imagemagick"
+brew "mas"
+brew "neovim"
+brew "node"
+brew "phantomjs"
+brew "postgres", restart_service: true
+brew "python"
+brew "python3"
+brew "rbenv"
+brew "redis"
+brew "ruby-build"
+brew "the_silver_searcher"
+brew "tig"
+brew "tldr"
+brew "tree"
+brew "unrar"
+brew "wget"
+brew "zsh"
+
+cask "cleanmymac"
+cask "dropbox"
+cask "evernote"
+cask "firefox", args: { appdir: "/Applications" }
+cask "google-chrome", args: { appdir: "/Applications" }
+cask "iterm2"
+cask "java"
+cask "ksdiff"
+cask "skype"
+cask "spotify"
+cask "transmission"
+cask "vagrant"
+cask "virtualbox"
+cask "vlc"
+cask "windscribe"
+
+mas "1Password", id: 443987910
+mas "BetterSnapTool", id: 417375580
+mas "Kaleidoscope", id: 587512244
+
+
+#========#
+#= WORK =#
+#========#
+
+brew "kibana"
+
+cask "screenhero"
+cask "slack"

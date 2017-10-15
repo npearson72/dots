@@ -1,0 +1,45 @@
+[user]
+    name = {{ git.first_name }} {{ git.last_name }}
+    email = {{ git.email }}
+[hub]
+    protocol = https
+[alias]
+    aa = add -A
+    st = status
+    co = checkout
+    count = !git shortlog -sn
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[apply]
+    whitespace = nowarn
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[credential]
+    helper = osxkeychain
+[diff]
+    tool = Kaleidoscope
+[difftool]
+    prompt = false
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff-so-fancy]
+    markEmptyLines = false
+    stripLeadingSymbols = false
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
+[mergetool]
+    keepBackup = false
+    prompt = false
+[help]
+    autocorrect = 1
+[push]
+    default = simple
+[pull]
+    default = current

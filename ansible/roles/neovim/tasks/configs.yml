@@ -1,0 +1,9 @@
+- name: copy config directory
+  copy:
+    src: "{{ role_path }}/files/config"
+    dest: "{{ neovim_config_path }}"
+
+- name: copy init.vim
+  copy:
+    src: "{{ role_path }}/files/init.vim"
+    dest: "{{ neovim_config_path }}/init.vim"

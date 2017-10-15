@@ -1,0 +1,26 @@
+- name: check installed ruby version
+  shell: "rbenv versions | grep {{ ruby_version }}"
+  register: ruby_version_exists
+  ignore_errors: true
+
+- name: install ruby
+  shell: "rbenv install {{ ruby_version }}"
+  register: ruby_installed
+  when: ruby_version_exists|failed
+
+- name: set global ruby version
+  shell: "rbenv global {{ ruby_version }} && rbenv rehash"
+  when: (ruby_version_exists|succeeded or ruby_installed|succeeded)
+
+- name: copy .gemrc file
+  copy:
+    src: "{{ role_path }}/files/gemrc"
+    dest: "{{ home }}/.gemrc"
+  when: (ruby_version_exists|succeeded or ruby_installed|succeeded)
+
+- name: install required gems
+  command: "{{ home }}/.rbenv/shims/gem install {{ item }}"
+  with_items:
+    - bundler
+    - neovim
+  when: (ruby_version_exists|succeeded or ruby_installed|succeeded)

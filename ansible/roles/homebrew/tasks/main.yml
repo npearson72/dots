@@ -1,0 +1,27 @@
+- name: update homebrew
+  homebrew:
+    update_homebrew: yes
+  tags:
+    - homebrew
+
+- name: check brew doctor
+  command: brew doctor
+
+- name: copy Brewfile
+  copy:
+    src: "{{ role_path }}/files/Brewfile"
+    dest: "{{ brewfile_path }}"
+
+- name: bundle dependencies
+  command: "brew bundle --file={{ brewfile_path }}"
+  args:
+    chdir: "{{ home }}"
+
+- name: cleanup dependencies
+  command: "brew bundle cleanup --force --file={{ brewfile_path }}"
+  args:
+    chdir: "{{ home }}"
+
+- name: upgrade all brew dependencies
+  homebrew:
+    upgrade_all: yes
