@@ -74,7 +74,7 @@ let g:buffergator_split_size=10
 
 " Ctrlp
 let g:ctrlp_match_window='order:ttb,max:30'
-" let g:ctrlp_clear_cache_on_exit=1
+let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_arg_map=1
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
@@ -94,6 +94,7 @@ endfunction
 let g:grep_cmd_opts='--line-numbers --noheading'
 
 " NERDTree
+let NERDTreeBookmarksFile=expand("$HOME/.local/share/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
