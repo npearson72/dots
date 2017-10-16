@@ -5,4 +5,4 @@
 
 - name: update osx software
   become: yes
-  command: softwareupdate -i -a
+  command: softwareupdate -i -r
