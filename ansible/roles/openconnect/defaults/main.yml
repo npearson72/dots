@@ -1,0 +1,6 @@
+vpn_config_path: "{{ home }}/.config/openconnect"
+
+vpn:
+  user: "{{ lookup('env', 'VPN_USER') }}"
+  authgroup: "{{ lookup('env', 'VPN_AUTH_GROUP') }}"
+  domain: "{{ lookup('env', 'VPN_DOMAIN') }}"

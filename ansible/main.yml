@@ -13,5 +13,6 @@
     - { role: neovim, tags: neovim }
     - { role: misc, tags: misc }
     - { role: ssh, tags: ssh }
+    - { role: openconnect, tags: openconnect }
     - { role: osx, tags: osx }
     - { role: post_build, tags: post_build }

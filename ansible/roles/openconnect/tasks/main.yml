@@ -1,0 +1,15 @@
+- name: "make sure '{{ vpn_config_path }}' dir exists"
+  file:
+    path: "{{ vpn_config_path }}"
+    state: directory
+
+- name: copy vpn.conf
+  template:
+    src: "{{ role_path }}/templates/vpn.conf.j2"
+    dest: "{{ vpn_config_path }}/vpn.conf"
+
+- name: set alias in .zshrc.local
+  blockinfile:
+    path: "{{ home }}/.zshrc.local"
+    marker: "# {mark} ansible managed block from OpenConnect VPN"
+    content: "alias vpn='sudo openconnect --config {{ vpn_config_path }}/vpn.conf {{ vpn.domain }}'"
