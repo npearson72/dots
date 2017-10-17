@@ -2,3 +2,9 @@
   template:
     src: "{{ role_path }}/files/pryrc"
     dest: "{{ home }}/.pryrc"
+
+- name: set alias in .zshrc.local
+  blockinfile:
+    path: "{{ home }}/.zshrc.local"
+    marker: "# {mark} ansible managed block for Pry"
+    content: "export PSQL_HISTORY=$HOME/.cache/psql/.psql_histoy"

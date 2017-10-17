@@ -2,24 +2,24 @@
 - name: check hostname
   command: hostname
   register: hostname_is
-  tags: osx_required
+  tags: mac_os_required
 
 - name: close system preferences
   command: osascript -e 'tell application "System Preferences" to quit'
-  tags: osx_required
+  tags: mac_os_required
 
 - include_tasks: menu.yml
-  tags: osx_menu
+  tags: mac_os_menu
 - include_tasks: dock.yml
-  tags: osx_dock
+  tags: mac_os_dock
 - include_tasks: finder.yml
-  tags: osx_finder
+  tags: mac_os_finder
 - include_tasks: trackpad.yml
-  tags: osx_trackpad
+  tags: mac_os_trackpad
 - include_tasks: keyboard.yml
-  tags: osx_keyboard
+  tags: mac_os_keyboard
 - include_tasks: misc.yml
-  tags: osx_misc
+  tags: mac_os_misc
 
 # Make this nearly the last thing you do since it's used to check if settings have been applied before
 - name: set computer name, hostname, etc
@@ -30,14 +30,14 @@
     - HostName
     - LocalHostName
   when: hostname_is.stdout != computer_name
-  tags: osx_required
+  tags: mac_os_required
 
 - name: set NetBIOSName
   become: yes
   command: "defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server \
     NetBIOSName -string {{ computer_name }}"
   when: hostname_is.stdout != computer_name
-  tags: osx_required
+  tags: mac_os_required
 
 - name: kill services
   command: "killall {{ item }}"
@@ -45,4 +45,4 @@
     - "-KILL SystemUIServer"
     - Dock
     - Finder
-  tags: osx_required
+  tags: mac_os_required

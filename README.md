@@ -1,25 +1,22 @@
 # Getting started
 
-## Clone repo to home directory
-`git clone git@github.com:npearson72/dots.git ~/.dots && cd ~/.dots`
+## 1. Clone repo to home directory
+`git clone https://github.com/npearson72/dots.git ~/.dots && cd ~/.dots`
 
-## Setup an .env file
+**Note:** Once you've cloned with `https` to reset the git remote url to `ssh` do:
+
+`git remote set-url origin git@github.com:npearson72/dots.git`
+
+## 2. Setup an .env file
 `cp .env_example .env`
 
-## To install everything
+## 3. To install
+
+#### To install everything
 `sh ./install.sh`
 
-## To install specific features
+#### To install specific features
 `sh ./install.sh --tags x,y,z`
-
-# Managing after install
-
-## To replay Ansible
-`buildosx`
-
--- or --
-
-`buildosx --tags x,y,z`
 
 ## To brew bundle / brew cleanup
 `brew_bundle`

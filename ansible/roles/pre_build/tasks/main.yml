@@ -3,6 +3,18 @@
     path: "{{ home }}/.config"
     state: directory
 
-- name: update osx software
+- name: update mac os software
   become: yes
   command: softwareupdate -i -r
+  register: mac_os_update
+
+- debug:
+    msg: "=====| WARNING: \
+      The macOS updater found and installed updates! \
+      Reboot your computer before re-running this playbook to avoid possible conflicts. \
+      |====="
+  when: mac_os_update is defined and mac_os_update.stderr != "No updates are available."
+
+- name: exit if mac os was updated
+  meta: end_play
+  when: mac_os_update is defined and mac_os_update.stderr != "No updates are available."

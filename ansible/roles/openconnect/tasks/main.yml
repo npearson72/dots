@@ -11,5 +11,5 @@
 - name: set alias in .zshrc.local
   blockinfile:
     path: "{{ home }}/.zshrc.local"
-    marker: "# {mark} ansible managed block from OpenConnect VPN"
+    marker: "# {mark} ansible managed block for OpenConnect VPN"
     content: "alias vpn='sudo openconnect --config {{ vpn_config_path }}/vpn.conf {{ vpn.domain }}'"
