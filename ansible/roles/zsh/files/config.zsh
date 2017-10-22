@@ -1,7 +1,7 @@
 # http://zsh.sourceforge.net/Doc/Release/Options.html
 
 # ZSH history
-HISTFILE=$HOME/.config/history/zsh
+HISTFILE=$HOME/.local/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
