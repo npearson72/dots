@@ -7,6 +7,7 @@
   roles:
     - { role: pre_build, tags: pre_build }
     - { role: homebrew, tags: homebrew }
+    - { role: npm, tags: npm }
     - { role: zsh, tags: zsh }
     - { role: git, tags: git }
     - { role: ruby, tags: ruby }

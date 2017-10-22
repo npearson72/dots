@@ -73,7 +73,7 @@ vnoremap <s-j> :m'>+<cr>gv
 vnoremap <s-k> :m-2<cr>gv
 
 " Toggle line wrapping
-nnoremap <leader>w :set wrap!<cr>
+" nnoremap <leader>w :set wrap!<cr> Conflict with default VimWiki key
 nnoremap <leader>i :set list!<cr>
 
 " Toggle relative numbers in visual line mode

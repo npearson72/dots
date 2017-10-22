@@ -1,0 +1,7 @@
+- name: install global npm packages
+  npm:
+    name: "{{ item }}"
+    global: yes
+    state: latest
+  with_items:
+    - "{{ global_npm_packages }}"
