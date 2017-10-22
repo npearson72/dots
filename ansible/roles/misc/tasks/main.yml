@@ -1,2 +1,4 @@
 - include_tasks: pry.yml
   tags: pry
+- include_tasks: postgres.yml
+  tags: postgres

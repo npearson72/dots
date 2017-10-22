@@ -1,0 +1,5 @@
+- name: set alias in .zshrc.local
+  blockinfile:
+    path: "{{ home }}/.zshrc.local"
+    marker: "# {mark} ansible managed block for PostgreSQL history file"
+    content: "export PSQL_HISTORY=$HOME/.local/.psql_history"
