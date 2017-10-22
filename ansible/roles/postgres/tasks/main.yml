@@ -1,3 +1,6 @@
+- name: create postgres default database
+  command: "createdb {{ default_db_name }}"
+
 - name: set alias in .zshrc.local
   blockinfile:
     path: "{{ home }}/.zshrc.local"
