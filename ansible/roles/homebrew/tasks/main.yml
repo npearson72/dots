@@ -7,19 +7,24 @@
 - name: check brew doctor
   command: brew doctor
 
+- name: "make sure '{{ brewfile_path }}' dir exists"
+  file:
+    path: "{{ brewfile_path }}"
+    state: directory
+
 - name: copy Brewfile
   file:
     src: "{{ role_path }}/files/Brewfile"
-    dest: "{{ brewfile_path }}"
+    dest: "{{ brewfile_path }}/Brewfile"
     state: link
 
 - name: bundle dependencies
-  command: "brew bundle --file={{ brewfile_path }}"
+  command: "brew bundle --file={{ brewfile_path }}/Brewfile"
   args:
     chdir: "{{ home }}"
 
 - name: cleanup dependencies
-  command: "brew bundle cleanup --force --file={{ brewfile_path }}"
+  command: "brew bundle cleanup --force --file={{ brewfile_path }}/Brewfile"
   args:
     chdir: "{{ home }}"
 
