@@ -43,6 +43,7 @@ Plug 'mhinz/vim-signify'
 
 " Other
 Plug 'vimwiki/vimwiki'
+Plug 'shime/vim-livedown'
 
 call plug#end()
 
@@ -111,4 +112,8 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsEditSplit='vertical'
 
 " VimWiki
-let g:vimwiki_list = [{'path': '~/Notes', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': { 'ruby': 'ruby' }}]
+let g:vimwiki_list = [
+      \{'path': '~/Dropbox/Wikis/dev', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': { 'ruby': 'ruby' }},
+      \{'path': '~/Dropbox/Wikis/personal', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': { 'ruby': 'ruby' }}
+      \]
+let g:vimwiki_table_mappings = 0 " Prevents conflict with Deoplete mappings
