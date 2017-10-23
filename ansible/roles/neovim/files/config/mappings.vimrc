@@ -81,7 +81,6 @@ nnoremap <silent> v v:<c-u>set nonu rnu<cr>gv
 nnoremap <silent> V V0:<c-u>set nonu rnu<cr>gv
 nnoremap <silent> <c-v> <c-v>:<c-u>set nonu rnu<cr>gv
 vnoremap <esc> <esc>:set nornu nu<cr>
-autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 
 " Use sane regexes
 nnoremap / /\v

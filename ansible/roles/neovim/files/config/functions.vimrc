@@ -13,3 +13,6 @@ augroup CursorColumn
   au BufWinEnter * setlocal cursorcolumn
   au WinLeave * setlocal nocursorcolumn
 augroup END
+
+" Automatically reload buffer when moving cursor if file was changed
+autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
