@@ -16,5 +16,6 @@
     - { role: ssh, tags: ssh }
     - { role: openconnect, tags: openconnect }
     - { role: postgres, tags: postgres }
+    - { role: iterm2, tags: iterm2 }
     - { role: mac_os, tags: mac_os }
     - { role: post_build, tags: post_build }
