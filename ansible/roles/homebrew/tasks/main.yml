@@ -12,7 +12,7 @@
     path: "{{ brewfile_path }}"
     state: directory
 
-- name: copy Brewfile
+- name: link Brewfile
   file:
     src: "{{ role_path }}/files/Brewfile"
     dest: "{{ brewfile_path }}/Brewfile"
