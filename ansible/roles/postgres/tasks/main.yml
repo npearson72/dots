@@ -1,5 +1,5 @@
 - name: check postgres default database exists
-  shell: "psql -l | grep {{ default_db_name }}"
+  shell: "psql -l | awk '{print $1}' | grep -w {{ default_db_name }}"
   register: default_db_exists
   ignore_errors: true
 
