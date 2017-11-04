@@ -37,7 +37,6 @@ cask "dropbox"
 cask "firefox", args: { appdir: '/Applications' }
 cask "google-chrome", args: { appdir: '/Applications' }
 cask "iterm2"
-cask "mullvad"
 cask "skype"
 cask "slack"
 cask "spotify"

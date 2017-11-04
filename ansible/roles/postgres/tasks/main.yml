@@ -1,5 +1,11 @@
+- name: check postgres default database exists
+  shell: "psql -l | grep {{ default_db_name }}"
+  register: default_db_exists
+  ignore_errors: true
+
 - name: create postgres default database
   command: "createdb {{ default_db_name }}"
+  when: default_db_exists|failed
 
 - name: set alias in .zshrc.local
   blockinfile:
