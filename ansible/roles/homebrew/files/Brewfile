@@ -37,8 +37,6 @@ cask "dropbox"
 cask "firefox", args: { appdir: '/Applications' }
 cask "google-chrome", args: { appdir: '/Applications' }
 cask "iterm2"
-cask "ksdiff"
-cask "screenhero"
 cask "skype"
 cask "slack"
 cask "spotify"
@@ -47,7 +45,5 @@ cask "tuntap"
 cask "vagrant"
 cask "virtualbox"
 cask "vlc"
-cask "windscribe"
 mas "1Password", id: 443987910
 mas "BetterSnapTool", id: 417375580
-mas "Kaleidoscope", id: 587512244
