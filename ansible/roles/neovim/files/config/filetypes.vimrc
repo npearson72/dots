@@ -10,4 +10,4 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd Filetype gitcommit setlocal colorcolumn=80
 
 " Markdown
-autocmd Filetype markdown setlocal spell textwidth=80
+autocmd Filetype markdown setlocal spell

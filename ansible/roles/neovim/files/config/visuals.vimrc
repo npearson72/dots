@@ -5,6 +5,9 @@ silent! colorscheme pencil
 set t_Co=256
 set background=dark
 
+set colorcolumn=80
+hi ColorColumn ctermbg=235 ctermfg=NONE
+
 " Tab styles
 hi TabLineFill ctermfg=08 ctermbg=08
 hi TabLine ctermfg=13 ctermbg=08
