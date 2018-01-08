@@ -1,6 +1,7 @@
 #!/bin/sh
 
-alias ll="ls -lhA"
+alias ls="ls -lh --color"
+alias ll="ls -Ud -- .*(/) .*(^/) *(/)"
 alias vim="nvim"
 alias vi="nvim"
 alias reload!="source $HOME/.zshrc"
