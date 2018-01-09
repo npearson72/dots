@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias ll="ls -lha --color --group-directories-first"
+alias ll="gls -lha --color --group-directories-first"
 alias vim="nvim"
 alias vi="nvim"
 alias reload!="source $HOME/.zshrc"

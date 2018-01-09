@@ -24,7 +24,7 @@ for file in ${${config_files:#*/path.zsh}:#*/env.zsh}; do
 done
 
 # Loads colors for coreutils GNU
-eval $(dircolors $ZSH/files/dircolors.txt)
+eval $(gdircolors $ZSH/files/dircolors.txt)
 
 unset config_files
 
