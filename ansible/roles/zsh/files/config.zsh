@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # http://zsh.sourceforge.net/Doc/Release/Options.html
 
 # ZSH history

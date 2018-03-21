@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Required settings
 setopt PROMPT_SUBST # Turns on parameter expansion, command substitution and arithmetic expansion in prompts
 autoload colors && colors
