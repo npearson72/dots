@@ -1,3 +1,6 @@
+require 'socket'
+hostname = Socket.gethostname
+
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/services"
@@ -7,26 +10,25 @@ cask "caskroom/versions/java8"
 brew "ansible"
 brew "autojump"
 brew "cmake"
-brew "coreutils", args: ["with-default-names"]
+brew "coreutils"
 brew "ctags"
 brew "diff-so-fancy"
 brew "elasticsearch"
-brew "findutils", args: ["with-default-names"]
+brew "findutils"
 brew "gawk"
-brew "ghostscript"
 brew "git"
 brew "gnu-getopt"
 brew "gnu-indent"
 brew "gnu-sed"
-brew "gnu-tar", args: ["with-default-names"]
+brew "gnu-tar"
 brew "gnutls"
 brew "gzip"
 brew "imagemagick"
-brew "kibana"
+brew "kibana" unless hostname == 'nathan'
 brew "mas"
 brew "neovim"
 brew "node"
-brew "openconnect"
+brew "openconnect" unless hostname == 'nathan'
 brew "openssh"
 brew "phantomjs"
 brew "postgresql", restart_service: true
@@ -42,16 +44,19 @@ brew "unrar"
 brew "unzip"
 brew "wget"
 brew "zsh"
-cask "cleanmymac"
+cask "cleanmymac" if hostname == 'nathan'
 cask "dropbox"
+cask "expressvpn" if hostname == 'nathan'
 cask "firefox", args: { appdir: '/Applications' }
 cask "google-chrome", args: { appdir: '/Applications' }
 cask "iterm2"
 cask "java"
-cask "spotify"
-cask "transmission"
-cask "vagrant"
-cask "virtualbox"
-cask "vlc"
+if hostname == 'nathan'
+  cask "spotify"
+  cask "transmission"
+  cask "vagrant"
+  cask "virtualbox"
+  cask "vlc"
+end
 mas "1Password", id: 443987910
 mas "BetterSnapTool", id: 417375580
