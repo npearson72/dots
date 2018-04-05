@@ -6,9 +6,3 @@
 - name: create postgres default database
   command: "createdb {{ default_db_name }}"
   when: default_db_exists|failed
-
-- name: set alias in .zshrc.local
-  blockinfile:
-    path: "{{ home }}/.zshrc.local"
-    marker: "# {mark} ansible managed block for PostgreSQL history file"
-    content: "export PSQL_HISTORY={{ home }}/.local/.psql_history"

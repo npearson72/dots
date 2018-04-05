@@ -1,6 +1,7 @@
 #!/bin/sh
 
-alias ll="ls -lha"
+alias ls='gls -lh --color'
+alias ll='gls -lha --color'
 if type nvim > /dev/null 2>&1; then
   alias vim=nvim
   alias vi=vim
