@@ -46,6 +46,7 @@ brew "wget"
 brew "zsh"
 cask "cleanmymac" if hostname == 'nathan'
 cask "dropbox"
+cask "evernote"
 cask "expressvpn" if hostname == 'nathan'
 cask "firefox", args: { appdir: '/Applications' }
 cask "google-chrome", args: { appdir: '/Applications' }
