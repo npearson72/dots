@@ -6,7 +6,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "caskroom/versions"
 tap "caskroom/cask"
-cask "caskroom/versions/java8"
+cask "caskroom/versions/java8" unless hostname == 'nathan'
 brew "ansible"
 brew "autojump"
 brew "cmake"
