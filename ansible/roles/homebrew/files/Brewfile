@@ -1,11 +1,11 @@
 require 'socket'
 hostname = Socket.gethostname
 
+tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/cask"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "caskroom/versions"
-tap "caskroom/cask"
 cask "caskroom/versions/java8" unless hostname == 'nathan'
 brew "ansible"
 brew "autojump"
@@ -42,19 +42,17 @@ brew "unrar"
 brew "unzip"
 brew "wget"
 brew "zsh"
+cask "1password"
+cask "docker"
 cask "dropbox"
 cask "evernote"
-cask "expressvpn" if hostname == 'nathan'
-cask "firefox", args: { appdir: '/Applications' }
 cask "google-chrome", args: { appdir: '/Applications' }
 cask "iterm2"
 cask "java"
 if hostname == 'nathan'
-  cask "spotify"
   cask "transmission"
   cask "vagrant"
   cask "virtualbox"
   cask "vlc"
 end
-mas "1Password", id: 443987910
-mas "BetterSnapTool", id: 417375580
+mas "Magnet", id: 441258766

@@ -4,6 +4,16 @@
 # Set global envs
 export ZSH={{ role_path }}
 export ZSH_FILES=$ZSH/files
+export ZSH_FUNCTIONS=$ZSH/functions
+
+# Add custom functions to fpath
+fpath=($ZSH_FUNCTIONS "${fpath[@]}")
+
+# Load custom functions
+for file in $ZSH_FUNCTIONS/*.zsh; do
+  autoload -Uz $file
+  source $file
+done
 
 typeset -U config_files
 config_files=($ZSH_FILES/*.zsh)
