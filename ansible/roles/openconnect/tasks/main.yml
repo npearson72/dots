@@ -2,14 +2,17 @@
   file:
     path: "{{ vpn_config_path }}"
     state: directory
+  when: vpn.user != ""
 
 - name: copy vpn.conf
   template:
     src: "{{ role_path }}/templates/vpn.conf.j2"
     dest: "{{ vpn_config_path }}/vpn.conf"
+  when: vpn.user != ""
 
 - name: set alias in .zshrc.local
   blockinfile:
     path: "{{ home }}/.zshrc.local"
     marker: "# {mark} ansible managed block for OpenConnect VPN"
     content: "alias vpn='sudo openconnect --config {{ vpn_config_path }}/vpn.conf {{ vpn.domain }}'"
+  when: vpn.user != ""
