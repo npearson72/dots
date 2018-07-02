@@ -50,6 +50,7 @@ cask "google-chrome", args: { appdir: '/Applications' }
 cask "iterm2"
 cask "java"
 if hostname == 'gemini'
+  cask "expressvpn"
   cask "transmission"
   cask "vagrant"
   cask "virtualbox"

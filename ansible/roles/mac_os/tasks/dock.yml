@@ -16,7 +16,9 @@
   with_items:
     - Launchpad
     - Google Chrome
+    - Evernote
     - Calendar
+    - iBooks
     - iTerm
     - Utilities/Activity Monitor
     - System Preferences
