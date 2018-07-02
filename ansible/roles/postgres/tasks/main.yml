@@ -5,4 +5,4 @@
 
 - name: create postgres default database
   command: "createdb {{ default_db_name }}"
-  when: default_db_exists|failed
+  when: default_db_exists is not successful

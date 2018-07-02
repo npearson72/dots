@@ -6,21 +6,21 @@
 - name: install ruby
   shell: "rbenv install {{ ruby_version }}"
   register: ruby_installed
-  when: ruby_version_exists|failed
+  when: ruby_version_exists is not successful
 
 - name: set global ruby version
   shell: "rbenv global {{ ruby_version }} && rbenv rehash"
-  when: (ruby_version_exists|succeeded or ruby_installed|succeeded)
+  when: (ruby_version_exists is successful or ruby_installed is successful)
 
 - name: copy .gemrc file
   copy:
     src: "{{ role_path }}/files/gemrc"
     dest: "{{ home }}/.gemrc"
-  when: (ruby_version_exists|succeeded or ruby_installed|succeeded)
+  when: (ruby_version_exists is successful or ruby_installed is successful)
 
 - name: install required gems
   command: "{{ home }}/.rbenv/shims/gem install {{ item }}"
   with_items:
     - bundler
     - neovim
-  when: (ruby_version_exists|succeeded or ruby_installed|succeeded)
+  when: (ruby_version_exists is successful or ruby_installed is successful)

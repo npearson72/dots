@@ -8,7 +8,7 @@
     path: "{{ zsh_path }}"
   register: brewed_zsh_path
   ignore_errors: true
-  when: zsh_brewed|succeeded
+  when: zsh_brewed is successful
 
 - name: replace path to zsh in /etc/shells
   become: yes
