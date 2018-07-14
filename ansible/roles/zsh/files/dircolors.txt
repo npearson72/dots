@@ -1,2 +1,0 @@
-# Directory
-DIR 00;34
