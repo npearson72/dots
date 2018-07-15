@@ -41,10 +41,6 @@ Plug 'kana/vim-textobj-user' " Required for vim-textobj-rubyblock
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-" Other
-Plug 'vimwiki/vimwiki'
-Plug 'shime/vim-livedown' " Requires: npm install -g livedown
-
 call plug#end()
 
 " Ack
@@ -110,26 +106,3 @@ let g:taboo_tab_format=' %f '
 " UltiSnips
 let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsEditSplit='vertical'
-
-" VimWiki
-let nested_syntaxes = {
-      \'sh': 'sh',
-      \'sql': 'sql',
-      \'ruby': 'ruby',
-      \'js': 'javascript',
-      \'coffee': 'coffee'
-      \}
-
-let default_vimwiki_configs = {
-      \'path': '$HOME/Dropbox/Wiki',
-      \'syntax': 'markdown',
-      \'ext': '.md',
-      \'nested_syntaxes': nested_syntaxes
-      \}
-
-let g:vimwiki_list = [default_vimwiki_configs]
-let g:vimwiki_table_mappings = 0 " Prevents conflict with Deoplete mappings
-
-" Vim Livedown
-let g:livedown_autorun = 1
-let g:vimwiki_auto_chdir = 1
