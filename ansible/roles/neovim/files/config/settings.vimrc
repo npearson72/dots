@@ -58,9 +58,6 @@ if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
 
-" Misc
-set shellpipe=>
-
 "=================
 " Plugin settings
 "=================
@@ -72,6 +69,3 @@ endif
 
 " Restore view (vim-scripts/restore_view.vim)
 set viewoptions=cursor
-
-" VimWiki
-set nocompatible
