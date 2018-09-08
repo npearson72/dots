@@ -7,15 +7,16 @@ cask "caskroom/versions/java8"
 brew "ansible"
 brew "autojump"
 brew "cmake"
-brew "coreutils"
+brew "coreutils", args: ["with-default-names"]
 brew "ctags"
 brew "diff-so-fancy"
 brew "elasticsearch"
-brew "findutils"
+brew "findutils", args: ["with-default-names"]
 brew "gawk"
 brew "git"
-brew "gnu-sed"
-brew "gnu-tar"
+brew "gnu-sed", args: ["with-default-names"]
+brew "gnu-tar", args: ["with-default-names"]
+brew "gnu-which", args: ["with-default-names"]
 brew "gnutls"
 brew "gzip"
 brew "imagemagick"
@@ -43,7 +44,7 @@ cask "1password"
 cask "docker"
 cask "dropbox"
 cask "evernote"
-cask "google-chrome", args: { appdir: '/Applications' }
+cask "google-chrome", args: { appdir: "/Applications" }
 cask "iterm2"
 cask "java"
 mas "Magnet", id: 441258766

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-alias ls='gls -lhN --color'
-alias ll='gls -lhaN --color'
+alias ls='ls -lhN --color --group-directories-first --classify'
+alias ll='ls -lhAN'
 if type nvim > /dev/null 2>&1; then
   alias vim=nvim
   alias vi=vim
