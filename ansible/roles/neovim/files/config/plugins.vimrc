@@ -28,7 +28,6 @@ Plug 'godlygeek/tabular'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-scripts/SyntaxRange'
 
 " Ruby/Rails
 Plug 'tpope/vim-rails'
