@@ -42,12 +42,11 @@ nnoremap T <esc><c-w>T
 nnoremap { <esc>gT
 nnoremap } <esc>gt
 
-" File navigation, search, replace
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<cr>
-nnoremap <leader>s :Ack<space>
-nnoremap <leader><space> :noh<cr>
+" Find all selected
 nnoremap <leader>* *:%s//
+
+" Remove search highlight
+nnoremap <leader><space> :noh<cr>
 
 " Folding
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
@@ -105,6 +104,9 @@ cnoremap <c-e> <end>
 "=================
 " Plugin mappings
 "=================
+" Ack
+cnoreabbrev Ack Ack!
+nnoremap <Leader>s :Ack!<Space>
 
 " Buffergator fix
 nnoremap [b :BuffergatorMruCyclePrev<cr>
@@ -113,6 +115,10 @@ nnoremap ]b :BuffergatorMruCycleNext<cr>
 " Deoplete - navigate menu the way you want
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" NERDTree
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<cr>
 
 " Tabularize
 vnoremap <leader>T :Tabularize /
