@@ -21,8 +21,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Formatters, selectors, accelerators
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 
@@ -30,7 +31,6 @@ Plug 'godlygeek/tabular'
 Plug 'sheerun/vim-polyglot'
 
 " Ruby/Rails
-Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'henrik/vim-ruby-runner'
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -93,6 +93,18 @@ let g:grep_cmd_opts='--line-numbers --noheading'
 let NERDTreeBookmarksFile=expand("$HOME/.local/share/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
+
+" Projectionist
+autocmd User ProjectionistDetect
+\ call projectionist#append(getcwd(),
+\ {
+\    'app/*.rb': {
+\      'alternate': 'spec/{}_spec.rb'
+\    },
+\    'spec/*_spec.rb': {
+\      'alternate': 'app/{}.rb'
+\    },
+\ })
 
 " RubyRunner
 let g:RubyRunner_key='<Leader>e'
