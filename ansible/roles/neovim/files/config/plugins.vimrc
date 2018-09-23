@@ -28,6 +28,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 
 " Syntax highlighting
+Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 
 " Ruby/Rails
