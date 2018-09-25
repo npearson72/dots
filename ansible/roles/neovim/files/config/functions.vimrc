@@ -16,3 +16,12 @@ augroup END
 
 " Automatically reload buffer when moving cursor if file was changed
 autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
+
+" Open Ctags in vsplit
+function! FollowTag()
+  if !exists("w:tagbrowse")
+    vsplit
+    let w:tagbrowse=1
+  endif
+  execute "tag " . expand("<cword>")
+endfunction

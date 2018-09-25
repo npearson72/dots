@@ -8,17 +8,6 @@ set background=dark
 set colorcolumn=80
 hi ColorColumn ctermbg=235 ctermfg=NONE
 
-" Interactive cursor
-let s:uname = system('echo -n "$(uname)"')
-if s:uname == 'Linux'
-  :set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-        \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-        \,sm:block-blinkwait175-blinkoff150-blinkon175
-elseif s:uname =~ "Darwin"
-  let &t_SI = '\<esc>]50;CursorShape=1\x7'
-  let &t_EI = '\<esc>]50;CursorShape=0\x7'
-endif
-
 "=================
 " Plugin visuals
 "=================

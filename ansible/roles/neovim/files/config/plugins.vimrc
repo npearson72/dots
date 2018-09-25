@@ -13,6 +13,7 @@ Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vim-scripts/zoomwintab.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Snippets & autocompletion
 Plug 'sirver/ultisnips'

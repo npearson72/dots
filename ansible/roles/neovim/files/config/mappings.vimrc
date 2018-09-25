@@ -76,12 +76,16 @@ nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
+" Ctags
+nnoremap <c-]> :call FollowTag()<CR>
+nnoremap <c-[> :pop<cr>
+
 " Drag block up/down
 vnoremap <s-j> :m'>+<cr>gv
 vnoremap <s-k> :m-2<cr>gv
 
 " Toggle line wrapping
-" nnoremap <leader>w :set wrap!<cr> Conflict with default VimWiki key
+nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>
 
 " Toggle relative numbers in visual line mode
