@@ -61,11 +61,5 @@ endif
 "=================
 " Plugin settings
 "=================
-
-" Ag (The Silver Searcher)
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor " Use Ag over Ack
-endif
-
 " Restore view (vim-scripts/restore_view.vim)
 set viewoptions=cursor

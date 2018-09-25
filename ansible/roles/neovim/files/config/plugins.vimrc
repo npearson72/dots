@@ -49,7 +49,11 @@ let g:ackhighlight=1
 
 " Ag (The Silver Searcher)
 if executable('ag')
-  let g:ackprg='ag --nogroup --column' " Use Ag over Ack
+ " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+ " Use Ag over Ack
+  let g:ackprg='ag --nogroup --column'
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command='ag %s -i --nocolor --nogroup --hidden
