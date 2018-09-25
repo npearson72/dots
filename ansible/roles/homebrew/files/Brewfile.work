@@ -27,7 +27,7 @@ brew "node"
 brew "openconnect"
 brew "openssh"
 brew "phantomjs"
-brew "postgresql", restart_service: true
+brew "postgresql", restart_service: :changed
 brew "python"
 brew "ruby-build"
 brew "rbenv"
