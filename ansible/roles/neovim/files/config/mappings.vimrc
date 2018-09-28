@@ -77,7 +77,7 @@ vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
 " Ctags
-nnoremap <c-]> :call FollowTag()<CR>
+" nnoremap <c-]> :call FollowTag()<CR>
 nnoremap <c-[> :pop<cr>
 
 " Drag block up/down
