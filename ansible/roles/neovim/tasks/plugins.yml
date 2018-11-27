@@ -1,4 +1,6 @@
 - name: install pip
+  become: yes
+  become_user: root
   easy_install:
     name: pip
     state: latest
