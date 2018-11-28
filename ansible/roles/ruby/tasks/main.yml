@@ -22,7 +22,4 @@
   command: "{{ home }}/.rbenv/shims/gem install {{ item }}"
   with_items:
     - bundler
-    - neovim
-    - rubocop
-    - brakeman
   when: (ruby_version_exists is successful or ruby_installed is successful)
