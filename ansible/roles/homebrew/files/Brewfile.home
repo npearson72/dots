@@ -43,7 +43,7 @@ cask "docker"
 cask "dropbox"
 cask "evernote"
 cask "google-chrome", args: { appdir: "/Applications" }
-cask "iterm2"
+cask "iterm2-nightly"
 cask "java"
 cask "phantomjs"
 cask "transmission"
