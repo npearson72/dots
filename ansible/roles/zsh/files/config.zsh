@@ -23,6 +23,3 @@ setopt CORRECT
 
  # Helps avoid mistakes like `rm * o` when `rm *.o` was intended
 setopt RM_STAR_WAIT
-
-# Emacs key bindings for ZSH
-bindkey -e

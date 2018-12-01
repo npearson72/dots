@@ -25,7 +25,7 @@ git_dirty() {
     then
       echo "on %{$fg[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg[red]%}$(git_prompt_info)*%{$reset_color%}"
     fi
   fi
 }

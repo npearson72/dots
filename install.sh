@@ -3,10 +3,6 @@ set -e
 
 SCRIPT_ROOT=$(dirname $0)
 
-#==================
-# Define functions
-#==================
-
 get_args() {
   while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -40,9 +36,9 @@ buildAnsible() {
   echo "\n=> Building Ansible Playbooks\n"
 
   if [[ $ANSIBLE_TAGS ]]; then
-    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/inventory -v -K --tags $ANSIBLE_TAGS"
+    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --tags $ANSIBLE_TAGS"
   else
-    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/inventory -v -K"
+    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K"
   fi
 }
 
@@ -59,9 +55,8 @@ run() {
   echo "\n=> Finished!\n"
 }
 
-#==================
-# Envoke functions
-#==================
+
+# Run...
 
 cd $SCRIPT_ROOT
 
