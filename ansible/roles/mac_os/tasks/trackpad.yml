@@ -1,5 +1,6 @@
 - name: disable natural scrolling
   command: defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+  tags: mac_os_trackpad
 
 - name: disable trackpad gestures
   command: "defaults write com.apple.dock {{ item }} -int 0"
@@ -7,6 +8,7 @@
     - showLaunchpadGestureEnabled
     - showDesktopGestureEnabled
     - showMissionControlGestureEnabled
+  tags: mac_os_trackpad
 
 - name: set trackpad right corner as right click
   command: "{{ item }}"
@@ -15,3 +17,4 @@
     - defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
     - defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
     - defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+  tags: mac_os_trackpad

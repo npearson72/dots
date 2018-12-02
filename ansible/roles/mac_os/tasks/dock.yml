@@ -1,18 +1,30 @@
 - name: enable autohide of dock
   command: defaults write com.apple.dock autohide -bool true
+  tags: mac_os_dock
 
 - name: enable dock magnification
   command: defaults write com.apple.dock magnification -bool true
+  tags: mac_os_dock
 
 - name: remove default icons from dock
   command: defaults write com.apple.dock persistent-apps -array
   when: hostname_is.stdout != computer_name
+  tags: mac_os_dock
 
 - name: add icons to dock
-  command: "defaults write com.apple.dock persistent-apps -array-add \
-    '<dict><key>tile-data</key><dict><key>file-data</key><dict>\
-    <key>_CFURLString</key><string>/Applications/{{ item }}.app</string>\
-    <key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'"
+  command: "defaults write com.apple.dock persistent-apps -array-add
+  '<dict>
+    <key>tile-data</key>
+    <dict>
+      <key>file-data</key>
+      <dict>
+        <key>_CFURLString</key>
+        <string>/Applications/{{ item }}.app</string>
+        <key>_CFURLStringType</key>
+        <integer>0</integer>
+      </dict>
+    </dict>
+  </dict>'"
   with_items:
     - Launchpad
     - Google Chrome
@@ -23,3 +35,4 @@
     - Utilities/Activity Monitor
     - System Preferences
   when: hostname_is.stdout != computer_name
+  tags: mac_os_dock

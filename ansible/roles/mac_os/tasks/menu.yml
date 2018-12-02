@@ -2,9 +2,12 @@
   command: "defaults write com.apple.systemuiserver menuExtras -array \
     '/System/Library/CoreServices/Menu Extras/Volume.menu' \
     '/System/Library/CoreServices/Menu Extras/Bluetooth.menu'"
+  tags: mac_os_menu
 
 - name: enable battery percent in menu
   command: defaults write com.apple.menuextra.battery ShowPercent YES
+  tags: mac_os_menu
 
 - name: display date in clock
   command: defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm a"
+  tags: mac_os_menu

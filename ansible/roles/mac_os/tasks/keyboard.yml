@@ -1,8 +1,36 @@
 - name: enable full keyboard access for all controls (i.e. tab in modal dialogs)
   command: defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+  tags: mac_os_keyboard
 
 - name: set fast keyboard repeat rate
   command: "{{ item }}"
   with_items:
     - defaults write NSGlobalDomain KeyRepeat -int 2
     - defaults write NSGlobalDomain InitialKeyRepeat -int 15
+  tags: mac_os_keyboard
+
+- name: disable shortcuts for mission control
+  command: "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add {{ item.key_number }} '
+    <dict>
+      <key>enabled</key><false/>
+      <key>value</key><dict>
+        <key>type</key><string>standard</string>
+        <key>parameters</key>
+        <array>
+          <integer>{{ item.params[0] }}</integer>
+          <integer>{{ item.params[1] }}</integer>
+          <integer>{{ item.params[2] }}</integer>
+        </array>
+      </dict>
+    </dict>'"
+  with_items:
+    - { key_number: 118, params: [65535, 18, 262144] }
+    - { key_number: 32, params: [65535, 126, 8650752] }
+    - { key_number: 33, params: [65535, 125, 8650752] }
+    - { key_number: 34, params: [65535, 126, 8781824] }
+    - { key_number: 35, params: [65535, 125, 8781824] }
+    - { key_number: 79, params: [65535, 123, 8650752] }
+    - { key_number: 80, params: [65535, 123, 8781824] }
+    - { key_number: 81, params: [65535, 124, 8650752] }
+    - { key_number: 82, params: [65535, 124, 8781824] }
+  tags: mac_os_keyboard
