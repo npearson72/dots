@@ -24,10 +24,9 @@ source '/usr/local/opt/fzf/shell/key-bindings.zsh'
 export PSQL_HISTORY=$HOME/.local/.psql_history
 
 # Rbenv
-rbenv() {
-  eval "$(command rbenv init -)"
-  rbenv "$@"
-}
+if which rbenv >/dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # ZSH history substring search
 source '/usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
