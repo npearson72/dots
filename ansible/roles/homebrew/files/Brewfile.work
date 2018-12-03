@@ -15,6 +15,7 @@ brew "elasticsearch"
 brew "findutils", args: ["with-default-names"]
 brew "fzf"
 brew "gawk"
+brew "ghostscript"
 brew "git"
 brew "gnu-sed", args: ["with-default-names"]
 brew "gnu-tar", args: ["with-default-names"]
