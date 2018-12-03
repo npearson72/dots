@@ -2,6 +2,11 @@
 
 # http://zsh.sourceforge.net/Doc/Release/Options.html
 
+# Editor
+export VISUAL=nvim
+export GIT_EDITOR=$VISUAL
+export EDITOR=$VISUAL
+
 # ZSH history
 HISTFILE=$HOME/.local/.zsh_history
 HISTSIZE=10000
