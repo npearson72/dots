@@ -1,0 +1,8 @@
+- name: install dependencies
+  yarn:
+    name: "{{ item }}"
+    global: yes
+    state: latest
+  with_items:
+    - eslint
+    - coffeelint

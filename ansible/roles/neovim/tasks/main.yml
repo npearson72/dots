@@ -1,2 +1,3 @@
 - include_tasks: configs.yml
 - include_tasks: plugins.yml
+- include_tasks: dependencies.yml
