@@ -6,6 +6,8 @@
 	<true/>
 	<key>AboutToPasteTabsWithCancel_selection</key>
 	<integer>2</integer>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -547,12 +549,12 @@
 			<key>Text</key>
 			<string>45C1CE53-217B-494F-A706-48C49509E5ED</string>
 		</dict>
-		<key>0x69-0x100000</key>
+		<key>0x6b-0x100000</key>
 		<dict>
 			<key>Action</key>
 			<integer>11</integer>
 			<key>Text</key>
-			<string>0x02 0x0B 0x0C</string>
+			<string>0x0C</string>
 		</dict>
 		<key>0x7b-0x120000</key>
 		<dict>
@@ -720,7 +722,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>354 141 994 316 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>468 354 814 486 0 0 1440 900 </string>
+	<string>90 360 1016 512 0 0 1440 877 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
 	<string>246 512 260 56 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>

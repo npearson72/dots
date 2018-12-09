@@ -1,0 +1,8 @@
+- name: copy tmux.config
+  file:
+    src: "{{ role_path }}/files/tmux.conf"
+    dest: "{{ home }}/.config/.tmux.conf"
+    state: link
+
+- name: install tmuxinator
+  command: "{{ home }}/.rbenv/shims/gem install tmuxinator"

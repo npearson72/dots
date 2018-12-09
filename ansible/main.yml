@@ -12,6 +12,7 @@
     - { role: neovim, tags: neovim }
     - { role: misc, tags: misc }
     - { role: ssh, tags: ssh }
+    - { role: tmux, tags: tmux }
     - { role: openconnect, tags: openconnect }
     - { role: postgres, tags: postgres }
     - { role: iterm2, tags: iterm2 }
