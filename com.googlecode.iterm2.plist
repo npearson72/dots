@@ -675,6 +675,8 @@
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -715,8 +717,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>354 141 994 316 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 451 770 420 0 0 1440 877 </string>
+	<string>468 354 814 486 0 0 1440 900 </string>
+	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
+	<string>246 512 260 56 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_45C1CE53-217B-494F-A706-48C49509E5ED</key>
@@ -994,7 +1000,7 @@
 			<key>Has Hotkey</key>
 			<true/>
 			<key>Horizontal Spacing</key>
-			<real>0.99392884036144569</real>
+			<real>1</real>
 			<key>HotKey Characters</key>
 			<string></string>
 			<key>HotKey Characters Ignoring Modifiers</key>
@@ -1330,13 +1336,13 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>NovaMonoForPowerline 14</string>
+			<string>HackNerdFontComplete-Regular 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>Monaco 14</string>
+			<string>HackNerdFontComplete-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1384,7 +1390,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.058016735406091369</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -1398,7 +1404,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.05</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -1413,13 +1419,15 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>693EE994-84CC-4000-9515-9E480C916E83</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariableNames</key>
 	<dict>
 		<key>1</key>
 		<array>
 			<string>session.jobName</string>
 			<string>session.id</string>
-			<string>session.badge</string>
+			<string>session.columns</string>
 			<string>session.profileName</string>
 			<string>session.name</string>
 			<string>session.terminalIconName</string>
@@ -1438,6 +1446,7 @@
 			<string>session.tmuxWindowTitle</string>
 			<string>session.autoLogId</string>
 			<string>session.tty</string>
+			<string>session.badge</string>
 			<string>session.autoName</string>
 			<string>session.terminalWindowName</string>
 			<string>iterm2</string>
@@ -1448,11 +1457,10 @@
 			<string>session.mouseReportingMode</string>
 			<string>session.pid</string>
 			<string>session.presentationName</string>
-			<string>session.columns</string>
 		</array>
 		<key>16</key>
 		<array>
-			<string>currentTab.currentSession.session.rows</string>
+			<string>currentTab.currentSession.session.mouseReportingMode</string>
 			<string>currentTab.currentSession.session.tty</string>
 			<string>currentTab.currentSession.session.username</string>
 			<string>currentTab.currentSession.session.name</string>
@@ -1462,20 +1470,24 @@
 			<string>currentTab.currentSession.session.pid</string>
 			<string>currentTab.currentSession.session.path</string>
 			<string>currentTab.currentSession</string>
+			<string>currentTab.currentSession.session.tmuxClientName</string>
+			<string>currentTab.currentSession.session.tmuxRole</string>
 			<string>titleOverride</string>
 			<string>currentTab.currentSession.session.terminalWindowName</string>
 			<string>currentTab.currentSession.session.autoName</string>
 			<string>currentTab.currentSession.session.jobPid</string>
 			<string>currentTab.currentSession.session.autoNameFormat</string>
+			<string>currentTab.currentSession.session.tmuxWindowTitle</string>
 			<string>iterm2</string>
 			<string>currentTab.currentSession.session.presentationName</string>
 			<string>currentTab.currentSession.session.columns</string>
 			<string>currentTab.currentSession.session.terminalIconName</string>
+			<string>currentTab.currentSession.session.rows</string>
 			<string>currentTab.currentSession.session.jobName</string>
-			<string>currentTab.currentSession.session.mouseReportingMode</string>
 		</array>
 		<key>2</key>
 		<array>
+			<string>currentSession.session.tmuxWindowTitle</string>
 			<string>currentSession.session.jobName</string>
 			<string>currentSession.session.termid</string>
 			<string>currentSession.session.pid</string>
@@ -1492,7 +1504,9 @@
 			<string>currentSession.session.autoNameFormat</string>
 			<string>currentSession.session.path</string>
 			<string>currentSession.session.terminalWindowName</string>
+			<string>currentSession.session.tmuxClientName</string>
 			<string>iterm2</string>
+			<string>currentSession.session.tmuxRole</string>
 			<string>currentSession.session.autoName</string>
 			<string>tmuxWindow</string>
 			<string>currentSession</string>
@@ -1563,7 +1577,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-01T14:10:31Z</date>
+	<date>2018-12-08T23:22:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>

@@ -5,6 +5,8 @@ Plug 'bling/vim-airline'
 Plug 'reedes/vim-colors-pencil'
 Plug 'gcmt/taboo.vim'
 Plug 'vim-scripts/restore_view.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " File management, search, navigation
 Plug 'mileszs/ack.vim' 
@@ -67,7 +69,9 @@ endif
 
 " Airline
 let g:airline#extensions#whitespace#enabled=0
-let g:airline_theme='pencil'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 
 " Buffergator
 let g:buffergator_viewport_split_policy='B'
@@ -98,6 +102,9 @@ let g:grep_cmd_opts='--line-numbers --noheading'
 let NERDTreeBookmarksFile=expand("$HOME/.local/share/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
+
+" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
+let g:NERDTreeLimitedSyntax = 1
 
 " Projectionist
 autocmd User ProjectionistDetect
