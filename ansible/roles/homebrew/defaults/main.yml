@@ -1,2 +1,2 @@
-brewfile_path: "{{ home }}/.local"
+brewfile_path: "{{ home }}/.config"
 computer_type: "{{ lookup('env', 'COMPUTER_TYPE') }}"

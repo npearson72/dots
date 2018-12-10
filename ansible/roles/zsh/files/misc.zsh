@@ -21,7 +21,7 @@ fi
 source '/usr/local/opt/fzf/shell/key-bindings.zsh'
 
 # Postgres
-export PSQL_HISTORY=$HOME/.local/.psql_history
+export PSQL_HISTORY=$HOME/.cache/.psql_history
 
 # Rbenv
 if which rbenv >/dev/null; then

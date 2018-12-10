@@ -8,7 +8,7 @@ export GIT_EDITOR=$VISUAL
 export EDITOR=$VISUAL
 
 # ZSH history
-HISTFILE=$HOME/.local/.zsh_history
+HISTFILE=$HOME/.cache/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 

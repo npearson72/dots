@@ -99,7 +99,7 @@ endfunction
 let g:grep_cmd_opts='--line-numbers --noheading'
 
 " NERDTree
-let NERDTreeBookmarksFile=expand("$HOME/.local/share/nvim/NERDTreeBookmarks")
+let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
