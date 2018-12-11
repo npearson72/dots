@@ -7,6 +7,13 @@ export VISUAL=nvim
 export GIT_EDITOR=$VISUAL
 export EDITOR=$VISUAL
 
+# Terminal
+if [ -n "$TMUX" ]; then
+  export TERM=screen-256color
+else
+  export TERM=xterm-256color
+fi
+
 # ZSH history
 HISTFILE=$HOME/.cache/.zsh_history
 HISTSIZE=10000
