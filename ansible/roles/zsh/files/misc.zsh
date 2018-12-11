@@ -29,8 +29,10 @@ if which rbenv >/dev/null; then
 fi
 
 # Tmuxinator
-tmux_gem_path=$(gem which tmuxinator | rev | cut -d'/' -f3- | rev)
-source "$tmux_gem_path/completion/tmuxinator.zsh"
+if [ ! -n "$TMUX" ]; then
+  tmux_gem_path=$(gem which tmuxinator | rev | cut -d'/' -f3- | rev)
+  source "$tmux_gem_path/completion/tmuxinator.zsh"
+fi
 
 # ZSH history substring search
 source '/usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
