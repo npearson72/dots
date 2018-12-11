@@ -9,6 +9,8 @@ tmux() {
         if [ -n "$selection" ]; then
           tmux -f $HOME/.config/.tmux.conf attach -t ${selection: : -1}
         fi
+      else
+        echo "\nToto, I've a feeling we're not in tmux anymore."
       fi
     else
       command tmux -f $HOME/.config/.tmux.conf new -s default > /dev/null 2>&1
