@@ -13,6 +13,6 @@ function rancher_console {
     export RANCHER_SECRET_KEY=$RANCHER_SECRET_KEY_STAGING
   fi
 
-  id=$(rancher ps -c | grep -i $2"-api-[0-9]" | cut -f 1 -d' ' | head -n 1)
+  id=$(rancher ps -c | grep -i "\s$2-api-[0-9]" | cut -f 1 -d' ' | head -n 1)
   rancher exec -it $id bash
 }
