@@ -116,6 +116,10 @@ nnoremap <Leader>s :Ack!<Space>
 nnoremap [b :BuffergatorMruCyclePrev<cr>
 nnoremap ]b :BuffergatorMruCycleNext<cr>
 
+" FZF
+nnoremap <c-p> :FilesMru --tiebreak=end<cr>
+autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
+
 " Deoplete - navigate menu the way you want
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"

@@ -15,10 +15,13 @@ if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
 fi
 
 # FZF auto-completion
-[[ $- == *i* ]] && source '/usr/local/opt/fzf/shell/completion.zsh' 2> /dev/null
+[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# FZF config to use ripgrep
+export FZF_DEFAULT_COMMAND='rg --hidden -l "" --glob "!.git/*"'
 
 # FZF key bindings
-source '/usr/local/opt/fzf/shell/key-bindings.zsh'
+source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
 
 # Postgres
 export PSQL_HISTORY=$HOME/.cache/.psql_history

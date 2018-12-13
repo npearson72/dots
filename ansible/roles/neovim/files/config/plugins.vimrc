@@ -10,7 +10,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " File management, search, navigation
 Plug 'mileszs/ack.vim' 
-Plug 'kien/ctrlp.vim'
+Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
+Plug 'junegunn/fzf.vim'
+Plug 'tweekmonster/fzf-filemru'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -48,55 +50,33 @@ call plug#end()
 " Ack
 let g:ackhighlight=1
 
-" Ag (The Silver Searcher)
-if executable('ag')
- " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
- " Use Ag over Ack
-  let g:ackprg='ag --nogroup --column'
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup --hidden
-        \ --ignore out
-        \ --ignore .git
-        \ --ignore .svn
-        \ --ignore .hg
-        \ --ignore .DS_Store
-        \ --ignore "**/*.pyc"
-        \ -g ""'
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ackprg='rg --line-number'
 endif
 
 " Airline
 let g:airline#extensions#whitespace#enabled=0
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+  let g:airline_symbols={}
 endif
 
 " Ale
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed='never'
+let g:ale_lint_on_enter=0
 
 " Buffergator
 let g:buffergator_viewport_split_policy='B'
 let g:buffergator_split_size=10
 
-" Ctrlp
-let g:ctrlp_match_window='order:ttb,max:30'
-let g:ctrlp_clear_cache_on_exit=1
-let g:ctrlp_arg_map=1
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-let g:ctrlp_switch_buffer=0
-
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 " Fix for vim-multiple-cursors
 function! Multiple_cursors_before()
-  let b:deoplete_disable_auto_complete = 1
+  let b:deoplete_disable_auto_complete=1
 endfunction
 function! Multiple_cursors_after()
-  let b:deoplete_disable_auto_complete = 0
+  let b:deoplete_disable_auto_complete=0
 endfunction
 
 " Gsearch
@@ -108,7 +88,7 @@ let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
 " https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
-let g:NERDTreeLimitedSyntax = 1
+let g:NERDTreeLimitedSyntax=1
 
 " Projectionist
 autocmd User ProjectionistDetect

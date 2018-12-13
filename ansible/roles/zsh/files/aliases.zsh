@@ -10,3 +10,4 @@ alias reload!="source $HOME/.zshrc"
 alias start_rails='bundle exec rails s -b 0.0.0.0'
 alias rc='rancher_console'
 alias mux='tmuxinator'
+alias ag='rg'
