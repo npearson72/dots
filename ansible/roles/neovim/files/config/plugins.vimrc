@@ -73,6 +73,10 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" Ale
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+
 " Buffergator
 let g:buffergator_viewport_split_policy='B'
 let g:buffergator_split_size=10
