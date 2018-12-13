@@ -29,7 +29,7 @@ set laststatus=2
 set showcmd
 set showmode!
 set wrap
-set listchars=tab:▸\ ,trail:·,eol:¬
+set listchars=tab:▸\ ,trail:·,eol:¬,space:·
 set linebreak
 let &showbreak = '↪ '
 
