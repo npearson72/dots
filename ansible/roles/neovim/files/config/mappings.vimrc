@@ -119,6 +119,8 @@ nnoremap ]b :BuffergatorMruCycleNext<cr>
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 nnoremap <C-p> :FZFNext<CR>
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " Deoplete - navigate menu the way you want
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"

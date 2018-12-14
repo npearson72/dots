@@ -78,6 +78,9 @@ function! Multiple_cursors_after()
   let b:deoplete_disable_auto_complete=0
 endfunction
 
+" FZF
+let g:fzf_layout={ 'down': '40%' }
+
 " Gsearch
 let g:grep_cmd_opts='--line-numbers --noheading'
 
