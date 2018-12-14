@@ -28,10 +28,10 @@ endfunction
 
 " FZF
 function! s:fzf_next(idx)
-  let commands = ['Files', 'History', 'Buffers']
+  let commands = ['Files', 'Buffers', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
-  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 100m<cr>:call <sid>fzf_next('.next.')<cr>'
+  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_next('.next.')<cr>'
 endfunction
 
 command! FZFNext call <sid>fzf_next(0)
