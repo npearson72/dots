@@ -18,7 +18,7 @@ fi
 [[ $- == *i* ]] && source $(brew --prefix)/opt/fzf/shell/completion.zsh 2> /dev/null
 
 # FZF config to use ripgrep
-export FZF_DEFAULT_COMMAND='rg --hidden -l "" --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --follow --hidden -l "" --glob "!.git/*" 2> /dev/null'
 
 # FZF key bindings
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh

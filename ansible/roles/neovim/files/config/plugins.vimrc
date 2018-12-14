@@ -12,7 +12,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mileszs/ack.vim' 
 Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'junegunn/fzf.vim'
-Plug 'tweekmonster/fzf-filemru'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
