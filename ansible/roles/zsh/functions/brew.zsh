@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function brew {
+brew() {
   if [ $1 = bundle ]
   then
     if [[ $@ =~ cleanup ]]; then

@@ -2,12 +2,11 @@
 
 alias ls='ls -lhN --color --group-directories-first --classify'
 alias ll='ls -lhAN'
-if type nvim > /dev/null 2>&1; then
+if type nvim &> /dev/null; then
   alias vim=nvim
   alias vi=nvim
 fi
 alias reload!='exec zsh -l'
 alias start_rails='bundle exec rails s -b 0.0.0.0'
-alias rc='rancher_console'
 alias mux='tmuxinator'
-alias ag='rg'
+alias ag="echo use \'rg\'"

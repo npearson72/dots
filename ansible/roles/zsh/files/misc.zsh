@@ -15,13 +15,13 @@ if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
 fi
 
 # FZF auto-completion
-[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source $(brew --prefix)/opt/fzf/shell/completion.zsh 2> /dev/null
 
 # FZF config to use ripgrep
 export FZF_DEFAULT_COMMAND='rg --hidden -l "" --glob "!.git/*"'
 
 # FZF key bindings
-source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
 
 # Postgres
 export PSQL_HISTORY=$HOME/.cache/.psql_history
@@ -33,8 +33,7 @@ fi
 
 # Tmuxinator
 if [ ! -n "$TMUX" ]; then
-  tmux_gem_path=$(gem which tmuxinator | rev | cut -d'/' -f3- | rev)
-  source "$tmux_gem_path/completion/tmuxinator.zsh"
+  source $(gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
 fi
 
 # ZSH history substring search

@@ -1,21 +1,27 @@
 #!/bin/sh
 
+_tmux_sessions() {
+  tmux ls 2> /dev/null
+}
+
 tmux() {
-  if [ "$1" = "menu" ]; then
-    if [ ! -n "$TMUX" ] && [[ $(tmux ls 2> /dev/null | head -n 1) == *"created"* ]]; then
-      list=$(tmux ls 2> /dev/null | grep -v attached)
+  config=$HOME/.config/.tmux.conf
+
+  if [ $1 = menu ]; then
+    if [ -z "$TMUX" ] && [ $(_tmux_sessions | grep -c created) -ge 1 ]; then
+      list=$(_tmux_sessions | grep -v attached)
       if [ -n "$list" ]; then
-        selection=$(tmux ls 2> /dev/null | grep -v attached | fzf | cut -f 1 -d " ")
+        selection=$(_tmux_sessions | grep -v attached | fzf | cut -f 1 -d ' ')
         if [ -n "$selection" ]; then
-          tmux -f $HOME/.config/.tmux.conf attach -t ${selection: : -1}
+          command tmux -f $config attach -t ${selection: : -1}
         fi
       else
         echo "\nToto, I've a feeling we're not in tmux anymore."
       fi
     else
-      command tmux -f $HOME/.config/.tmux.conf new -s default > /dev/null 2>&1
+      command tmux -f $config new -s default 2> /dev/null
     fi
   else
-    command tmux -f $HOME/.config/.tmux.conf $@
+    command tmux -f $config $@
   fi
 }
