@@ -14,7 +14,6 @@ Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vim-scripts/zoomwintab.vim'
 
 " Snippets & autocompletion
@@ -63,10 +62,6 @@ endif
 " Ale
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
-
-" Buffergator
-let g:buffergator_viewport_split_policy='B'
-let g:buffergator_split_size=10
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

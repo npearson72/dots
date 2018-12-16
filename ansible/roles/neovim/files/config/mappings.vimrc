@@ -36,6 +36,10 @@ if has('nvim')
   tnoremap <a-l> <c-\><c-n><c-w>l
 endif
 
+" Buffers
+nnoremap [b :bnext<cr>
+nnoremap ]b :bprevious<cr>
+
 " Tabs
 nnoremap t <esc>:tabnew<cr>
 nnoremap T <esc><c-w>T
@@ -70,7 +74,7 @@ imap <F1> <esc>
 nnoremap <leader>a ggVG
 
 " Change pwd to current file
-nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
+nnoremap <leader>pwd :lcd<space>%:p:h<cr>:pwd<cr>
 
 " Copy & paste to clipboard
 vnoremap <leader>y "*y
@@ -78,7 +82,6 @@ nnoremap <leader>p "*p
 
 " Ctags
 " nnoremap <c-]> :call FollowTag()<CR>
-nnoremap <c-[> :pop<cr>
 
 " Drag block up/down
 vnoremap <s-j> :m'>+<cr>gv
@@ -112,13 +115,10 @@ cnoremap <c-e> <end>
 cnoreabbrev Ack Ack!
 nnoremap <Leader>s :Ack!<Space>
 
-" Buffergator fix
-nnoremap [b :BuffergatorMruCyclePrev<cr>
-nnoremap ]b :BuffergatorMruCycleNext<cr>
-
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 nnoremap <C-p> :FZFNext<CR>
+nnoremap <Leader>b :Buffers<cr>
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
