@@ -19,14 +19,7 @@ typeset -U config_files
 config_files=($ZSH_FILES/*.zsh)
 
 # Load path files
-for file in ${(M)config_files:#*/path.zsh}; do
-  source $file
-done
-
-# Load env files
-for file in ${(M)config_files:#*/env.zsh}; do
-  source $file
-done
+source $ZSH_FILES/path.zsh
 
 # Load evertyhing else
 for file in ${${config_files:#*/path.zsh}:#*/env.zsh}; do
