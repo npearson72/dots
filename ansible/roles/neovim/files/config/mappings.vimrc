@@ -74,7 +74,7 @@ imap <F1> <esc>
 nnoremap <leader>a ggVG
 
 " Change pwd to current file
-nnoremap <leader>pwd :lcd<space>%:p:h<cr>:pwd<cr>
+nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 
 " Copy & paste to clipboard
 vnoremap <leader>y "*y

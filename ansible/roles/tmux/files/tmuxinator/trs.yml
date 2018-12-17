@@ -1,0 +1,20 @@
+name: trs
+root: ~/Dev/trs/ansible
+tmux_options: -f ~/.config/.tmux.conf
+
+windows:
+  - vagrant:
+      layout: 2376,178x47,0,0{89x47,0,0,130,88x47,90,0[88x23,90,0,133,88x23,90,24,134]}
+      panes:
+        - nvim: sleep 1 && nvim
+        - vagrant:
+          - if [ $(vagrant status 2> /dev/null | grep -c running) -ge 1 ]; then; vagrant ssh; else; ; sh -ac '. ./.env.dev; vagrant up && vagrant ssh'; fi
+          - clear
+        - zsh:
+  - magento:
+      root: ~/Dev/trs/magento
+  - production:
+      panes:
+        - production:
+          - ssh trs -p $TRS_PORT
+          - clear

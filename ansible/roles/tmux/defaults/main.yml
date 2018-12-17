@@ -1,0 +1,1 @@
+tmuxinator_path: "{{ home }}/.config/tmuxinator"

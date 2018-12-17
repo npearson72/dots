@@ -1,0 +1,10 @@
+name: bg
+root: ~/
+tmux_options: -f ~/.config/.tmux.conf
+
+windows:
+  - bg:
+      layout: cc7b,238x57,0,0{119x57,0,0,1,118x57,120,0,7}
+      panes:
+        - vpn
+        - slack-keep-presence

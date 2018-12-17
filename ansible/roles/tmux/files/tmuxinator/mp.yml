@@ -1,0 +1,21 @@
+name: mp
+root: ~/Dev/mp
+tmux_options: -f ~/.config/.tmux.conf
+
+windows:
+  - zsh:
+  - nvim: nvim
+  - rails:
+      layout: cc7b,238x57,0,0{119x57,0,0,1,118x57,120,0,7}
+      panes:
+        - console: rails c
+        - server: start_mp
+  - bgs:
+      panes:
+        - sidekiq: start_sidekiq
+  - gcrs:
+      root: ~/Dev/gcrs
+      layout: cc7b,238x57,0,0{119x57,0,0,1,118x57,120,0,7}
+      panes:
+        - console: rails c
+        - server: start_gcrs

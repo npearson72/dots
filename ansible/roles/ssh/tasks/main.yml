@@ -14,7 +14,7 @@
   file:
     path: "{{ home }}/.ssh/id_rsa"
     state: touch
-    mode: 0600
+    mode: 0400
 
 - name: create a blank config file
   file:

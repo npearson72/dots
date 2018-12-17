@@ -8,10 +8,9 @@
 
 - name: remove default icons from dock
   command: defaults write com.apple.dock persistent-apps -array
-  when: hostname_is.stdout != computer_name
   tags: mac_os_dock
 
-- name: add icons to dock
+- name: add icons to home dock
   command: "defaults write com.apple.dock persistent-apps -array-add
   '<dict>
     <key>tile-data</key>
@@ -29,10 +28,34 @@
     - Launchpad
     - Google Chrome
     - Bear
-    - Calendar
     - Books
     - iTerm
     - Utilities/Activity Monitor
     - System Preferences
-  when: hostname_is.stdout != computer_name
+  when: computer_type == 'home'
+  tags: mac_os_dock
+
+- name: add icons to work dock
+  command: "defaults write com.apple.dock persistent-apps -array-add
+  '<dict>
+    <key>tile-data</key>
+    <dict>
+      <key>file-data</key>
+      <dict>
+        <key>_CFURLString</key>
+        <string>/Applications/{{ item }}.app</string>
+        <key>_CFURLStringType</key>
+        <integer>0</integer>
+      </dict>
+    </dict>
+  </dict>'"
+  with_items:
+    - Launchpad
+    - Google Chrome
+    - Bear
+    - Slack
+    - iTerm
+    - Utilities/Activity Monitor
+    - System Preferences
+  when: computer_type == 'work'
   tags: mac_os_dock

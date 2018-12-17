@@ -6,3 +6,30 @@
 
 - name: install tmuxinator
   command: "{{ home }}/.rbenv/shims/gem install tmuxinator"
+
+- name: "make sure '{{ tmuxinator_path }}' dir exists"
+  file:
+    path: "{{ tmuxinator_path }}"
+    state: directory
+
+- name: link home tmuxinator configs
+  file:
+    src: "{{ role_path }}/files/tmuxinator/{{ item.src }}.yml"
+    dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
+    state: link
+  with_items:
+    - { src: 'default', dest: 'default' }
+    - { src: 'trs', dest: 'trs' }
+  when: computer_type == 'home'
+
+- name: link work tmuxinator configs
+  file:
+    src: "{{ role_path }}/files/tmuxinator/{{ item.src }}.yml"
+    dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
+    state: link
+  with_items:
+    - { src: 'default', dest: 'default' }
+    - { src: 'mp', dest: 'mp' }
+    - { src: 'lms', dest: 'lms' }
+    - { src: 'bg', dest: 'bg' }
+  when: computer_type == 'work'
