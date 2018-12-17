@@ -32,9 +32,7 @@ if which rbenv >/dev/null; then
 fi
 
 # Tmuxinator
-if [ ! -n "$TMUX" ]; then
-  source $(gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
-fi
+source $(gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
 
 # ZSH history substring search
 source '/usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh'

@@ -1,5 +1,5 @@
-name: mp
-root: ~/Dev/mp
+name: gcrs
+root: ~/Dev/gcrs
 tmux_options: -f ~/.config/.tmux.conf
 
 windows:
@@ -10,6 +10,3 @@ windows:
       panes:
         - rails c
         - start_mp
-  - processes:
-      panes:
-        - start_sidekiq
