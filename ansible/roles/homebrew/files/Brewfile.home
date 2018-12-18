@@ -22,6 +22,7 @@ brew "gnu-tar", args: ["with-default-names"]
 brew "gnu-which", args: ["with-default-names"]
 brew "gnutls"
 brew "gzip"
+brew "htop"
 brew "imagemagick"
 brew "mas"
 brew "neovim"
