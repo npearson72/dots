@@ -9,4 +9,4 @@ windows:
       layout: even-horizontal
       panes:
         - rails c
-        - start_mp
+        - start_gcrs
