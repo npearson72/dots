@@ -8,7 +8,7 @@ _get_caffeinated_apps() {
   xargs -I {} sh -c 'ps -p {} -o comm=' | rev | cut -d / -f 1 | rev
 }
 
-_keep_awake_status() {
+_stay_awake_status() {
   apps=$(_get_caffeinated_pid | _get_caffeinated_apps)
 
   if [ -n "$apps" ]; then
@@ -18,9 +18,9 @@ _keep_awake_status() {
   fi
 }
 
-keep_awake() {
+stay_awake() {
   if [ $1 = "--status" ]; then
-    _keep_awake_status
+    _stay_awake_status
   else
     pid=$(ps aux | grep -i $1 | grep -v grep | tr -s ' ' | cut -d ' ' -f 2)
 
