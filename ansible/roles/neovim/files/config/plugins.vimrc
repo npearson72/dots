@@ -19,7 +19,7 @@ Plug 'vim-scripts/zoomwintab.vim'
 " Snippets & autocompletion
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'valloric/youcompleteme', { 'do': './install.py' }
 
 " Formatters, selectors, accelerators
 Plug 'tpope/vim-commentary'
@@ -63,16 +63,6 @@ endif
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-" Fix for vim-multiple-cursors
-function! Multiple_cursors_before()
-  let b:deoplete_disable_auto_complete=1
-endfunction
-function! Multiple_cursors_after()
-  let b:deoplete_disable_auto_complete=0
-endfunction
-
 " FZF
 let g:fzf_layout={ 'down': '40%' }
 
@@ -100,7 +90,7 @@ autocmd User ProjectionistDetect
 \ })
 
 " RubyRunner
-let g:RubyRunner_key='<Leader>e'
+let g:RubyRunner_key='<leader>e'
 let g:RubyRunner_open_below=1
 let g:RubyRunner_window_size=10
 

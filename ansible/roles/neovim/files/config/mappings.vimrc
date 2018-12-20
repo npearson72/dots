@@ -113,18 +113,14 @@ cnoremap <c-e> <end>
 "=================
 " Ack
 cnoreabbrev Ack Ack!
-nnoremap <Leader>s :Ack!<Space>
+nnoremap <leader>s :Ack!<Space>
 
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
-nnoremap <C-p> :FZFNext<CR>
-nnoremap <Leader>b :Buffers<cr>
+nnoremap <c-p> :FZFNext<CR>
+nnoremap <leader>b :Buffers<cr>
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-" Deoplete - navigate menu the way you want
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
