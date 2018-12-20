@@ -6,7 +6,7 @@ windows:
   - vagrant:
       layout: even-horizontal
       panes:
-        - sleep 1 && nvim
+        -
         -
   - magento:
       root: ~/Dev/trs/magento

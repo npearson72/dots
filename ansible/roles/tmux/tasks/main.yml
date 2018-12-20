@@ -28,9 +28,9 @@
     dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
     state: link
   with_items:
-    - { src: 'bg', dest: 'bg' }
     - { src: 'default', dest: 'default' }
     - { src: 'gcrs', dest: 'gcrs' }
     - { src: 'lms', dest: 'lms' }
     - { src: 'mp', dest: 'mp' }
+    - { src: 'office', dest: 'office' }
   when: computer_type == 'work'

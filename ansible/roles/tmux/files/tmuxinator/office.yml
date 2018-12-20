@@ -1,9 +1,9 @@
-name: bg
+name: office
 root: ~/
 tmux_options: -f ~/.config/.tmux.conf
 
 windows:
-  - bg:
+  - office:
       layout: even-horizontal
       panes:
         - vpn

@@ -3,8 +3,8 @@ root: ~/Dev/gcrs
 tmux_options: -f ~/.config/.tmux.conf
 
 windows:
-  - nvim: nvim
-  - zsh:
+  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
+  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
   - rails:
       layout: even-horizontal
       panes:
