@@ -19,7 +19,7 @@ Plug 'vim-scripts/zoomwintab.vim'
 " Snippets & autocompletion
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'valloric/youcompleteme', { 'do': './install.py' }
+Plug 'Valloric/Youcompleteme', { 'do': './install.py' }
 
 " Formatters, selectors, accelerators
 Plug 'tpope/vim-commentary'
