@@ -122,6 +122,9 @@ nnoremap <leader>b :Buffers<cr>
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+" Mundo
+nnoremap <leader>u :MundoToggle<cr>
+
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<cr>

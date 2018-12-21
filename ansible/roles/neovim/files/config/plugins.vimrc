@@ -28,6 +28,8 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-peekaboo'
+Plug 'simnalamburt/vim-mundo'
 
 " Syntax highlighting
 Plug 'w0rp/ale'
