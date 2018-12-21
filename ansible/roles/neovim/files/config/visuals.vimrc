@@ -7,6 +7,7 @@ set background=dark
 
 set colorcolumn=100
 hi ColorColumn ctermbg=235 ctermfg=NONE
+hi PmenuSel ctermfg=NONE ctermbg=04
 
 "=================
 " Plugin visuals
