@@ -20,6 +20,10 @@ Plug 'vim-scripts/zoomwintab.vim'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/Youcompleteme', { 'do': './install.py' }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Formatters, selectors, accelerators
 Plug 'tpope/vim-commentary'
@@ -70,6 +74,11 @@ let g:fzf_layout={ 'down': '40%' }
 
 " Gsearch
 let g:grep_cmd_opts='--line-numbers --noheading'
+
+" LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': [ 'solargraph', 'stdio' ],
+    \ }
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
