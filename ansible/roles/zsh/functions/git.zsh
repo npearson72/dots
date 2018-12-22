@@ -1,26 +1,27 @@
 #!/bin/sh
 
 _git_fzf_add() {
-  git ls-files -m -o --exclude-standard | fzf -m | xargs -I {} sh -c 'git add {}'
+  command git ls-files -m -o --exclude-standard | fzf -m | xargs -I {} sh -c 'git add {}'
 }
 
 _git_fzf_rm() {
-  git ls-files -m -o --exclude-standard | fzf -m | xargs -I {} sh -c 'git rm {}'
+  command git ls-files -m -o --exclude-standard | fzf -m | xargs -I {} sh -c 'git rm {}'
 }
 
 _git_fzf_reset() {
-  git diff --name-only --cached | fzf -m | xargs -I {} sh -c 'git reset -- {}'
+  command git diff --name-only --cached | fzf -m | xargs -I {} sh -c 'git reset -- {}'
 }
 
 _git_fzf_checkout_branch() {
-  git branch | grep -v '^*' | fzf | xargs -I {} sh -c 'git checkout {}'
+  command git branch | grep -v '^*' | fzf | xargs -I {} sh -c 'git checkout {}'
 }
 
-_git_fzf_show() {
-  git log\
+_git_fzf_log() {
+  command git log\
     --color=always\
-    --pretty=format:'%Cred%h%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' |\
+    --pretty=format:'%Cred%h%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' $@ |\
   fzf\
+    --exit-0\
     --ansi\
     --tiebreak=index\
     --header "<enter> view commit | <ctrl-p> toggle preview window | <esc> quit"\
@@ -32,10 +33,11 @@ _git_fzf_show() {
 }
 
 _git_fzf_stash_list() {
-  git stash list\
+  command git stash list\
     --color=always\
     --pretty=format:'%Cred%gd%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)' |\
   fzf\
+    --exit-0\
     --ansi\
     --tiebreak=index\
     --header "<enter> view stash | <alt-enter> apply stash | <alt-d> drop stash | <ctrl-p> toggle preview window | <esc> quit"\
@@ -52,12 +54,26 @@ _git_fzf_stash_apply() {
   if [ $(git stash list | wc -l) -gt 1 ]; then
     _git_fzf_stash_list
   else
-    git stash apply stash@{0}
+    command git stash apply stash@{0}
   fi
 }
 
 git() {
-  if [ -z $2 ]; then
+  if [ $1 = lg ]; then
+    _git_fzf_log ${@:2}
+  elif [ $1 = stash ] && [ -z $3 ]; then
+    case $2 in
+      ls)
+        _git_fzf_stash_list
+        ;;
+      apply)
+        _git_fzf_stash_apply
+        ;;
+      *)
+        command git $@
+        ;;
+    esac
+  elif [ -z $2 ]; then
     case $1 in
       add)
         _git_fzf_add
@@ -71,22 +87,9 @@ git() {
       cob)
         _git_fzf_checkout_branch
         ;;
-      show|lg)
-        _git_fzf_show
-        ;;
       *)
         command git $@
-    esac
-  elif [ $1 = stash ] && [ -z $3 ]; then
-    case $2 in
-      ls)
-        _git_fzf_stash_list
         ;;
-      apply)
-        _git_fzf_stash_apply
-        ;;
-      *)
-        command git $@
     esac
   else
     command git $@

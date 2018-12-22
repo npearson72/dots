@@ -6,6 +6,10 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'gcmt/taboo.vim'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'ryanoasis/vim-devicons'
+
+" Syntax highlighting
+Plug 'w0rp/ale'
+Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " File management, search, navigation
@@ -17,8 +21,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/zoomwintab.vim'
 
 " Snippets & autocompletion
-Plug 'sirver/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'cristianoliveira/vim-react-html-snippets'
 Plug 'Valloric/Youcompleteme', { 'do': './install.py' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -34,10 +39,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-peekaboo'
 Plug 'simnalamburt/vim-mundo'
-
-" Syntax highlighting
-Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'
 
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
