@@ -31,6 +31,9 @@ if which rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
 
+# Tmux
+tmux menu
+
 # Tmuxinator
 source $(gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
 

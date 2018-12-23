@@ -6,12 +6,12 @@ _login_to_rancher() {
 }
 
 rancher_console() {
-  if [ $1 = production ]; then
+  if [[ $1 = production ]]; then
     export RANCHER_URL=$RANCHER_URL_PRODUCTION
     export RANCHER_ACCESS_KEY=$RANCHER_ACCESS_KEY_PRODUCTION
     export RANCHER_SECRET_KEY=$RANCHER_SECRET_KEY_PRODUCTION
     _login_to_rancher $2
-  elif [ $1 = staging ]; then
+  elif [[ $1 = staging ]]; then
     export RANCHER_URL=$RANCHER_URL_STAGING
     export RANCHER_ACCESS_KEY=$RANCHER_ACCESS_KEY_STAGING
     export RANCHER_SECRET_KEY=$RANCHER_SECRET_KEY_STAGING

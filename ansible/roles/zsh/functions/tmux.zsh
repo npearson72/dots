@@ -7,12 +7,12 @@ _tmux_sessions() {
 tmux() {
   config=$HOME/.config/.tmux.conf
 
-  if [ $1 = menu ]; then
-    if [ -z $TMUX ] && [ $(_tmux_sessions | grep -c created) -ge 1 ]; then
+  if [[ $1 = menu ]]; then
+    if [[ -z $TMUX ]] && [[ $(_tmux_sessions | grep -c created) -ge 1 ]]; then
       list=$(_tmux_sessions | grep -v attached)
-      if [ -n "$list" ]; then
+      if [[ -n "$list" ]]; then
         selection=$(_tmux_sessions | grep -v attached | fzf | cut -f 1 -d ' ')
-        if [ -n "$selection" ]; then
+        if [[ -n "$selection" ]]; then
           command tmux -f $config attach -t ${selection: : -1}
         fi
       else

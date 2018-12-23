@@ -51,7 +51,7 @@ _git_fzf_stash_list() {
 }
 
 _git_fzf_stash_apply() {
-  if [ $(git stash list | wc -l) -gt 1 ]; then
+  if [[ $(git stash list | wc -l) -gt 1 ]]; then
     _git_fzf_stash_list
   else
     command git stash apply stash@{0}
@@ -59,9 +59,9 @@ _git_fzf_stash_apply() {
 }
 
 git() {
-  if [ $1 = lg ]; then
+  if [[ $1 = lg ]]; then
     _git_fzf_log ${@:2}
-  elif [ $1 = stash ] && [ -z $3 ]; then
+  elif [[ $1 = stash ]] && [[ -z $3 ]]; then
     case $2 in
       ls)
         _git_fzf_stash_list
@@ -73,7 +73,7 @@ git() {
         command git $@
         ;;
     esac
-  elif [ -z $2 ]; then
+  elif [[ -z $2 ]]; then
     case $1 in
       add)
         _git_fzf_add

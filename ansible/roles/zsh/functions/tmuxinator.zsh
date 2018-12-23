@@ -3,7 +3,7 @@
 _halt_vagrant() {
   pwd=$PWD
   cd $HOME/Dev/trs/ansible
-  if [ $(vagrant status | grep -c running) -ge 1 ]; then
+  if [[ $(vagrant status | grep -c running) -ge 1 ]]; then
     vagrant halt
   fi
   cd $pwd
@@ -14,8 +14,8 @@ _kill_processes() {
 }
 
 _killer_mux() {
-  if [ $1 = stop ]; then
-    if [ $2 = trs ]; then _halt_vagrant; fi
+  if [[ $1 = stop ]]; then
+    if [[ $2 = trs ]]; then _halt_vagrant; fi
     _kill_processes
   fi
   command tmuxinator $@

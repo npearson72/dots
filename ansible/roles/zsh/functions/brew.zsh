@@ -1,7 +1,7 @@
 #!/bin/sh
 
 brew() {
-  if [ $1 = bundle ]
+  if [[ $1 = bundle ]]
   then
     if [[ $@ =~ cleanup ]]; then
       /usr/local/bin/brew $@ -v --force --zap --file="$HOME/.config/Brewfile"
