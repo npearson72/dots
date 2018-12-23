@@ -19,6 +19,7 @@
     state: link
   with_items:
     - { src: 'default', dest: 'default' }
+    - { src: 'learning', dest: 'learning' }
     - { src: 'trs', dest: 'trs' }
   when: computer_type == 'home'
 
