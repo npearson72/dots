@@ -14,17 +14,22 @@ _kill_processes() {
 }
 
 _killer_mux() {
-  if [[ $1 = stop ]]; then
-    if [[ $2 = trs ]]; then _halt_vagrant; fi
-    _kill_processes
-  fi
+  if [[ $2 = trs ]]; then _halt_vagrant; fi
+  _kill_processes
   command tmuxinator $@
 }
 
-mux() {
-  _killer_mux $@
+tmuxinator() {
+  if [[ -z $1 ]]; then
+    selection=$(command tmuxinator list | tail -n 1 | sed -e 's/   */ /g' | tr ' ' '\n' | fzf)
+    command tmuxinator $selection
+  elif [[ $1 = stop ]]; then
+    _killer_mux $@
+  else
+    command tmuxinator $@
+  fi
 }
 
-tmuxinator() {
-  _killer_mux $@
+mux() {
+  tmuxinator $@
 }
