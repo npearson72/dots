@@ -20,11 +20,13 @@ Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/zoomwintab.vim'
 
-" Snippets & autocompletion
+" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'cristianoliveira/vim-react-html-snippets'
-Plug 'Valloric/Youcompleteme', { 'do': './install.py' }
+
+" Autocompletion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -70,6 +72,16 @@ endif
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+" Fix for vim-multiple-cursors
+function! Multiple_cursors_before()
+  let b:deoplete_disable_auto_complete=1
+endfunction
+function! Multiple_cursors_after()
+  let b:deoplete_disable_auto_complete=0
+endfunction
+
 " FZF
 let g:fzf_layout={ 'down': '40%' }
 
@@ -79,7 +91,11 @@ let g:grep_cmd_opts='--line-numbers --noheading'
 " LanguageClient-neovim
 let g:LanguageClient_serverCommands = {
     \ 'ruby': [ 'solargraph', 'stdio' ],
+    \ 'javascript': [ 'javascript-typescript-stdio' ],
+    \ 'javascript.jsx': [ 'javascript-typescript-stdio' ]
     \ }
+
+let g:LanguageClient_diagnosticsEnable=0 " language server thinks JS is TypeScript
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")

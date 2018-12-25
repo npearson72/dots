@@ -131,3 +131,7 @@ nnoremap <leader>f :NERDTreeFind<cr>
 
 " Tabularize
 vnoremap <leader>T :Tabularize /
+
+" Deoplete - navigate menu the way you want
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"

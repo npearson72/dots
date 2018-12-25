@@ -14,28 +14,41 @@ hi PmenuSel ctermfg=NONE ctermbg=04
 "=================
 " Airline
 let g:airline_theme='pencil'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.notexists = '*'
+let g:airline_left_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_sep=''
+let g:airline_right_alt_sep=''
+let g:airline_symbols.branch=''
+let g:airline_symbols.readonly=''
+let g:airline_symbols.linenr=''
+let g:airline_symbols.maxlinenr=''
+let g:airline_symbols.notexists='*'
 
 " Ale
-let g:ale_sign_warning=""
-let g:ale_sign_error=""
+let g:ale_sign_warning=''
+let g:ale_sign_error=''
 hi ALEWarningSign ctermfg=166 ctermbg=NONE
 hi ALEErrorSign ctermfg=160 ctermbg=NONE
 hi ALEWarning ctermfg=NONE ctermbg=232
 hi ALEError ctermfg=NONE ctermbg=232
 
+" LanguageClient-neovim
+let g:LanguageClient_diagnosticsDisplay={
+    \ 1: { 'signText': '' },
+    \ 2: { 'signText': '' }
+    \ }
+
 " NERDTree
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-hi NERDTreeFile ctermfg=07 ctermbg=NONE
+let g:NERDTreeDirArrowExpandable="\u00a0"
+let g:NERDTreeDirArrowCollapsible="\u00a0"
+" Overwrites colors of folders
+hi! link NERDTreeFlags NERDTreeDir
+
+" Devicons
+let g:WebDevIconsNerdTreeBeforeGlyphPadding=''
+let g:WebDevIconsUnicodeDecorateFolderNodes=1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
+let g:DevIconsEnableFoldersOpenClose=1
 
 " Taboo
 hi TabLineFill ctermfg=08 ctermbg=08
