@@ -113,11 +113,11 @@ cnoremap <c-e> <end>
 "=================
 " Ack
 cnoreabbrev Ack Ack!
-nnoremap <leader>s :Ack!<Space>
+nnoremap <leader>s :Ack!<space>
 
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
-nnoremap <c-p> :FZFNext<CR>
+nnoremap <c-p> :FZFNext<cr>
 nnoremap <leader>b :Buffers<cr>
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
@@ -132,6 +132,9 @@ nnoremap <leader>f :NERDTreeFind<cr>
 " Tabularize
 vnoremap <leader>T :Tabularize /
 
-" Deoplete - navigate menu the way you want
+" COC - navigate menu the way you want
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+" Mapped to UltiSnips in plugins.vimrc
+inoremap <silent><expr><c-j> pumvisible() ? "\<c-y><c-r>=UltiSnips#ExpandSnippet()<cr>" : "\<c-j>"
