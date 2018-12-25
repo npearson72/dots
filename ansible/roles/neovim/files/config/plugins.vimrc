@@ -95,6 +95,9 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': [ 'javascript-typescript-stdio' ]
     \ }
 
+" brew install solargraph
+" yarn global add javascript-typescript-langserver
+
 let g:LanguageClient_diagnosticsEnable=0 " language server thinks JS is TypeScript
 
 " NERDTree
