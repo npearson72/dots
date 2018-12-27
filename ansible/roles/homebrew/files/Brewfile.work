@@ -56,6 +56,7 @@ cask "font-hack-nerd-font"
 cask "google-chrome", args: { appdir: "/Applications" }
 cask "iterm2-nightly"
 cask "java"
+cask "kap"
 cask "phantomjs"
 cask "slack"
 mas "Bear", id: 1091189122
