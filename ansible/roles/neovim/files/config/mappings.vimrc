@@ -138,3 +138,5 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Mapped to UltiSnips in plugins.vimrc
 inoremap <silent><expr><c-j> pumvisible() ? "\<c-y><c-r>=UltiSnips#ExpandSnippet()<cr>" : "\<c-j>"
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gr <Plug>(coc-references)

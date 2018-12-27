@@ -61,5 +61,8 @@ endif
 "=================
 " Plugin settings
 "=================
+" COC
+autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
+
 " Restore view (vim-scripts/restore_view.vim)
 set viewoptions=cursor
