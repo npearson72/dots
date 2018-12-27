@@ -1,27 +1,25 @@
-- name: install python 2 provider for neovim
+- name: install python 2 provider
   pip:
     name: neovim
     extra_args: --user
 
-- name: install python 3 provider for neovim
+- name: install python 3 provider
   pip:
     name: neovim
     extra_args: --user
     executable: pip3
 
-- name: install node.js provider for neovim
+- name: install node.js provider
   yarn:
     name: neovim
     global: yes
     state: latest
 
-- name: install ruby provider for neovim
-  command: "{{ home }}/.rbenv/shims/gem install neovim"
-
-- name: "create {{ neovim_config_path }}/autoload dir"
-  file:
-    path: "{{ neovim_config_path }}/autoload"
-    state: directory
+- name: install ruby provider and gems
+  command: "{{ home }}/.rbenv/shims/gem install {{ item }}"
+  with_items:
+    - neovim
+    - solargraph
 
 - name: install yarn libs
   yarn:

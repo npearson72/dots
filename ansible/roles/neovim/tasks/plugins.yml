@@ -1,3 +1,8 @@
+- name: "make sure '{{ neovim_config_path }}/autoload' dir exists"
+  file:
+    path: "{{ neovim_config_path }}/autoload"
+    state: directory
+
 - name: install vim-plug
   get_url:
     url: "{{ vim_plug_repo }}"
@@ -6,3 +11,18 @@
 
 - name: install neovim plugins 
   command: nvim --headless "+silent! PlugInstall!" +qall!
+
+- name: "make sure '{{ coc_config_path }}/extensions' dir exists"
+  file:
+    path: "{{ coc_config_path }}/extensions"
+    state: directory
+
+- name: "initialize yarn in '{{ coc_config_path }}/extensions' dir"
+  shell: "cd {{ coc_config_path }}/extensions && yarn init -y"
+
+- name: install coc extensions
+  shell: "cd {{ coc_config_path }}/extensions && yarn add {{ item }}"
+  with_items:
+    - coc-solargraph
+    - coc-tsserver
+    - coc-json

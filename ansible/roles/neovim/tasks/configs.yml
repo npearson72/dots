@@ -16,8 +16,14 @@
     - { src: 'settings', dest: 'settings' }
     - { src: 'visuals', dest: 'visuals' }
 
-- name: copy init.vim
+- name: symlink init.vim
   file:
     src: "{{ role_path }}/files/init.vim"
     dest: "{{ neovim_config_path }}/init.vim"
+    state: link
+
+- name: symlink coc-settings.json
+  file:
+    src: "{{ role_path }}/files/coc-settings.json"
+    dest: "{{ neovim_config_path }}/coc-settings.json"
     state: link
