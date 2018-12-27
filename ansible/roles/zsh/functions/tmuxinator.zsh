@@ -21,8 +21,10 @@ _killer_mux() {
 
 tmuxinator() {
   if [[ -z $1 ]]; then
-    selection=$(command tmuxinator list | tail -n 1 | sed -e 's/   */ /g' | tr ' ' '\n' | fzf)
-    command tmuxinator $selection
+    selection=$(command tmuxinator list | tail -n 1 | tr -s ' ' '\n' | fzf)
+    if [[ -n $selection ]]; then
+      command tmuxinator $selection
+    fi
   elif [[ $1 = stop ]]; then
     _killer_mux $@
   else
