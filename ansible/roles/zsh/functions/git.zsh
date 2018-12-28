@@ -1,19 +1,19 @@
 #!/bin/sh
 
 _git_fzf_add() {
-  command git ls-files -m -o --exclude-standard | fzf -m | xargs -I {} sh -c 'git add {}'
+  command git ls-files -m -o --exclude-standard | fzf -m | xargs git add
 }
 
 _git_fzf_rm() {
-  command git ls-files -m -o --exclude-standard | fzf -m | xargs -I {} sh -c 'git rm {}'
+  command git ls-files -m -o --exclude-standard | fzf -m | xargs git rm
 }
 
 _git_fzf_reset() {
-  command git diff --name-only --cached | fzf -m | xargs -I {} sh -c 'git reset -- {}'
+  command git diff --name-only --cached | fzf -m | xargs git reset --
 }
 
 _git_fzf_checkout_branch() {
-  command git branch | grep -v '^*' | fzf | xargs -I {} sh -c 'git checkout {}'
+  command git branch | grep -v '^*' | fzf | xargs git checkout
 }
 
 _git_fzf_log() {
@@ -21,15 +21,14 @@ _git_fzf_log() {
     --color=always\
     --pretty=format:'%Cred%h%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' $@ |\
   fzf\
-    --exit-0\
     --ansi\
-    --tiebreak=index\
     --header "<enter> view commit | <ctrl-p> toggle preview window | <esc> quit"\
-    --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % sh -c 'git show --color=always %' | diff-so-fancy"\
+    --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs git show --color=always | diff-so-fancy"\
     --preview-window "hidden"\
     --bind "ctrl-p:toggle-preview"\
-    --bind "enter:execute: (grep -o '[a-f0-9]\{7\}' | head -1 | xargs -I % sh -c 'git show --color=always %' | diff-so-fancy | less -R) << 'FZF-EOF'
-  {} FZF-EOF"
+    --bind "enter:execute: (grep -o '[a-f0-9]\{7\}' | head -1 | xargs git show --color=always | diff-so-fancy | less -CR) <<-FZF-EOF
+  {}
+  FZF-EOF"
 }
 
 _git_fzf_stash_list() {
@@ -39,15 +38,15 @@ _git_fzf_stash_list() {
   fzf\
     --exit-0\
     --ansi\
-    --tiebreak=index\
     --header "<enter> view stash | <alt-enter> apply stash | <alt-d> drop stash | <ctrl-p> toggle preview window | <esc> quit"\
-    --preview "echo {} | grep -o 'stash@{[0-9]}' | head -1 | xargs -I % sh -c 'git show --color=always %' | diff-so-fancy"\
+    --preview "echo {} | grep -o 'stash@{[0-9]}' | head -1 | xargs git show --color=always | diff-so-fancy"\
     --preview-window "hidden"\
     --bind "ctrl-p:toggle-preview"\
-    --bind "alt-d:execute(echo {} | grep -o 'stash@{[0-9]}' | xargs -I % sh -c 'git stash drop %')+abort"\
-    --bind "alt-enter:execute(echo {} | grep -o 'stash@{[0-9]}' | xargs -I % sh -c 'git stash apply %')+abort"\
-    --bind "enter:execute: (grep -o 'stash@{[0-9]}' | xargs -I % sh -c 'git stash show -p --color=always %' | diff-so-fancy | less -R) << 'FZF-EOF'
-  {} FZF-EOF"
+    --bind "alt-d:execute(echo {} | grep -o 'stash@{[0-9]}' | xargs git stash drop)+abort"\
+    --bind "alt-enter:execute(echo {} | grep -o 'stash@{[0-9]}' | xargs git stash apply)+abort"\
+    --bind "enter:execute: (grep -o 'stash@{[0-9]}' | xargs git stash show --color=always | diff-so-fancy | less -CR) <<-FZF-EOF
+  {}
+  FZF-EOF"
 }
 
 _git_fzf_stash_apply() {
