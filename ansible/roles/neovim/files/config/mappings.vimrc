@@ -46,9 +46,6 @@ nnoremap T <esc><c-w>T
 nnoremap { <esc>gT
 nnoremap } <esc>gt
 
-" Find all selected
-nnoremap <leader>* *:%s//
-
 " Remove search highlight
 nnoremap <leader><space> :noh<cr>
 
@@ -80,9 +77,6 @@ nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
-" Ctags
-" nnoremap <c-]> :call FollowTag()<CR>
-
 " Drag block up/down
 vnoremap <s-j> :m'>+<cr>gv
 vnoremap <s-k> :m-2<cr>gv
@@ -97,10 +91,6 @@ nnoremap <silent> V V0:<c-u>set nonu rnu<cr>gv
 nnoremap <silent> <c-v> <c-v>:<c-u>set nonu rnu<cr>gv
 vnoremap <esc> <esc>:set nornu nu<cr>
 
-" Use sane regexes
-nnoremap / /\v
-vnoremap / /\v
-
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
@@ -114,6 +104,9 @@ cnoremap <c-e> <end>
 " Ack
 cnoreabbrev Ack Ack!
 nnoremap <leader>s :Ack!<space>
+
+" eregex.vim
+nnoremap <C-_> :%S/
 
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>

@@ -37,6 +37,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-peekaboo'
 Plug 'simnalamburt/vim-mundo'
+Plug 'othree/eregex.vim'
 
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
