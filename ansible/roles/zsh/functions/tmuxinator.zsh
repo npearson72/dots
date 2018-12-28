@@ -21,10 +21,7 @@ _killer_mux() {
 
 tmuxinator() {
   if [[ -z $1 ]]; then
-    selection=$(command tmuxinator list | tail -n 1 | tr -s ' ' '\n' | fzf)
-    if [[ -n $selection ]]; then
-      command tmuxinator $selection
-    fi
+    command tmuxinator list | tail -n 1 | tr -s ' ' '\n' | fzf | xargs command tmuxinator &> /dev/null
   elif [[ $1 = stop ]]; then
     _killer_mux $@
   else
