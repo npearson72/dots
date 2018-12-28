@@ -3,6 +3,17 @@
   register: ruby_version_exists
   ignore_errors: true
 
+- name: "make sure '{{ home }}/.rbenv' dir exists"
+  file:
+    path: "{{ home }}/.rbenv"
+    state: directory
+
+- name: symlink default-gems file
+  file:
+    src: "{{ role_path }}/files/default-gems"
+    dest: "{{ home }}/.rbenv/default-gems"
+    state: link
+
 - name: install ruby
   shell: "rbenv install {{ ruby_version }}"
   register: ruby_installed
@@ -16,10 +27,4 @@
   copy:
     src: "{{ role_path }}/files/gemrc"
     dest: "{{ home }}/.gemrc"
-  when: (ruby_version_exists is successful or ruby_installed is successful)
-
-- name: install required gems
-  command: "{{ home }}/.rbenv/shims/gem install {{ item }}"
-  with_items:
-    - bundler
   when: (ruby_version_exists is successful or ruby_installed is successful)
