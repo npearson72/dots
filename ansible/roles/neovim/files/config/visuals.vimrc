@@ -39,8 +39,11 @@ let g:LanguageClient_diagnosticsDisplay={
     \ }
 
 " NERDTree
-let g:NERDTreeDirArrowExpandable="\u00a0"
-let g:NERDTreeDirArrowCollapsible="\u00a0"
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+hi NERDTreeOpenable ctermbg=NONE ctermfg=08
+hi NERDTreeClosable ctermbg=NONE ctermfg=08
+
 " Overwrites colors of folders
 hi! link NERDTreeFlags NERDTreeDir
 
