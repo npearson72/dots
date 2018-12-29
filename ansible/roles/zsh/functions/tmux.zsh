@@ -4,6 +4,11 @@ _tmux_sessions() {
   tmux ls 2> /dev/null
 }
 
+# This function will present a menu of active TMUX sesssions
+#
+# Usage: tmux menu
+#
+# Note: Will only work outside of TMUX
 tmux() {
   config=$HOME/.config/.tmux.conf
 
