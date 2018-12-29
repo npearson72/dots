@@ -80,9 +80,6 @@ let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
-" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
-let g:NERDTreeLimitedSyntax=1
-
 " Projectionist
 autocmd User ProjectionistDetect
 \ call projectionist#append(getcwd(),

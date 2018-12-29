@@ -32,6 +32,12 @@ hi ALEErrorSign ctermfg=160 ctermbg=NONE
 hi ALEWarning ctermfg=NONE ctermbg=232
 hi ALEError ctermfg=NONE ctermbg=232
 
+" Devicons
+let g:WebDevIconsNerdTreeBeforeGlyphPadding=''
+let g:WebDevIconsUnicodeDecorateFolderNodes=1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
+let g:DevIconsEnableFoldersOpenClose=1
+
 " LanguageClient-neovim
 let g:LanguageClient_diagnosticsDisplay={
     \ 1: { 'signText': '' },
@@ -47,11 +53,11 @@ hi NERDTreeClosable ctermbg=NONE ctermfg=08
 " Overwrites colors of folders
 hi! link NERDTreeFlags NERDTreeDir
 
-" Devicons
-let g:WebDevIconsNerdTreeBeforeGlyphPadding=''
-let g:WebDevIconsUnicodeDecorateFolderNodes=1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
-let g:DevIconsEnableFoldersOpenClose=1
+" vim-nerdtree-syntax-highlight
+" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
+let g:NERDTreeLimitedSyntax=1
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['vue'] = "42b983"
 
 " Taboo
 hi TabLineFill ctermfg=08 ctermbg=08
