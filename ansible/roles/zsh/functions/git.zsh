@@ -26,6 +26,7 @@ _git_fzf_log() {
     --preview "echo {} | grep -o '[a-f0-9]\{7\}' | head -1 | xargs git show --color=always | diff-so-fancy"\
     --preview-window "hidden"\
     --bind "ctrl-p:toggle-preview"\
+    --bind "up:preview-up,down:preview-down,shift-up:preview-page-up,shift-down:preview-page-down"\
     --bind "enter:execute: (grep -o '[a-f0-9]\{7\}' | head -1 | xargs git show --color=always | diff-so-fancy | less -R) <<-FZF-EOF
   {}
   FZF-EOF"
@@ -42,6 +43,7 @@ _git_fzf_stash_list() {
     --preview "echo {} | grep -o 'stash@{[0-9]}' | head -1 | xargs git show --color=always | diff-so-fancy"\
     --preview-window "hidden"\
     --bind "ctrl-p:toggle-preview"\
+    --bind "up:preview-up,down:preview-down,shift-up:preview-page-up,shift-down:preview-page-down"\
     --bind "alt-d:execute(echo {} | grep -o 'stash@{[0-9]}' | xargs git stash drop)+abort"\
     --bind "alt-enter:execute(echo {} | grep -o 'stash@{[0-9]}' | xargs git stash apply)+abort"\
     --bind "enter:execute: (grep -o 'stash@{[0-9]}' | xargs git stash show --color=always | diff-so-fancy | less -R) <<-FZF-EOF
