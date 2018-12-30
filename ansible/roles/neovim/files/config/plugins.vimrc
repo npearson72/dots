@@ -103,3 +103,7 @@ let g:taboo_tab_format=' %f '
 " UltiSnips
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger="<c-y>"
+
+" Vim polyglot
+" Fix for Vue slowness related to (posva/vim-vue)
+let g:vue_disable_pre_processors=1
