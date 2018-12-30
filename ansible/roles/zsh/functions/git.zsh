@@ -45,7 +45,7 @@ _git_fzf_stash_list() {
     --no-sort\
     --tiebreak=index\
     --header "<enter> view stash | <alt-enter> apply stash | <alt-d> drop stash | <ctrl-p> toggle preview window | <ctrl-s> sort | <esc> quit"\
-    --preview "echo {} | grep -o 'stash@{[0-9]}' | head -1 | xargs git show --color=always | diff-so-fancy"\
+    --preview "echo {} | grep -o 'stash@{[0-9]}' | head -1 | xargs git stash show -p --color=always | diff-so-fancy"\
     --preview-window "hidden"\
     --bind "ctrl-p:toggle-preview"\
     --bind "ctrl-s:toggle-sort"\
