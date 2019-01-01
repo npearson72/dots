@@ -24,7 +24,6 @@ Plug 'vim-scripts/zoomwintab.vim'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'npearson72/vim-personal-snippets'
-Plug 'cristianoliveira/vim-react-html-snippets'
 
 " Autocompletion
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
@@ -111,7 +110,6 @@ let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger="<c-y>"
 let g:UltiSnipsSnippetDirectories=[
       \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
-      \ $HOME."/.config/nvim/plugged/vim-react-html-snippets/UltiSnips"
       \]
 
 " Vim polyglot
