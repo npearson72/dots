@@ -23,7 +23,7 @@ Plug 'vim-scripts/zoomwintab.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'npearson72/vim-personal-snippets'
 Plug 'cristianoliveira/vim-react-html-snippets'
 
 " Autocompletion
@@ -84,7 +84,7 @@ let NERDTreeQuitOnOpen=1
 " Prettier
 let g:prettier#config#print_width=100
 let g:prettier#quickfix_enabled=0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 
 " Projectionist
 autocmd User ProjectionistDetect
@@ -109,6 +109,10 @@ let g:taboo_tab_format=' %f '
 " UltiSnips
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger="<c-y>"
+let g:UltiSnipsSnippetDirectories=[
+      \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
+      \ $HOME."/.config/nvim/plugged/vim-react-html-snippets/UltiSnips"
+      \]
 
 " Vim polyglot
 " Fix for Vue slowness related to (posva/vim-vue)
