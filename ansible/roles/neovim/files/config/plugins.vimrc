@@ -11,6 +11,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " File management, search, navigation
 Plug 'mileszs/ack.vim' 
@@ -79,6 +80,11 @@ let g:grep_cmd_opts='--line-numbers --noheading'
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
+
+" Prettier
+let g:prettier#config#print_width=100
+let g:prettier#quickfix_enabled=0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " Projectionist
 autocmd User ProjectionistDetect
