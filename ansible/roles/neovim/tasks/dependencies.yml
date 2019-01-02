@@ -20,12 +20,3 @@
   with_items:
     - neovim
     - solargraph
-
-- name: install yarn libs
-  yarn:
-    name: "{{ item }}"
-    global: yes
-    state: latest
-  with_items:
-    - eslint
-    - coffeelint
