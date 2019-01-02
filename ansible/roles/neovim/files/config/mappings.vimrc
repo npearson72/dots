@@ -113,7 +113,8 @@ autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 nnoremap <c-p> :FZFNext<cr>
 nnoremap <leader>b :Buffers<cr>
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
+
 
 " Mundo
 nnoremap <leader>u :MundoToggle<cr>
