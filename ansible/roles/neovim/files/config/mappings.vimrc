@@ -105,6 +105,12 @@ cnoremap <c-e> <end>
 cnoreabbrev Ack Ack!
 nnoremap <leader>s :Ack!<space>
 
+let g:ack_mappings = {
+      \ "<c-v>": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
+      \ "<c-x>": "<C-W><CR><C-W>K",
+      \ "<c-t>": "<C-W><CR><C-W>T"
+      \}
+
 " eregex.vim
 nnoremap <C-_> :%S/
 

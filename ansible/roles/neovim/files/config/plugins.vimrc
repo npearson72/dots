@@ -87,15 +87,15 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 
 " Projectionist
 autocmd User ProjectionistDetect
-\ call projectionist#append(getcwd(),
-\ {
-\    'app/*.rb': {
-\      'alternate': 'spec/{}_spec.rb'
-\    },
-\    'spec/*_spec.rb': {
-\      'alternate': 'app/{}.rb'
-\    },
-\ })
+      \ call projectionist#append(getcwd(),
+      \ {
+      \    'app/*.rb': {
+      \      'alternate': 'spec/{}_spec.rb'
+      \    },
+      \    'spec/*_spec.rb': {
+      \      'alternate': 'app/{}.rb'
+      \    },
+      \ })
 
 " RubyRunner
 let g:RubyRunner_key='<leader>e'
@@ -113,5 +113,5 @@ let g:UltiSnipsSnippetDirectories=[
       \]
 
 " Vim polyglot
-" Fix for Vue slowness related to (posva/vim-vue)
+" Fix for Vue slowness related to posva/vim-vue (part of sheerun/vim-polyglot)
 let g:vue_disable_pre_processors=1
