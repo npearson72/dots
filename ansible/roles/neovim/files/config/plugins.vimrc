@@ -33,6 +33,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
+Plug 'suy/vim-context-commentstring' " For JSX comments
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-peekaboo'
