@@ -4,7 +4,8 @@ tmux_options: -f ~/.config/.tmux.conf
 
 windows:
   - office:
-      layout: even-horizontal
+      layout: 7494,178x48,0,0{89x48,0,0,0,88x48,90,0[88x24,90,0,43,88x23,90,25,44]}
       panes:
+        -
         - vpn
         - slack-keep-presence

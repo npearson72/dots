@@ -31,6 +31,7 @@
   with_items:
     - { src: 'default', dest: 'default' }
     - { src: 'gcrs', dest: 'gcrs' }
+    - { src: 'kipper', dest: 'kipper' }
     - { src: 'lms', dest: 'lms' }
     - { src: 'mp', dest: 'mp' }
     - { src: 'office', dest: 'office' }

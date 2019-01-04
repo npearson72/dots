@@ -1,0 +1,10 @@
+name: kipper
+root: ~/Dev/kipper
+tmux_options: -f ~/.config/.tmux.conf
+
+windows:
+  - kipper:
+      layout: even-horizontal
+      panes:
+        -
+        - start_kipper
