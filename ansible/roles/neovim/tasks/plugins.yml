@@ -31,7 +31,9 @@
 - name: install coc extensions
   shell: "cd {{ coc_config_path }}/extensions && yarn add {{ item }}"
   with_items:
+    - coc-css
+    - coc-html
+    - coc-json
     - coc-solargraph
     - coc-tsserver
-    - coc-json
     - coc-ultisnips
