@@ -56,8 +56,7 @@ call plug#end()
 let g:ackhighlight=1
 
 if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ackprg='rg --line-number'
+  let g:ackprg='rg --sort=path --line-number --smart-case'
 endif
 
 " Airline
