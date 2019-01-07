@@ -91,7 +91,7 @@ git() {
       reset)
         _git_fzf_reset
         ;;
-      cob)
+      co)
         _git_fzf_checkout_branch
         ;;
       *)
