@@ -2,5 +2,6 @@
   "coc.preferences.diagnostic.displayByAle": true,
   "coc.preferences.snippetIndicator": " ",
   "prettier.trailingComma": "all",
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "prettier.eslintIntegration": true
 }
