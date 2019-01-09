@@ -118,9 +118,6 @@ nnoremap <C-_> :%S/
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 nnoremap <c-p> :FZFNext<cr>
 nnoremap <leader>b :Buffers<cr>
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
-
 
 " Mundo
 nnoremap <leader>u :MundoToggle<cr>
@@ -132,7 +129,7 @@ nnoremap <leader>f :NERDTreeFind<cr>
 " Tabularize
 vnoremap <leader>T :Tabularize /
 
-" COC - navigate menu the way you want
+" CoC - navigate menu the way you want
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 

@@ -1,4 +1,7 @@
 {
   "coc.preferences.diagnostic.displayByAle": true,
-  "coc.preferences.snippetIndicator": " "
+  "coc.preferences.snippetIndicator": " ",
+  "coc.preferences.formatOnSaveFiletypes": ["css", "javascript", "json", "vue"],
+  "prettier.trailingComma": "all",
+  "prettier.singleQuote": true
 }

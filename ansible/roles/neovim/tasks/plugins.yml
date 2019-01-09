@@ -37,3 +37,4 @@
     - coc-solargraph
     - coc-tsserver
     - coc-ultisnips
+    - coc-prettier

@@ -5,7 +5,7 @@ silent! colorscheme pencil
 set t_Co=256
 set background=dark
 
-set colorcolumn=100
+set colorcolumn=80
 hi ColorColumn ctermbg=235 ctermfg=NONE
 hi PmenuSel ctermfg=NONE ctermbg=04
 

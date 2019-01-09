@@ -17,13 +17,6 @@ augroup END
 " Automatically reload buffer when moving cursor if file was changed
 autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 
-" Force remember folds
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWrite * mkview
-  autocmd BufRead * silent! loadview
-augroup END
-
 " Open Ctags in vsplit
 function! FollowTag()
   if !exists("w:tagbrowse")
@@ -42,3 +35,18 @@ function! s:fzf_next(idx)
 endfunction
 
 command! FZFNext call <sid>fzf_next(0)
+
+" Display preview in vim
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
+
+" CoC Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+" Bufwrites/reads
+augroup DoOnWriteRead
+  autocmd!
+  autocmd BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.vue,*.yaml,*.html Prettier
+  autocmd BufWrite,ExitPre,QuitPre,VimLeavePre * mkview
+  autocmd BufRead * silent! loadview
+augroup END
