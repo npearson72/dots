@@ -4,7 +4,6 @@ call plug#begin("$HOME/.config/nvim/plugged")
 Plug 'bling/vim-airline'
 Plug 'reedes/vim-colors-pencil'
 Plug 'gcmt/taboo.vim'
-Plug 'vim-scripts/restore_view.vim'
 Plug 'ryanoasis/vim-devicons'
 
 " Syntax highlighting

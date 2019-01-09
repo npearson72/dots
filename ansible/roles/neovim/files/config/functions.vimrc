@@ -17,6 +17,13 @@ augroup END
 " Automatically reload buffer when moving cursor if file was changed
 autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 
+" Force remember folds
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWrite * mkview
+  autocmd BufRead * silent! loadview
+augroup END
+
 " Open Ctags in vsplit
 function! FollowTag()
   if !exists("w:tagbrowse")
