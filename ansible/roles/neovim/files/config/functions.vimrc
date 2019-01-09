@@ -46,7 +46,7 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 " Bufwrites/reads
 augroup DoOnWriteRead
   autocmd!
-  autocmd BufWrite *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.vue,*.yaml,*.html Prettier
-  autocmd BufWrite,ExitPre,QuitPre,VimLeavePre * mkview
+  autocmd BufWrite *.css,*.html,*.less,*.mjs,*.js,*.json,*.jsx,*.scss,*.ts,*.tsx,*.vue,*.yaml Prettier
+  autocmd BufWrite,ExitPre,QuitPre,VimLeavePre *.coffee,*.css,*.erb,*.haml,*.html,*.less,*.mjs,*.js,*.json,*.jsx,*.rb,*.scss,*.slim,*.ts,*.tsx,*.vue,*.yaml mkview
   autocmd BufRead * silent! loadview
 augroup END
