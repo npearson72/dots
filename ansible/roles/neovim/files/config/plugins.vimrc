@@ -105,6 +105,6 @@ let g:UltiSnipsSnippetDirectories=[
       \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
       \]
 
-" Vim polyglot
-" Fix for Vue slowness related to posva/vim-vue (part of sheerun/vim-polyglot)
+" posa/vim-vue (included in vim-polyglot)
+" https://github.com/posva/vim-vue#vim-slows-down-when-using-this-plugin-how-can-i-fix-that
 let g:vue_disable_pre_processors=1

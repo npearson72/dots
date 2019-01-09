@@ -17,14 +17,12 @@ augroup END
 " Automatically reload buffer when moving cursor if file was changed
 autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 
-" Open Ctags in vsplit
-function! FollowTag()
-  if !exists("w:tagbrowse")
-    vsplit
-    let w:tagbrowse=1
-  endif
-  execute "tag " . expand("<cword>")
-endfunction
+"=================================
+" Plugin functions & autocommands
+"=================================
+
+" CoC Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " FZF
 function! s:fzf_next(idx)
@@ -36,17 +34,18 @@ endfunction
 
 command! FZFNext call <sid>fzf_next(0)
 
-" Display preview in vim
+" FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
 
-" CoC Prettier
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
-" Bufwrites/reads
-augroup DoOnWriteRead
+" MyCustomEventHandlers - perform actions on events
+augroup MyCustomEventHandlers
   autocmd!
   autocmd BufWrite *.css,*.html,*.less,*.mjs,*.js,*.json,*.jsx,*.scss,*.ts,*.tsx,*.vue,*.yaml Prettier
   autocmd BufWrite,ExitPre,QuitPre,VimLeavePre *.coffee,*.css,*.erb,*.haml,*.html,*.less,*.mjs,*.js,*.json,*.jsx,*.rb,*.scss,*.slim,*.ts,*.tsx,*.vue,*.yaml mkview
   autocmd BufRead * silent! loadview
 augroup END
+
+" posa/vim-vue (included in vim-polyglot)
+" https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
+autocmd FileType vue syntax sync fromstart
