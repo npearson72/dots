@@ -4,5 +4,6 @@
   "prettier.trailingComma": "all",
   "prettier.singleQuote": true,
   "prettier.eslintIntegration": true,
-  "prettier.bracketSpacing": false
+  "prettier.bracketSpacing": false,
+  "prettier.jsxBracketSameLine": true
 }
