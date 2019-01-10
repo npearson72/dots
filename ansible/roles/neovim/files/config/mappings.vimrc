@@ -52,6 +52,7 @@ nnoremap <leader><space> :noh<cr>
 " Folding
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
 vnoremap <space> zf
+nnoremap <expr> <c-space> &foldlevel ? 'zM' :'zR'
 
 " Keep search matches in the middle of the window
 nnoremap n nzzzv
