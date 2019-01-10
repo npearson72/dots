@@ -3,5 +3,6 @@
   "coc.preferences.snippetIndicator": " ",
   "prettier.trailingComma": "all",
   "prettier.singleQuote": true,
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "prettier.bracketSpacing": false
 }
