@@ -24,6 +24,58 @@ autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 " CoC Prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
+" Check computer type (ex: home or work)
+function s:ComputerType(type)
+  for s:line in readfile($HOME.'/.dots/.env')
+    if s:line =~# 'TYPE.*'.a:type
+      return 1
+    endif
+  endfor
+  return 0
+endfunction
+
+" Custom autocmds
+augroup CustomAutos
+  autocmd!
+  if s:ComputerType('home')
+    " Fix syntax with Prettier
+    autocmd BufWrite \
+          \*.css,
+          \*.html,
+          \*.less,
+          \*.js,
+          \*.json,
+          \*.jsx,
+          \*.scss,
+          \*.ts,
+          \*.tsx,
+          \*.vue,
+          \*.yaml Prettier
+  endif
+
+  " mkview to save folds, etc.
+  autocmd BufWrite,ExitPre,QuitPre,VimLeavePre \
+        \*.coffee,
+        \*.css,
+        \*.erb,
+        \*.haml,
+        \*.html,
+        \*.less,
+        \*.js,
+        \*.json,
+        \*.jsx,
+        \*.rb,
+        \*.scss,
+        \*.slim,
+        \*.ts,
+        \*.tsx,
+        \*.vue,
+        \*.yaml mkview
+
+  " Load views
+  autocmd BufRead * silent! loadview
+augroup END
+
 " FZF
 function! s:fzf_next(idx)
   let commands = ['Files', 'History']
@@ -37,14 +89,6 @@ command! FZFNext call <sid>fzf_next(0)
 " FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
-
-" MyCustomEventHandlers - perform actions on events
-augroup MyCustomEventHandlers
-  autocmd!
-  autocmd BufWrite *.css,*.html,*.less,*.mjs,*.js,*.json,*.jsx,*.scss,*.ts,*.tsx,*.vue,*.yaml Prettier
-  autocmd BufWrite,ExitPre,QuitPre,VimLeavePre *.coffee,*.css,*.erb,*.haml,*.html,*.less,*.mjs,*.js,*.json,*.jsx,*.rb,*.scss,*.slim,*.ts,*.tsx,*.vue,*.yaml mkview
-  autocmd BufRead * silent! loadview
-augroup END
 
 " posa/vim-vue (included in vim-polyglot)
 " https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
