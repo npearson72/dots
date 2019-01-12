@@ -10,12 +10,12 @@ _halt_vagrant() {
 }
 
 _kill_processes() {
-  tmux list-panes -s -F "#{pane_pid} #{pane_current_command}" | grep -v tmux | awk '{print $1}' | xargs kill
+  tmux list-panes -s -F "#{pane_pid} #{pane_current_command}" -t $1 | grep -v tmux | awk '{print $1}' | xargs kill
 }
 
 _killer_mux() {
   if [[ $2 = trs ]]; then _halt_vagrant; fi
-  _kill_processes
+  _kill_processes $2
   command tmuxinator $@
 }
 
