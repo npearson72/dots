@@ -1,4 +1,0 @@
-- name: copy .pryrc
-  template:
-    src: "{{ role_path }}/files/pryrc"
-    dest: "{{ home }}/.pryrc"

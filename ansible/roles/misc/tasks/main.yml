@@ -1,2 +1,17 @@
-- include_tasks: pry.yml
-  tags: pry
+- name: copy .pryrc
+  template:
+    src: "{{ role_path }}/files/pryrc"
+    dest: "{{ home }}/.pryrc"
+
+- name: make sure hack stty dir exists
+  file:
+    path: /usr/local/sbin/stty
+    state: directory
+
+- name: copy stty
+  become: yes
+  become_user: root
+  copy:
+    src: /bin/stty
+    dest: /usr/local/sbin/stty/stty
+    mode: u=rwx,g=rx,o=rx
