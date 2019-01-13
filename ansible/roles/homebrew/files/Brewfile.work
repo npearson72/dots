@@ -9,6 +9,7 @@ cask "caskroom/versions/java8"
 brew "ansible"
 brew "autojump"
 brew "awscli"
+brew "bat"
 brew "cmake"
 brew "coreutils", args: ["with-default-names"]
 brew "ctags"

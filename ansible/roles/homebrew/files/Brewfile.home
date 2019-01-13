@@ -8,6 +8,7 @@ tap "homebrew/services"
 cask "caskroom/versions/java8"
 brew "ansible"
 brew "autojump"
+brew "bat"
 brew "cmake"
 brew "coreutils", args: ["with-default-names"]
 brew "ctags"
