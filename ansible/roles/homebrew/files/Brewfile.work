@@ -55,6 +55,7 @@ brew "getantibody/tap/antibody"
 cask "1password"
 cask "docker"
 cask "dropbox"
+cask "firefox", args: { appdir: "/Applications" }
 cask "font-hack-nerd-font"
 cask "google-chrome", args: { appdir: "/Applications" }
 cask "iterm2-nightly"
