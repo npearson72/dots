@@ -14,7 +14,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " File management, search, navigation
 Plug 'mileszs/ack.vim' 
 Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
-Plug 'junegunn/fzf.vim'
+Plug 'npearson72/fzf.vim'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/zoomwintab.vim'
