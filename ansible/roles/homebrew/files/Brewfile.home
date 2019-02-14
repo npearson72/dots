@@ -5,18 +5,19 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-cask "caskroom/versions/java8"
+cask "java8"
 brew "ansible"
 brew "autojump"
+brew "awscli"
 brew "bat"
 brew "cmake"
-brew "coreutils", args: ["with-default-names"]
-brew "ctags"
+brew "coreutils"
 brew "diff-so-fancy"
-brew "elasticsearch"
+brew "elasticsearch", restart_service: true
 brew "findutils", args: ["with-default-names"]
 brew "fzf"
 brew "gawk"
+brew "ghostscript"
 brew "git"
 brew "gnu-sed", args: ["with-default-names"]
 brew "gnu-tar", args: ["with-default-names"]
@@ -25,18 +26,18 @@ brew "gnutls"
 brew "gzip"
 brew "htop"
 brew "imagemagick"
+brew "kibana"
 brew "mas"
 brew "neovim"
 brew "node"
 brew "openssh"
-brew "postgresql", restart_service: :changed
+brew "postgresql", restart_service: true
 brew "python@2"
-brew "python"
 brew "ruby-build"
 brew "rbenv"
 brew "rbenv-default-gems"
-brew "redis"
-brew "rg"
+brew "redis", restart_service: true
+brew "ripgrep"
 brew "the_silver_searcher"
 brew "tldr"
 brew "tmux"
@@ -53,7 +54,7 @@ cask "docker"
 cask "dropbox"
 cask "font-hack-nerd-font"
 cask "google-chrome", args: { appdir: "/Applications" }
-cask "iterm2-nightly"
+cask "iterm2"
 cask "java"
 cask "kap"
 cask "phantomjs"
@@ -64,3 +65,4 @@ cask "vlc"
 cask "windscribe"
 mas "Bear", id: 1091189122
 mas "Magnet", id: 441258766
+mas "Xcode", id: 497799835

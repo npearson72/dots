@@ -1,11 +1,11 @@
 - name: install python 2 provider
   pip:
-    name: neovim
+    name: pynvim
     extra_args: --user
 
 - name: install python 3 provider
   pip:
-    name: neovim
+    name: pynvim
     extra_args: --user
     executable: pip3
 
