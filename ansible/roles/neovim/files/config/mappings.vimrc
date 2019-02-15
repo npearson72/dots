@@ -3,8 +3,8 @@ let mapleader=','
 " Movement
 nnoremap j gj
 nnoremap k gk
-nnoremap <c-j> }
-nnoremap <c-k> {
+nnoremap <c-j> <c-d>
+nnoremap <c-k> <c-u>
 nnoremap <s-j> }
 nnoremap <s-k> {
 nnoremap <c-h> ^
