@@ -15,15 +15,13 @@ brew "coreutils"
 brew "diff-so-fancy"
 brew "elasticsearch", restart_service: true
 brew "elixir"
-brew "findutils", args: ["with-default-names"]
+brew "findutils"
 brew "fzf"
 brew "gawk"
-brew "ghostscript"
 brew "git"
-brew "gnu-sed", args: ["with-default-names"]
-brew "gnu-tar", args: ["with-default-names"]
-brew "gnu-which", args: ["with-default-names"]
-brew "gnutls"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
 brew "gzip"
 brew "htop"
 brew "imagemagick"
@@ -33,6 +31,7 @@ brew "neovim"
 brew "node"
 brew "openssh"
 brew "postgresql", restart_service: true
+brew "python"
 brew "python@2"
 brew "ruby-build"
 brew "rbenv"

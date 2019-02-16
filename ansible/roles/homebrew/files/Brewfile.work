@@ -14,15 +14,14 @@ brew "cmake"
 brew "coreutils"
 brew "diff-so-fancy"
 brew "elasticsearch", restart_service: true
-brew "findutils", args: ["with-default-names"]
+brew "findutils"
 brew "fzf"
 brew "gawk"
 brew "ghostscript"
 brew "git"
-brew "gnu-sed", args: ["with-default-names"]
-brew "gnu-tar", args: ["with-default-names"]
-brew "gnu-which", args: ["with-default-names"]
-brew "gnutls"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
 brew "gzip"
 brew "htop"
 brew "imagemagick"
@@ -34,6 +33,7 @@ brew "openconnect"
 brew "openssh"
 brew "postgresql", restart_service: true
 brew "python@2"
+brew "python"
 brew "ruby-build"
 brew "rbenv"
 brew "rbenv-default-gems"
