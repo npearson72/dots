@@ -8,6 +8,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " Syntax highlighting
 Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -72,6 +73,10 @@ let g:fzf_layout={ 'down': '40%' }
 
 " Gsearch
 let g:grep_cmd_opts='--line-numbers --noheading'
+
+" Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")

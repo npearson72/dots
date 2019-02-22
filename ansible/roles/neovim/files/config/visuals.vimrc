@@ -44,6 +44,16 @@ let g:LanguageClient_diagnosticsDisplay={
     \ 2: { 'signText': '' }
     \ }
 
+" Neomake
+let g:neomake_error_sign = {
+    \ 'text': '',
+    \ 'texthl': 'ALEErrorSign',
+    \ }
+let g:neomake_warning_sign = {
+    \ 'text': '',
+    \ 'texthl': 'ALEWarningSign',
+    \ }
+
 " NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
