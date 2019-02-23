@@ -3,10 +3,10 @@ let mapleader=','
 " Movement
 nnoremap j gj
 nnoremap k gk
-nnoremap <c-j> <c-d>
-nnoremap <c-k> <c-u>
-nnoremap <s-j> }
-nnoremap <s-k> {
+nnoremap <s-j> <c-d>
+nnoremap <s-k> <c-u>
+nnoremap <c-j> }
+nnoremap <c-k> {
 nnoremap <c-h> ^
 nnoremap <c-l> $
 vnoremap <c-h> ^
@@ -111,6 +111,10 @@ let g:ack_mappings = {
       \ "<c-x>": "<C-W><CR><C-W>K",
       \ "<c-t>": "<C-W><CR><C-W>T"
       \}
+
+" Ale
+nnoremap <c-]> :ALEGoToDefinition<cr>
+nnoremap <c-[> :ALEFindReferences<cr>
 
 " eregex.vim
 nnoremap <C-_> :%S/

@@ -8,9 +8,9 @@ Plug 'ryanoasis/vim-devicons'
 
 " Syntax highlighting
 Plug 'w0rp/ale'
-Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'mhinz/vim-mix-format'
 
 " File management, search, navigation
 Plug 'mileszs/ack.vim' 
@@ -68,15 +68,21 @@ endif
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
 
+if ComputerType('home')
+  let g:ale_elixir_elixir_ls_release="/usr/local/bin/elixir-ls/release"
+  let g:ale_linters={
+    \   'elixir': ['elixir-ls'],
+    \}
+endif
+
 " FZF
 let g:fzf_layout={ 'down': '40%' }
 
 " Gsearch
 let g:grep_cmd_opts='--line-numbers --noheading'
 
-" Neomake
-autocmd! BufWritePost * Neomake
-let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+" MixFormat (vim-mix-format)
+let g:mix_format_on_save=1
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")

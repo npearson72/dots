@@ -24,20 +24,10 @@ autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 " CoC Prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
-" Check computer type (ex: home or work)
-function s:ComputerType(type)
-  for s:line in readfile($HOME.'/.dots/.env')
-    if s:line =~# 'TYPE.*'.a:type
-      return 1
-    endif
-  endfor
-  return 0
-endfunction
-
 " Custom autocmds
 augroup CustomAutos
   autocmd!
-  if s:ComputerType('home')
+  if ComputerType('home')
     " Fix syntax with Prettier
     autocmd BufWrite \
           \*.css,

@@ -1,3 +1,4 @@
+source $HOME/.config/nvim/config/startup.vimrc
 source $HOME/.config/nvim/config/plugins.vimrc
 source $HOME/.config/nvim/config/visuals.vimrc
 source $HOME/.config/nvim/config/settings.vimrc
