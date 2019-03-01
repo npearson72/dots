@@ -114,7 +114,6 @@ let g:ack_mappings = {
 
 " Ale
 nnoremap <c-]> :ALEGoToDefinition<cr>
-nnoremap <c-[> :ALEFindReferences<cr>
 
 " eregex.vim
 nnoremap <C-_> :%S/

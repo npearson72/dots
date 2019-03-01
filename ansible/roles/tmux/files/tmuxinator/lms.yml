@@ -3,15 +3,9 @@ root: ~/Dev/lms
 tmux_options: -f ~/.config/.tmux.conf
 
 windows:
-  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
-  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
-  - rails:
-      layout: even-horizontal
+  - lms:
+      layout: 7494,178x48,0,0{89x48,0,0,0,88x48,90,0[88x24,90,0,43,88x23,90,25,44]}
       panes:
-        - rails c
+        -
         - start_lms
-  - background:
-      layout: even-horizontal
-      panes:
         - start_sidekiq
-        - bin/webpack-dev-server
