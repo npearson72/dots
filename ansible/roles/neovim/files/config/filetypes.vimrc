@@ -1,7 +1,7 @@
 filetype plugin indent on
 
 " Tabstops
-autocmd Filetype * setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd Filetype * setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 
 " Git
 autocmd Filetype gitcommit setlocal spell textwidth=72
