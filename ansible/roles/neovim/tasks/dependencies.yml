@@ -14,9 +14,3 @@
     name: neovim
     global: yes
     state: latest
-
-- name: install ruby provider and gems
-  command: "{{ home }}/.rbenv/shims/gem install {{ item }}"
-  with_items:
-    - neovim
-    - solargraph

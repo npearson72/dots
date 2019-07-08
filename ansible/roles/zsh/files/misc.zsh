@@ -4,6 +4,10 @@
 source <(antibody init)
 antibody bundle < $ZSH_FILES/zsh_plugins.txt
 
+# ASDF
+source $(brew --prefix asdf)/asdf.sh
+source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+
 # Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
@@ -23,19 +27,23 @@ export FZF_DEFAULT_COMMAND='rg --follow --hidden -l "" --glob "!.git/*" 2> /dev/
 # FZF key bindings
 source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
 
+# OpenSSL
+# For compilers to find openssl you may need to set:
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+# For pkg-config to find openssl you may need to set:
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
 # Postgres
 export PSQL_HISTORY=$HOME/.cache/.psql_history
-
-# Rbenv
-if which rbenv >/dev/null; then
-  eval "$(rbenv init -)"
-fi
 
 # Tmux
 tmux menu
 
 # Tmuxinator
-source $(gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
+tmuxinator_version=$(cat $HOME/.tool-versions | grep ruby | cut -f 2 -d ' ')
+source $($HOME/.asdf/installs/ruby/$tmuxinator_version/bin/gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
 
 # ZSH history substring search
 source '/usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh'

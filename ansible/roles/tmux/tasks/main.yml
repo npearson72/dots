@@ -4,9 +4,6 @@
     dest: "{{ home }}/.config/.tmux.conf"
     state: link
 
-- name: install tmuxinator
-  command: "{{ home }}/.rbenv/shims/gem install tmuxinator"
-
 - name: "make sure '{{ tmuxinator_path }}' dir exists"
   file:
     path: "{{ tmuxinator_path }}"

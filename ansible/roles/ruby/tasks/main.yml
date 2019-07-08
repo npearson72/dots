@@ -1,26 +1,24 @@
+- name: install ruby plugin for asdf
+  shell: "asdf plugin-add ruby"
+
 - name: check installed ruby version
-  shell: "rbenv versions | grep {{ ruby_version }}"
+  shell: "asdf list ruby | grep {{ ruby_version }}"
   register: ruby_version_exists
   ignore_errors: true
-
-- name: "make sure '{{ home }}/.rbenv' dir exists"
-  file:
-    path: "{{ home }}/.rbenv"
-    state: directory
 
 - name: symlink default-gems file
   file:
     src: "{{ role_path }}/files/default-gems"
-    dest: "{{ home }}/.rbenv/default-gems"
+    dest: "{{ home }}/.default-gems"
     state: link
 
 - name: install ruby
-  shell: "rbenv install {{ ruby_version }}"
+  shell: "asdf install ruby {{ ruby_version }}"
   register: ruby_installed
   when: ruby_version_exists is not successful
 
 - name: set global ruby version
-  shell: "rbenv global {{ ruby_version }} && rbenv rehash"
+  shell: "asdf global ruby {{ ruby_version }}"
   when: (ruby_version_exists is successful or ruby_installed is successful)
 
 - name: copy .gemrc file

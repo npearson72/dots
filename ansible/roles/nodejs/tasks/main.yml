@@ -1,0 +1,19 @@
+- name: install nodejs plugin for asdf
+  shell: "asdf plugin-add nodejs"
+
+- name: import pgp keys
+  shell: "bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring"
+
+- name: check installed nodejs version
+  shell: "asdf list nodejs | grep {{ nodejs_version }}"
+  register: nodejs_version_exists
+  ignore_errors: true
+
+- name: install nodejs
+  shell: "asdf install nodejs {{ nodejs_version }}"
+  register: nodejs_installed
+  when: nodejs_version_exists is not successful
+
+- name: set global nodejs version
+  shell: "asdf global nodejs {{ nodejs_version }}"
+  when: (nodejs_version_exists is successful or nodejs_installed is successful)

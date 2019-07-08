@@ -7,8 +7,9 @@ GNU_PATH="/usr/local/opt/coreutils/libexec/gnubin:\
 /usr/local/opt/gnu-sed/libexec/gnubin:\
 /usr/local/opt/gnu-tar/libexec/gnubin:\
 /usr/local/opt/gnu-which/libexec/gnubin"
+SSL_PATH="/usr/local/opt/openssl/bin"
 
-export PATH="$STTY_HACK:$GNU_PATH:$PATH"
+export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$PATH"
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH
