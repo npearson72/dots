@@ -4,9 +4,9 @@
 source <(antibody init)
 antibody bundle < $ZSH_FILES/zsh_plugins.txt
 
-# ASDF
+# ASDF (Warning: slow load time)
 source $(brew --prefix asdf)/asdf.sh
-source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+# source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 # Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
