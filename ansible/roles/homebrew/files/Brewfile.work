@@ -56,6 +56,7 @@ cask "iterm2"
 cask "java"
 cask "kap"
 cask "phantomjs"
+cask "postman"
 cask "slack"
 mas "Bear", id: 1091189122
 mas "Magnet", id: 441258766
