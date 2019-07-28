@@ -1,5 +1,5 @@
 - name: install nodejs plugin for asdf
-  shell: "asdf plugin-add nodejs"
+  shell: "asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git"
 
 - name: import pgp keys
   shell: "bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring"

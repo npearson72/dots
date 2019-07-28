@@ -1,0 +1,16 @@
+- name: install elixir plugin for asdf
+  shell: "asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git"
+
+- name: check installed elixir version
+  shell: "asdf list elixir | grep {{ elixir_version }}"
+  register: elixir_version_exists
+  ignore_errors: true
+
+- name: install elixir
+  shell: "asdf install elixir {{ elixir_version }}"
+  register: elixir_installed
+  when: elixir_version_exists is not successful
+
+- name: set global elixir version
+  shell: "asdf global elixir {{ elixir_version }}"
+  when: (elixir_version_exists is successful or elixir_installed is successful)

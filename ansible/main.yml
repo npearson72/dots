@@ -12,6 +12,8 @@
     - { role: git, tags: git }
     - { role: ruby, tags: ruby }
     - { role: nodejs, tags: node }
+    - { role: erlang, tags: erlang }
+    - { role: elixir, tags: elixir }
     - { role: neovim, tags: neovim }
     - { role: misc, tags: misc }
     - { role: ssh, tags: ssh }

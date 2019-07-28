@@ -1,5 +1,5 @@
 - name: install ruby plugin for asdf
-  shell: "asdf plugin-add ruby"
+  shell: "asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git"
 
 - name: check installed ruby version
   shell: "asdf list ruby | grep {{ ruby_version }}"

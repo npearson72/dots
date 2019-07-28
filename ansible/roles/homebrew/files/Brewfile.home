@@ -15,7 +15,6 @@ brew "cmake"
 brew "coreutils"
 brew "diff-so-fancy"
 brew "elasticsearch", restart_service: true
-brew "elixir"
 brew "findutils"
 brew "fzf"
 brew "gawk"
