@@ -9,3 +9,7 @@ autocmd Filetype gitcommit setlocal colorcolumn=80
 
 " Markdown
 autocmd Filetype markdown setlocal spell
+
+" posa/vim-vue (included in vim-polyglot)
+" https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
+autocmd FileType vue syntax sync fromstart

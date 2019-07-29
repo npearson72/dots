@@ -21,7 +21,9 @@ autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 " Plugin functions & autocommands
 "=================================
 
-" CoC Prettier
+" CoC
+autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
+
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Custom autocmds
@@ -79,7 +81,3 @@ command! FZFNext call <sid>fzf_next(0)
 " FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
-
-" posa/vim-vue (included in vim-polyglot)
-" https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
-autocmd FileType vue syntax sync fromstart

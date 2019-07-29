@@ -27,6 +27,7 @@ let g:airline_symbols.notexists='*'
 " Ale
 let g:ale_sign_warning=''
 let g:ale_sign_error=''
+
 hi ALEWarningSign ctermfg=166 ctermbg=NONE
 hi ALEErrorSign ctermfg=160 ctermbg=NONE
 hi ALEWarning ctermfg=NONE ctermbg=232
@@ -38,26 +39,21 @@ let g:WebDevIconsUnicodeDecorateFolderNodes=1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
 let g:DevIconsEnableFoldersOpenClose=1
 
-" LanguageClient-neovim
-let g:LanguageClient_diagnosticsDisplay={
-    \ 1: { 'signText': '' },
-    \ 2: { 'signText': '' }
-    \ }
-
 " NERDTree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
-hi NERDTreeOpenable ctermbg=NONE ctermfg=08
-hi NERDTreeClosable ctermbg=NONE ctermfg=08
-
-" Overwrites colors of folders
-hi! link NERDTreeFlags NERDTreeDir
 
 " vim-nerdtree-syntax-highlight
 " https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
 let g:NERDTreeLimitedSyntax=1
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExtensionHighlightColor['vue'] = "42b983"
+
+" Overwrites colors of folders
+hi! link NERDTreeFlags NERDTreeDir
+hi NERDTreeOpenable ctermbg=NONE ctermfg=08
+hi NERDTreeClosable ctermbg=NONE ctermfg=08
+hi NERDTreeFile ctermfg=NONE ctermfg=251
 
 " Taboo
 hi TabLineFill ctermfg=08 ctermbg=08

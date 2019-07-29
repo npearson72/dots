@@ -68,13 +68,6 @@ endif
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
 
-if ComputerType('home')
-  let g:ale_elixir_elixir_ls_release="/usr/local/bin/elixir-ls/release"
-  let g:ale_linters={
-    \   'elixir': ['elixir-ls'],
-    \}
-endif
-
 " FZF
 let g:fzf_layout={ 'down': '40%' }
 
@@ -119,3 +112,7 @@ let g:UltiSnipsSnippetDirectories=[
 " posa/vim-vue (included in vim-polyglot)
 " https://github.com/posva/vim-vue#vim-slows-down-when-using-this-plugin-how-can-i-fix-that
 let g:vue_disable_pre_processors=1
+
+" Vim multiple cursors
+let g:multi_cursor_exit_from_visual_mode=1
+let g:multi_cursor_exit_from_insert_mode=1

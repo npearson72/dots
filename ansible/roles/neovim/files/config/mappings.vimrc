@@ -112,9 +112,6 @@ let g:ack_mappings = {
       \ "<c-t>": "<C-W><CR><C-W>T"
       \}
 
-" Ale
-nnoremap <c-]> :ALEGoToDefinition<cr>
-
 " eregex.vim
 nnoremap <C-_> :%S/
 

@@ -62,8 +62,6 @@ endif
 " Plugin settings
 "=================
 " COC
-autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
-
 " Fix for coc-vetur: https://github.com/neoclide/coc-vetur/issues/3
 set signcolumn=yes
 set shortmess+=c
