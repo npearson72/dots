@@ -6,11 +6,10 @@
   register: ruby_version_exists
   ignore_errors: true
 
-- name: symlink default-gems file
-  file:
+- name: copy .default-gems file
+  copy:
     src: "{{ role_path }}/files/default-gems"
     dest: "{{ home }}/.default-gems"
-    state: link
 
 - name: install ruby
   shell: "asdf install ruby {{ ruby_version }}"
