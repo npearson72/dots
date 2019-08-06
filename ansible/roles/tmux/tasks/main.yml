@@ -26,6 +26,7 @@
     dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
     state: link
   with_items:
+    - { src: 'ams', dest: 'ams' }
     - { src: 'default', dest: 'default' }
     - { src: 'gcrs', dest: 'gcrs' }
     - { src: 'kipper', dest: 'kipper' }

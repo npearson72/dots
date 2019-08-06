@@ -1,0 +1,15 @@
+name: ams
+root: ~/Dev/ams
+tmux_options: -f ~/.config/.tmux.conf
+
+windows:
+  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
+  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
+  - rails:
+      layout: even-horizontal
+      panes:
+        - rails c
+        - start_ams
+  - background:
+      panes:
+        - start_sidekiq
