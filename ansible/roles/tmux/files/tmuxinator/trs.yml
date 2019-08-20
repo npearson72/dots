@@ -6,8 +6,8 @@ windows:
   - vagrant:
       layout: even-horizontal
       panes:
-        -
-        -
+        - tmux send-keys -R && tmux clear-history
+        - tmux send-keys -R && tmux clear-history
   - magento:
       root: ~/Dev/trs/magento
   - production:

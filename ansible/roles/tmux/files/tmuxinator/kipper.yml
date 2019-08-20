@@ -6,5 +6,5 @@ windows:
   - kipper:
       layout: even-horizontal
       panes:
-        -
+        - tmux send-keys -R && tmux clear-history
         - start_kipper

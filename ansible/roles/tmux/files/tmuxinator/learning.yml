@@ -3,6 +3,6 @@ root: ~/Dev/learning
 tmux_options: -f ~/.config/.tmux.conf
 
 windows:
-  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
-  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
-  - zsh: tmux set-window-option -t $TMUX_PANE automatic-rename on && clear
+  - zsh: tmux send-keys -R && tmux clear-history
+  - zsh:
+  - zsh:
