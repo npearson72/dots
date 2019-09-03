@@ -4,11 +4,10 @@ tmux_options: -f ~/.config/.tmux.conf
 
 windows:
   - zsh: tmux send-keys -R && tmux clear-history
-  - zsh:
   - rails:
       layout: even-horizontal
       panes:
-        - rails c
+        -
         - start_mp
   - background:
       panes:
