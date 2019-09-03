@@ -72,7 +72,8 @@ let g:ale_lint_on_enter=0
 let g:fzf_layout={ 'down': '40%' }
 
 " Gsearch
-let g:grep_cmd_opts='--line-numbers --noheading'
+set grepprg=rg
+let g:grep_cmd_opts = '--line-number --no-heading'
 
 " MixFormat (vim-mix-format)
 let g:mix_format_on_save=1
