@@ -55,9 +55,9 @@ cask "google-chrome", args: { appdir: "/Applications" }
 cask "iterm2"
 cask "java"
 cask "kap"
+caks "karabiner-elements"
 cask "phantomjs"
 cask "postman"
 cask "slack"
 mas "Bear", id: 1091189122
 mas "Magnet", id: 441258766
-# mas "Xcode", id: 497799835

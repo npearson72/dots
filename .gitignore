@@ -1,3 +1,5 @@
 .DS_Store
 .env
 ansible/*.retry
+ansible/roles/karabiner/files/karabiner/*
+!ansible/roles/karabiner/files/karabiner/karabiner.json
