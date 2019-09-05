@@ -9,6 +9,3 @@ windows:
       panes:
         -
         - start_mp
-  - background:
-      panes:
-        - start_sidekiq

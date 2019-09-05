@@ -3,9 +3,9 @@ root: ~/Dev/lms
 tmux_options: -f ~/.config/.tmux.conf
 
 windows:
-  - lms:
-      layout: 7494,178x48,0,0{89x48,0,0,0,88x48,90,0[88x24,90,0,43,88x23,90,25,44]}
+  - zsh: tmux send-keys -R && tmux clear-history
+  - rails:
+      layout: even-horizontal
       panes:
-        - tmux send-keys -R && tmux clear-history
+        -
         - start_lms
-        - start_sidekiq
