@@ -1,10 +1,10 @@
 - name: "make sure '{{ karabiner_config_path }}' dir exists"
   file:
-    path: "{{ neovim_config_path }}"
+    path: "{{ karabiner_config_path }}"
     state: directory
 
-- name: symlink karabiner dir
-  file:
-    src: "{{ role_path }}/files/karabiner"
-    dest: "{{ karabiner_config_path }}"
-    state: link
+- name: "copy karabiner.json to {{ karabiner_config_path }}/karabiner.json"
+  copy:
+    src: "{{ role_path }}/files/karabiner.json"
+    dest: "{{ karabiner_config_path }}/karabiner.json"
+    mode: u=rw,g=rw,o=rw

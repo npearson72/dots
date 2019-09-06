@@ -10,3 +10,16 @@
     src: /bin/stty
     dest: /usr/local/sbin/stty
     state: link
+
+- name: "make sure '{{ cache_path }}' dir exists"
+  file:
+    path: "{{ cache_path }}"
+    state: directory
+  register: cache_path_exists
+
+- name: create a .zsh_history file
+  file:
+    path: "{{ cache_path }}/.zsh_history"
+    state: touch
+    mode: u=rw,g=rw,o=rw
+  when: cache_path_exists is successful
