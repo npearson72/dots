@@ -35,6 +35,9 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 # For pkg-config to find openssl you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
+# Pet
+bindkey '^s' pet-select
+
 # Postgres
 export PSQL_HISTORY=$HOME/.cache/.psql_history
 
