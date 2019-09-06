@@ -1,6 +1,6 @@
 [[snippets]]
   description = "Find all"
-  command = "sudo find / -iname '*<name>*' 2>&1 | egrep -v 'Operation not permitted|Not a directory|Bad file descriptor|system loop detected'"
+  command = "sudo find <location> -iname '*<name>*' 2>&1 | egrep -v 'Operation not permitted|Not a directory|Bad file descriptor|system loop detected'"
   output = ""
 
 [[snippets]]
@@ -16,4 +16,19 @@
 [[snippets]]
   description = "Fix ssh key file permissions"
   command = "chmod 400 ~/.ssh/id_rsa"
+  output = ""
+
+[[snippets]]
+  description = "Rename multiple files"
+  command = "for file in <file pattern>; do mv $file \"${file/<old chars>/<new chars>}\"; done"
+  output = ""
+
+[[snippets]]
+  description = "Tail log with count"
+  command = "tail -f <path to log file> | nl"
+  output = ""
+
+[[snippets]]
+  description = "Find and delete files"
+  command = "find <location> -iname '<name>' -print -exec rm -rf {} \\;"
   output = ""
