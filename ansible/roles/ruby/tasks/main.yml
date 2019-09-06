@@ -1,5 +1,11 @@
+- name: check if ruby plgin installed
+  shell: "asdf list | grep ruby"
+  register: ruby_plugin_exists
+  ignore_errors: true
+
 - name: install ruby plugin for asdf
   shell: "asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git"
+  when: ruby_plugin_exists is not successful
 
 - name: check installed ruby version
   shell: "asdf list ruby | grep {{ ruby_version }}"

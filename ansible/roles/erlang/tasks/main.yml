@@ -1,5 +1,11 @@
+- name: check if erlang plgin installed
+  shell: "asdf list | grep erlang"
+  register: erlang_plugin_exists
+  ignore_errors: true
+
 - name: install erlang plugin for asdf
   shell: "asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git"
+  when: erlang_plugin_exists is not successful
 
 - name: check installed erlang version
   shell: "asdf list erlang | grep {{ erlang_version }}"
