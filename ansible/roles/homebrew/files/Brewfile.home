@@ -53,7 +53,7 @@ cask "google-chrome", args: { appdir: "/Applications" }
 cask "iterm2"
 cask "java"
 cask "kap"
-caks "karabiner-elements"
+cask "karabiner-elements"
 cask "phantomjs"
 cask "postman"
 cask "transmission"
