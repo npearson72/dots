@@ -48,6 +48,7 @@ brew "zsh"
 brew "zsh-history-substring-search"
 brew "getantibody/tap/antibody"
 cask "1password"
+cask "bettertouchtool"
 cask "docker"
 cask "dropbox"
 cask "font-hack-nerd-font"
@@ -63,5 +64,3 @@ cask "vagrant"
 cask "virtualbox"
 cask "vlc"
 mas "Bear", id: 1091189122
-mas "Magnet", id: 441258766
-# mas "Xcode", id: 497799835

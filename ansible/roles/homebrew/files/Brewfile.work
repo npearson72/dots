@@ -50,6 +50,7 @@ brew "zsh"
 brew "zsh-history-substring-search"
 brew "getantibody/tap/antibody"
 cask "1password"
+cask "bettertouchtool"
 cask "docker"
 cask "dropbox"
 cask "font-hack-nerd-font"
@@ -62,4 +63,3 @@ cask "phantomjs"
 cask "postman"
 cask "slack"
 mas "Bear", id: 1091189122
-mas "Magnet", id: 441258766
