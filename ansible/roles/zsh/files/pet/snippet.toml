@@ -12,3 +12,8 @@
   description = "Uninstall all ruby gems"
   command = "for g in `gem list --no-versions`; do gem uninstall $g -a -x -I; done"
   output = ""
+
+[[snippets]]
+  description = "Fix ssh key file permissions"
+  command = "chmod 400 ~/.ssh/id_rsa"
+  output = ""
