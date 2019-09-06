@@ -10,6 +10,10 @@ get_args() {
         ANSIBLE_TAGS=$2
         shift
         ;;
+      -t|--skip-tags)
+        SKIP_ANSIBLE_TAGS=$2
+        shift
+        ;;
       *)
         echo "Invalid option: $1"
         ;;
@@ -35,8 +39,12 @@ installAnsible() {
 buildAnsible() {
   echo "\n=> Building Ansible Playbooks\n"
 
-  if [[ $ANSIBLE_TAGS ]]; then
+  if [[ $ANSIBLE_TAGS && ! $SKIP_ANSIBLE_TAGS ]]; then
     sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --tags $ANSIBLE_TAGS"
+  elif [[ ! $ANSIBLE_TAGS && $SKIP_ANSIBLE_TAGS ]]; then
+    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --skip-tags $SKIP_ANSIBLE_TAGS"
+  elif [[ $ANSIBLE_TAGS && $SKIP_ANSIBLE_TAGS ]]; then
+    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --tags $ANSIBLE_TAGS --skip-tags $SKIP_ANSIBLE_TAGS"
   else
     sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K"
   fi
