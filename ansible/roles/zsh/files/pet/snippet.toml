@@ -32,3 +32,13 @@
   description = "Find and delete files"
   command = "find <location> -iname '<name>' -print -exec rm -rf {} \\;"
   output = ""
+
+[[snippets]]
+  description = "Create a gzipped archive"
+  command = "tar -czf <file name>.tar.gz <file(s) to archive>"
+  output = ""
+
+[[snippets]]
+  description = "Extract a gzipped archive"
+  command = "tar -xzf <archive>.tar.gz --one-top-level"
+  output = ""
