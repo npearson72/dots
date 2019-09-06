@@ -40,3 +40,5 @@
     state: touch
     owner: "{{ user }}"
   when: brewed_zsh_path.stat.exists
+
+- include_tasks: pet.yml

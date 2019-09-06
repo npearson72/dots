@@ -1,1 +1,2 @@
 zsh_path: /usr/local/bin/zsh
+pet_config_path: "{{ home }}/.config/pet"
