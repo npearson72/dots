@@ -5,7 +5,9 @@ tmux_options: -f ~/.config/.tmux.conf
 windows:
   - zsh: tmux send-keys -R && tmux clear-history
   - rails:
-      layout: even-horizontal
+      layout: 6ca2,178x48,0,0{88x48,0,0,4,89x48,89,0[89x24,89,0,5,89x23,89,25,17]}
       panes:
         -
         - start_lms
+        - rails c
+  - background: start_sidekiq

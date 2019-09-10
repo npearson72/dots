@@ -4,7 +4,7 @@ tmux_options: -f ~/.config/.tmux.conf
 
 windows:
   - office:
-      layout: 7494,178x48,0,0{89x48,0,0,0,88x48,90,0[88x24,90,0,43,88x23,90,25,44]}
+      layout: 6ca2,178x48,0,0{88x48,0,0,4,89x48,89,0[89x24,89,0,5,89x23,89,25,17]}
       panes:
         - tmux send-keys -R && tmux clear-history
         - vpn

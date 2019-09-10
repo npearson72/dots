@@ -16,7 +16,6 @@
     state: link
   with_items:
     - { src: 'default', dest: 'default' }
-    - { src: 'learning', dest: 'learning' }
     - { src: 'trs', dest: 'trs' }
   when: computer_type == 'home'
 
@@ -30,7 +29,6 @@
     - { src: 'default', dest: 'default' }
     - { src: 'gcrs', dest: 'gcrs' }
     - { src: 'kipper', dest: 'kipper' }
-    - { src: 'learning', dest: 'learning' }
     - { src: 'lms', dest: 'lms' }
     - { src: 'mp', dest: 'mp' }
     - { src: 'office', dest: 'office' }

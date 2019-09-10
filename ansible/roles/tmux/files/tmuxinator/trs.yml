@@ -4,7 +4,6 @@ tmux_options: -f ~/.config/.tmux.conf
 
 windows:
   - zsh: tmux send-keys -R && tmux clear-history
-  - production:
-      panes: ssh trs -p $TRS_PORT
+  - production: ssh trs -p $TRS_PORT
   - magento:
       root: ~/Dev/trs/magento
