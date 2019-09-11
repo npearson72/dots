@@ -8,4 +8,4 @@ windows:
       panes:
         - tmux send-keys -R && tmux clear-history
         - start_gcrs
-        - rails c
+        - bundle exec rails c

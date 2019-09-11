@@ -9,5 +9,5 @@ windows:
       panes:
         -
         - start_lms
-        - rails c
+        - bundle exec rails c
   - background: start_sidekiq
