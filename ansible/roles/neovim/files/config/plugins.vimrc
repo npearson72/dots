@@ -18,7 +18,7 @@ Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'npearson72/fzf.vim'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/zoomwintab.vim'
+" Plug 'vim-scripts/zoomwintab.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'

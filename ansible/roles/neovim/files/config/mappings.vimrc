@@ -25,7 +25,7 @@ nnoremap wK <c-w>K
 nnoremap ws <c-w>x
 nnoremap wr <c-w>r
 nnoremap wR <c-w>R
-nnoremap wo :ZoomWinTabToggle<cr>
+nnoremap wo :ZoomToggle<cr>
 
 " Neovim terminal mode
 if has('nvim')
