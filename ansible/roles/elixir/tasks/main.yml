@@ -1,4 +1,4 @@
-- name: check if elixir plgin installed
+- name: check if elixir plugin installed
   shell: "asdf list | grep elixir"
   register: elixir_plugin_exists
   ignore_errors: true

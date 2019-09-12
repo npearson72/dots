@@ -1,26 +1,10 @@
-#!/bin/sh
-set -e
+#!/bin/bash
+set -o nounset -o pipefail -o errexit
 
-SCRIPT_ROOT=$(dirname $0)
-
-get_args() {
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      -t|--tags)
-        ANSIBLE_TAGS=$2
-        shift
-        ;;
-      -t|--skip-tags)
-        SKIP_ANSIBLE_TAGS=$2
-        shift
-        ;;
-      *)
-        echo "Invalid option: $1"
-        ;;
-    esac
-    shift
-  done
-}
+# Load all variables from .env and export them all for Ansible to read
+set -o allexport
+source "$(dirname $0)/.env"
+set +o allexport
 
 installHomeBrew() {
   if ! [[ $(which brew) ]]; then
@@ -38,16 +22,8 @@ installAnsible() {
 
 buildAnsible() {
   echo "\n=> Building Ansible Playbooks\n"
-
-  if [[ $ANSIBLE_TAGS && ! $SKIP_ANSIBLE_TAGS ]]; then
-    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --tags $ANSIBLE_TAGS"
-  elif [[ ! $ANSIBLE_TAGS && $SKIP_ANSIBLE_TAGS ]]; then
-    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --skip-tags $SKIP_ANSIBLE_TAGS"
-  elif [[ $ANSIBLE_TAGS && $SKIP_ANSIBLE_TAGS ]]; then
-    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K --tags $ANSIBLE_TAGS --skip-tags $SKIP_ANSIBLE_TAGS"
-  else
-    sh -ac ". ./.env && ansible-playbook ansible/main.yml -i ansible/hosts -v -K"
-  fi
+  
+  exec ansible-playbook ansible/main.yml -i ansible/hosts -v -K $@
 }
 
 run() {
@@ -55,9 +31,9 @@ run() {
 
   if ! [[ $(which ansible) ]]; then
     installAnsible
-    buildAnsible
+    buildAnsible $@
   else
-    buildAnsible
+    buildAnsible $@
   fi
 
   echo "\n=> Finished!\n"
@@ -66,11 +42,10 @@ run() {
 
 # Run...
 
-cd $SCRIPT_ROOT
+cd $(dirname $0) # Run script from script root no matter where it's called
 
 if [ -f $(pwd)/.env ]; then
-  get_args $@
-  run
+  run $@
 else
   echo "\n=> Missing '$(pwd)/.env'. Make one first! Goodbye."
 fi

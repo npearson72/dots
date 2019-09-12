@@ -1,4 +1,4 @@
-- name: check if ruby plgin installed
+- name: check if ruby plugin installed
   shell: "asdf list | grep ruby"
   register: ruby_plugin_exists
   ignore_errors: true

@@ -20,14 +20,6 @@
 - name: "initialize yarn in '{{ coc_config_path }}/extensions' dir"
   shell: "cd {{ coc_config_path }}/extensions && yarn init -y"
 
-- name: install yarn libs
-  yarn:
-    name: "{{ item }}"
-    global: yes
-    state: latest
-  with_items:
-    - prettier
-
 - name: install coc extensions
   shell: "cd {{ coc_config_path }}/extensions && yarn add {{ item }}"
   with_items:
@@ -39,3 +31,23 @@
     - coc-tsserver
     - coc-ultisnips
     - coc-vetur
+
+- name: install global yarn libs
+  yarn:
+    name: "{{ item }}"
+    global: yes
+    state: latest
+  with_items:
+    - neovim
+    - prettier
+
+- name: install python 2 provider
+  pip:
+    name: pynvim
+    extra_args: --user
+
+- name: install python 3 provider
+  pip:
+    name: pynvim
+    extra_args: --user
+    executable: pip3
