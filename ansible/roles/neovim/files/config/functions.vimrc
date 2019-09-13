@@ -1,17 +1,18 @@
 " Only show curson line and column in active window
 augroup CursorLine
-  au!
-  au VimEnter * setlocal cursorline
-  au WinEnter * setlocal cursorline
-  au BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
+  autocmd!
+  autocmd VimEnter * setlocal cursorline
+  autocmd WinEnter * setlocal cursorline
+  autocmd BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
 augroup END
+
 augroup CursorColumn
-  au!
-  au VimEnter * setlocal cursorcolumn
-  au WinEnter * setlocal cursorcolumn
-  au BufWinEnter * setlocal cursorcolumn
-  au WinLeave * setlocal nocursorcolumn
+  autocmd!
+  autocmd VimEnter * setlocal cursorcolumn
+  autocmd WinEnter * setlocal cursorcolumn
+  autocmd BufWinEnter * setlocal cursorcolumn
+  autocmd WinLeave * setlocal nocursorcolumn
 augroup END
 
 " Automatically reload buffer when moving cursor if file was changed
@@ -66,28 +67,6 @@ augroup CustomAutos
           \*.vue,
           \*.yaml Prettier
   endif
-
-  " mkview to save folds, etc.
-  autocmd BufWrite,ExitPre,QuitPre,VimLeavePre \
-        \*.coffee,
-        \*.css,
-        \*.erb,
-        \*.haml,
-        \*.html,
-        \*.less,
-        \*.js,
-        \*.json,
-        \*.jsx,
-        \*.rb,
-        \*.scss,
-        \*.slim,
-        \*.ts,
-        \*.tsx,
-        \*.vue,
-        \*.yaml mkview
-
-  " Load views
-  autocmd BufRead * silent! loadview
 augroup END
 
 " FZF
