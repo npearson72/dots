@@ -70,14 +70,14 @@ augroup CustomAutos
 augroup END
 
 " FZF
-function! s:fzf_next(idx)
+function! s:fzf_ctrlp(idx)
   let commands = ['Files', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
-  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_next('.next.')<cr>'
+  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
 endfunction
 
-command! FZFNext call <sid>fzf_next(0)
+command! FZFCtrlp call <sid>fzf_ctrlp(0)
 
 " FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files

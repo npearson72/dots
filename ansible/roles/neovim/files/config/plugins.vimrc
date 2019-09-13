@@ -18,14 +18,13 @@ Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'npearson72/fzf.vim'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'vim-scripts/zoomwintab.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'npearson72/vim-personal-snippets'
 
 " Autocompletion
-Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Formatters, selectors, accelerators
 Plug 'tpope/vim-commentary'

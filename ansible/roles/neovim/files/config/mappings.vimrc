@@ -27,15 +27,6 @@ nnoremap wr <c-w>r
 nnoremap wR <c-w>R
 nnoremap wo :ZoomToggle<cr>
 
-" Neovim terminal mode
-if has('nvim')
-  tnoremap <esc> <c-\><c-n>
-  tnoremap <a-h> <c-\><c-n><c-w>h
-  tnoremap <a-j> <c-\><c-n><c-w>j
-  tnoremap <a-k> <c-\><c-n><c-w>k
-  tnoremap <a-l> <c-\><c-n><c-w>l
-endif
-
 " Buffers
 nnoremap [b :bnext<cr>
 nnoremap ]b :bprevious<cr>
@@ -68,7 +59,7 @@ vnoremap < <gv
 nmap <F1> <esc>
 imap <F1> <esc>
 
-" Convential select all
+" Select all
 nnoremap <leader>a ggVG
 
 " Change pwd to current file
@@ -112,12 +103,9 @@ let g:ack_mappings = {
       \ "<c-t>": "<C-W><CR><C-W>T"
       \}
 
-" eregex.vim
-nnoremap <C-_> :%S/
-
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
-nnoremap <c-p> :FZFNext<cr>
+nnoremap <c-p> :FZFCtrlp<cr>
 nnoremap <leader>b :Buffers<cr>
 
 " Mundo
