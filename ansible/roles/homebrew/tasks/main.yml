@@ -11,19 +11,11 @@
     path: "{{ brewfile_path }}"
     state: directory
 
-- name: link home Brewfile
+- name: link Brewfile
   file:
-    src: "{{ role_path }}/files/Brewfile.home"
+    src: "{{ role_path }}/files/brewfile.rb"
     dest: "{{ brewfile_path }}/Brewfile"
     state: link
-  when: computer_type == 'home'
-
-- name: link work Brewfile
-  file:
-    src: "{{ role_path }}/files/Brewfile.work"
-    dest: "{{ brewfile_path }}/Brewfile"
-    state: link
-  when: computer_type == 'work'
 
 - name: bundle dependencies
   command: "brew bundle --file={{ brewfile_path }}/Brewfile"
