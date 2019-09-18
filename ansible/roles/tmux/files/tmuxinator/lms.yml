@@ -10,4 +10,8 @@ windows:
         -
         - start_lms
         - bundle exec rails c
-  - background: start_sidekiq
+  - background:
+      layout: even-horizontal
+      panes:
+        - start_sidekiq
+        - ruby bin/webpack-dev-server

@@ -1,6 +1,21 @@
 [[snippets]]
-  description = "Find all"
+  description = "Create a gzipped archive"
+  command = "tar -czf <file name>.tar.gz <file(s) to archive>"
+  output = ""
+
+[[snippets]]
+  description = "Extract a gzipped archive"
+  command = "tar -xzf <archive>.tar.gz --one-top-level"
+  output = ""
+
+[[snippets]]
+  description = "Find all files"
   command = "sudo find <location> -iname '*<name>*' 2>&1 | egrep -v 'Operation not permitted|Not a directory|Bad file descriptor|system loop detected'"
+  output = ""
+
+[[snippets]]
+  description = "Find and delete files"
+  command = "find <location> -iname '<name>' -print -exec rm -rf {} \\;"
   output = ""
 
 [[snippets]]
@@ -9,13 +24,18 @@
   output = ""
 
 [[snippets]]
-  description = "Uninstall all ruby gems"
-  command = "for g in `gem list --no-versions`; do gem uninstall $g -a -x -I; done"
+  description = "Fix ssh key file permissions"
+  command = "chmod 400 ~/.ssh/id_rsa"
   output = ""
 
 [[snippets]]
-  description = "Fix ssh key file permissions"
-  command = "chmod 400 ~/.ssh/id_rsa"
+  description = "Git rename local and remote branch"
+  command = "git branch -m <new name> && git push origin :<old name> <new name> && git push origin -u <new name>"
+  output = ""
+
+[[snippets]]
+  description = "Git delete local and remote branch"
+  command = "git branch -D <branch name> && git push origin --delete <branch name>"
   output = ""
 
 [[snippets]]
@@ -29,16 +49,6 @@
   output = ""
 
 [[snippets]]
-  description = "Find and delete files"
-  command = "find <location> -iname '<name>' -print -exec rm -rf {} \\;"
-  output = ""
-
-[[snippets]]
-  description = "Create a gzipped archive"
-  command = "tar -czf <file name>.tar.gz <file(s) to archive>"
-  output = ""
-
-[[snippets]]
-  description = "Extract a gzipped archive"
-  command = "tar -xzf <archive>.tar.gz --one-top-level"
+  description = "Uninstall all ruby gems"
+  command = "for g in `gem list --no-versions`; do gem uninstall $g -a -x -I; done"
   output = ""
