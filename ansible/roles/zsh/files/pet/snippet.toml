@@ -39,6 +39,16 @@
   output = ""
 
 [[snippets]]
+  description = "Rails DB migrate development"
+  command = "bundle exec rake db:migrate RAILS_ENV=development"
+  output = ""
+
+[[snippets]]
+  description = "Rails DB migrate test"
+  command = "bundle exec rake db:migrate RAILS_ENV=test"
+  output = ""
+
+[[snippets]]
   description = "Rename multiple files"
   command = "for file in <file pattern>; do mv $file \"${file/<old chars>/<new chars>}\"; done"
   output = ""
