@@ -56,6 +56,7 @@ brew 'zsh'
 brew 'zsh-history-substring-search'
 brew 'getantibody/tap/antibody'
 cask '1password'
+cask 'bartender' unless work
 cask 'bettertouchtool'
 cask 'docker'
 cask 'dropbox'
@@ -69,8 +70,7 @@ cask 'phantomjs'
 cask 'postman'
 cask 'slack' if work
 cask 'transmission' unless work
-cask 'vanilla'
 cask 'vagrant' unless work
 cask 'virtualbox' unless work
 cask 'vlc'
-mas 'Bear', id: '1091189122'.to_int
+mas 'Bear', id: '1091189122'.to_i
