@@ -1,8 +1,3 @@
-- name: "make sure '{{ home }}/.config' dir exists"
-  file:
-    path: "{{ home }}/.config"
-    state: directory
-
 - name: update mac os software
   become: yes
   command: softwareupdate -i -r
@@ -18,3 +13,49 @@
 - name: exit if mac os was updated
   meta: end_play
   when: mac_os_update is defined and mac_os_update.stderr != "No updates are available."
+
+- name: make sure csrutil is disabled
+  shell: csrutil status | grep -o disabled
+  ignore_errors: yes
+  register: csrutil_status
+
+- debug:
+    msg: "=====| WARNING: \
+      You must disable csrutil to continue!!! \
+      |====="
+  when: csrutil_status.stdout != "disabled"
+
+- name: exit if csrutil not disabled
+  meta: end_play
+  when: csrutil_status.stdout != "disabled"
+
+- name: Remove directories that will by symlinked to Dropbox
+  become: yes
+  become_user: root
+  file:
+    path: '{{ home }}/{{ item }}'
+    state: absent
+  with_items:
+    - Desktop
+    - Documents
+    - Downloads
+    - Pictures
+
+- name: Symlink directories to Dropbox
+  become: yes
+  become_user: root
+  file:
+    src: 'Dropbox/{{ computer_name | capitalize }}/{{ item }}'
+    dest: '{{ home }}/{{ item }}'
+    owner: '{{ user }}'
+    state: link
+  with_items:
+    - Desktop
+    - Documents
+    - Downloads
+    - Pictures
+
+- name: "make sure '{{ home }}/.config' dir exists"
+  file:
+    path: "{{ home }}/.config"
+    state: directory
