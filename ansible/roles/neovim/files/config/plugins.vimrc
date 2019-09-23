@@ -15,7 +15,7 @@ Plug 'mhinz/vim-mix-format'
 " File management, search, navigation
 Plug 'mileszs/ack.vim' 
 Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
-Plug 'npearson72/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
 Plug 'scrooloose/nerdtree'
 
