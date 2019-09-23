@@ -1,20 +1,8 @@
-- name: "make sure '{{ neovim_config_path }}/config' dir exists"
+- name: symlink config directory
   file:
-    path: "{{ neovim_config_path }}/config"
-    state: directory
-
-- name: symlink files in config directory
-  file:
-    src: "{{ role_path }}/files/config/{{ item.src }}.vimrc"
-    dest: "{{ neovim_config_path }}/config/{{ item.dest }}.vimrc"
+    src: "{{ role_path }}/files/config"
+    dest: "{{ neovim_config_path }}/config"
     state: link
-  with_items:
-    - { src: 'filetypes', dest: 'filetypes' }
-    - { src: 'functions', dest: 'functions' }
-    - { src: 'mappings', dest: 'mappings' }
-    - { src: 'plugins', dest: 'plugins' }
-    - { src: 'settings', dest: 'settings' }
-    - { src: 'visuals', dest: 'visuals' }
 
 - name: symlink init.vim
   file:
