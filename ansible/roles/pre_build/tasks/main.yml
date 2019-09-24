@@ -23,11 +23,11 @@
     msg: "=====| WARNING: \
       You must disable csrutil to continue!!! \
       |====="
-  when: csrutil_status.stdout != "disabled"
+  when: csrutil_status is defined and csrutil_status.stdout != "disabled"
 
 - name: exit if csrutil not disabled
   meta: end_play
-  when: csrutil_status.stdout != "disabled"
+  when: csrutil_status is defined and csrutil_status.stdout != "disabled"
 
 - name: Remove directories that will by symlinked to Dropbox
   become: yes
@@ -38,8 +38,8 @@
   with_items:
     - Desktop
     - Documents
-    - Downloads
     - Pictures
+  when: csrutil_status is defined and csrutil_status.stdout == "disabled"
 
 - name: Symlink directories to Dropbox
   become: yes
@@ -52,8 +52,8 @@
   with_items:
     - Desktop
     - Documents
-    - Downloads
     - Pictures
+  when: csrutil_status is defined and csrutil_status.stdout == "disabled"
 
 - name: "make sure '{{ home }}/.config' dir exists"
   file:
