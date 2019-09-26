@@ -66,6 +66,7 @@ cask 'iterm2'
 cask 'java'
 cask 'kap'
 cask 'karabiner-elements' unless work
+cask 'ngrok' if work
 cask 'phantomjs'
 cask 'postman'
 cask 'slack' if work
