@@ -18,24 +18,16 @@ augroup END
 " Automatically reload buffer when moving cursor if file was changed
 autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 
-" Checks if current buffer is NERDTree
-function! IsNERDTreeEnabled()
-    return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
-endfunction
-
 " Zoom / Restore window
 function! s:ZoomToggle() abort
-  " Only zoom if NOT in NERDTree buffer
-  if !IsNERDTreeEnabled()
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
+  if exists('t:zoomed') && t:zoomed
+      execute t:zoom_winrestcmd
+      let t:zoomed = 0
+  else
+      let t:zoom_winrestcmd = winrestcmd()
+      resize
+      vertical resize
+      let t:zoomed = 1
   endif
 endfunction
 command! ZoomToggle call s:ZoomToggle()
