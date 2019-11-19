@@ -2,7 +2,7 @@
 
 alias ls='ls -lhN --color --group-directories-first --classify'
 alias ll='ls -lhAN'
-if type nvim &> /dev/null; then
+if command -v nvim &> /dev/null; then
   alias vim=nvim
   alias vi=nvim
 fi
