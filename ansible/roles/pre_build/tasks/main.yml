@@ -14,16 +14,6 @@
   meta: end_play
   when: mac_os_update is defined and mac_os_update.stderr != "No updates are available."
 
-- name: "make sure '{{ home }}/.config' dir exists"
-  file:
-    path: "{{ home }}/.config"
-    state: directory
-
-- name: copy .pryrc
-  template:
-    src: "{{ role_path }}/files/pryrc"
-    dest: "{{ home }}/.pryrc"
-
 - name: copy stty
   become: yes
   become_user: root
@@ -31,6 +21,11 @@
     src: /bin/stty
     dest: /usr/local/sbin/stty
     state: link
+
+- name: "make sure '{{ home }}/.config' dir exists"
+  file:
+    path: "{{ home }}/.config"
+    state: directory
 
 - name: "make sure '{{ cache_path }}' dir exists"
   file:

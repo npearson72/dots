@@ -24,10 +24,16 @@
 
 - name: set global ruby version
   shell: "asdf global ruby {{ ruby_version }}"
-  when: (ruby_version_exists is successful or ruby_installed is successful)
+  when: ruby_version_exists is successful or ruby_installed is successful
 
 - name: copy .gemrc file
   copy:
     src: "{{ role_path }}/files/gemrc"
     dest: "{{ home }}/.gemrc"
-  when: (ruby_version_exists is successful or ruby_installed is successful)
+  when: ruby_version_exists is successful or ruby_installed is successful
+
+- name: copy .pryrc
+  template:
+    src: "{{ role_path }}/files/pryrc"
+    dest: "{{ home }}/.pryrc"
+  when: ruby_version_exists is successful or ruby_installed is successful
