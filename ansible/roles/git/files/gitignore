@@ -2,3 +2,4 @@
 *~
 *.swp
 .elixir_ls
+.tool-versions
