@@ -44,9 +44,5 @@ export PSQL_HISTORY=$HOME/.cache/.psql_history
 # Tmux
 tmux menu
 
-# Tmuxinator
-tmuxinator_version=$(cat $HOME/.tool-versions | grep ruby | cut -f 2 -d ' ')
-source $($HOME/.asdf/installs/ruby/$tmuxinator_version/bin/gem which tmuxinator | rev | cut -d'/' -f3- | rev)/completion/tmuxinator.zsh
-
 # ZSH history substring search
 source '/usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh'

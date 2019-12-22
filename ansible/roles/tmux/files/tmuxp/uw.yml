@@ -1,0 +1,10 @@
+session_name: uw
+start_directory: ~/Dev/uw
+windows:
+  - window_name: zsh
+    layout: even-horizontal
+    panes:
+      - shell_command:
+        -
+        focus: true
+      - start_uw

@@ -1,0 +1,13 @@
+session_name: trs
+start_directory: ~/Dev/trs/ansible
+windows:
+  - window_name: zsh
+    panes:
+      - sleep 1 && tmux select-window -t 1 && tmux_clear
+  - window_name: magento
+    start_directory: ~/Dev/trs/magento
+    panes:
+      -
+  - window_name: production
+    panes:
+      - ssh trs -p $TRS_PORT

@@ -1,36 +1,57 @@
+- name: install tmuxp
+  pip:
+    name: tmuxp
+
 - name: copy tmux.config
   file:
     src: "{{ role_path }}/files/tmux.conf"
     dest: "{{ home }}/.config/.tmux.conf"
     state: link
 
-- name: "make sure '{{ tmuxinator_path }}' dir exists"
+- name: "make sure '{{ tmuxp_path }}' dir exists"
   file:
-    path: "{{ tmuxinator_path }}"
+    path: "{{ tmuxp_path }}"
     state: directory
 
-- name: link home tmuxinator configs
+- name: link tmuxp config dir
   file:
-    src: "{{ role_path }}/files/tmuxinator/{{ item.src }}.yml"
-    dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
+    src: "{{ role_path }}/files/tmuxp"
+    dest: "{{ tmuxp_path }}"
     state: link
-  with_items:
-    - { src: 'default', dest: 'default' }
-    - { src: 'trs', dest: 'trs' }
-  when: computer_type == 'home'
+    force: yes
 
-- name: link work tmuxinator configs
-  file:
-    src: "{{ role_path }}/files/tmuxinator/{{ item.src }}.yml"
-    dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
-    state: link
-  with_items:
-    - { src: 'ams', dest: 'ams' }
-    - { src: 'default', dest: 'default' }
-    - { src: 'gcrs', dest: 'gcrs' }
-    - { src: 'kipper', dest: 'kipper' }
-    - { src: 'lms', dest: 'lms' }
-    - { src: 'mp', dest: 'mp' }
-    - { src: 'office', dest: 'office' }
-    - { src: 'uw', dest: 'uw' }
-  when: computer_type == 'work'
+- name: install tmux plugin manager
+  git:
+    repo: "https://github.com/tmux-plugins/tpm.git"
+    dest: "{{ home }}/.tmux/plugins/tpm"
+
+# - name: "make sure '{{ tmuxinator_path }}' dir exists"
+#   file:
+#     path: "{{ tmuxinator_path }}"
+#     state: directory
+
+# - name: link home tmuxinator configs
+#   file:
+#     src: "{{ role_path }}/files/tmuxinator/{{ item.src }}.yml"
+#     dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
+#     state: link
+#   with_items:
+#     - { src: 'default', dest: 'default' }
+#     - { src: 'trs', dest: 'trs' }
+#   when: computer_type == 'home'
+
+# - name: link work tmuxinator configs
+#   file:
+#     src: "{{ role_path }}/files/tmuxinator/{{ item.src }}.yml"
+#     dest: "{{ tmuxinator_path }}/{{ item.dest }}.yml"
+#     state: link
+#   with_items:
+#     - { src: 'ams', dest: 'ams' }
+#     - { src: 'default', dest: 'default' }
+#     - { src: 'gcrs', dest: 'gcrs' }
+#     - { src: 'kipper', dest: 'kipper' }
+#     - { src: 'lms', dest: 'lms' }
+#     - { src: 'mp', dest: 'mp' }
+#     - { src: 'office', dest: 'office' }
+#     - { src: 'uw', dest: 'uw' }
+#   when: computer_type == 'work'
