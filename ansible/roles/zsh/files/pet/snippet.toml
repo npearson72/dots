@@ -54,6 +54,11 @@
   output = ""
 
 [[snippets]]
+  description = "Print terminal colors"
+  command = "curl -s https://gist.githubusercontent.com/npearson72/e36bfb70f70bb908edb6f0148a43249f/raw/colortest.py | python3"
+  output = ""
+
+[[snippets]]
   description = "Rails DB migrate test"
   command = "bundle exec rake db:migrate RAILS_ENV=test"
   output = ""

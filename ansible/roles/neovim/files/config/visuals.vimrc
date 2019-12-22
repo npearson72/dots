@@ -1,15 +1,7 @@
 syntax enable
 
-" https://github.com/vim/vim/issues/993
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
-autocmd VimEnter * hi! Normal guibg=NONE
-
-" Colorscheme
+" Color scheme
+set t_Co=256
 silent! colorscheme pencil
 set background=dark
 
