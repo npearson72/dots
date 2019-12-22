@@ -44,12 +44,6 @@ let g:DevIconsEnableFoldersOpenClose=1
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
-" vim-nerdtree-syntax-highlight
-" https://github.com/tiagofumo/vim-nerdtree-syntax-highlight#mitigating-lag-issues
-let g:NERDTreeLimitedSyntax=1
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['vue'] = "42b983"
-
 " Overwrites colors of folders
 hi! link NERDTreeFlags NERDTreeDir
 hi NERDTreeOpenable ctermbg=NONE ctermfg=08

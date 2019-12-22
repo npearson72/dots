@@ -9,7 +9,6 @@ Plug 'ryanoasis/vim-devicons'
 " Syntax highlighting
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'mhinz/vim-mix-format'
 
 " File management, search, navigation
