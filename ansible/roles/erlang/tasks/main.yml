@@ -4,7 +4,7 @@
   ignore_errors: true
 
 - name: install erlang plugin for asdf
-  shell: "asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git"
+  shell: "asdf plugin-add erlang"
   when: erlang_plugin_exists is not successful
 
 - name: check installed erlang version
@@ -19,4 +19,4 @@
 
 - name: set global erlang version
   shell: "asdf global erlang {{ erlang_version }}"
-  when: (erlang_version_exists is successful or erlang_installed is successful)
+  when: erlang_version_exists is successful or erlang_installed is successful

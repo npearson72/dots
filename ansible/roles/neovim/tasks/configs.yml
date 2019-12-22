@@ -1,3 +1,8 @@
+- name: "make sure '{{ neovim_config_path }}' dir exists"
+  file:
+    path: "{{ neovim_config_path }}"
+    state: directory
+
 - name: symlink config directory
   file:
     src: "{{ role_path }}/files/config"

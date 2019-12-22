@@ -7,55 +7,31 @@
   tags: mac_os_dock
 
 - name: remove default icons from dock
-  command: defaults write com.apple.dock persistent-apps -array
+  command: dockutil --remove all
   tags: mac_os_dock
 
 - name: add icons to home dock
-  command: "defaults write com.apple.dock persistent-apps -array-add
-  '<dict>
-    <key>tile-data</key>
-    <dict>
-      <key>file-data</key>
-      <dict>
-        <key>_CFURLString</key>
-        <string>/Applications/{{ item }}.app</string>
-        <key>_CFURLStringType</key>
-        <integer>0</integer>
-      </dict>
-    </dict>
-  </dict>'"
+  command: dockutil --add '{{ item }}'
   with_items:
-    - Launchpad
-    - Google Chrome
-    - Bear
-    - Books
-    - iTerm
-    - Utilities/Activity Monitor
-    - System Preferences
+    - /System/Applications/Launchpad.app
+    - /Applications/Google Chrome.app
+    - /Applications/Bear.app
+    - /System/Applications/Books.app
+    - /Applications/iTerm.app
+    - /System/Applications/Utilities/Activity Monitor.app
+    - /System/Applications/System Preferences.app
   when: computer_type == 'home'
   tags: mac_os_dock
 
 - name: add icons to work dock
-  command: "defaults write com.apple.dock persistent-apps -array-add
-  '<dict>
-    <key>tile-data</key>
-    <dict>
-      <key>file-data</key>
-      <dict>
-        <key>_CFURLString</key>
-        <string>/Applications/{{ item }}.app</string>
-        <key>_CFURLStringType</key>
-        <integer>0</integer>
-      </dict>
-    </dict>
-  </dict>'"
+  command: dockutil --add '{{ item }}'
   with_items:
-    - Launchpad
-    - Google Chrome
-    - Bear
-    - Slack
-    - iTerm
-    - Utilities/Activity Monitor
-    - System Preferences
+    - /System/Applications/Launchpad.app
+    - /Applications/Google Chrome.app
+    - /Applications/Bear.app
+    - /Applications/Slack.app
+    - /Applications/iTerm.app
+    - /System/Applications/Utilities/Activity Monitor.app
+    - /System/Applications/System Preferences.app
   when: computer_type == 'work'
   tags: mac_os_dock

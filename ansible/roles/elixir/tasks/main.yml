@@ -4,7 +4,7 @@
   ignore_errors: true
 
 - name: install elixir plugin for asdf
-  shell: "asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git"
+  shell: "asdf plugin-add elixir"
   when: elixir_plugin_exists is not successful
 
 - name: check installed elixir version
@@ -19,7 +19,7 @@
 
 - name: set global elixir version
   shell: "asdf global elixir {{ elixir_version }}"
-  when: (elixir_version_exists is successful or elixir_installed is successful)
+  when: elixir_version_exists is successful or elixir_installed is successful
 
 - name: set vars in .zshrc.local
   blockinfile:

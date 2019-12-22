@@ -39,6 +39,16 @@
   output = ""
 
 [[snippets]]
+  description = "Start Postgres"
+  command = "pg_ctl -D /usr/local/var/postgres-<version> start"
+  output = ""
+
+[[snippets]]
+  description = "Stop Postgres"
+  command = "pg_ctl -D /usr/local/var/postgres-<version> stop"
+  output = ""
+
+[[snippets]]
   description = "Rails DB migrate development"
   command = "bundle exec rake db:migrate RAILS_ENV=development"
   output = ""

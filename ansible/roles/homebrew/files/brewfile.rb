@@ -12,7 +12,7 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'knqyf263/pet'
-cask 'homebrew/cask-versions/adoptopenjdk8'
+cask 'adoptopenjdk8'
 brew 'ansible'
 brew 'asdf'
 brew 'autojump'
@@ -21,6 +21,7 @@ brew 'bat'
 brew 'cmake'
 brew 'coreutils'
 brew 'diff-so-fancy'
+brew 'dockutil'
 brew 'elasticsearch', restart_service: true
 brew 'findutils'
 brew 'fzf'
@@ -41,7 +42,7 @@ brew 'mas'
 brew 'neovim'
 brew 'openconnect' if work
 brew 'openssh'
-brew 'postgresql', restart_service: true
+# brew 'postgresql', restart_service: true
 brew 'python'
 brew 'python@2'
 brew 'redis', restart_service: true
@@ -57,22 +58,19 @@ brew 'zsh'
 brew 'zsh-history-substring-search'
 brew 'getantibody/tap/antibody'
 cask '1password'
-cask 'bartender' unless work
 cask 'docker'
 cask 'dropbox'
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'iterm2'
 cask 'java'
-cask 'kap'
-cask 'karabiner-elements' unless work
-cask 'ngrok' if work
+cask 'ngrok'
 cask 'phantomjs'
 cask 'postman'
 cask 'slack' if work
 cask 'transmission' unless work
-cask 'vagrant' unless work
-cask 'virtualbox' unless work
+cask 'vagrant'
+cask 'virtualbox'
 cask 'vlc'
 mas 'Bear', id: '1091189122'.to_i
-mas "Magnet", id: '441258766'.to_i
+mas 'Magnet', id: '441258766'.to_i

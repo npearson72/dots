@@ -1,1 +1,1 @@
-nodejs_version: 11.3.0
+nodejs_version: "{{ lookup('env', 'NODEJS_VERSION') }}"

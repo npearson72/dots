@@ -12,15 +12,14 @@
     - { role: git, tags: git }
     - { role: ruby, tags: ruby }
     - { role: nodejs, tags: nodejs }
+    - { role: yarn, tags: yarn }
     - { role: erlang, tags: erlang }
     - { role: elixir, tags: elixir }
     - { role: neovim, tags: neovim }
-    - { role: misc, tags: misc }
     - { role: ssh, tags: ssh }
     - { role: tmux, tags: tmux }
     - { role: openconnect, tags: openconnect }
     - { role: postgres, tags: postgres }
     - { role: iterm2, tags: iterm2 }
-    - { role: karabiner, tags: karabiner }
     - { role: mac_os, tags: mac_os }
     - { role: post_build, tags: post_build }
