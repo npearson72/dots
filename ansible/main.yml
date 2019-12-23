@@ -12,13 +12,13 @@
     - { role: git, tags: git }
     - { role: ruby, tags: ruby }
     - { role: nodejs, tags: nodejs }
-    - { role: yarn, tags: yarn }
+    - { role: yarn, tags: yarn, when: computer_type == 'work' }
     - { role: erlang, tags: erlang }
     - { role: elixir, tags: elixir }
     - { role: neovim, tags: neovim }
     - { role: ssh, tags: ssh }
     - { role: tmux, tags: tmux }
-    - { role: openconnect, tags: openconnect }
+    - { role: openconnect, tags: openconnect, when: computer_type == 'work' }
     - { role: postgres, tags: postgres }
     - { role: iterm2, tags: iterm2 }
     - { role: mac_os, tags: mac_os }

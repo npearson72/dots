@@ -19,4 +19,4 @@
 
 - name: set global yarn version
   shell: "asdf global yarn {{ yarn_version }}"
-  when: (yarn_version_exists is successful or yarn_installed is successful)
+  when: yarn_version_exists is successful or yarn_installed is successful

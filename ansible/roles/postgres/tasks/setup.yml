@@ -1,4 +1,4 @@
-- name: "check if /usr/local/var/postgres-{{ postgres_version }} exists"
+- name: check if /usr/local/var/postgres-{{ postgres_version }} exists
   stat:
     path: "/usr/local/var/postgres-{{ postgres_version }}"
   register: db_files

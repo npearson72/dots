@@ -66,9 +66,7 @@ function! s:fzf_ctrlp(idx)
   let commands = ['Files', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
-  " Hack to hide errors since fzf.vim expect ctrl-v, ctrl-x, or ctrl-t ONLY
-  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:silent sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
-  " execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
+  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
 endfunction
 
 command! FZFCtrlp call <sid>fzf_ctrlp(0)

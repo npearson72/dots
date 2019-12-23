@@ -1,4 +1,4 @@
-- name: "make sure '{{ neovim_config_path }}/autoload' dir exists"
+- name: make sure '{{ neovim_config_path }}/autoload' dir exists
   file:
     path: "{{ neovim_config_path }}/autoload"
     state: directory
@@ -12,16 +12,27 @@
 - name: install neovim plugins 
   command: nvim --headless "+silent! PlugInstall!" +qall!
 
-- name: "make sure '{{ coc_config_path }}/extensions' dir exists"
+- name: make sure '{{ coc_config_path }}/extensions' dir exists
   file:
     path: "{{ coc_config_path }}/extensions"
     state: directory
 
-- name: "initialize yarn in '{{ coc_config_path }}/extensions' dir"
-  shell: "cd {{ coc_config_path }}/extensions && yarn init -y"
+- name: check if '{{ coc_config_path }}/extensions/package.json' file exists
+  stat:
+    path: "{{ coc_config_path }}/extensions/package.json"
+  register: package_json_file
+
+- name: initialize npm in '{{ coc_config_path }}/extensions' dir
+  shell: "cd {{ coc_config_path }}/extensions && npm init -y"
+  register: npm_initialized
+  when: not package_json_file.stat.exists
 
 - name: install coc extensions
-  shell: "cd {{ coc_config_path }}/extensions && yarn add {{ item }}"
+  shell: |
+    cd {{ coc_config_path }}/extensions &&
+    cat {{ coc_config_path }}/extensions/package.json |
+    grep -c {{ item }} |
+    xargs -I % sh -c 'if [[ % = 0 ]]; then npm install {{ item }}; fi'
   with_items:
     - coc-css
     - coc-html
@@ -31,9 +42,10 @@
     - coc-tsserver
     - coc-ultisnips
     - coc-vetur
+  ignore_errors: true
 
-- name: install global yarn libs
-  yarn:
+- name: install global npm libs
+  npm:
     name: "{{ item }}"
     global: yes
     state: latest
