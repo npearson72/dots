@@ -53,6 +53,7 @@ brew 'tree'
 brew 'unrar'
 brew 'unzip'
 brew 'wget'
+brew 'wxmac' # Used for Erlang/Elixir (ex: :observer:start())
 brew 'zsh'
 brew 'zsh-history-substring-search'
 brew 'getantibody/tap/antibody'
