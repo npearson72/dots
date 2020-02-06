@@ -12,6 +12,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -728,6 +730,8 @@ Clear Buffer</string>
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>650 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1920 1080 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_45C1CE53-217B-494F-A706-48C49509E5ED</key>
@@ -1422,18 +1426,19 @@ Clear Buffer</string>
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.7</string>
+		<string>3.3.8</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{331, 941}</string>
+		<string>{799, 954}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>DE32395C-29B0-4799-9B4C-C50936AB840E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>22</integer>
+	<integer>36</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>599122967.70299804</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2179,7 +2184,11 @@ Clear Buffer</string>
 	<string>https://iterm2.com/appcasts/final_new.xml?shard=95</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2020-02-06T01:38:27Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
@@ -2208,6 +2217,6 @@ Clear Buffer</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.8</string>
 </dict>
 </plist>
