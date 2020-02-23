@@ -31,7 +31,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'suy/vim-context-commentstring' " For JSX comments
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-peekaboo'
 Plug 'simnalamburt/vim-mundo'
