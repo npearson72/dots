@@ -9,10 +9,10 @@ Plug 'ryanoasis/vim-devicons'
 " Syntax highlighting
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
-Plug 'mhinz/vim-mix-format'
+" Plug 'mhinz/vim-mix-format'
 
 " File management, search, navigation
-Plug 'mileszs/ack.vim' 
+Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
@@ -36,6 +36,7 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-peekaboo'
 Plug 'simnalamburt/vim-mundo'
 Plug 'othree/eregex.vim'
+Plug 'wesQ3/vim-windowswap'
 
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
@@ -61,20 +62,23 @@ let g:airline#extensions#whitespace#enabled=0
 if !exists('g:airline_symbols')
   let g:airline_symbols={}
 endif
+let g:airline_extensions=['ale', 'branch']
+let g:airline_section_z=airline#section#create(['%1p%% %l/%L:%c '])
 
 " Ale
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
+let b:ale_warn_about_trailing_whitespace=1
 
 " FZF
 let g:fzf_layout={ 'down': '40%' }
 
 " Gsearch
 set grepprg=rg
-let g:grep_cmd_opts = '--line-number --no-heading'
+let g:grep_cmd_opts='--line-number --no-heading'
 
-" MixFormat (vim-mix-format)
-let g:mix_format_on_save=1
+" MixFormat (vim-mix-format) for Elixir
+" let g:mix_format_on_save=1
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
@@ -90,6 +94,12 @@ autocmd User ProjectionistDetect
       \    },
       \    'spec/*_spec.rb': {
       \      'alternate': 'app/{}.rb'
+      \    },
+      \    'lib/*.ex': {
+      \      'alternate': 'test/{}_test.exs'
+      \    },
+      \    'test/*_test.exs': {
+      \      'alternate': 'lib/{}.ex'
       \    },
       \ })
 

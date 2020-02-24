@@ -33,3 +33,6 @@ endif
 " Fix for coc-vetur: https://github.com/neoclide/coc-vetur/issues/3
 set signcolumn=yes
 set shortmess+=c
+
+" TextEdit might fail if hidden is not set.
+set hidden

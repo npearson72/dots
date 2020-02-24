@@ -25,6 +25,9 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # Postgres
 export PSQL_HISTORY=$HOME/.cache/.psql_history
 
+# Ripgrep (aka: rg)
+export RIPGREP_CONFIG_PATH=$HOME/.config/.ripgreprc
+
 # Terminal
 if [ -n "$TMUX" ]; then
   export TERM=screen-256color

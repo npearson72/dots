@@ -40,12 +40,12 @@ command! ZoomToggle call s:ZoomToggle()
 autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+command! -nargs=0 Format :call CocAction('format')
 
 " Custom autocmds
-augroup CustomAutos
-  autocmd!
+augroup AutoPrettier
   if ComputerType('home')
-    " Fix syntax with Prettier
+    autocmd!
     autocmd BufWrite \
           \*.css,
           \*.html,
@@ -61,9 +61,19 @@ augroup CustomAutos
   endif
 augroup END
 
+augroup AutoFormat
+  if ComputerType('home')
+    autocmd!
+    autocmd BufWrite \
+          \*.ex,
+          \*.exs,
+          \*.rb Format
+  endif
+augroup END
+
 " FZF
 function! s:fzf_ctrlp(idx)
-  let commands = ['Files', 'History']
+  let commands = ['Files', 'Buffer', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
   execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
