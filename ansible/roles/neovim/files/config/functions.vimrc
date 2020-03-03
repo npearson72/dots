@@ -1,6 +1,5 @@
 " Only show curson line and column in active window
 augroup CursorLine
-  autocmd!
   autocmd VimEnter * setlocal cursorline
   autocmd WinEnter * setlocal cursorline
   autocmd BufWinEnter * setlocal cursorline
@@ -8,7 +7,6 @@ augroup CursorLine
 augroup END
 
 augroup CursorColumn
-  autocmd!
   autocmd VimEnter * setlocal cursorcolumn
   autocmd WinEnter * setlocal cursorcolumn
   autocmd BufWinEnter * setlocal cursorcolumn
@@ -39,37 +37,22 @@ command! ZoomToggle call s:ZoomToggle()
 " CoC
 autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
 
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 command! -nargs=0 Format :call CocAction('format')
+autocmd BufWrite *.ex,*.exs,*.rb Format
 
-" Custom autocmds
-augroup AutoPrettier
-  if ComputerType('home')
-    autocmd!
-    autocmd BufWrite \
-          \*.css,
-          \*.html,
-          \*.less,
-          \*.js,
-          \*.json,
-          \*.jsx,
-          \*.scss,
-          \*.ts,
-          \*.tsx,
-          \*.vue,
-          \*.yaml Prettier
-  endif
-augroup END
-
-augroup AutoFormat
-  if ComputerType('home')
-    autocmd!
-    autocmd BufWrite \
-          \*.ex,
-          \*.exs,
-          \*.rb Format
-  endif
-augroup END
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+autocmd BufWrite \
+      \*.css,
+      \*.html,
+      \*.less,
+      \*.js,
+      \*.json,
+      \*.jsx,
+      \*.scss,
+      \*.ts,
+      \*.tsx,
+      \*.vue,
+      \*.yaml Prettier
 
 " FZF
 function! s:fzf_ctrlp(idx)
