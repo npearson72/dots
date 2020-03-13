@@ -37,22 +37,24 @@ command! ZoomToggle call s:ZoomToggle()
 " CoC
 autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
 
-command! -nargs=0 Format :call CocAction('format')
-autocmd BufWrite *.ex,*.exs,*.rb Format
+if ComputerType('home')
+  command! -nargs=0 Format :call CocAction('format')
+  autocmd BufWrite *.ex,*.exs,*.rb Format
 
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-autocmd BufWrite \
-      \*.css,
-      \*.html,
-      \*.less,
-      \*.js,
-      \*.json,
-      \*.jsx,
-      \*.scss,
-      \*.ts,
-      \*.tsx,
-      \*.vue,
-      \*.yaml Prettier
+  command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+  autocmd BufWrite \
+        \*.css,
+        \*.html,
+        \*.less,
+        \*.js,
+        \*.json,
+        \*.jsx,
+        \*.scss,
+        \*.ts,
+        \*.tsx,
+        \*.vue,
+        \*.yaml Prettier
+endif
 
 " FZF
 function! s:fzf_ctrlp(idx)
