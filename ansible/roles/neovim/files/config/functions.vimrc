@@ -1,15 +1,11 @@
 " Only show curson line and column in active window
 augroup CursorLine
-  autocmd VimEnter * setlocal cursorline
-  autocmd WinEnter * setlocal cursorline
-  autocmd BufWinEnter * setlocal cursorline
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
 augroup CursorColumn
-  autocmd VimEnter * setlocal cursorcolumn
-  autocmd WinEnter * setlocal cursorcolumn
-  autocmd BufWinEnter * setlocal cursorcolumn
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
   autocmd WinLeave * setlocal nocursorcolumn
 augroup END
 
