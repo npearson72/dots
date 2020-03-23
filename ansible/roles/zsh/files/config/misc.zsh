@@ -8,7 +8,7 @@ antibody bundle < $ZSH_FILES/zsh_plugins.txt
 
 # ASDF
 source $BREW_PREFIX_DIR/opt/asdf/asdf.sh
-source $BREW_PREFIX_DIR/opt/asdf/etc/bash_completion.d/asdf.bash
+source $BREW_PREFIX_DIR/share/zsh/site-functions
 
 # Autojump
 [[ -s $BREW_PREFIX_DIR/etc/autojump.sh ]] && source $BREW_PREFIX_DIR/etc/autojump.sh
