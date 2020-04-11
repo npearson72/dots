@@ -9,7 +9,6 @@ Plug 'ryanoasis/vim-devicons'
 " Syntax highlighting
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
-" Plug 'mhinz/vim-mix-format'
 
 " File management, search, navigation
 Plug 'mileszs/ack.vim'
@@ -71,14 +70,11 @@ let g:ale_lint_on_enter=0
 let b:ale_warn_about_trailing_whitespace=1
 
 " FZF
-let g:fzf_layout={ 'down': '40%' }
+let g:fzf_layout={ 'down': '50%' }
 
 " Gsearch
 set grepprg=rg
-let g:grep_cmd_opts='--line-number --no-heading'
-
-" MixFormat (vim-mix-format) for Elixir
-" let g:mix_format_on_save=1
+let g:grep_cmd_opts='--sort=path --line-number --no-heading'
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
