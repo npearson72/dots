@@ -11,7 +11,6 @@ Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 
 " File management, search, navigation
-Plug 'mileszs/ack.vim'
 Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
@@ -47,14 +46,9 @@ Plug 'kana/vim-textobj-user' " Required for vim-textobj-rubyblock
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
+Plug 'chengzeyi/fzf-preview.vim'
+
 call plug#end()
-
-" Ack
-let g:ackhighlight=1
-
-if executable('rg')
-  let g:ackprg='rg --sort=path --line-number --smart-case'
-endif
 
 " Airline
 let g:airline#extensions#whitespace#enabled=0
@@ -72,9 +66,24 @@ let b:ale_warn_about_trailing_whitespace=1
 " FZF
 let g:fzf_layout={ 'down': '50%' }
 
+" FZF display preview window while searching (ctrl-p)
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
+
+command! -bang -nargs=? -complete=dir Buffers
+  \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+
+command! -bang -nargs=? -complete=dir History
+  \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+
+" FZF as grep (Using ripgrep)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.(<q-args>), 1,
+  \   fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'), <bang>0)
+
 " Gsearch
-set grepprg=rg
-let g:grep_cmd_opts='--sort=path --line-number --no-heading'
+let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 
 " NERDTree
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")

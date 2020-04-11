@@ -93,20 +93,11 @@ cnoremap <c-e> <end>
 "=================
 " Plugin mappings
 "=================
-" Ack
-cnoreabbrev Ack Ack!
-nnoremap <leader>s :Ack!<space>
-
-let g:ack_mappings = {
-      \ "<c-v>": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
-      \ "<c-x>": "<C-W><CR><C-W>K",
-      \ "<c-t>": "<C-W><CR><C-W>T"
-      \}
-
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 nnoremap <c-p> :FZFCtrlp<cr>
 nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>s :Rg<space>
 
 " Mundo
 nnoremap <leader>u :MundoToggle<cr>

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Bat
+export BAT_THEME="base16"
+
 # Editor
 export VISUAL=nvim
 export GIT_EDITOR=$VISUAL
@@ -9,11 +12,11 @@ export EDITOR=$VISUAL
 export ERL_AFLAGS='-kernel shell_history enabled'
 
 # FZF
-export FZF_DEFAULT_OPTS='--height 50% --border --layout=reverse --tiebreak=index'
+export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --no-mouse --tiebreak=index"
 export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
 
 # FZF config to use ripgrep
-export FZF_DEFAULT_COMMAND='rg --sort=path --follow --hidden -l "" --glob "!.git/*" 2> /dev/null'
+export FZF_DEFAULT_COMMAND='rg --follow --hidden -l "" --glob "!.git/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # OpenSSL

@@ -36,3 +36,6 @@ set shortmess+=c
 
 " TextEdit might fail if hidden is not set.
 set hidden
+
+" Ripgrep as grep
+if executable('rg') | set grepprg=rg | endif

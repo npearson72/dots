@@ -54,14 +54,10 @@ endif
 
 " FZF
 function! s:fzf_ctrlp(idx)
-  let commands = ['Files', 'Buffer', 'History']
+  let commands = ['Files', 'Buffers', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
   execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
 endfunction
 
 command! FZFCtrlp call <sid>fzf_ctrlp(0)
-
-" FZF display preview window while searching (ctrl-p)
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
