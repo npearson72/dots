@@ -18,7 +18,7 @@ command! ZoomToggle call s:ZoomToggle()
 
 " FZF
 function! s:fzf_ctrlp(idx)
-  let commands = ['Files', 'Buffers', 'History']
+  let commands = ['Files', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
   execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
