@@ -46,17 +46,14 @@ Plug 'kana/vim-textobj-user' " Required for vim-textobj-rubyblock
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-Plug 'chengzeyi/fzf-preview.vim'
-
 call plug#end()
 
 " Airline
 let g:airline#extensions#whitespace#enabled=0
-if !exists('g:airline_symbols')
-  let g:airline_symbols={}
-endif
 let g:airline_extensions=['ale', 'branch']
 let g:airline_section_z=airline#section#create(['%1p%% %l/%L:%c '])
+
+if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 
 " Ale
 let g:ale_lint_on_text_changed='never'
@@ -66,22 +63,6 @@ let b:ale_warn_about_trailing_whitespace=1
 " FZF
 let g:fzf_layout={ 'down': '50%' }
 
-" FZF display preview window while searching (ctrl-p)
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
-
-command! -bang -nargs=? -complete=dir Buffers
-  \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%', 'ctrl-p'))
-
-command! -bang -nargs=? -complete=dir History
-  \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
-
-" FZF as grep (Using ripgrep)
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.(<q-args>), 1,
-  \   fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'), <bang>0)
-
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 
@@ -89,24 +70,6 @@ let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
-
-" Projectionist
-autocmd User ProjectionistDetect
-      \ call projectionist#append(getcwd(),
-      \ {
-      \    'app/*.rb': {
-      \      'alternate': 'spec/{}_spec.rb'
-      \    },
-      \    'spec/*_spec.rb': {
-      \      'alternate': 'app/{}.rb'
-      \    },
-      \    'lib/*.ex': {
-      \      'alternate': 'test/{}_test.exs'
-      \    },
-      \    'test/*_test.exs': {
-      \      'alternate': 'lib/{}.ex'
-      \    },
-      \ })
 
 " RubyRunner
 let g:RubyRunner_key='<leader>e'
@@ -123,6 +86,7 @@ let g:UltiSnipsSnippetDirectories=[
       \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
       \]
 
+" Vim Polyglot
 " posa/vim-vue (included in vim-polyglot)
 " https://github.com/posva/vim-vue#vim-slows-down-when-using-this-plugin-how-can-i-fix-that
 let g:vue_disable_pre_processors=1

@@ -26,9 +26,9 @@ if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
 
-"=================
-" Plugin settings
-"=================
+"=================================
+" Plugins
+"=================================
 " COC
 " Fix for coc-vetur: https://github.com/neoclide/coc-vetur/issues/3
 set signcolumn=yes

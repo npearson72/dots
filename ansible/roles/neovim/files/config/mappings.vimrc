@@ -90,11 +90,10 @@ cnoremap w!! w !sudo tee % >/dev/null
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
-"=================
-" Plugin mappings
-"=================
+"=================================
+" Plugins
+"=================================
 " FZF
-autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 nnoremap <c-p> :FZFCtrlp<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>s :Rg<space>
