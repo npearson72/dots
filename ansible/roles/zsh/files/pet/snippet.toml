@@ -44,23 +44,13 @@
   output = ""
 
 [[snippets]]
-  description = "Start Postgres"
-  command = "pg_ctl -D /usr/local/var/postgres-<version> start"
-  output = ""
-
-[[snippets]]
-  description = "Stop Postgres"
-  command = "pg_ctl -D /usr/local/var/postgres-<version> stop"
+  description = "Print terminal colors"
+  command = "curl -s https://gist.githubusercontent.com/npearson72/e36bfb70f70bb908edb6f0148a43249f/raw/colortest.py | python3"
   output = ""
 
 [[snippets]]
   description = "Rails DB migrate development"
   command = "bundle exec rake db:migrate RAILS_ENV=development"
-  output = ""
-
-[[snippets]]
-  description = "Print terminal colors"
-  command = "curl -s https://gist.githubusercontent.com/npearson72/e36bfb70f70bb908edb6f0148a43249f/raw/colortest.py | python3"
   output = ""
 
 [[snippets]]
