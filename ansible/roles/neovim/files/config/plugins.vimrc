@@ -62,6 +62,10 @@ let b:ale_warn_about_trailing_whitespace=1
 
 " FZF
 let g:fzf_layout={ 'down': '50%' }
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
@@ -70,6 +74,8 @@ let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
+let NERDTreeMapOpenSplit='s'
+let NERDTreeMapOpenVSplit='v'
 
 " RubyRunner
 let g:RubyRunner_key='<leader>e'
