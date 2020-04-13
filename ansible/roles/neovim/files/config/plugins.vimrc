@@ -83,7 +83,7 @@ let g:RubyRunner_open_below=1
 let g:RubyRunner_window_size=10
 
 " Taboo
-let g:taboo_tab_format=' %f '
+let g:taboo_tab_format=' %f%U '
 
 " UltiSnips
 let g:UltiSnipsEditSplit='vertical'
