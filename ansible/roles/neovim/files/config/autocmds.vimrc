@@ -35,8 +35,6 @@ autocmd FileType vue syntax sync fromstart
 " Plugins
 "=================================
 " CoC
-autocmd CursorMoved * if &previewwindow != 1 | pclose | endif
-
 if ComputerType('home')
   command! -nargs=0 Format :call CocAction('format')
   autocmd BufWrite *.ex,*.exs,*.rb Format
