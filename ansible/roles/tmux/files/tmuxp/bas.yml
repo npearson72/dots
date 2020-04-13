@@ -1,0 +1,10 @@
+session_name: bas
+start_directory: ~/Dev/bas
+windows:
+  - window_name: zsh
+    layout: even-horizontal
+    panes:
+      - shell_command:
+        -
+        focus: true
+      - start_bas

@@ -1,6 +1,0 @@
-name: default
-root: ~/
-tmux_options: -f ~/.config/.tmux.conf
-
-windows:
-  - zsh: tmux send-keys -R && tmux clear-history
