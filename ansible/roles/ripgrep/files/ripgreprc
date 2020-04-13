@@ -25,5 +25,8 @@
 # Exclude elixir directories
 --glob=!{_build,deps,dist,doc}
 
+# Exclude rails directories
+--glob=!{log/*.log,tmp}
+
 # Exclude nodejs files
 --glob=!{package-lock.json}
