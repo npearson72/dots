@@ -1,27 +1,28 @@
 set autoindent
-set smartindent
-set encoding=utf-8
-set fileencoding=utf-8
 set backspace=indent,eol,start
+set completeopt=longest,menuone,preview
+set history=1000 " Sets size of cmd history
+set laststatus=2
+set linebreak
+set listchars=tab:▸\ ,trail:·,eol:¬,space:·
+set noswapfile
 set number
 set ruler
-set visualbell
+set smartindent
 set scrolloff=3
-set laststatus=2
-set wrap
-set linebreak
 set showbreak=↪
-set listchars=tab:▸\ ,trail:·,eol:¬,space:·
-set completeopt=longest,menuone,preview
-set backup
-set noswapfile
-set history=1000
 set undofile
-set undoreload=10000
+set visualbell
 
+"=================================
+" Backups
+"=================================
+" Disable backups because they are managed by the SaveBackups() function
+set nobackup
+
+" set a centralized backup directory
 set backupdir=$HOME/.local/share/nvim/backup//
 
-" Make folders automatically if they don't already exist.
 if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
@@ -34,8 +35,9 @@ endif
 set signcolumn=yes
 set shortmess+=c
 
-" TextEdit might fail if hidden is not set.
+" TextEdit might fail if hidden is not set
 set hidden
 
 " Ripgrep as grep
 if executable('rg') | set grepprg=rg | endif
+

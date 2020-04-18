@@ -12,6 +12,32 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 
+" Properly manage (and name) backups
+" https://stackoverflow.com/a/38479550/1092012
+function! s:SaveBackups()
+  if expand('%:p') =~ &backupskip | return | endif
+
+  " If this is a newly created file, don't try to create a backup
+  if !filereadable(@%) | return | endif
+
+  for l:backupdir in split(&backupdir, ',')
+    :call s:SaveBackup(l:backupdir)
+  endfor
+endfunction
+command! SaveBackups call s:SaveBackups()
+
+function! s:SaveBackup(backupdir)
+  let l:filename = expand('%:p')
+  if a:backupdir =~ '//$'
+      let l:backup = escape(substitute(l:filename, '/', '%', 'g')  . &backupext, '%')
+  else
+      let l:backup = escape(expand('%') . &backupext, '%')
+  endif
+
+  let l:backup_path = a:backupdir . l:backup
+  :silent! execute '!cp ' . resolve(l:filename) . ' ' . l:backup_path
+endfunction
+
 "=================================
 " Plugins
 "=================================

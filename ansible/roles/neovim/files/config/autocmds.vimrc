@@ -1,16 +1,21 @@
 " Only show curson line and column in active window
 augroup CursorLine
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter,CursorMoved * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
 augroup CursorColumn
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter,CursorMoved * setlocal cursorcolumn
   autocmd WinLeave * setlocal nocursorcolumn
 augroup END
 
 " Automatically reload buffer when moving cursor if file was changed
 autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
+
+" Use custom function to create backups
+autocmd BufWritePre * SaveBackups
 
 "=================================
 " Filetypes
