@@ -59,13 +59,28 @@ if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=0
 let b:ale_warn_about_trailing_whitespace=1
+let g:ale_elixir_elixir_ls_release='/usr/local/bin/elixir-ls/release'
+
+let g:ale_linters = {
+      \ 'elixir': ['elixir-ls'],
+      \}
+
+if ComputerType('home')
+  let g:ale_fix_on_save=1
+
+  let g:ale_fixers = {
+        \ 'elixir': ['mix_format'],
+        \ 'ruby': ['rubocop'],
+        \}
+endif
 
 " FZF
 let g:fzf_layout={ 'down': '50%' }
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
+  \ 'ctrl-v': 'vsplit'
+  \}
 
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'

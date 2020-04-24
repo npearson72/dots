@@ -1,6 +1,6 @@
 {
-  "coc.preferences.diagnostic.displayByAle": true,
-  "coc.preferences.snippetIndicator": " ",
+  "diagnostic.displayByAle": true,
+  "suggest.snippetIndicator": " ",
   "prettier.trailingComma": "all",
   "prettier.singleQuote": true,
   "prettier.eslintIntegration": true,

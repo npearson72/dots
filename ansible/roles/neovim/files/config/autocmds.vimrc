@@ -41,8 +41,8 @@ autocmd FileType vue syntax sync fromstart
 "=================================
 " CoC
 if ComputerType('home')
-  command! -nargs=0 Format :call CocAction('format')
-  autocmd BufWrite *.ex,*.exs,*.rb Format
+  " command! -nargs=0 Format :call CocAction('format')
+  " autocmd BufWrite *.ex,*.exs,*.rb Format
 
   command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
   autocmd BufWrite \
