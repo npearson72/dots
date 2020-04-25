@@ -1,0 +1,22 @@
+- name: check if python plugin installed
+  shell: "asdf list | grep python"
+  register: python_plugin_exists
+  ignore_errors: true
+
+- name: install python plugin for asdf
+  shell: "asdf plugin-add python"
+  when: python_plugin_exists is not successful
+
+- name: check installed python version
+  shell: "asdf list python | grep {{ python_version }}"
+  register: python_version_exists
+  ignore_errors: true
+
+- name: install python
+  shell: "asdf install python {{ python_version }}"
+  register: python_installed
+  when: python_version_exists is not successful
+
+- name: set global python version
+  shell: "asdf global python {{ python_version }}"
+  when: python_version_exists is successful or python_installed is successful

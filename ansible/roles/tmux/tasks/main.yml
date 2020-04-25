@@ -1,6 +1,8 @@
 - name: install tmuxp
   pip:
     name: tmuxp
+    extra_args: --user
+    executable: pip3
 
 - name: copy tmux.config
   file:

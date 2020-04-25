@@ -1,5 +1,8 @@
 #!/bin/sh
 
+alias ag="echo use \'rg\'"
+alias cat='bat'
+alias be='bundle exec'
 alias ls='ls -lhN --color --group-directories-first --classify'
 alias ll='ls -lhAN'
 if command -v nvim &> /dev/null; then
@@ -8,6 +11,3 @@ if command -v nvim &> /dev/null; then
 fi
 alias reload!='exec zsh -l'
 alias start_rails='bundle exec rails s -b 0.0.0.0'
-alias ag="echo use \'rg\'"
-alias cat='bat'
-alias be='bundle exec'

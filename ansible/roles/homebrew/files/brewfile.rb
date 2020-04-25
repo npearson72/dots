@@ -43,8 +43,6 @@ brew 'neovim'
 brew 'openconnect' if work
 brew 'openssh'
 # brew 'postgresql', restart_service: true
-brew 'python'
-# brew 'python@2'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
