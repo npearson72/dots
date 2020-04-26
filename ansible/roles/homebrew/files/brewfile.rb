@@ -69,7 +69,7 @@ cask 'postman'
 cask 'rectangle'
 cask 'slack' if work
 cask 'transmission' unless work
-cask 'vagrant'
-cask 'virtualbox'
+# cask 'vagrant'
+# cask 'virtualbox'
 cask 'vlc'
 mas 'Bear', id: '1091189122'.to_i
