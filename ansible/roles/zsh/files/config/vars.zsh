@@ -1,7 +1,11 @@
 #!/bin/sh
 
 # Bat
-export BAT_THEME="base16"
+export BAT_THEME=base16
+
+# Brew bundle
+export HOMEBREW_BUNDLE_FILE=$HOME/.config/Brewfile
+export HOMEBREW_BUNDLE_NO_LOCK=false
 
 # Editor
 export VISUAL=nvim
@@ -12,7 +16,7 @@ export EDITOR=$VISUAL
 export ERL_AFLAGS='-kernel shell_history enabled'
 
 # FZF
-export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border --no-mouse --tiebreak=index"
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --no-mouse --tiebreak=index'
 export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
 
 # FZF config to use ripgrep
@@ -21,11 +25,11 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # OpenSSL
 # For compilers to find openssl you may need to set:
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS='-L/usr/local/opt/openssl/lib'
+export CPPFLAGS='-I/usr/local/opt/openssl/include'
 
 # For pkg-config to find openssl you may need to set:
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 
 # Postgres
 export PSQL_HISTORY=$HOME/.cache/.psql_history
