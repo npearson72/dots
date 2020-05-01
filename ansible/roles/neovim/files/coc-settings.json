@@ -1,10 +1,11 @@
 {
   "diagnostic.displayByAle": true,
   "suggest.snippetIndicator": " ",
-  "prettier.trailingComma": "all",
+  "prettier.trailingComma": "none",
   "prettier.singleQuote": true,
   "prettier.eslintIntegration": true,
   "prettier.bracketSpacing": false,
+  "prettier.arrowParens": "avoid",
   "prettier.jsxBracketSameLine": true,
   "languageserver": {
     "elixirLS": {
