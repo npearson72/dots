@@ -6,5 +6,9 @@
 #
 
 vimall() {
-  paste -s -d' ' | xargs -I {} sh -c 'nvim -p {}'
+  array=()
+  while IFS= read line; do
+    array+=("$(git rev-parse --show-toplevel)/${line}")
+  done
+  echo $array | xargs -I {} sh -c 'nvim -p {}'
 }
