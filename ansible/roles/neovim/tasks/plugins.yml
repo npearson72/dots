@@ -50,6 +50,7 @@
     global: yes
     state: latest
   with_items:
+    - eslint
     - neovim
     - prettier
 
