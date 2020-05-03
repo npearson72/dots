@@ -7,6 +7,7 @@
   "prettier.bracketSpacing": false,
   "prettier.arrowParens": "avoid",
   "prettier.jsxBracketSameLine": true,
+  "vetur.validation.template": false,
   "languageserver": {
     "elixirLS": {
       "command": "/usr/local/bin/elixir-ls/release/language_server.sh",
