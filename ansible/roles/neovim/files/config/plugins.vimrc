@@ -68,9 +68,23 @@ if ComputerType('home')
   let g:ale_fix_on_save=1
 
   let g:ale_fixers = {
+        \ 'css': ['prettier'],
         \ 'elixir': ['mix_format'],
+        \ 'html': ['prettier'],
+        \ 'javascript': ['prettier'],
+        \ 'json': ['prettier'],
+        \ 'jsx': ['prettier'],
         \ 'ruby': ['rubocop'],
+        \ 'scss': ['prettier'],
+        \ 'vue': ['prettier'],
+        \ 'yaml': ['prettier'],
         \}
+
+  let g:ale_javascript_prettier_options = '
+        \ --single-quote
+        \ --trailing-comma="none"
+        \ --arrow-parens="avoid"
+        \'
 endif
 
 " FZF

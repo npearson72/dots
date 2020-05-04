@@ -37,7 +37,6 @@
     - coc-css
     - coc-html
     - coc-json
-    - coc-prettier
     - coc-solargraph
     - coc-tsserver
     - coc-ultisnips
