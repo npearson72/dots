@@ -57,7 +57,6 @@ if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 
 " Ale
 let g:ale_lint_on_text_changed='never'
-let g:ale_lint_on_enter=0
 let b:ale_warn_about_trailing_whitespace=1
 let g:ale_elixir_elixir_ls_release='/usr/local/bin/elixir-ls/release'
 
