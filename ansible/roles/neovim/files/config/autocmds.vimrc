@@ -44,6 +44,25 @@ autocmd FileType vue syntax sync fromstart
 " https://github.com/JakeBecker/elixir-ls/issues/76
 autocmd FileType elixir let b:coc_root_patterns = ['mix.exs']
 
+if ComputerType('home')
+  command! -nargs=0 Format :call CocAction('format')
+  autocmd BufWrite *.ex,*.exs,*.rb Format
+
+  command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+  autocmd BufWrite \
+        \*.css,
+        \*.html,
+        \*.less,
+        \*.js,
+        \*.json,
+        \*.jsx,
+        \*.scss,
+        \*.ts,
+        \*.tsx,
+        \*.vue,
+        \*.yaml Prettier
+endif
+
 " FZF
 " FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files

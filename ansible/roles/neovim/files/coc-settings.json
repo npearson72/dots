@@ -1,11 +1,14 @@
 {
-  "diagnostic.displayByAle": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "eslint.run": "onSave",
+  "eslint.filetypes": ["javascript", "vue"],
+  "prettier.arrowParens": "avoid",
+  "prettier.eslintIntegration": true,
+  "prettier.printWidth": 80,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
   "suggest.snippetIndicator": " ",
-  "vetur.validation.template": false,
-  "languageserver": {
-    "elixirLS": {
-      "command": "/usr/local/bin/elixir-ls/release/language_server.sh",
-      "filetypes": ["elixir", "eelixir"]
-    }
-  }
+  "vetur.validation.template": false
 }

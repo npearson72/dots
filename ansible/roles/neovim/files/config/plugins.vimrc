@@ -7,7 +7,6 @@ Plug 'gcmt/taboo.vim'
 Plug 'ryanoasis/vim-devicons'
 
 " Syntax highlighting
-Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 
 " File management, search, navigation
@@ -50,51 +49,22 @@ call plug#end()
 
 " Airline
 let g:airline#extensions#whitespace#enabled=0
-let g:airline_extensions=['ale', 'branch']
+let g:airline_extensions=['branch', 'coc']
 let g:airline_section_z=airline#section#create(['%1p%% %l/%L:%c '])
 
 if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 
-" Ale
-let g:ale_lint_on_text_changed='never'
-let b:ale_warn_about_trailing_whitespace=1
-let g:ale_elixir_elixir_ls_release='/usr/local/bin/elixir-ls/release'
-
-let g:ale_linters = {
-      \ 'elixir': ['elixir-ls'],
-      \}
-
-if ComputerType('home')
-  let g:ale_fix_on_save=1
-
-  let g:ale_fixers = {
-        \ 'css': ['prettier'],
-        \ 'elixir': ['mix_format'],
-        \ 'html': ['prettier'],
-        \ 'javascript': ['prettier'],
-        \ 'json': ['prettier'],
-        \ 'jsx': ['prettier'],
-        \ 'ruby': ['rubocop'],
-        \ 'scss': ['prettier'],
-        \ 'vue': ['prettier'],
-        \ 'yaml': ['prettier'],
-        \}
-
-  let g:ale_javascript_prettier_options = '
-        \ --single-quote
-        \ --trailing-comma="none"
-        \ --arrow-parens="avoid"
-        \'
-endif
-
 " CoC
 let g:coc_global_extensions=[
       \ 'coc-css',
+      \ 'coc-elixir',
+      \ 'coc-eslint',
       \ 'coc-html',
       \ 'coc-json',
+      \ 'coc-prettier',
       \ 'coc-solargraph',
       \ 'coc-tsserver',
-      \ 'coc-ultisnips',
+      \ 'coc-snippets',
       \ 'coc-vetur'
       \]
 
@@ -134,4 +104,4 @@ let g:UltiSnipsSnippetDirectories=[
 " Vim Polyglot
 " posa/vim-vue (included in vim-polyglot)
 " https://github.com/posva/vim-vue#vim-slows-down-when-using-this-plugin-how-can-i-fix-that
-let g:vue_disable_pre_processors=1
+let g:vue_pre_processors = 'detect_on_enter'

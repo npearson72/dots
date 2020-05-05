@@ -22,6 +22,9 @@
 # Exclude nodejs directories
 --glob=!{node_modules}
 
+# Exclude webpack directories
+--glob=!{public/packs}
+
 # Exclude elixir directories
 --glob=!{_build,deps,dist,doc}
 
