@@ -87,13 +87,24 @@ if ComputerType('home')
         \'
 endif
 
+" CoC
+let g:coc_global_extensions=[
+      \ 'coc-css',
+      \ 'coc-html',
+      \ 'coc-json',
+      \ 'coc-solargraph',
+      \ 'coc-tsserver',
+      \ 'coc-ultisnips',
+      \ 'coc-vetur'
+      \]
+
 " FZF
 let g:fzf_layout={ 'down': '50%' }
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \}
 
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
