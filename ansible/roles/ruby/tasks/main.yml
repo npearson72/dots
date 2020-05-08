@@ -32,8 +32,15 @@
     dest: "{{ home }}/.gemrc"
   when: ruby_version_exists is successful or ruby_installed is successful
 
-- name: copy .pryrc
-  template:
+- name: make sure '{{ pryrc_path }}' dir exists
+  file:
+    path: "{{ pryrc_path }}"
+    state: directory
+  when: ruby_version_exists is successful or ruby_installed is successful
+
+- name: link pryrc
+  file:
     src: "{{ role_path }}/files/pryrc"
-    dest: "{{ home }}/.pryrc"
+    dest: "{{ pryrc_path }}/pryrc"
+    state: link
   when: ruby_version_exists is successful or ruby_installed is successful

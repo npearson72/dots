@@ -1,2 +1,2 @@
 Pry.config.color = true
-Pry.config.history.file = "#{ENV['HOME']}/.cache/.pry_history"
+Pry.config.history_file="~/.cache/.pry_history"
