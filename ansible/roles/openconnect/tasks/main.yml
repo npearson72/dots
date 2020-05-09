@@ -1,4 +1,4 @@
-- name: make sure '{{ vpn_config_path }}' dir exists
+- name: make sure "{{ vpn_config_path }}" dir exists
   file:
     path: "{{ vpn_config_path }}"
     state: directory
@@ -25,4 +25,3 @@
     - vpn.user
     - vpn.authgroup
     - vpn.domain
-

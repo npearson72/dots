@@ -1,2 +1,2 @@
 ruby_version: "{{ lookup('env', 'RUBY_VERSION') }}"
-pryrc_path: '{{ home }}/.config/pry'
+pryrc_path: "{{ home }}/.config/pry"

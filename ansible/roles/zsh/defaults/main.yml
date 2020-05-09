@@ -1,2 +1,3 @@
-zsh_path: /usr/local/bin/zsh
+cache_path: "{{ home }}/.cache"
 pet_config_path: "{{ home }}/.config/pet"
+zsh_path: /usr/local/bin/zsh

@@ -1,4 +1,4 @@
-call plug#begin("$HOME/.config/nvim/plugged")
+call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 
 " UI/UX
 Plug 'bling/vim-airline'

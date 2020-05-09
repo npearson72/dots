@@ -6,7 +6,7 @@
   command: brew doctor
   ignore_errors: yes
 
-- name: make sure '{{ brewfile_path }}' dir exists
+- name: make sure "{{ brewfile_path }}" dir exists
   file:
     path: "{{ brewfile_path }}"
     state: directory
@@ -26,7 +26,3 @@
   command: "brew bundle cleanup --force --file={{ brewfile_path }}/Brewfile"
   args:
     chdir: "{{ home }}"
-
-- name: upgrade all brew dependencies
-  homebrew:
-    upgrade_all: yes

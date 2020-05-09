@@ -1,10 +1,10 @@
 - name: check if elixir plugin installed
-  shell: "asdf list | grep elixir"
+  shell: asdf list | grep elixir
   register: elixir_plugin_exists
   ignore_errors: true
 
 - name: install elixir plugin for asdf
-  shell: "asdf plugin-add elixir"
+  shell: asdf plugin-add elixir
   when: elixir_plugin_exists is not successful
 
 - name: check installed elixir version
@@ -19,4 +19,8 @@
 
 - name: set global elixir version
   shell: "asdf global elixir {{ elixir_version }}"
+  when: elixir_version_exists is successful or elixir_installed is successful
+
+- name: reshim elixir
+  shell: asdf reshim elixir
   when: elixir_version_exists is successful or elixir_installed is successful

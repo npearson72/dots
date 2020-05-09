@@ -7,12 +7,15 @@ set linebreak
 set listchars=tab:▸\ ,trail:·,eol:¬,space:·
 set noswapfile
 set number
+set numberwidth=1 " Reduce width of number line
 set ruler
 set smartindent
 set scrolloff=3
 set showbreak=↪
 set undofile
 set visualbell
+
+let g:python3_host_prog='$HOME/.asdf/shims/python'
 
 "=================================
 " Backups
@@ -40,4 +43,3 @@ set hidden
 
 " Ripgrep as grep
 if executable('rg') | set grepprg=rg | endif
-

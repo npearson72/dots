@@ -7,6 +7,6 @@ mux() {
   elif [ -z "$1" ]; then
     command tmuxp
   else
-    command tmuxp load $HOME/.config/tmuxp/$1.yml -y
+    command tmuxp load $XDG_CONFIG_HOME/tmuxp/$1.yml -y
   fi
 }

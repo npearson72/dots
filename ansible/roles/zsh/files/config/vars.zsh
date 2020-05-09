@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# Bat
-export BAT_THEME=base16
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
 
 # Brew bundle
-export HOMEBREW_BUNDLE_FILE=$HOME/.config/Brewfile
+export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/Brewfile
 export HOMEBREW_BUNDLE_NO_LOCK=false
 
 # Editor
@@ -35,7 +35,7 @@ export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 export PSQL_HISTORY=$HOME/.cache/.psql_history
 
 # Ripgrep (aka: rg)
-export RIPGREP_CONFIG_PATH=$HOME/.config/.ripgreprc
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc
 
 # Terminal
 if [ -n "$TMUX" ]; then
@@ -43,6 +43,3 @@ if [ -n "$TMUX" ]; then
 else
   export TERM=xterm-256color
 fi
-
-# XDG
-export XDG_CONFIG_HOME=$HOME/.config

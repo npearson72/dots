@@ -1,16 +1,10 @@
-- name: install tmuxp
-  pip:
-    name: tmuxp
-    extra_args: --user
-    executable: pip3
-
 - name: copy tmux.config
   file:
     src: "{{ role_path }}/files/tmux.conf"
     dest: "{{ home }}/.config/.tmux.conf"
     state: link
 
-- name: "make sure '{{ tmuxp_path }}' dir exists"
+- name: make sure "{{ tmuxp_path }}" dir exists
   file:
     path: "{{ tmuxp_path }}"
     state: directory

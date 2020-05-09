@@ -1,0 +1,15 @@
+- name: check if hammerspoon was brewed
+  shell: brew cask info hammerspoon
+  register: hammerspoon_brewed
+  ignore_errors: true
+
+- name: set location of hammerspoon config directory
+  command: defaults write org.hammerspoon.Hammerspoon MJConfigFile "{{ hammerspoon_config_path }}/init.lua"
+  when: hammerspoon_brewed is successful
+
+- name: symlink hammerspoon directory
+  file:
+    src: "{{ role_path }}/files/hammerspoon"
+    dest: "{{ hammerspoon_config_path }}"
+    state: link
+  when: hammerspoon_brewed is successful

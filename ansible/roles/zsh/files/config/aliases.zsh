@@ -1,6 +1,5 @@
 #!/bin/sh
 
-alias ag="echo use \'rg\'"
 alias cat='bat'
 alias be='bundle exec'
 alias ls='ls -lhN --color --group-directories-first --classify'

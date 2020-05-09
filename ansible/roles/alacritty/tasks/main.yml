@@ -1,0 +1,11 @@
+- name: check if alacritty was brewed
+  shell: brew cask info alacritty
+  register: alacritty_brewed
+  ignore_errors: true
+
+- name: symlink alacritty directory
+  file:
+    src: "{{ role_path }}/files/alacritty"
+    dest: "{{ alacritty_config_path }}"
+    state: link
+  when: alacritty_brewed is successful

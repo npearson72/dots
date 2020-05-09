@@ -19,19 +19,27 @@
     line: "{{ zsh_path }}"
   when: brewed_zsh_path.stat.exists
 
-- name: "switch {{ user }}'s shell to zsh"
+- name: switch user "{{ user }}" shell to zsh
   become: yes
   become_user: root
   user:
     name: "{{ user }}"
     shell: "{{ zsh_path }}"
+  register: zsh_installed
   when: brewed_zsh_path.stat.exists
+
+- name: check if .zshrc exists
+  stat:
+    path: "{{ home }}/.zshrc"
+  register: zshrc_path
+  ignore_errors: true
+  when: zsh_installed is successful
 
 - name: copy .zshrc
   template:
     src: "{{ role_path }}/templates/zshrc.j2"
     dest: "{{ home }}/.zshrc"
-  when: brewed_zsh_path.stat.exists
+  when: zsh_installed is successful
 
 - name: create .zshrc.local
   become: true
@@ -39,6 +47,29 @@
     path: "{{ home }}/.zshrc.local"
     state: touch
     owner: "{{ user }}"
-  when: brewed_zsh_path.stat.exists
+  when: zsh_installed is successful
 
-- include_tasks: pet.yml
+- name: create a .zsh_history file
+  file:
+    path: "{{ cache_path }}/.zsh_history"
+    state: touch
+    mode: u=rw,g=rw,o=rw
+  when: zsh_installed is successful
+
+- name: symlink pet files (config and snippets)
+  file:
+    src: "{{ role_path }}/files/pet"
+    dest: "{{ pet_config_path }}"
+    state: link
+  when: zsh_installed is successful
+
+- debug:
+    msg: "=====| WARNING: \
+      ZSH was successfully installed! \
+      Restart your terminal to ensure any other installations use all the ZSH \
+      settings and environemnt variables. \
+      |====="
+  when: zshrc_path is defined and not zshrc_path.stat.exists
+
+- meta: end_play
+  when: zshrc_path is defined and not zshrc_path.stat.exists

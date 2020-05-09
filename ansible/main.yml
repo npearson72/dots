@@ -8,19 +8,21 @@
   roles:
     - { role: pre_build, tags: pre_build }
     - { role: homebrew, tags: homebrew }
-    - { role: zsh, tags: zsh }
+    - { role: alacritty, tags: alacritty }
     - { role: git, tags: git }
+    - { role: hammerspoon, tags: hammerspoon }
     - { role: ripgrep, tags: ripgrep }
-    - { role: ruby, tags: ruby }
-    - { role: nodejs, tags: nodejs }
-    - { role: yarn, tags: yarn, when: computer_type == 'work' }
-    - { role: erlang, tags: erlang }
-    - { role: elixir, tags: elixir }
-    - { role: neovim, tags: neovim }
     - { role: ssh, tags: ssh }
     - { role: tmux, tags: tmux }
-    - { role: openconnect, tags: openconnect, when: computer_type == 'work' }
+    - { role: zsh, tags: zsh }
+    - { role: nodejs, tags: nodejs }
+    - { role: yarn, tags: yarn }
+    - { role: erlang, tags: erlang, when: computer_type == 'home' }
+    - { role: elixir, tags: elixir, when: computer_type == 'home' }
     - { role: postgres, tags: postgres }
-    - { role: iterm2, tags: iterm2 }
+    - { role: python, tags: python }
+    - { role: ruby, tags: ruby }
+    - { role: openconnect, tags: openconnect, when: computer_type == 'work' }
+    - { role: neovim, tags: neovim }
     - { role: mac_os, tags: mac_os }
     - { role: post_build, tags: post_build }

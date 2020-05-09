@@ -6,34 +6,38 @@
   command: defaults write com.apple.dock magnification -bool true
   tags: mac_os_dock
 
+- name: don't show recent applications
+  command: defaults write com.apple.dock show-recents -bool false
+  tags: mac_os_doc
+
 - name: remove default icons from dock
   command: dockutil --remove all
   tags: mac_os_dock
 
 - name: add icons to home dock
-  command: dockutil --add '{{ item }}'
+  command: dockutil --add "{{ item }}"
   with_items:
     - /System/Applications/Launchpad.app
     - /Applications/Google Chrome.app
     - /Applications/Bear.app
     - /System/Applications/Books.app
     - /Applications/Authy Desktop.app
-    - /Applications/iTerm.app
+    - /Applications/Alacritty.app
     - /System/Applications/Utilities/Activity Monitor.app
     - /System/Applications/System Preferences.app
-  when: computer_type == 'home'
+  when: computer_type == "home"
   tags: mac_os_dock
 
 - name: add icons to work dock
-  command: dockutil --add '{{ item }}'
+  command: dockutil --add "{{ item }}"
   with_items:
     - /System/Applications/Launchpad.app
     - /Applications/Google Chrome.app
     - /Applications/Bear.app
     - /Applications/Slack.app
     - /Applications/Authy Desktop.app
-    - /Applications/iTerm.app
+    - /Applications/Alacritty.app
     - /System/Applications/Utilities/Activity Monitor.app
     - /System/Applications/System Preferences.app
-  when: computer_type == 'work'
+  when: computer_type == "work"
   tags: mac_os_dock

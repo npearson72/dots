@@ -10,7 +10,7 @@ _tmux_sessions() {
 #
 # Note: Will only work outside of TMUX
 tmux() {
-  config=$HOME/.config/.tmux.conf
+  config=$XDG_CONFIG_HOME/.tmux.conf
 
   if [[ $1 = menu ]]; then
     if [[ -z $TMUX ]] && [[ $(_tmux_sessions | grep -c created) -ge 1 ]]; then

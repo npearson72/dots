@@ -1,10 +1,10 @@
 - name: check if postgres plugin installed
-  shell: "asdf list | grep postgres"
+  shell: asdf list | grep postgres
   register: postgres_plugin_exists
   ignore_errors: true
 
 - name: install postgres plugin for asdf
-  shell: "asdf plugin-add postgres"
+  shell: asdf plugin-add postgres
   when: postgres_plugin_exists is not successful
 
 - name: check installed postgres version
@@ -21,5 +21,9 @@
   shell: "asdf global postgres {{ postgres_version }}"
   when: postgres_version_exists is successful or postgres_installed is successful
 
-- include_tasks: setup.yml
+- name: reshim postgres
+  shell: asdf reshim postgres
+  when: postgres_version_exists is successful or postgres_installed is successful
+
+- include_tasks: setup_db.yml
   when: postgres_version_exists is successful or postgres_installed is successful

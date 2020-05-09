@@ -1,5 +1,0 @@
-- name: symlink pet files (config and snippets)
-  file:
-    src: "{{ role_path }}/files/pet"
-    dest: "{{ pet_config_path }}"
-    state: link
