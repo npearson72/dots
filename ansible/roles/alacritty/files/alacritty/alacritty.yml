@@ -62,6 +62,8 @@ key_bindings:
   - { key: K,         mods: Command,    chars: "\x1C"     } # See .tmux.conf
   - { key: L,         mods: Alt,        chars: "\x1b\x6c" }
   - { key: O,         mods: Alt,        chars: "\x1b\x6f" }
+  - { key: R,         mods: Shift|Alt,  chars: "\x1b\x52" }
+  - { key: R,         mods: Alt,        chars: "\x1b\x72" }
   - { key: S,         mods: Alt,        chars: "\x1b\x73" }
   - { key: T,         mods: Alt,        chars: "\x1b\x74" }
   - { key: W,         mods: Alt,        chars: "\x1b\x77" }
@@ -69,6 +71,8 @@ key_bindings:
   - { key: Minus,     mods: Shift|Alt,  chars: "\x1b\x5f" }
   - { key: LBracket,  mods: Alt,        chars: "\x1b\x5b" }
   - { key: RBracket,  mods: Alt,        chars: "\x1b\x5d" }
+  - { key: Semicolon, mods: Shift|Alt,  chars: "\x1b\x3a" }
+  - { key: Slash,     mods: Alt,        chars: "\x1b\x2f" }
 
   - {
       key: N,
