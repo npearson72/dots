@@ -37,6 +37,7 @@ brew 'gzip'
 brew 'htop'
 brew 'imagemagick'
 brew 'kibana'
+brew 'kubectl' if work
 brew 'mas'
 brew 'neovim'
 brew 'openconnect' if work
