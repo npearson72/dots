@@ -26,25 +26,21 @@ let g:airline_symbols.notexists='*'
 let g:airline_theme_patch_func = 'AirlineThemePatch'
 function! AirlineThemePatch(palette)
   if g:airline_theme == 'pencil'
-      let airline_warning = ['', '#D75F5F', '', 167, '']
-      let a:palette.normal.airline_warning = airline_warning
-      let a:palette.insert.airline_warning = airline_warning
-      let a:palette.visual.airline_warning = airline_warning
-      let a:palette.replace.airline_warning = airline_warning
-      let a:palette.normal_modified.airline_warning = airline_warning
-      let a:palette.insert_modified.airline_warning = airline_warning
-      let a:palette.visual_modified.airline_warning = airline_warning
-      let a:palette.replace_modified.airline_warning = airline_warning
+    let keys = [
+          \ 'normal',
+          \ 'insert',
+          \ 'visual',
+          \ 'replace',
+          \ 'normal_modified',
+          \ 'insert_modified',
+          \ 'visual_modified',
+          \ 'replace_modified'
+          \ ]
 
-      let airline_error = ['', '#E32791', '', 1, '']
-      let a:palette.normal.airline_error = airline_error
-      let a:palette.insert.airline_error = airline_error
-      let a:palette.visual.airline_error = airline_error
-      let a:palette.replace.airline_error = airline_error
-      let a:palette.normal_modified.airline_error = airline_error
-      let a:palette.insert_modified.airline_error = airline_error
-      let a:palette.visual_modified.airline_error = airline_error
-      let a:palette.replace_modified.airline_error = airline_error
+    for key in keys
+      let a:palette[key].airline_warning = ['', '#D75F5F', '', 167, '']
+      let a:palette[key].airline_error = ['', '#E32791', '', 1, '']
+    endfor
   endif
 endfunction
 
