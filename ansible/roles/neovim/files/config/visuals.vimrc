@@ -8,7 +8,9 @@ highlight Normal ctermfg=NONE ctermbg=NONE
 
 " Color column
 set colorcolumn=80
-hi ColorColumn ctermbg=00 ctermfg=NONE
+hi ColorColumn ctermbg=235 ctermfg=235
+hi CursorColumn ctermbg=235 ctermfg=NONE
+hi! link CursorLine CursorColumn
 
 "=================
 " Plugins
@@ -72,6 +74,6 @@ hi link NERDTreeClosable NERDTreeOpenable
 hi NERDTreeFile ctermfg=NONE ctermfg=251
 
 " Taboo
-hi TabLineFill ctermfg=08 ctermbg=08
-hi TabLine ctermfg=249 ctermbg=08
+hi TabLineFill ctermfg=235 ctermbg=235
+hi TabLine ctermfg=08 ctermbg=235
 hi TabLineSel ctermfg=02 ctermbg=NONE

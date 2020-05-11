@@ -23,11 +23,11 @@ font:
 colors:
  # Default Colors
  primary:
-   background: '#2c2c2c'
+   background: '#1c1c1c'
    foreground: '#f1f1f1'
  # Normal colors
  normal:
-   black:   '#262626'
+   black:   '#1c1c1c'
    red:     '#d02783'
    green:   '#00b38a'
    yellow:  '#b6a917'
