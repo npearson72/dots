@@ -2,6 +2,8 @@
 
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
 
 # Brew bundle
 export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/Brewfile
@@ -32,7 +34,7 @@ export CPPFLAGS='-I/usr/local/opt/openssl/include'
 export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 
 # Postgres
-export PSQL_HISTORY=$HOME/.cache/.psql_history
+export PSQL_HISTORY=$XDG_CACHE_HOME/.psql_history
 
 # Ripgrep (aka: rg)
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc

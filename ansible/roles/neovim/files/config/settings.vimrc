@@ -24,7 +24,7 @@ let g:python3_host_prog='$HOME/.asdf/shims/python'
 set nobackup
 
 " set a centralized backup directory
-set backupdir=$HOME/.local/share/nvim/backup//
+set backupdir=$XDG_DATA_HOME/nvim/backup//
 
 if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")

@@ -80,7 +80,7 @@ let g:fzf_action = {
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 
 " NERDTree
-let NERDTreeBookmarksFile=expand("$HOME/.local/shared/nvim/NERDTreeBookmarks")
+let NERDTreeBookmarksFile=expand("$XDG_DATA_HOME/nvim/NERDTreeBookmarks")
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeMapOpenSplit='s'
