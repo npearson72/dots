@@ -63,23 +63,6 @@ if ComputerType('home')
         \*.yaml Prettier
 endif
 
-" FZF
-" FZF display preview window while searching (ctrl-p)
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
-
-command! -bang -nargs=? -complete=dir Buffers
-  \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%', 'ctrl-p'))
-
-command! -bang -nargs=? -complete=dir History
-  \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
-
-" FZF as grep (Using ripgrep)
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.(<q-args>), 1,
-  \   fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'), <bang>0)
-
 " Projectionist
 autocmd User ProjectionistDetect
       \ call projectionist#append(getcwd(),

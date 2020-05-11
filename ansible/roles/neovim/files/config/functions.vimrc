@@ -1,13 +1,13 @@
 " Zoom / Restore window
 function! s:ZoomToggle() abort
   if exists('t:zoomed') && t:zoomed
-      execute t:zoom_winrestcmd
-      let t:zoomed = 0
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
   else
-      let t:zoom_winrestcmd = winrestcmd()
-      resize
-      vertical resize
-      let t:zoomed = 1
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
   endif
 endfunction
 command! ZoomToggle call s:ZoomToggle()
@@ -29,9 +29,9 @@ command! SaveBackups call s:SaveBackups()
 function! s:SaveBackup(backupdir)
   let l:filename = expand('%:p')
   if a:backupdir =~ '//$'
-      let l:backup = escape(substitute(l:filename, '/', '%', 'g')  . &backupext, '%')
+    let l:backup = escape(substitute(l:filename, '/', '%', 'g')  . &backupext, '%')
   else
-      let l:backup = escape(expand('%') . &backupext, '%')
+    let l:backup = escape(expand('%') . &backupext, '%')
   endif
 
   let l:backup_path = a:backupdir . l:backup
@@ -51,6 +51,7 @@ function! s:fzf_ctrlp(idx)
 endfunction
 command! FZFCtrlp call <sid>fzf_ctrlp(0)
 
+" FZF BD (Buffer Delete)
 function! s:list_buffers()
   redir => list
   silent ls
@@ -63,6 +64,22 @@ function! s:delete_buffers(lines)
 endfunction
 
 command! BD call fzf#run(fzf#wrap({
-  \ 'source': s:list_buffers(),
-  \ 'sink*': { lines -> s:delete_buffers(lines) }
-\ }))
+      \ 'source': s:list_buffers(),
+      \ 'sink*': { lines -> s:delete_buffers(lines) }
+      \ }))
+
+" FZF display preview window while searching (ctrl-p)
+command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
+
+command! -bang -nargs=? -complete=dir Buffers
+      \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+
+command! -bang -nargs=? -complete=dir History
+      \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+
+" FZF as grep (Using ripgrep)
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --color=always --smart-case '.(<q-args>), 1,
+      \   fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'), <bang>0)
