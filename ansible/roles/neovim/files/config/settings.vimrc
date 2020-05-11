@@ -1,3 +1,5 @@
+filetype plugin indent on
+
 set autoindent
 set backspace=indent,eol,start
 set completeopt=longest,menuone,preview

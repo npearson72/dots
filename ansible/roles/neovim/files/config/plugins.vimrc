@@ -65,7 +65,8 @@ let g:coc_global_extensions=[
       \ 'coc-solargraph',
       \ 'coc-tsserver',
       \ 'coc-snippets',
-      \ 'coc-vetur'
+      \ 'coc-vetur',
+      \ 'coc-highlight'
       \]
 
 " FZF
