@@ -33,7 +33,7 @@ endif
 "=================================
 " Plugins
 "=================================
-" COC
+" Coc
 " Fix for coc-vetur: https://github.com/neoclide/coc-vetur/issues/3
 set signcolumn=yes
 set shortmess+=c

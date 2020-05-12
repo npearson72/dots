@@ -54,7 +54,7 @@ let g:airline_section_z=airline#section#create(['%1p%% %l/%L:%c '])
 
 if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 
-" CoC
+" Coc
 let g:coc_global_extensions=[
       \ 'coc-css',
       \ 'coc-elixir',
