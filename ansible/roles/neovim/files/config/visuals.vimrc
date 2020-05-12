@@ -8,7 +8,7 @@ highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " Color column
 set colorcolumn=80
-hi ColorColumn ctermfg=235 ctermbg=235 guifg='#262626' guibg='#262626'
+hi ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg='#262626'
 hi CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg='#262626'
 hi! link CursorLine CursorColumn
 
@@ -28,6 +28,12 @@ let g:airline_symbols.notexists='*'
 let g:airline_theme_patch_func = 'AirlineThemePatch'
 function! AirlineThemePatch(palette)
   if g:airline_theme == 'pencil'
+
+    let warning_colors = ['', '#d75F5f', '', 167, '']
+    let error_colors = ['', '#c30771', '', 1, '']
+    let inactive_colors = ['#535353', '#262626', 08, 235, '']
+
+    " Active states
     let keys = [
           \ 'normal',
           \ 'insert',
@@ -40,9 +46,26 @@ function! AirlineThemePatch(palette)
           \ ]
 
     for key in keys
-      let a:palette[key].airline_warning = ['', '#d75F5f', '', 167, '']
-      let a:palette[key].airline_error = ['', '#c30771', '', 1, '']
+      let a:palette[key].airline_warning = warning_colors
+      let a:palette[key].airline_error = error_colors
+      let a:palette[key].airline_c = inactive_colors
     endfor
+
+    " Inactive states
+    let keys = [
+          \ 'airline_a',
+          \ 'airline_b',
+          \ 'airline_c',
+          \ 'airline_x',
+          \ 'airline_y',
+          \ 'airline_z',
+          \]
+
+    for key in keys
+      let a:palette.inactive[key] = inactive_colors
+    endfor
+
+    let a:palette.inactive_modified.airline_c = inactive_colors
   endif
 endfunction
 
