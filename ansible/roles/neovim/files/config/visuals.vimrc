@@ -12,6 +12,28 @@ hi ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg='#262626'
 hi CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg='#262626'
 hi! link CursorLine CursorColumn
 
+" Keep neovim terminal colors consistent with shell
+
+" Normal colors
+let g:terminal_color_0="#212121" " black
+let g:terminal_color_1="#d02783" " red
+let g:terminal_color_2="#00b38a" " green
+let g:terminal_color_3="#b6a917" " yellow
+let g:terminal_color_4="#009fcf" " blue
+let g:terminal_color_5="#65508b" " magenta
+let g:terminal_color_6="#1eb3c6" " cyan
+let g:terminal_color_7="#e0e0e0" " white
+
+" Bright colors
+let g:terminal_color_8="#535353"  " black
+let g:terminal_color_9="#fe2e8c"  " red
+let g:terminal_color_10="#6ddcbc" " green
+let g:terminal_color_11="#f5e63d" " yellow
+let g:terminal_color_12="#1ac7fc" " blue
+let g:terminal_color_13="#7b6fe4" " magenta
+let g:terminal_color_14="#5dc3d5" " cyan
+let g:terminal_color_15="#f3f3f3" " white
+
 "=================
 " Plugins
 "=================

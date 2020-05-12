@@ -5,6 +5,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
+export BAT_THEME=zenburn
+
 # Brew bundle
 export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/Brewfile
 export HOMEBREW_BUNDLE_NO_LOCK=false
