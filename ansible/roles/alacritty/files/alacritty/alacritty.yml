@@ -50,6 +50,8 @@ colors:
    text: '#f3f3f3'
    cursor: '#1ac7fc'
 
+# background_opacity: 0.99
+
 visual_bell:
   duration: 10
   color: '#626262'
