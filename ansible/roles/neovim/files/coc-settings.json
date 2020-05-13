@@ -4,6 +4,26 @@
   "diagnostic.infoSign": "",
   "eslint.run": "onSave",
   "eslint.filetypes": ["javascript", "vue"],
+  "explorer.width": 40,
+  "explorer.quitOnOpen": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.file.column.indent.indentLine": false,
+  "explorer.file.column.indent.chars": "  ",
+  "explorer.sources": [
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.file.child.template": "[selection | clip] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.file.root.template": "[icon] [fullpath]",
+  "explorer.keyMappings": {
+    "h": false,
+    "l": false,
+    "v": "open:vsplit"
+  },
   "prettier.arrowParens": "avoid",
   "prettier.eslintIntegration": true,
   "prettier.printWidth": 80,

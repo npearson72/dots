@@ -102,8 +102,10 @@ nnoremap <leader>s :Rg<space>
 nnoremap <leader>u :MundoToggle<cr>
 
 " NERDTree
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<cr>
+" nnoremap <leader>n :NERDTreeToggle<cr>
+" nnoremap <leader>f :NERDTreeFind<cr>
+nnoremap <leader>n :CocCommand explorer<cr>
+nnoremap <leader>f :CocCommand explorer<cr>
 
 " Tabularize
 vnoremap <leader>T :Tabularize /
