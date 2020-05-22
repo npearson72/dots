@@ -45,10 +45,10 @@ _pg_start() {
 }
 
 _pg_start_process() {
-  if [[ -f $(pwd)/.tool-versions ]]; then
-    pg_ctl -D /usr/local/var/postgres-$(_pg_local_version) start
-  else
+  if [[ -z $(_pg_local_version) ]]; then
     pg_ctl -D /usr/local/var/postgres-$(_pg_global_version) start
+  else
+    pg_ctl -D /usr/local/var/postgres-$(_pg_local_version) start
   fi
 }
 
