@@ -101,6 +101,9 @@ let g:UltiSnipsSnippetDirectories=[
       \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
       \]
 
+" vim-visual-multi
+let g:VM_case_setting='sensitive'
+
 " Vim Polyglot
 " posa/vim-vue (included in vim-polyglot)
 " https://github.com/posva/vim-vue#vim-slows-down-when-using-this-plugin-how-can-i-fix-that
