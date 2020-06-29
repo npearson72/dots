@@ -40,7 +40,6 @@
   command: "{{ item }}"
   with_items:
     - chflags nohidden ~/Library
-    - xattr -d com.apple.FinderInfo ~/Library
   tags: mac_os_finder
 
 - name: show the /Volumes folder
