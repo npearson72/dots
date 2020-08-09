@@ -54,7 +54,7 @@ colors:
 
 # background_opacity: 0.99
 
-visual_bell:
+bell:
   duration: 10
   color: '#626262'
 
