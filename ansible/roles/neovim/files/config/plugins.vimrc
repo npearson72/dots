@@ -103,6 +103,7 @@ let g:UltiSnipsSnippetDirectories=[
 
 " vim-visual-multi
 let g:VM_case_setting='sensitive'
+let g:VM_quit_after_leaving_insert_mode=1 " Quit insert mode immediately on <esc>
 
 " Vim Polyglot
 " posa/vim-vue (included in vim-polyglot)
