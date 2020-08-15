@@ -17,27 +17,28 @@ autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 " Use custom function to create backups
 autocmd BufWritePre * SaveBackups
 
-" mkview to save folds, etc.
-autocmd BufWrite,ExitPre,QuitPre,VimLeavePre \
-      \*.coffee,
-      \*.css,
-      \*.erb,
-      \*.haml,
-      \*.html,
-      \*.less,
-      \*.js,
-      \*.json,
-      \*.jsx,
-      \*.rb,
-      \*.scss,
-      \*.slim,
-      \*.ts,
-      \*.tsx,
-      \*.vue,
-      \*.yaml mkview
+" Locks up certain files that are using coc-tsserver for some reason??
+" " mkview to save folds, etc.
+" autocmd BufWrite,ExitPre,QuitPre,VimLeavePre \
+"       \*.coffee,
+"       \*.css,
+"       \*.erb,
+"       \*.haml,
+"       \*.html,
+"       \*.less,
+"       \*.js,
+"       \*.json,
+"       \*.jsx,
+"       \*.rb,
+"       \*.scss,
+"       \*.slim,
+"       \*.ts,
+"       \*.tsx,
+"       \*.vue,
+"       \*.yaml mkview
 
-" Load views
-autocmd BufRead * silent! loadview
+" " Load views
+" autocmd BufRead * silent! loadview
 
 "=================================
 " Filetypes
