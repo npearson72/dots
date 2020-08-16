@@ -25,9 +25,6 @@
 # Exclude webpack directories
 --glob=!{public/packs}
 
-# Exclude elixir directories
---glob=!{_build,deps,dist,doc}
-
 # Exclude rails directories
 --glob=!{log/*.log,tmp}
 

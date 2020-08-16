@@ -63,10 +63,6 @@ autocmd FileType vue syntax sync fromstart
 " Plugins
 "=================================
 " Coc
-" Elxir 'no mix found in project' issue
-" https://github.com/JakeBecker/elixir-ls/issues/76
-autocmd FileType elixir let b:coc_root_patterns = ['mix.exs']
-
 if ComputerType('home')
   command! -nargs=0 Format :call CocAction('format')
   autocmd BufWrite *.ex,*.exs,*.rb Format

@@ -16,9 +16,6 @@ export VISUAL=nvim
 export GIT_EDITOR=$VISUAL
 export EDITOR=$VISUAL
 
-# Erlang/Elixir
-export ERL_AFLAGS='-kernel shell_history enabled'
-
 # FZF
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --no-mouse --tiebreak=index'
 export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
