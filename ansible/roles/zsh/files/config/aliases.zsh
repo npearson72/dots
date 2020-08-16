@@ -10,3 +10,4 @@ if command -v nvim &> /dev/null; then
 fi
 alias reload!='exec zsh -l'
 alias start_rails='bundle exec rails s -b 0.0.0.0'
+alias j='fasd_cd -d'
