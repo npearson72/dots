@@ -9,6 +9,8 @@
   "prettier.printWidth": 80,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
   "suggest.snippetIndicator": " ",
   "vetur.validation.template": false
 }
