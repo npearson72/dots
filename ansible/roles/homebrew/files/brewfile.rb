@@ -42,6 +42,7 @@ brew 'mas'
 brew 'neovim'
 brew 'openconnect' if work
 brew 'openssh'
+brew 'postgresql' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
