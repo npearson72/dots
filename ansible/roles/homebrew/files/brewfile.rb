@@ -5,6 +5,7 @@ work = File.readlines("#{Dir.home}/.dots/.env").any? do |line|
 end
 
 tap 'getantibody/tap'
+tap 'elastic/tap'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
@@ -21,7 +22,8 @@ brew 'bat'
 brew 'cmake'
 brew 'diff-so-fancy'
 brew 'dockutil'
-brew 'elasticsearch', restart_service: true
+brew 'elastic/tap/elasticsearch-oss', restart_service: true
+brew 'elastic/tap/kibana-oss'
 brew 'fasd'
 brew 'findutils'
 brew 'fzf'
@@ -36,7 +38,6 @@ brew 'gnu-which'
 brew 'gzip'
 brew 'htop'
 brew 'imagemagick'
-brew 'kibana'
 brew 'kubectl' if work
 brew 'mas'
 brew 'neovim'
@@ -68,7 +69,7 @@ cask 'ngrok'
 cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
-cask 'slack' if work
+cask 'slack'
 cask 'transmission' unless work
 cask 'vlc'
 mas 'Bear', id: '1091189122'.to_i
