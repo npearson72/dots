@@ -23,7 +23,7 @@
 --glob=!{node_modules}
 
 # Exclude webpack directories
---glob=!{public/packs}
+--glob=!{public/packs,dist*}
 
 # Exclude rails directories
 --glob=!{log/*.log,tmp}
