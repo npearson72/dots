@@ -112,6 +112,12 @@ vnoremap <leader>T :Tabularize /
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+" Coc - Bookmark
+nmap mj <plug>(coc-bookmark-next)
+nmap mk <plug>(coc-bookmark-prev)
+nmap mm <plug>(coc-bookmark-toggle)
+nmap ml :CocList bookmark<cr>
+
 " Mapped to UltiSnips in plugins.vimrc
 inoremap <silent><expr><c-j> pumvisible() ? "\<c-y><c-r>=UltiSnips#ExpandSnippet()<cr>" : "\<c-j>"
 nmap <silent> gd <Plug>(coc-definition)
