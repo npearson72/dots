@@ -96,7 +96,7 @@ let g:taboo_tab_format=' %f%U '
 
 " UltiSnips
 let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger="<c-y>"
+let g:UltiSnipsExpandTrigger='<nop>'
 let g:UltiSnipsSnippetDirectories=[
       \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
       \]
