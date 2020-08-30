@@ -2,6 +2,8 @@
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
+  "flutter.trace.server": "verbose",
+  "flutter.lsp.debug": true,
   "eslint.run": "onSave",
   "eslint.filetypes": ["javascript", "vue"],
   "prettier.arrowParens": "avoid",

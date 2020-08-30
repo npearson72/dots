@@ -30,3 +30,6 @@
 
 # Exclude nodejs files
 --glob=!{package-lock.json}
+
+# Exclude yarn files
+--glob=!{yarn-error*,yarn.lock}
