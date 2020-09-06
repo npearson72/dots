@@ -102,20 +102,6 @@ hi CocInfoFloat ctermfg=251 ctermbg=NONE guifg='#c6c6c6' guibg=NONE
 hi link CocWarningFloat CocInfoFloat
 hi link CocErrorFloat CocInfoFloat
 
-" Devicons
-let g:WebDevIconsNerdTreeBeforeGlyphPadding=''
-let g:WebDevIconsUnicodeDecorateFolderNodes=1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
-let g:DevIconsEnableFoldersOpenClose=1
-
-" NERDTree
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
-
-hi link NERDTreeFlags NERDTreeDir
-hi NERDTreeOpenable ctermfg=242 ctermbg=NONE guifg='#6c6c6c' guibg=NONE
-hi link NERDTreeClosable NERDTreeOpenable
-
 " Taboo
 hi TabLineFill ctermfg=235 ctermbg=235 guifg='#262626' guibg='#262626'
 hi TabLine ctermfg=08 ctermbg=235 guifg='#535353' guibg='#262626'

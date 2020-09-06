@@ -13,7 +13,6 @@ Plug 'sheerun/vim-polyglot'
 Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
 Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
-Plug 'scrooloose/nerdtree'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -79,13 +78,6 @@ let g:fzf_action = {
 
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
-
-" NERDTree
-let NERDTreeBookmarksFile=expand("$XDG_DATA_HOME/nvim/NERDTreeBookmarks")
-let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen=1
-let NERDTreeMapOpenSplit='s'
-let NERDTreeMapOpenVSplit='v'
 
 " RubyRunner
 let g:RubyRunner_key='<leader>e'

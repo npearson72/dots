@@ -119,6 +119,9 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Coc - Explorer
+nnoremap <leader>e :CocCommand explorer<cr>
+
 " Coc - Flutter
 nnoremap <leader>F :CocList --input=flutter commands<cr>
 
@@ -129,10 +132,6 @@ nnoremap <leader>s :Rg<space>
 
 " Mundo
 nnoremap <leader>u :MundoToggle<cr>
-
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<cr>
 
 " Tabularize
 vnoremap <leader>T :Tabularize /
