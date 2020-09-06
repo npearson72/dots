@@ -3,8 +3,8 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 " UI/UX
 Plug 'bling/vim-airline'
 Plug 'reedes/vim-colors-pencil'
-Plug 'gcmt/taboo.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'gcmt/taboo.vim'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -56,6 +56,7 @@ if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 
 " Coc
 let g:coc_global_extensions=[
+      \ 'coc-actions',
       \ 'coc-css',
       \ 'coc-eslint',
       \ 'coc-flutter',

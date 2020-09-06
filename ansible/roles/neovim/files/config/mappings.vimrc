@@ -60,7 +60,7 @@ nmap <F1> <esc>
 imap <F1> <esc>
 
 " Select all
-nnoremap <leader>a ggVG
+" nnoremap <leader>a ggVG
 
 " Change pwd to current file
 nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
@@ -93,6 +93,25 @@ cnoremap <c-e> <end>
 "=================================
 " Plugins
 "=================================
+" Coc
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Coc - Actions
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+" Coc - Flutter
+nnoremap <leader>F :CocList --input=flutter commands<cr>
+
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>
 nnoremap <leader>b :Buffers<cr>
@@ -108,18 +127,5 @@ nnoremap <leader>f :NERDTreeFind<cr>
 " Tabularize
 vnoremap <leader>T :Tabularize /
 
-" Coc - navigate menu the way you want
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-" Coc - Flutter
-nnoremap <c-f> :CocList --input=flutter commands<cr>
-xmap <c-s> <Plug>(coc-codeaction-selected)
-nmap <c-s> <Plug>(coc-codeaction-selected)
-
-" Mapped to UltiSnips in plugins.vimrc
+" UltiSnips (<c-y> defined in plugins.vimrc to avoid conflicts)
 inoremap <silent><expr><c-j> pumvisible() ? "\<c-y><c-r>=UltiSnips#ExpandSnippet()<cr>" : "\<c-j>"
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
