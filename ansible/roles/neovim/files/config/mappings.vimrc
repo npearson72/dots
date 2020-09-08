@@ -60,7 +60,7 @@ nmap <F1> <esc>
 imap <F1> <esc>
 
 " Select all
-" nnoremap <leader>a ggVG
+nnoremap <leader>a ggVG
 
 " Change pwd to current file
 nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
@@ -106,8 +106,8 @@ nmap <silent> gr <Plug>(coc-references)
 function! s:cocActionsOpenFromSelected(type) abort
   execute 'CocCommand actions.open ' . a:type
 endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+xmap <silent> <c-a> :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <c-a> :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " Coc - Documentation
 nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
@@ -123,7 +123,7 @@ endfunction
 nnoremap <leader>e :CocCommand explorer<cr>
 
 " Coc - Flutter
-nnoremap <leader>F :CocList --input=flutter commands<cr>
+nnoremap <c-f> :CocList --input=flutter commands<cr>
 
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>

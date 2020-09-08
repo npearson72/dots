@@ -9,6 +9,7 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.keyMappings": {
+    "<2-LeftMouse>": "null",
     "l": "null",
     "E": "null",
     "v": "open:vsplit"
