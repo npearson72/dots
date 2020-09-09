@@ -57,6 +57,7 @@ if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
 let g:coc_global_extensions=[
       \ 'coc-actions',
       \ 'coc-css',
+      \ 'coc-emoji',
       \ 'coc-eslint',
       \ 'coc-flutter',
       \ 'coc-html',
