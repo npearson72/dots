@@ -106,11 +106,11 @@ nmap <silent> gr <Plug>(coc-references)
 function! s:cocActionsOpenFromSelected(type) abort
   execute 'CocCommand actions.open ' . a:type
 endfunction
-xmap <silent> <c-a> :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <c-a> :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+xmap <silent> <c-a> :<c-u>execute 'CocCommand actions.open ' . visualmode()<cr>
+nmap <silent> <c-a> :<c-u>set operatorfunc=<SID>cocActionsOpenFromSelected<cr>g@w<cr>
 
 " Coc - Documentation
-nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
+nnoremap <silent> <leader>d :call <SID>show_documentation()<cr>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
