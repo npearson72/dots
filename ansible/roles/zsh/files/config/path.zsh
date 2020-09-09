@@ -8,9 +8,11 @@ GNU_PATH="/usr/local/opt/coreutils/libexec/gnubin:\
 /usr/local/opt/gnu-sed/libexec/gnubin:\
 /usr/local/opt/gnu-tar/libexec/gnubin:\
 /usr/local/opt/gnu-which/libexec/gnubin"
-SSL_PATH="/usr/local/opt/openssl/bin"
+SSL_PATH='/usr/local/opt/openssl/bin'
+ASDF_PATH="$HOME/.asdf/bin"
+PUB_CACHE_PATH="$HOME/.pub-cache/bin" # Flutter pub binaries
 
-export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$PATH"
+export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$PUB_CACHE_PATH:$PATH"
 
 # FZF
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then

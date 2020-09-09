@@ -35,6 +35,9 @@ export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 # Postgres
 export PSQL_HISTORY=$XDG_CACHE_HOME/.psql_history
 
+# Python Fix
+export LANG=en_US.UTF-8
+
 # Ripgrep (aka: rg)
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc
 
