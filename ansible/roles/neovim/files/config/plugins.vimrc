@@ -81,7 +81,7 @@ let g:fzf_action = {
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 
 " RubyRunner
-let g:RubyRunner_key='<leader>e'
+let g:RubyRunner_key='<leader>r'
 let g:RubyRunner_open_below=1
 let g:RubyRunner_window_size=10
 
