@@ -96,6 +96,7 @@ cnoremap <c-e> <end>
 " Coc
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <silent><expr><c-j> pumvisible() ? "\<c-y>" : "\<c-j>"
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -135,6 +136,3 @@ nnoremap <leader>u :MundoToggle<cr>
 
 " Tabularize
 vnoremap <leader>T :Tabularize /
-
-" UltiSnips (<c-y> defined in plugins.vimrc to avoid conflicts)
-inoremap <silent><expr><c-j> pumvisible() ? "\<c-y><c-r>=UltiSnips#ExpandSnippet()<cr>" : "\<c-j>"
