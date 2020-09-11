@@ -32,6 +32,7 @@
   "prettier.printWidth": 80,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
+  "snippets.priority": 100,
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "suggest.snippetIndicator": " ",
