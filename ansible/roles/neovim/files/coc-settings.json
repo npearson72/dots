@@ -23,8 +23,8 @@
       "expand": true
     }
   ],
-  "flutter.trace.server": "verbose",
-  "flutter.lsp.debug": true,
+  "flutter.sdk.flutter-lookup": "asdf which flutter",
+  "flutter.sdk.dart-lookup": "asdf which dart",
   "eslint.run": "onSave",
   "eslint.filetypes": ["javascript", "vue"],
   "prettier.arrowParens": "avoid",

@@ -103,15 +103,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Coc - Actions
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <c-a> :<c-u>execute 'CocCommand actions.open ' . visualmode()<cr>
-nmap <silent> <c-a> :<c-u>set operatorfunc=<SID>cocActionsOpenFromSelected<cr>g@w<cr>
-
-" Coc - Documentation
-nnoremap <silent> <leader>d :call <SID>show_documentation()<cr>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -119,12 +110,16 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+nnoremap <silent> <leader>d :call <SID>show_documentation()<cr>
+
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <c-a> :<c-u>execute 'CocCommand actions.open ' . visualmode()<cr>
+nmap <silent> <c-a> :<c-u>set operatorfunc=<SID>cocActionsOpenFromSelected<cr>g@w<cr>
 
 " Coc - Explorer
 nnoremap <leader>e :CocCommand explorer<cr>
-
-" Coc - Flutter
-nnoremap <c-f> :CocList --input=flutter commands<cr>
 
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>
