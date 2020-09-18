@@ -17,6 +17,13 @@ autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 " Use custom function to create backups
 autocmd BufWritePre * SaveBackups
 
+" Save folds
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave,BufLeave ?* silent! mkview
+  autocmd BufWinEnter ?* silent! loadview
+augroup END
+
 "=================================
 " Filetypes
 "=================================
