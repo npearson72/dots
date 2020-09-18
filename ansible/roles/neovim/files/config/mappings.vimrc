@@ -43,7 +43,6 @@ nnoremap <leader><space> :noh<cr>
 " Folding
 nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
 vnoremap <space> zf
-nnoremap <expr> <c-space> &foldlevel ? 'zM' :'zR'
 
 " Keep search matches in the middle of the window
 nnoremap n nzzzv
@@ -117,6 +116,13 @@ function! s:cocActionsOpenFromSelected(type) abort
 endfunction
 xmap <silent> <c-a> :<c-u>execute 'CocCommand actions.open ' . visualmode()<cr>
 nmap <silent> <c-a> :<c-u>set operatorfunc=<SID>cocActionsOpenFromSelected<cr>g@w<cr>
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " Coc - Explorer
 nnoremap <leader>e :CocCommand explorer<cr>
