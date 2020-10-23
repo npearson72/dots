@@ -36,7 +36,6 @@ Plug 'wesQ3/vim-windowswap'
 
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby'
-Plug 'henrik/vim-ruby-runner'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user' " Required for vim-textobj-rubyblock
 
@@ -79,11 +78,6 @@ let g:fzf_action = {
 
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
-
-" RubyRunner
-let g:RubyRunner_key='<leader>r'
-let g:RubyRunner_open_below=1
-let g:RubyRunner_window_size=10
 
 " Taboo
 let g:taboo_tab_format=' %f%U '
