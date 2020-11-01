@@ -16,8 +16,6 @@ set undofile
 set visualbell
 set nosplitright
 
-" let g:python3_host_prog=$HOME.'/.asdf/shims/python'
-
 "=================================
 " Backups
 "=================================

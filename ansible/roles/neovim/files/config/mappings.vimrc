@@ -125,7 +125,8 @@ else
 endif
 
 " Coc - Explorer
-nnoremap <leader>e :CocCommand explorer<cr>
+nnoremap <leader>e :CocCommand explorer --preset pwd<cr>
+
 
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>

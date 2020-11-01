@@ -69,6 +69,13 @@ let g:coc_global_extensions=[
       \ 'coc-vetur'
       \]
 
+
+let g:coc_explorer_global_presets = {
+      \   'pwd': {
+      \     'root-uri': getcwd(),
+      \   },
+      \ }
+
 " FZF
 let g:fzf_layout={ 'down': '50%' }
 let g:fzf_action = {
