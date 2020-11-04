@@ -10,7 +10,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'sheerun/vim-polyglot'
 
 " File management, search, navigation
-Plug '/usr/local/opt/fzf' " Homebrew managed fzf binary
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
 
@@ -26,18 +26,17 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
-Plug 'suy/vim-context-commentstring' " For JSX comments
+Plug 'suy/vim-context-commentstring', { 'for': ['jsx', 'tsx', 'vue' ] } " For JSX comments
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
-Plug 'junegunn/vim-peekaboo'
 Plug 'simnalamburt/vim-mundo'
 Plug 'othree/eregex.vim'
 Plug 'wesQ3/vim-windowswap'
 
 " Ruby/Rails
-Plug 'vim-ruby/vim-ruby'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'kana/vim-textobj-user' " Required for vim-textobj-rubyblock
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'kana/vim-textobj-user', { 'for': 'ruby' } " Required for vim-textobj-rubyblock
 
 " Git
 Plug 'tpope/vim-fugitive'
