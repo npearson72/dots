@@ -3,6 +3,8 @@
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
+  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "emmet.showSuggestionsAsSnippets": true,
   "eslint.run": "onSave",
   "eslint.filetypes": ["javascript", "vue"],
   "explorer.file.child.template": "[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]",

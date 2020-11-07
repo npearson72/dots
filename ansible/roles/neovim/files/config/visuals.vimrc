@@ -34,62 +34,31 @@ let g:terminal_color_13='#6855de' " magenta
 let g:terminal_color_14='#4fb8cc' " cyan
 let g:terminal_color_15='#ffffff' " white
 
-"=================
-" Plugins
-"=================
-" Airline
-let g:airline_theme='pencil'
-let g:airline_left_sep=''
-let g:airline_left_alt_sep=''
-let g:airline_right_sep=''
-let g:airline_right_alt_sep=''
-let g:airline_symbols.branch=''
-let g:airline_symbols.readonly=''
-let g:airline_symbols.notexists='*'
-
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-  if g:airline_theme == 'pencil'
-
-    let warning_colors = ['', '#d75F5f', '', 167, '']
-    let error_colors = ['', '#c30771', '', 1, '']
-    let inactive_colors = ['#535353', '#262626', 08, 235, '']
-
-    " Active states
-    let keys = [
-          \ 'normal',
-          \ 'insert',
-          \ 'visual',
-          \ 'replace',
-          \ 'normal_modified',
-          \ 'insert_modified',
-          \ 'visual_modified',
-          \ 'replace_modified'
-          \ ]
-
-    for key in keys
-      let a:palette[key].airline_warning = warning_colors
-      let a:palette[key].airline_error = error_colors
-      let a:palette[key].airline_c = inactive_colors
-    endfor
-
-    " Inactive states
-    let keys = [
-          \ 'airline_a',
-          \ 'airline_b',
-          \ 'airline_c',
-          \ 'airline_x',
-          \ 'airline_y',
-          \ 'airline_z',
-          \]
-
-    for key in keys
-      let a:palette.inactive[key] = inactive_colors
-    endfor
-
-    let a:palette.inactive_modified.airline_c = inactive_colors
-  endif
+" Statusline
+function! GitInfo()
+  let git = fugitive#head()
+  if git != ''
+    return ' '.fugitive#head()
+  else
+    return ''
 endfunction
+
+set statusline=
+set statusline+=%#StatusLineNC#
+set statusline+=\ %{GitInfo()}
+set statusline+=%#Tabline#
+set statusline+=\ %t
+set statusline+=%=
+set statusline+=\ %{&filetype}
+set statusline+=\ 
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ 
+set statusline+=\ spaces:
+set statusline+=%{&tabstop}
+set statusline+=\ 
+set statusline+=\ ln\ %l,\ col\ %c
+set statusline+=\ 
+
 
 " Coc
 hi CocInfoSign ctermfg=03 ctermbg=NONE guifg='#b6a917' guibg=NONE

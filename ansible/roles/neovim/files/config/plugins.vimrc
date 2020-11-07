@@ -1,7 +1,6 @@
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 
 " UI/UX
-Plug 'bling/vim-airline'
 Plug 'reedes/vim-colors-pencil'
 Plug 'ryanoasis/vim-devicons'
 Plug 'gcmt/taboo.vim'
@@ -44,17 +43,13 @@ Plug 'mhinz/vim-signify'
 
 call plug#end()
 
-" Airline
-let g:airline#extensions#whitespace#enabled=0
-let g:airline_extensions=['branch', 'coc']
-let g:airline_section_z=airline#section#create(['%1p%% %l/%L:%c '])
-
-if !exists('g:airline_symbols') | let g:airline_symbols={} | endif
-
 " Coc
+let g:python_host_prog='/usr/bin/python'
+
 let g:coc_global_extensions=[
       \ 'coc-actions',
       \ 'coc-css',
+      \ 'coc-emmet',
       \ 'coc-emoji',
       \ 'coc-eslint',
       \ 'coc-explorer',
