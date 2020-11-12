@@ -42,5 +42,6 @@
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "suggest.snippetIndicator": " ",
+  "typescript.updateImportsOnFileMove.enable": false,
   "vetur.validation.template": false
 }
