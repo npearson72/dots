@@ -5,12 +5,12 @@
 
 [[snippets]]
   description = "Create a gzipped archive"
-  command = "tar -czf <file name>.tar.gz <file(s) to archive>"
+  command = "tar -czvf <file name>.tar.gz <file(s) to archive>"
   output = ""
 
 [[snippets]]
   description = "Extract a gzipped archive"
-  command = "tar -xzf <archive>.tar.gz --one-top-level"
+  command = "tar -xzvf <archive>.tar.gz"
   output = ""
 
 [[snippets]]

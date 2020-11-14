@@ -28,7 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'suy/vim-context-commentstring', { 'for': ['jsx', 'tsx', 'vue' ] } " For JSX comments
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
-Plug 'simnalamburt/vim-mundo'
+Plug 'mbbill/undotree'
 Plug 'othree/eregex.vim'
 Plug 'wesQ3/vim-windowswap'
 
@@ -45,6 +45,7 @@ call plug#end()
 
 " Coc
 let g:python_host_prog='/usr/bin/python'
+let g:python_host_prog3='/usr/local/bin/python3'
 
 let g:coc_global_extensions=[
       \ 'coc-actions',

@@ -10,6 +10,9 @@ antibody bundle < $ZSH_FILES/zsh_plugins.txt
 source $BREW_PREFIX_DIR/opt/asdf/asdf.sh
 source $BREW_PREFIX_DIR/share/zsh/site-functions
 
+# Brew
+export HOMEBREW_NO_ANALYTICS=1
+
 # fasd
 eval "$(fasd --init posix-alias zsh-hook)"
 

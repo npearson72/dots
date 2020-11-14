@@ -65,7 +65,6 @@ cask 'dropbox'
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'hammerspoon'
-cask 'java'
 cask 'ngrok'
 cask 'phantomjs'
 cask 'postman'

@@ -134,7 +134,7 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>s :Rg<space>
 
 " Mundo
-nnoremap <leader>u :MundoToggle<cr>
+nnoremap <leader>u :UndotreeToggle<cr>
 
 " Tabularize
 vnoremap <leader>T :Tabularize /
