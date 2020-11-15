@@ -36,6 +36,9 @@ autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd Filetype gitcommit setlocal colorcolumn=80
 
+" Jsonc
+autocmd FileType json setlocal filetype=jsonc
+
 " Markdown
 autocmd Filetype markdown setlocal spell
 

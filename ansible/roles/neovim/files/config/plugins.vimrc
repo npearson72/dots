@@ -7,6 +7,7 @@ Plug 'gcmt/taboo.vim'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
+Plug 'kevinoid/vim-jsonc'
 
 " File management, search, navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
