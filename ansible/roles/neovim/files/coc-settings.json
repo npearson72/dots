@@ -27,8 +27,6 @@
       "expand": true
     }
   ],
-  "flutter.sdk.flutter-lookup": "asdf which flutter",
-  "flutter.sdk.dart-lookup": "asdf which dart",
   "prettier.arrowParens": "avoid",
   "prettier.eslintIntegration": false, // Prettier throwing errors in typescript
   "prettier.printWidth": 80,

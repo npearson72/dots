@@ -25,9 +25,6 @@
 # Exclude webpack directories
 --glob=!{public/packs,dist*}
 
-# Exclude mobile directories
---glob=!{.dart_tool,.idea,android,build,ios}
-
 # Exclude rails directories
 --glob=!{log/*.log,tmp}
 

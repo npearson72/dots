@@ -1,1 +1,0 @@
-python_version: "{{ lookup('env', 'PYTHON_VERSION') }}"

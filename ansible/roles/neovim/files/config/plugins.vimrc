@@ -55,7 +55,6 @@ let g:coc_global_extensions=[
       \ 'coc-emoji',
       \ 'coc-eslint',
       \ 'coc-explorer',
-      \ 'coc-flutter',
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-prettier',

@@ -127,13 +127,12 @@ endif
 " Coc - Explorer
 nnoremap <leader>e :CocCommand explorer --preset pwd<cr>
 
-
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>s :Rg<space>
 
-" Mundo
+" Undotree
 nnoremap <leader>u :UndotreeToggle<cr>
 
 " Tabularize

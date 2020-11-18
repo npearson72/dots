@@ -52,10 +52,7 @@ autocmd FileType vue syntax sync fromstart
 " Coc
 if ComputerType('home')
   command! Format :call CocAction('format')
-  autocmd BufWrite *.dart,*.ex,*.exs,*.rb Format
-
-  " command! HotRestart :call CocAction('runCommand', 'flutter.dev.hotReload')
-  " autocmd BufWrite *.dart HotRestart
+  autocmd BufWrite *.rb Format
 
   command! Prettier :call CocAction('runCommand', 'prettier.formatFile')
   autocmd BufWrite \
