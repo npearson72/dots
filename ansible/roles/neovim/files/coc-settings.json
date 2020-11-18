@@ -38,7 +38,6 @@
     "typescriptreact": ["javascript"],
     "typescript": ["javascript"]
   },
-  "snippets.priority": 100,
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "suggest.snippetIndicator": " ",
