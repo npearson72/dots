@@ -65,11 +65,11 @@ cask 'dropbox'
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'hammerspoon'
+cask 'iina'
 cask 'ngrok'
 cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
 cask 'slack'
 cask 'transmission' unless work
-cask 'vlc'
 mas 'Bear', id: '1091189122'.to_i
