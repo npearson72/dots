@@ -7,7 +7,7 @@
   "emmet.showSuggestionsAsSnippets": true,
   "eslint.run": "onSave",
   "eslint.filetypes": ["javascript", "vue"],
-  "explorer.file.child.template": "[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]",
+  "explorer.file.child.template": "[selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
   "explorer.file.column.indent.indentLine": true,
   "explorer.openAction.strategy": "sourceWindow",
   "explorer.file.root.template": "[icon] [fullpath]",

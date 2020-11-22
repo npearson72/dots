@@ -17,7 +17,7 @@
 --sort=path
 
 # Exclude .dot directories
---glob=!{.git,.svn,.tldr}
+--glob=!{.git,.svn,.tldr,.cache}
 
 # Exclude nodejs directories
 --glob=!{node_modules}
