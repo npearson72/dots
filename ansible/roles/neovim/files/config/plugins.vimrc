@@ -26,7 +26,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
-Plug 'suy/vim-context-commentstring', { 'for': ['jsx', 'tsx', 'vue' ] } " For JSX comments
+Plug 'suy/vim-context-commentstring'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'godlygeek/tabular'
 Plug 'mbbill/undotree'
