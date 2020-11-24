@@ -41,9 +41,8 @@ brew 'imagemagick'
 brew 'kubectl' if work
 brew 'mas'
 brew 'neovim'
-brew 'openconnect' if work
 brew 'openssh'
-brew 'postgresql' if work
+brew 'postgresql@12' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
