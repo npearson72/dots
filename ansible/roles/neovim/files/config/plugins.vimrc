@@ -15,7 +15,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'skwp/greplace.vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
 Plug 'npearson72/vim-personal-snippets'
 
 " Autocompletion
@@ -84,13 +83,6 @@ let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 
 " Taboo
 let g:taboo_tab_format=' %f%U '
-
-" UltiSnips
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger='<c-y>'
-let g:UltiSnipsSnippetDirectories=[
-      \ $HOME."/.config/nvim/plugged/vim-personal-snippets/UltiSnips",
-      \]
 
 " vim-visual-multi
 let g:VM_case_setting='sensitive'
