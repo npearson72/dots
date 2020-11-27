@@ -1,3 +1,9 @@
+augroup StatusLine
+  autocmd!
+  autocmd VimEnter,WinNew,WinEnter,BufEnter * setlocal statusline=%!MyStatusLine('current')
+  autocmd WinLeave,BufLeave * setlocal statusline=%!MyStatusLine('')
+augroup end
+
 " Only show curson line and column in active window
 augroup CursorLine
   autocmd!

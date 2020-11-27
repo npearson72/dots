@@ -8,8 +8,8 @@ highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " Color column
 set colorcolumn=80
-hi ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg='#262626'
-hi CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg='#262626'
+hi ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
+hi CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
 hi! link CursorLine CursorColumn
 
 " Keep neovim terminal colors consistent with shell
@@ -35,43 +35,24 @@ let g:terminal_color_14='#4fb8cc' " cyan
 let g:terminal_color_15='#ffffff' " white
 
 " Statusline
-function! GitInfo()
-  let git = fugitive#head()
-  if git != ''
-    return ' '.fugitive#head()
-  else
-    return ''
-endfunction
-
-set statusline=
-set statusline+=%#StatusLineNC#
-set statusline+=\ %{GitInfo()}
-set statusline+=%#Tabline#
-set statusline+=\ %t
-set statusline+=%=
-set statusline+=\ %{&filetype}
-set statusline+=\ 
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ 
-set statusline+=\ spaces:
-set statusline+=%{&tabstop}
-set statusline+=\ 
-set statusline+=\ ln\ %l,\ col\ %c
-set statusline+=\ 
-
+hi StatusLine ctermfg=244 ctermbg=235 guifg=#808080 guibg=#262626
+hi StatusLineNC ctermfg=238 ctermbg=235 guifg=#444444 guibg=#262626
+hi StatusLineGit ctermfg=01 ctermbg=244 guifg=#262626 guibg=#808080
+hi StatusLineWarning ctermfg=235 ctermbg=167 guifg=#262626 guibg=#d75f5f
+hi StatusLineError ctermfg=235 ctermbg=01 guifg=#262626 guibg=#c30771
 
 " Coc
-hi CocInfoSign ctermfg=03 ctermbg=NONE guifg='#b6a917' guibg=NONE
-hi CocWarningSign ctermfg=167 ctermbg=NONE guifg='#d75f5f' guibg=NONE
-hi CocErrorSign ctermfg=01 ctermbg=NONE guifg='#c30771' guibg=NONE
-hi CocInfoHighlight ctermfg=NONE ctermbg=16 guifg=NONE guibg='#000000'
+hi CocInfoSign ctermfg=03 ctermbg=NONE guifg=#b6a917 guibg=NONE
+hi CocWarningSign ctermfg=167 ctermbg=NONE guifg=#d75f5f guibg=NONE
+hi CocErrorSign ctermfg=01 ctermbg=NONE guifg=#c30771 guibg=NONE
+hi CocInfoHighlight ctermfg=NONE ctermbg=16 guifg=NONE guibg=#000000
 hi link CocWarningHighlight CocInfoHighlight
 hi link CocErrorHighlight CocInfoHighlight
-hi CocInfoFloat ctermfg=251 ctermbg=NONE guifg='#c6c6c6' guibg=NONE
+hi CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
 hi link CocWarningFloat CocInfoFloat
 hi link CocErrorFloat CocInfoFloat
 
 " Taboo
-hi TabLineFill ctermfg=235 ctermbg=235 guifg='#262626' guibg='#262626'
-hi TabLine ctermfg=08 ctermbg=235 guifg='#535353' guibg='#262626'
-hi TabLineSel ctermfg=02 ctermbg=NONE guifg='#00b38a' guibg=NONE
+hi TabLineFill ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
+hi TabLine ctermfg=238 ctermbg=235 guifg=#444444 guibg=#262626
+hi TabLineSel ctermfg=02 ctermbg=NONE guifg=#00b38a guibg=NONE

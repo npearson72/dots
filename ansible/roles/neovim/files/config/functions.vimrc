@@ -1,3 +1,38 @@
+" Status line
+function! s:GitInfo()
+  return fugitive#head() != '' ? '  ' . fugitive#head() . ' ' : ''
+endfunction
+
+function! s:CocDiagnostics(type) abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  let prefix = a:type == 'error' ? 'e' : 'w'
+
+  if get(info, a:type, 0)
+    return ' ' . prefix . info[a:type] . ' '
+  else
+    return ''
+  endif
+endfunction
+
+function! MyStatusLine(target) abort
+  let common = '%1 %<%F  '
+        \. '%='
+        \. '%#StatusLineNC#'
+        \. '%{&filetype}  '
+        \. '%{&fileencoding?&fileencoding:&encoding}  '
+        \. 'spaces:%{&tabstop}  '
+        \. 'ln %l, col %c  '
+
+  if a:target == 'current'
+    return '%#StatusLineGit#' . s:GitInfo() . '%* '
+          \. common
+          \. '%#StatusLineError#' . s:CocDiagnostics('error')
+          \. '%#StatusLineWarning#' . s:CocDiagnostics('warning')
+  end
+
+  return s:GitInfo() . ' ' . common
+endfunction
+
 " Zoom / Restore window
 function! s:ZoomToggle() abort
   if exists('t:zoomed') && t:zoomed
