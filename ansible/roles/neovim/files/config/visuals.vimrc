@@ -35,11 +35,24 @@ let g:terminal_color_14='#4fb8cc' " cyan
 let g:terminal_color_15='#ffffff' " white
 
 " Statusline
+function! GitInfo()
+  return fugitive#head() != '' ? '   ' . fugitive#head() . ' ' : ''
+endfunction
+
+let myStatusLine = '%#StatusLineGit#%{GitInfo()}%* '
+      \. '%1 %<%F  '
+      \. '%='
+      \. '%#StatusLineNC#'
+      \. '%{&filetype}  '
+      \. '%{&fileencoding?&fileencoding:&encoding}  '
+      \. 'spaces:%{&tabstop}  '
+      \. 'ln %l, col %c  '
+
+set statusline=%!myStatusLine
+
+hi StatusLineGit ctermfg=01 ctermbg=244 guifg=#262626 guibg=#808080
 hi StatusLine ctermfg=244 ctermbg=235 guifg=#808080 guibg=#262626
 hi StatusLineNC ctermfg=238 ctermbg=235 guifg=#444444 guibg=#262626
-hi StatusLineGit ctermfg=01 ctermbg=244 guifg=#262626 guibg=#808080
-hi StatusLineWarning ctermfg=235 ctermbg=167 guifg=#262626 guibg=#d75f5f
-hi StatusLineError ctermfg=235 ctermbg=01 guifg=#262626 guibg=#c30771
 
 " Coc
 hi CocInfoSign ctermfg=03 ctermbg=NONE guifg=#b6a917 guibg=NONE
