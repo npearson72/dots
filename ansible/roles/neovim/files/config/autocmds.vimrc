@@ -20,7 +20,7 @@ autocmd BufWritePre * SaveBackups
 " Save folds
 augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave,BufLeave ?* silent! mkview
+  autocmd BufUnload,BufLeave ?* silent! mkview
   autocmd BufWinEnter ?* silent! loadview
 augroup END
 
