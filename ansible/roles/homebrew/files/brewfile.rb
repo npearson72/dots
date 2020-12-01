@@ -42,7 +42,7 @@ brew 'kubectl' if work
 brew 'mas'
 brew 'neovim'
 brew 'openssh'
-brew 'postgresql@12' if work
+brew 'postgresql' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'

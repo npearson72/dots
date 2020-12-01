@@ -12,6 +12,7 @@ source $BREW_PREFIX_DIR/share/zsh/site-functions
 
 # Brew
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # fasd
 eval "$(fasd --init posix-alias zsh-hook)"
