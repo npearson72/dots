@@ -92,8 +92,7 @@ let s:colors.red        = [ '#c30771', 1 ]
 let s:theme = {}
 let s:theme = {
       \ 'normal': {
-      \   'left':   [ [ s:colors.black, s:colors.light_gray ],
-      \               [ s:colors.light_gray, s:colors.black ] ],
+      \   'left':   [ [ s:colors.light_gray, s:colors.black ] ],
       \   'middle': [ [ s:colors.dark_gray, s:colors.black ] ],
       \   'right':  [ [ s:colors.black, s:colors.red ],
       \               [ s:colors.black, s:colors.orange ],
@@ -113,8 +112,7 @@ let g:lightline#colorscheme#pencil_dark#palette = lightline#colorscheme#flatten(
 let g:lightline = {
       \ 'colorscheme': 'pencil_dark',
       \ 'active': {
-      \   'left':  [ [ 'gitbranch' ],
-      \              [ 'readonly', 'filepath' ] ],
+      \   'left':  [ [ 'readonly', 'filepath' ] ],
       \   'right': [ [ 'error' ],
       \              [ 'warning' ],
       \              [ 'fileformat', 'fileencoding', 'filetype', 'position' ] ],
@@ -126,9 +124,8 @@ let g:lightline = {
       \              [ 'filetype' ] ],
       \ },
       \ 'component': {
-      \   'gitbranch': '%{FugitiveHead() != "" ? " " . FugitiveHead() : ""}',
       \   'readonly':  '%{&readonly? "" : ""}',
-      \   'filepath':  '%<%F',
+      \   'filepath':  '%F',
       \   'position':  '%l/%L:%c  %p%%',
       \   'warning':   '%{CocDiagnostics("warning")}',
       \   'error':     '%{CocDiagnostics("error")}'
