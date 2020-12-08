@@ -18,11 +18,11 @@ autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
 autocmd BufWritePre * SaveBackups
 
 " Save folds
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufUnload,BufLeave ?* silent! mkview
-  autocmd BufWinEnter ?* silent! loadview
-augroup END
+" augroup AutoSaveFolds
+"   autocmd!
+"   autocmd BufUnload,BufLeave ?* silent! mkview
+"   autocmd BufWinEnter ?* silent! loadview
+" augroup END
 
 "=================================
 " Filetypes

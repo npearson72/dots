@@ -64,12 +64,6 @@ let g:coc_global_extensions=[
       \ 'coc-vetur'
       \]
 
-let g:coc_explorer_global_presets = {
-      \ 'pwd': {
-      \   'root-uri': getcwd(),
-      \ },
-      \}
-
 " FZF
 let g:fzf_layout={ 'down': '50%' }
 let g:fzf_action = {
@@ -112,20 +106,19 @@ let g:lightline#colorscheme#pencil_dark#palette = lightline#colorscheme#flatten(
 let g:lightline = {
       \ 'colorscheme': 'pencil_dark',
       \ 'active': {
-      \   'left':  [ [ 'readonly', 'filepath' ] ],
+      \   'left':  [ [ 'readonly', 'relativepath' ] ],
       \   'right': [ [ 'error' ],
       \              [ 'warning' ],
       \              [ 'fileformat', 'fileencoding', 'filetype', 'position' ] ],
       \ },
       \ 'inactive': {
-      \   'left':  [ [ 'readonly', 'filepath' ] ],
+      \   'left':  [ [ 'readonly', 'relativepath' ] ],
       \   'right': [ [ 'error' ],
       \              [ 'warning' ],
       \              [ 'filetype' ] ],
       \ },
       \ 'component': {
       \   'readonly':  '%{&readonly? "" : ""}',
-      \   'filepath':  '%F',
       \   'position':  '%l/%L:%c  %p%%',
       \   'warning':   '%{CocDiagnostics("warning")}',
       \   'error':     '%{CocDiagnostics("error")}'
@@ -145,7 +138,7 @@ function! CocDiagnostics(type) abort
 endfunction
 
 " Taboo
-let g:taboo_tab_format=' %f%U '
+let g:taboo_tab_format=' %f '
 
 " vim-visual-multi
 let g:VM_case_setting='sensitive'
