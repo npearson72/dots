@@ -2,19 +2,17 @@ set autoindent
 set backspace=indent,eol,start
 set completeopt=longest,menuone,preview
 set history=1000 " Sets size of cmd history
-set laststatus=2
 set linebreak
 set listchars=tab:▸\ ,trail:·,eol:¬,space:·
+set nosplitright
 set noswapfile
 set number
 set numberwidth=1 " Reduce width of number line
-set ruler
 set smartindent
 set scrolloff=3
 set showbreak=↪
 set undofile
 set visualbell
-set nosplitright
 
 "=================================
 " Backups
@@ -33,12 +31,13 @@ endif
 " Plugins
 "=================================
 " Coc
-" Fix for coc-vetur: https://github.com/neoclide/coc-vetur/issues/3
+" Fix for shifting left margin: https://github.com/neoclide/coc-vetur/issues/3
 set signcolumn=yes
-set shortmess+=c
 
-" TextEdit might fail if hidden is not set
+" Other Coc recommendations
 set hidden
+set shortmess+=c
+set updatetime=300
 
 " Ripgrep as grep
 if executable('rg') | set grepprg=rg | endif

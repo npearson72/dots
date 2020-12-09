@@ -1,16 +1,15 @@
 syntax enable
 
 " Color scheme
-" set t_Co=256 " Use for 8-bit colors (not true color)
 silent! colorscheme pencil
 set background=dark
 highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " Color column
 set colorcolumn=80
-hi ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
-hi CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
-hi! link CursorLine CursorColumn
+highlight ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
+highlight CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
+highlight link CursorLine CursorColumn
 
 " Keep neovim terminal colors consistent with shell
 
@@ -34,18 +33,21 @@ let g:terminal_color_13='#6855de' " magenta
 let g:terminal_color_14='#4fb8cc' " cyan
 let g:terminal_color_15='#ffffff' " white
 
+"=================================
+" Plugins
+"=================================
 " Coc
-hi CocInfoSign ctermfg=03 ctermbg=NONE guifg=#b6a917 guibg=NONE
-hi CocWarningSign ctermfg=167 ctermbg=NONE guifg=#d75f5f guibg=NONE
-hi CocErrorSign ctermfg=01 ctermbg=NONE guifg=#c30771 guibg=NONE
-hi CocInfoHighlight ctermfg=NONE ctermbg=16 guifg=NONE guibg=#000000
-hi link CocWarningHighlight CocInfoHighlight
-hi link CocErrorHighlight CocInfoHighlight
-hi CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
-hi link CocWarningFloat CocInfoFloat
-hi link CocErrorFloat CocInfoFloat
+highlight CocInfoSign ctermfg=03 ctermbg=NONE guifg=#b6a917 guibg=NONE
+highlight CocWarningSign ctermfg=167 ctermbg=NONE guifg=#d75f5f guibg=NONE
+highlight CocErrorSign ctermfg=01 ctermbg=NONE guifg=#c30771 guibg=NONE
+highlight CocInfoHighlight ctermfg=NONE ctermbg=16 guifg=NONE guibg=#000000
+highlight link CocWarningHighlight CocInfoHighlight
+highlight link CocErrorHighlight CocInfoHighlight
+highlight CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
+highlight link CocWarningFloat CocInfoFloat
+highlight link CocErrorFloat CocInfoFloat
 
 " Taboo
-hi TabLineFill ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
-hi TabLine ctermfg=238 ctermbg=235 guifg=#444444 guibg=#262626
-hi TabLineSel ctermfg=02 ctermbg=NONE guifg=#00b38a guibg=NONE
+highlight TabLineFill ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
+highlight TabLine ctermfg=238 ctermbg=235 guifg=#444444 guibg=#262626
+highlight TabLineSel ctermfg=02 ctermbg=NONE guifg=#00b38a guibg=NONE

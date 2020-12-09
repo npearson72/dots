@@ -41,7 +41,6 @@ endfunction
 "=================================
 " Plugins
 "=================================
-
 " FZF
 function! s:fzf_ctrlp(idx)
   let commands = ['Files', 'History']
