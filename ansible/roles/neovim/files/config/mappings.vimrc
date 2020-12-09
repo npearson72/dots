@@ -77,10 +77,10 @@ nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>
 
 " Toggle relative numbers in visual line mode
-nnoremap <silent> v v:<c-u>set nonu rnu<cr>gv
-nnoremap <silent> V V0:<c-u>set nonu rnu<cr>gv
-nnoremap <silent> <c-v> <c-v>:<c-u>set nonu rnu<cr>gv
-vnoremap <esc> <esc>:set nornu nu<cr>
+" nnoremap <silent> v v:<c-u>set nonu rnu<cr>gv
+" nnoremap <silent> V V0:<c-u>set nonu rnu<cr>gv
+" nnoremap <silent> <c-v> <c-v>:<c-u>set nonu rnu<cr>gv
+" vnoremap <esc> <esc>:set nornu nu<cr>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -116,13 +116,6 @@ function! s:cocActionsOpenFromSelected(type) abort
 endfunction
 xmap <silent> <c-a> :<c-u>execute 'CocCommand actions.open ' . visualmode()<cr>
 nmap <silent> <c-a> :<c-u>set operatorfunc=<SID>cocActionsOpenFromSelected<cr>g@w<cr>
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Coc - Explorer
 nnoremap <leader>e :CocCommand explorer<cr>

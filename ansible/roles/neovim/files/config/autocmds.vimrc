@@ -11,9 +11,6 @@ augroup CursorColumn
   autocmd WinLeave * setlocal nocursorcolumn
 augroup END
 
-" Automatically reload buffer when moving cursor if file was changed
-autocmd CursorMoved * if mode() !~# "[vV\<c-v>]" | set nornu nu | endif
-
 " Use custom function to create backups
 autocmd BufWritePre * SaveBackups
 
