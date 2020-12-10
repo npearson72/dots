@@ -48,13 +48,8 @@ autocmd Filetype markdown setlocal spell
 " Coc
 augroup CodeFormatting
   autocmd!
-  autocmd BufWritePre 
-        \*.js,
-        \*.jsx,
-        \*.ts,
-        \*.tsx CocOrganizeImports
-
-  autocmd BufWritePre *.rb CocFormat
+  autocmd BufWritePre *.rb Format
+  autocmd BufWritePre *.vue Prettier " Because Vue is a special snowflake
 augroup END
 
 " Projectionist
@@ -66,11 +61,5 @@ autocmd User ProjectionistDetect
       \    },
       \    'spec/*_spec.rb': {
       \      'alternate': 'app/{}.rb'
-      \    },
-      \    'lib/*.ex': {
-      \      'alternate': 'test/{}_test.exs'
-      \    },
-      \    'test/*_test.exs': {
-      \      'alternate': 'lib/{}.ex'
       \    },
       \ })

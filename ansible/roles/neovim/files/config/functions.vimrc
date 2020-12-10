@@ -42,8 +42,9 @@ endfunction
 " Plugins
 "=================================
 " Coc
-command! CocFormat :call CocAction('format')
-command! CocOrganizeImports :call CocAction('runCommand', 'tsserver.organizeImports')
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+command! -nargs=0 OrganizeImports :call CocAction('runCommand', 'tsserver.organizeImports')
 
 function! s:cocShowDocumentation()
   if (index(['vim','help'], &filetype) >= 0)

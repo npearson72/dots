@@ -2,16 +2,14 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "html",
-    "less",
     "javascript",
+    "javascriptreact",
     "json",
     "jsonc",
-    "jsx",
     "markdown",
     "scss",
     "typescript",
-    "tsx",
-    "vue",
+    "typescriptreact",
     "yaml"
   ],
   "coc.preferences.jumpCommand": "tabe",
@@ -58,7 +56,6 @@
     }
   ],
   "prettier.arrowParens": "avoid",
-  "prettier.eslintIntegration": false, // Prettier throwing errors in typescript
   "prettier.printWidth": 80,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
