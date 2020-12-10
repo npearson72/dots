@@ -1,5 +1,5 @@
 " Zoom / Restore window
-function! s:ZoomToggle() abort
+function! s:zoomToggle() abort
   if exists('t:zoomed') && t:zoomed
     execute t:zoom_winrestcmd
     let t:zoomed = 0
@@ -10,23 +10,23 @@ function! s:ZoomToggle() abort
     let t:zoomed = 1
   endif
 endfunction
-command! ZoomToggle call s:ZoomToggle()
+command! ZoomToggle call s:zoomToggle()
 
 " Properly manage (and name) backups
 " https://stackoverflow.com/a/38479550/1092012
-function! s:SaveBackups()
+function! s:saveBackups()
   if expand('%:p') =~ &backupskip | return | endif
 
   " If this is a newly created file, don't try to create a backup
   if !filereadable(@%) | return | endif
 
   for l:backupdir in split(&backupdir, ',')
-    :call s:SaveBackup(l:backupdir)
+    :call s:saveBackup(l:backupdir)
   endfor
 endfunction
-command! SaveBackups call s:SaveBackups()
+command! SaveBackups call s:saveBackups()
 
-function! s:SaveBackup(backupdir)
+function! s:saveBackup(backupdir)
   let l:filename = expand('%:p')
   if a:backupdir =~ '//$'
     let l:backup = escape(substitute(l:filename, '/', '%', 'g')  . &backupext, '%')
@@ -43,53 +43,52 @@ endfunction
 "=================================
 " Coc
 command! CocFormat :call CocAction('format')
-command! CocPrettier :call CocAction('runCommand', 'prettier.formatFile')
-command! CocOrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
+command! CocOrganizeImports :call CocAction('runCommand', 'tsserver.organizeImports')
 
-function! s:CocShowDocumentation()
+function! s:cocShowDocumentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
     call CocAction('doHover')
   endif
 endfunction
-command! CocShowDocumentation call <sid>CocShowDocumentation()
+command! CocShowDocumentation call <sid>cocShowDocumentation()
 
 " FZF
-function! s:FZFCtrlp(idx)
+function! s:fZFCtrlp(idx)
   let commands = ['Files', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
-  execute 'tnoremap <buffer><silent><c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>FZFCtrlp('.next.')<cr>'
+  execute 'tnoremap <buffer><silent><c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fZFCtrlp('.next.')<cr>'
 endfunction
-command! FZFCtrlp call <sid>FZFCtrlp(0)
+command! FZFCtrlp call <sid>fZFCtrlp(0)
 
 " FZF BD (Buffer Delete)
-function! s:FZFListBuffers()
+function! s:fZFListBuffers()
   redir => list
   silent ls
   redir END
   return split(list, "\n")
 endfunction
 
-function! s:FZFDeleteBuffers(lines)
+function! s:fZFDeleteBuffers(lines)
   execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
 endfunction
 
 command! BD call fzf#run(fzf#wrap({
-      \ 'source': s:FZFListBuffers(),
-      \ 'sink*': { lines -> s:FZFDeleteBuffers(lines) }
+      \ 'source': s:fZFListBuffers(),
+      \ 'sink*': { lines -> s:fZFDeleteBuffers(lines) }
       \ }))
 
 " FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files
-      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'), <bang>0)
 
 command! -bang -nargs=? -complete=dir Buffers
-      \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+      \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'))
 
 command! -bang -nargs=? -complete=dir History
-      \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+      \ call fzf#vim#history(fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'))
 
 " FZF as grep (Using ripgrep)
 command! -bang -nargs=* Rg

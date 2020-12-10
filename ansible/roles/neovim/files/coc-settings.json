@@ -1,4 +1,19 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "html",
+    "less",
+    "javascript",
+    "json",
+    "jsonc",
+    "jsx",
+    "markdown",
+    "scss",
+    "typescript",
+    "tsx",
+    "vue",
+    "yaml"
+  ],
   "coc.preferences.jumpCommand": "tabe",
   "coc.preferences.rootPatterns": [
     "package.json",

@@ -1,5 +1,3 @@
-syntax enable
-
 " Color scheme
 silent! colorscheme pencil
 set background=dark

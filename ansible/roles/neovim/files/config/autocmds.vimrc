@@ -12,7 +12,10 @@ augroup CursorColumn
 augroup END
 
 " Use custom function to create backups
-autocmd BufWritePre * SaveBackups
+augroup SaveBackups
+  autocmd!
+  autocmd BufWritePre * SaveBackups
+augroup END
 
 " Save folds
 " augroup AutoSaveFolds
@@ -39,46 +42,20 @@ autocmd FileType json setlocal filetype=jsonc
 " Markdown
 autocmd Filetype markdown setlocal spell
 
-" posa/vim-vue (included in vim-polyglot)
-" https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
-autocmd FileType vue syntax sync fromstart
-
 "=================================
 " Plugins
 "=================================
 " Coc
+augroup CodeFormatting
+  autocmd!
+  autocmd BufWritePre 
+        \*.js,
+        \*.jsx,
+        \*.ts,
+        \*.tsx CocOrganizeImports
 
-if ComputerType('home')
-  augroup CocFormat
-    autocmd!
-    autocmd BufWritePre *.rb CocFormat
-  augroup END
-
-  augroup CocPrettier
-    autocmd!
-    autocmd BufWritePre 
-          \*.css,
-          \*.html,
-          \*.less,
-          \*.js,
-          \*.json,
-          \*.jsx,
-          \*.scss,
-          \*.ts,
-          \*.tsx,
-          \*.vue,
-          \*.yaml CocPrettier
-  augroup END
-
-  augroup CocOrganizeImports
-    autocmd!
-    autocmd BufWritePre 
-          \*.js,
-          \*.jsx,
-          \*.ts,
-          \*.tsx CocOrganizeImports
-  augroup END
-endif
+  autocmd BufWritePre *.rb CocFormat
+augroup END
 
 " Projectionist
 autocmd User ProjectionistDetect
