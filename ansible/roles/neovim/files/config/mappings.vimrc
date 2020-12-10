@@ -97,25 +97,15 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent><expr><c-j> pumvisible() ? "\<c-y>" : "\<c-j>"
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gr <Plug>(coc-references)
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-nnoremap <silent> <leader>d :call <SID>show_documentation()<cr>
+xmap <silent><c-a> <Plug>(coc-codeaction-selected)<cr>
+nmap <silent><c-a> <Plug>(coc-codeaction-selected)<cr>
 
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <c-a> :<c-u>execute 'CocCommand actions.open ' . visualmode()<cr>
-nmap <silent> <c-a> :<c-u>set operatorfunc=<SID>cocActionsOpenFromSelected<cr>g@w<cr>
+nnoremap <silent><leader>d :CocShowDocumentation<cr>
 
 " Coc - Explorer
 nnoremap <leader>e :CocCommand explorer<cr>

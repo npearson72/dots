@@ -41,30 +41,44 @@ endfunction
 "=================================
 " Plugins
 "=================================
+" Coc
+command! CocFormat :call CocAction('format')
+command! CocPrettier :call CocAction('runCommand', 'prettier.formatFile')
+command! CocOrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
+
+function! s:CocShowDocumentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+command! CocShowDocumentation call <sid>CocShowDocumentation()
+
 " FZF
-function! s:fzf_ctrlp(idx)
+function! s:FZFCtrlp(idx)
   let commands = ['Files', 'History']
   execute commands[a:idx]
   let next = (a:idx + 1) % len(commands)
-  execute 'tnoremap <buffer> <silent> <c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>fzf_ctrlp('.next.')<cr>'
+  execute 'tnoremap <buffer><silent><c-f> <c-\><c-n>:close<cr>:sleep 10m<cr>:call <sid>FZFCtrlp('.next.')<cr>'
 endfunction
-command! FZFCtrlp call <sid>fzf_ctrlp(0)
+command! FZFCtrlp call <sid>FZFCtrlp(0)
 
 " FZF BD (Buffer Delete)
-function! s:list_buffers()
+function! s:FZFListBuffers()
   redir => list
   silent ls
   redir END
   return split(list, "\n")
 endfunction
 
-function! s:delete_buffers(lines)
+function! s:FZFDeleteBuffers(lines)
   execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
 endfunction
 
 command! BD call fzf#run(fzf#wrap({
-      \ 'source': s:list_buffers(),
-      \ 'sink*': { lines -> s:delete_buffers(lines) }
+      \ 'source': s:FZFListBuffers(),
+      \ 'sink*': { lines -> s:FZFDeleteBuffers(lines) }
       \ }))
 
 " FZF display preview window while searching (ctrl-p)

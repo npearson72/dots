@@ -47,23 +47,37 @@ autocmd FileType vue syntax sync fromstart
 " Plugins
 "=================================
 " Coc
-if ComputerType('home')
-  command! Format :call CocAction('format')
-  autocmd BufWrite *.rb Format
 
-  command! Prettier :call CocAction('runCommand', 'prettier.formatFile')
-  autocmd BufWrite \
-        \*.css,
-        \*.html,
-        \*.less,
-        \*.js,
-        \*.json,
-        \*.jsx,
-        \*.scss,
-        \*.ts,
-        \*.tsx,
-        \*.vue,
-        \*.yaml Prettier
+if ComputerType('home')
+  augroup CocFormat
+    autocmd!
+    autocmd BufWritePre *.rb CocFormat
+  augroup END
+
+  augroup CocPrettier
+    autocmd!
+    autocmd BufWritePre 
+          \*.css,
+          \*.html,
+          \*.less,
+          \*.js,
+          \*.json,
+          \*.jsx,
+          \*.scss,
+          \*.ts,
+          \*.tsx,
+          \*.vue,
+          \*.yaml CocPrettier
+  augroup END
+
+  augroup CocOrganizeImports
+    autocmd!
+    autocmd BufWritePre 
+          \*.js,
+          \*.jsx,
+          \*.ts,
+          \*.tsx CocOrganizeImports
+  augroup END
 endif
 
 " Projectionist
