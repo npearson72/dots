@@ -10,8 +10,9 @@ GNU_PATH="/usr/local/opt/coreutils/libexec/gnubin:\
 /usr/local/opt/gnu-which/libexec/gnubin"
 SSL_PATH='/usr/local/opt/openssl/bin'
 ASDF_PATH="$HOME/.asdf/bin"
+ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 
-export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$PATH"
+export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$ANDROID_PATH:$PATH"
 
 # FZF
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
