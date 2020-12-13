@@ -59,10 +59,7 @@ nmap <F1> <esc>
 imap <F1> <esc>
 
 " Select all
-nnoremap <leader>a ggVG
-
-" Change pwd to current file
-nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
+nnoremap <c-a> ggVG
 
 " Copy & paste to clipboard
 vnoremap <leader>y "*y
@@ -81,6 +78,9 @@ nnoremap <leader>i :set list!<cr>
 " nnoremap <silent> V V0:<c-u>set nonu rnu<cr>gv
 " nnoremap <silent> <c-v> <c-v>:<c-u>set nonu rnu<cr>gv
 " vnoremap <esc> <esc>:set nornu nu<cr>
+
+" Change pwd to current file
+nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -102,10 +102,9 @@ nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 
-xmap <silent><c-a> <Plug>(coc-codeaction-selected)<cr>
-nmap <silent><c-a> <Plug>(coc-codeaction-selected)<cr>
+nmap <leader>a <Plug>(coc-codeaction)<cr>
 
-nnoremap <silent><leader>d :CocShowDocumentation<cr>
+nnoremap <leader>d :CocShowDocumentation<cr>
 
 " Coc - Explorer
 nnoremap <leader>e :CocCommand explorer<cr>
