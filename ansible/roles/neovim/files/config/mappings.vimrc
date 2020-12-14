@@ -80,7 +80,7 @@ nnoremap <leader>i :set list!<cr>
 " vnoremap <esc> <esc>:set nornu nu<cr>
 
 " Change pwd to current file
-nnoremap <leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
+nnoremap <silent><leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -102,12 +102,12 @@ nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 
-nmap <leader>a <Plug>(coc-codeaction)<cr>
+nmap <silent><leader>a <Plug>(coc-codeaction)<cr>
 
-nnoremap <leader>d :CocShowDocumentation<cr>
+nnoremap <silent><leader>d :CocShowDocumentation<cr>
 
 " Coc - Explorer
-nnoremap <leader>e :CocCommand explorer<cr>
+nnoremap <silent><leader>e :CocCommand explorer<cr>
 
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>
