@@ -17,19 +17,10 @@
 --sort=path
 
 # Exclude .dot directories
---glob=!{.git,.svn,.tldr,.cache}
+--glob=!{.cache,.expo*,.git,.svn,.tldr}
 
-# Exclude nodejs directories
---glob=!{node_modules}
+# Exclude dev directories
+--glob=!{dist*,log,node_modules,tmp}
 
-# Exclude webpack directories
---glob=!{public/packs,dist*}
-
-# Exclude rails directories
---glob=!{log/*.log,tmp}
-
-# Exclude nodejs files
---glob=!{package-lock.json}
-
-# Exclude yarn files
---glob=!{yarn-error*,yarn.lock}
+# Exclude dev files
+--glob=!{package-lock.json,yarn-error*,yarn.lock}
