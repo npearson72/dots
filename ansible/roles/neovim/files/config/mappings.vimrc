@@ -73,6 +73,12 @@ vnoremap <s-k> :m-2<cr>gv
 nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>
 
+" Toggle relative line numbers in visual mode
+nnoremap <silent>v v:<c-u>RelativeLineNumbers<cr>gv
+nnoremap <silent>V V0:<c-u>RelativeLineNumbers<cr>gv
+nnoremap <silent><c-v> <c-v>:<c-u>RelativeLineNumbers<cr>gv
+vnoremap <esc> <c-c>:set nornu nu<cr>
+
 " Change pwd to current file
 nnoremap <silent><leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 
