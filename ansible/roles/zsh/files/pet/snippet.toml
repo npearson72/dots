@@ -4,6 +4,11 @@
   output = ""
 
 [[snippets]]
+  description = "Kill all processes matching pattern"
+  command = "pkill -f <pattern>"
+  output = ""
+
+[[snippets]]
   description = "Create a gzipped archive"
   command = "tar -czvf <file name>.tar.gz <file(s) to archive>"
   output = ""
