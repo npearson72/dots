@@ -41,7 +41,7 @@ nnoremap } <esc>gt
 nnoremap <leader><space> :noh<cr>
 
 " Folding
-nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
+nnoremap <silent><space> @=(foldlevel('.')?'za':"\<space>")<CR>
 vnoremap <space> zf
 
 " Keep search matches in the middle of the window
@@ -74,10 +74,10 @@ nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>
 
 " Toggle relative numbers in visual line mode
-" nnoremap <silent> v v:<c-u>set nonu rnu<cr>gv
-" nnoremap <silent> V V0:<c-u>set nonu rnu<cr>gv
-" nnoremap <silent> <c-v> <c-v>:<c-u>set nonu rnu<cr>gv
-" vnoremap <esc> <esc>:set nornu nu<cr>
+nnoremap <silent>v :ToggleRelativeLineNumbers<cr>v
+nnoremap <silent>V :ToggleRelativeLineNumbers<cr>V0
+nnoremap <silent><c-v> :ToggleRelativeLineNumbers<cr><c-v>
+vnoremap <silent><esc> <esc>:set nornu nu<cr>
 
 " Change pwd to current file
 nnoremap <silent><leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
