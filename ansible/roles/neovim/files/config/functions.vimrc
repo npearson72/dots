@@ -12,14 +12,6 @@ function! s:zoomToggle() abort
 endfunction
 command! ZoomToggle call s:zoomToggle()
 
-" Toggle relative line numbers
-function! s:toggleRelativeLineNumbers()
-  if (&filetype != 'coc-explorer')
-    set nonu rnu
-  endif
-endfunction
-command ToggleRelativeLineNumbers call s:toggleRelativeLineNumbers()
-
 " Properly manage (and name) backups
 " https://stackoverflow.com/a/38479550/1092012
 function! s:saveBackups()
