@@ -2,7 +2,6 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 
 " UI/UX
 Plug 'reedes/vim-colors-pencil'
-Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'gcmt/taboo.vim'
 
