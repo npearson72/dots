@@ -20,7 +20,7 @@
 --glob=!{.cache,.expo*,.git,.svn,.tldr}
 
 # Exclude dev directories
---glob=!{dist*,log,node_modules,tmp}
+--glob=!{cache,dist*,log,node_modules,tmp}
 
 # Exclude dev files
 --glob=!{package-lock.json,yarn-error*,yarn.lock}
