@@ -21,7 +21,7 @@ eval "$(fasd --init posix-alias zsh-hook)"
 [[ $- == *i* ]] && source $BREW_PREFIX_DIR/opt/fzf/shell/completion.zsh 2> /dev/null
 
 # FZF key bindings
-source $(brew --prefix)/opt/fzf/shell/key-bindings.zsh
+source $BREW_PREFIX_DIR/opt/fzf/shell/key-bindings.zsh
 
 # Pet
 bindkey '^s' pet-select
