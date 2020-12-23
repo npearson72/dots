@@ -22,8 +22,8 @@ brew 'bat'
 brew 'cmake'
 brew 'diff-so-fancy'
 brew 'dockutil'
-brew 'elastic/tap/elasticsearch-oss', restart_service: true
-brew 'elastic/tap/kibana-oss'
+brew 'elastic/tap/elasticsearch-full', restart_service: true if work
+brew 'elastic/tap/kibana-full' if work
 brew 'fasd'
 brew 'findutils'
 brew 'fzf'
