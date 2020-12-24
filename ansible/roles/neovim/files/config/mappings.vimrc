@@ -77,7 +77,8 @@ nnoremap <leader>i :set list!<cr>
 nnoremap <silent>v v:<c-u>RelativeLineNumbers<cr>gv
 nnoremap <silent>V V0:<c-u>RelativeLineNumbers<cr>gv
 nnoremap <silent><c-v> <c-v>:<c-u>RelativeLineNumbers<cr>gv
-vnoremap <esc> <c-c><esc>:set nornu nu<cr>
+noremap <esc> <esc>:set nornu nu<cr>
+inoremap <esc> <esc>:set nornu nu<cr>
 
 " Change pwd to current file
 nnoremap <silent><leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
