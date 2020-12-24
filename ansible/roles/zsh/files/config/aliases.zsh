@@ -11,3 +11,4 @@ fi
 alias reload!='exec zsh -l'
 alias start_rails='bundle exec rails s -b 0.0.0.0'
 alias j='fasd_cd -d'
+alias wget="wget --hsts-file $XDG_CACHE_HOME/.wget-hsts"
