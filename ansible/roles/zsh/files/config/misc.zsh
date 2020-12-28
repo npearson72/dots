@@ -23,6 +23,9 @@ eval "$(fasd --init posix-alias zsh-hook)"
 # FZF key bindings
 source $BREW_PREFIX_DIR/opt/fzf/shell/key-bindings.zsh
 
+source <(kubectl completion zsh)
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
 # Pet
 bindkey '^s' pet-select
 
