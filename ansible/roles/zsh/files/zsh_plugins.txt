@@ -1,1 +1,2 @@
-zsh-users/zsh-autosuggestions branch:develop
+zsh-users/zsh-autosuggestions
+ohmyzsh/ohmyzsh path:plugins/docker

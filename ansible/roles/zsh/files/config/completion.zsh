@@ -23,3 +23,7 @@ zstyle ':completion:*' insert-tab pending
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Docker completion
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
