@@ -8,5 +8,6 @@ source $CONFIG_DIR/defaults.zsh
 source $CONFIG_DIR/aliases.zsh
 source $CONFIG_DIR/bindings.zsh
 source $CONFIG_DIR/completion.zsh
+source $CONFIG_DIR/colors.zsh
 source $CONFIG_DIR/prompt.zsh
 source $CONFIG_DIR/misc.zsh
