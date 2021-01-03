@@ -79,12 +79,13 @@ nnoremap <silent>V V0:<c-u>RelativeLineNumbers<cr>gv
 nnoremap <silent><c-v> <c-v>:<c-u>RelativeLineNumbers<cr>gv
 noremap <esc> <esc>:set nornu nu<cr>
 inoremap <esc> <esc>:set nornu nu<cr>
+vnoremap y y<esc>:set nornu nu<cr>
 
 " Change pwd to current file
 nnoremap <silent><leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 
 " Sudo to write
-cnoremap W w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee % >/dev/null
 
 " Modify command line cursor movement
 cnoremap <c-a> <home>
