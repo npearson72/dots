@@ -1,3 +1,1 @@
 zsh-users/zsh-autosuggestions
-ohmyzsh/ohmyzsh path:plugins/docker
-ohmyzsh/ohmyzsh path:plugins/doctl
