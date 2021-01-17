@@ -112,8 +112,7 @@ nmap <silent><leader>a <Plug>(coc-codeaction)<cr>
 nnoremap <silent><leader>d :CocShowDocumentation<cr>
 
 " Coc - Explorer
-" nnoremap <silent><leader>e :CocCommand explorer<cr>
-nnoremap <silent><leader>e :call CocAction('runCommand', 'explorer', '--reveal',  expand('%:p'))<cr>
+nnoremap <silent><leader>e :CocCommand explorer<cr>
 
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>
