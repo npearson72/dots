@@ -55,6 +55,7 @@
     }
   ],
   "prettier.arrowParens": "avoid",
+  "prettier.endOfLine": "auto",
   "prettier.printWidth": 80,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
