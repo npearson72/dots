@@ -17,7 +17,7 @@
 --sort=path
 
 # Exclude .dot directories
---glob=!{.cache,.expo*,.git,.svn,.tldr,.terraform}
+--glob=!{.cache,.expo*,.git,.svn,.tldr,.terraform,.webpack}
 
 # Exclude dev directories
 --glob=!{cache,dist*,log,node_modules,tmp}
