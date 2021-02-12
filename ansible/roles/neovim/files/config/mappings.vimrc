@@ -74,14 +74,13 @@ nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>
 
 " Toggle relative line numbers in visual mode
-nnoremap <silent>v v:<c-u>RelativeLineNumbers<cr>gv
-nnoremap <silent>V V0:<c-u>RelativeLineNumbers<cr>gv
-nnoremap <silent><c-v> <c-v>:<c-u>RelativeLineNumbers<cr>gv
-
-noremap <silent><esc> <esc>:set nornu nu<cr>
-augroup ExitRelativeLineNumbers
+nnoremap <silent>v v:<c-u>RelativeLineNumbers on<cr>gv
+nnoremap <silent>V V0:<c-u>RelativeLineNumbers on<cr>gv
+nnoremap <silent><c-v> <c-v>:<c-u>RelativeLineNumbers on<cr>gv
+noremap <silent><esc> <esc>:RelativeLineNumbers off<cr>
+augroup RelativeLineNumbersOff
   autocmd!
-  autocmd InsertEnter,TextYankPost,CmdlineLeave * set nornu nu
+  autocmd InsertEnter,TextYankPost,CmdlineLeave * RelativeLineNumbers off
 augroup END
 
 " Change pwd to current file

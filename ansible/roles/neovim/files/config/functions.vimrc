@@ -12,11 +12,15 @@ function! s:zoomToggle() abort
 endfunction
 command! ZoomToggle call s:zoomToggle()
 
-" Enable relative line numbers
-function! s:relativeLineNumbers()
-  if (&filetype != 'coc-explorer') | set nonu rnu | endif
+" Toggle relative line numbers
+function! s:relativeLineNumbers(args)
+  if (a:args == 'on' && &filetype != 'coc-explorer')
+    set nonu rnu
+  elseif (a:args == 'off' && &filetype != 'coc-explorer')
+    set nornu nu
+  endif
 endfunction
-command RelativeLineNumbers call s:relativeLineNumbers()
+command! -nargs=1 RelativeLineNumbers call s:relativeLineNumbers(<q-args>)
 
 " Properly manage (and name) backups
 " https://stackoverflow.com/a/38479550/1092012
