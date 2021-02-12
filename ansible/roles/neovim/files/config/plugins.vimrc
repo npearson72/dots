@@ -26,7 +26,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
 Plug 'suy/vim-context-commentstring'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
 Plug 'godlygeek/tabular'
 Plug 'mbbill/undotree'
 Plug 'othree/eregex.vim'
@@ -39,7 +39,6 @@ Plug 'kana/vim-textobj-user', { 'for': 'ruby' } " Required for vim-textobj-rubyb
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
 
 call plug#end()
 
@@ -53,6 +52,7 @@ let g:coc_global_extensions=[
       \ 'coc-emoji',
       \ 'coc-eslint',
       \ 'coc-explorer',
+      \ 'coc-git',
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-prettier',
@@ -74,14 +74,14 @@ let g:fzf_action = {
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'
 
 " Lightline
-let s:colors = {}
-let s:colors.black      = [ '#262626', 235 ]
-let s:colors.dark_gray  = [ '#424242', 8 ]
-let s:colors.light_gray = [ '#767676', 243 ]
-let s:colors.orange     = [ '#d75f5f', 167 ]
-let s:colors.red        = [ '#c30771', 1 ]
+let s:colors = {
+      \ 'black':      [ '#262626', 235 ],
+      \ 'dark_gray':  [ '#424242', 8 ],
+      \ 'light_gray': [ '#767676', 243 ],
+      \ 'orange':     [ '#d75f5f', 167 ],
+      \ 'red':        [ '#c30771', 1 ],
+      \}
 
-let s:theme = {}
 let s:theme = {
       \ 'normal': {
       \   'left':   [ [ s:colors.light_gray, s:colors.black ] ],
