@@ -2,11 +2,9 @@ session_name: ams
 start_directory: ~/Dev/ams
 windows:
   - window_name: zsh
-    panes:
-      - sleep 1 && tmux select-window -t 1 && tmux_clear
   - window_name: rails
-    layout: 6ca2,178x48,0,0{88x48,0,0,4,89x48,89,0[89x24,89,0,5,89x23,89,25,17]}
+    layout: main-vertical
     panes:
-      -
-      - start_ams
-      - bundle exec rails c
+      - sleep 0.5 && tmux selectw -t 1 && tmux selectp -t 0 && tmux send -R && tmux clear-history
+      - sleep 1.0 && tmux selectw -t 1 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_ams
+      - sleep 1.5 && tmux selectw -t 1 && tmux selectp -t 2 && tmux send -R && tmux clear-history

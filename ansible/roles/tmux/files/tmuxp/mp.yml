@@ -2,14 +2,12 @@ session_name: mp
 start_directory: ~/Dev/mp
 windows:
   - window_name: zsh
-    panes:
-      - sleep 1 && tmux select-window -t 1 && tmux_clear
   - window_name: rails
-    layout: 6ca2,178x48,0,0{88x48,0,0,4,89x48,89,0[89x24,89,0,5,89x23,89,25,17]}
+    layout: main-vertical
     panes:
-      -
-      - start_mp
-      - bundle exec rails c
+      - sleep 0.5 && tmux selectw -t 1 && tmux selectp -t 0 && tmux send -R && tmux clear-history
+      - sleep 1.0 && tmux selectw -t 1 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_mp
+      - sleep 1.5 && tmux selectw -t 1 && tmux selectp -t 2 && tmux send -R && tmux clear-history
   - window_name: backround
     panes:
-      - start_sidekiq
+      - sleep 2.0 && tmux selectw -t 2 && tmux selectp -t 0 && tmux send -R && tmux clear-history && start_sidekiq

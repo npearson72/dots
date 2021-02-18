@@ -1,6 +1,4 @@
 session_name: default
 start_directory: ~/
 windows:
-- window_name: zsh
-  panes:
-    - tmux_clear
+  - window_name: zsh
