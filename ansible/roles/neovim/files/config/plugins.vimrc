@@ -34,6 +34,7 @@ Plug 'wesQ3/vim-windowswap'
 
 " Ruby/Rails
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'henrik/vim-ruby-runner', { 'for': 'ruby' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'kana/vim-textobj-user', { 'for': 'ruby' } " Required for vim-textobj-rubyblock
 
@@ -134,6 +135,10 @@ function! CocDiagnostics(type) abort
     return ''
   endif
 endfunction
+
+" RubyRunner
+ let g:RubyRunner_open_below=1
+ let g:RubyRunner_window_size=10
 
 " Taboo
 let g:taboo_tab_format=' %f '
