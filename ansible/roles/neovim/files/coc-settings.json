@@ -60,6 +60,7 @@
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
   "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
   "git.changedSign.text": "!",
+  "javascript.suggestionActions.enabled": false,
   "prettier.arrowParens": "avoid",
   "prettier.endOfLine": "auto",
   "prettier.printWidth": 80,
