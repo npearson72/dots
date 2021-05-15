@@ -6,7 +6,7 @@ window:
     y: 0
 
 font:
-  size: 14
+  size: 15.5
   normal:
     family: Hack Nerd Font Mono
     style: Regular

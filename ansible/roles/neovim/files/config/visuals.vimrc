@@ -1,13 +1,14 @@
+set termguicolors
+
 " Color scheme
 silent! colorscheme pencil
 set background=dark
-highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " Color column
 set colorcolumn=80
 highlight ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
-highlight CursorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
-highlight link CursorLine CursorColumn
+highlight link CursorColumn ColorColumn
+highlight link CursorLine ColorColumn
 
 " Keep neovim terminal colors consistent with shell
 
@@ -35,7 +36,7 @@ let g:terminal_color_15='#ffffff' " white
 " Plugins
 "=================================
 " Coc
-highlight CocInfoSign ctermfg=03 ctermbg=NONE guifg=#b6a917 guibg=NONE
+highlight CocInfoSign ctermfg=03 ctermbg=NONE guifg=#a89c14 guibg=NONE
 highlight CocWarningSign ctermfg=167 ctermbg=NONE guifg=#d75f5f guibg=NONE
 highlight CocErrorSign ctermfg=01 ctermbg=NONE guifg=#c30771 guibg=NONE
 highlight CocInfoHighlight ctermfg=NONE ctermbg=16 guifg=NONE guibg=#000000
@@ -44,10 +45,11 @@ highlight link CocErrorHighlight CocInfoHighlight
 highlight CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
 highlight link CocWarningFloat CocInfoFloat
 highlight link CocErrorFloat CocInfoFloat
-highlight GitGutterAdd ctermfg=2 ctermbg=NONE guifg=#10a778 guibg=NONE
-highlight GitGutterChange ctermfg=3 ctermbg=NONE guifg=#a89c14 guibg=NONE
-highlight GitGutterDelete ctermfg=9 ctermbg=NONE guifg=#e32791 guibg=NONE
-highlight link GitGutterChangeDelete GitGutterDelete
+
+highlight CocGitAdd ctermfg=2 ctermbg=NONE guifg=#10a778 guibg=NONE
+highlight CocGitChange ctermfg=3 ctermbg=NONE guifg=#a89c14 guibg=NONE
+highlight CocGitDelete ctermfg=9 ctermbg=NONE guifg=#e32791 guibg=NONE
+highlight link CocGitDeleteChange CocGitDelete
 
 " Taboo
 highlight TabLineFill ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
