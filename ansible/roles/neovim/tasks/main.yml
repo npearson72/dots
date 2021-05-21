@@ -34,3 +34,8 @@
 
 - name: install neovim plugins
   command: nvim --headless "+silent! PlugInstall!" +qall!
+
+- name: install pynvim
+  pip:
+    name: pynvim
+    executable: pip3

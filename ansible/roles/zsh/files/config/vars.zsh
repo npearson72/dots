@@ -40,10 +40,3 @@ export LANG=en_US.UTF-8
 
 # Ripgrep (aka: rg)
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc
-
-# Terminal
-if [ -n "$TMUX" ]; then
-  export TERM=screen-256color
-else
-  export TERM=xterm-256color
-fi
