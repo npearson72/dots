@@ -62,4 +62,10 @@ autocmd User ProjectionistDetect
       \    'spec/*_spec.rb': {
       \      'alternate': 'app/{}.rb'
       \    },
+      \    'src/*.js': {
+      \      'alternate': 'src/tests/{}.test.js'
+      \    },
+      \    'src/tests/*.test.js': {
+      \      'alternate': 'src/{}.js'
+      \    },
       \ })
