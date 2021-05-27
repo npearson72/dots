@@ -1,5 +1,5 @@
 - name: check if hammerspoon was brewed
-  shell: brew cask info hammerspoon
+  shell: brew info hammerspoon
   register: hammerspoon_brewed
   ignore_errors: true
 
