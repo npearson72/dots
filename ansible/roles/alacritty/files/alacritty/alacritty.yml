@@ -4,12 +4,9 @@ env:
 window:
   startup_mode: SimpleFullscreen
   decorations: none
-  padding:
-    x: 5
-    y: 0
 
 font:
-  size: 15.5
+  size: 14
   normal:
     family: Hack Nerd Font Mono
     style: Regular
