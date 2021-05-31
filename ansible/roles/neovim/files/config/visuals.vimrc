@@ -3,6 +3,7 @@ set termguicolors
 " Color scheme
 silent! colorscheme pencil
 set background=dark
+highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " Color column
 set colorcolumn=80
