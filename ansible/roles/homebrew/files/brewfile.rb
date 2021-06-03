@@ -41,6 +41,7 @@ brew 'kubectl'
 brew 'minikube'
 brew 'mas'
 brew 'neovim'
+brew 'openconnect' if work
 brew 'openssh'
 brew 'redis', restart_service: true
 brew 'ripgrep'

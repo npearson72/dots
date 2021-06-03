@@ -19,6 +19,7 @@
     - { role: yarn, tags: yarn }
     - { role: postgres, tags: postgres, when: computer_type == 'home' }
     - { role: ruby, tags: ruby }
+    - { role: openconnect, tags: openconnect, when: computer_type == 'work' }
     - { role: neovim, tags: neovim }
     - { role: mac_os, tags: mac_os }
     - { role: post_build, tags: post_build }

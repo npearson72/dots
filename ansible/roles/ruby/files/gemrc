@@ -1,6 +1,3 @@
 ---
-:update_sources: true
-:verbose: true
-:backtrace: false
-:benchmark: false
-gem: --document
+backtrace: true
+gem: --no-document
