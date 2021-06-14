@@ -5,9 +5,9 @@ windows:
   - window_name: rails
     layout: main-vertical
     panes:
-      - sleep 0.5 && tmux selectw -t 1 && tmux selectp -t 0 && tmux send -R && tmux clear-history
-      - sleep 1.0 && tmux selectw -t 1 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_lms
-      - sleep 1.5 && tmux selectw -t 1 && tmux selectp -t 2 && tmux send -R && tmux clear-history
-  - window_name: backround
+      -
+      -
+      -
+  - window_name: background
     panes:
-      - sleep 2.0 && tmux selectw -t 2 && tmux selectp -t 0 && tmux send -R && tmux clear-history && start_sidekiq
+      -

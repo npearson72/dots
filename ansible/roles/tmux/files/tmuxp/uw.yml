@@ -5,27 +5,27 @@ windows:
     layout: main-vertical
     focus: true
     panes:
-      - sleep 0.5 && tmux selectw -t 0 && tmux selectp -t 0 && tmux send -R && tmux clear-history
-      - sleep 1.0 && tmux selectw -t 0 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_uw
-      - sleep 1.5 && tmux selectw -t 0 && tmux selectp -t 2 && tmux send -R && tmux clear-history
+      -
+      -
+      -
   - window_name: gcrs
     start_directory: ~/Dev/gcrs
     layout: main-vertical
     panes:
-      - sleep 2.0 && tmux selectw -t 1 && tmux selectp -t 0 && tmux send -R && tmux clear-history
-      - sleep 2.5 && tmux selectw -t 1 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_gcrs
-      - sleep 3.0 && tmux selectw -t 1 && tmux selectp -t 2 && tmux send -R && tmux clear-history
+      -
+      -
+      -
   - window_name: bas
     start_directory: ~/Dev/bas
     layout: main-vertical
     panes:
-      - sleep 4.5 && tmux selectw -t 2 && tmux selectp -t 0 && tmux send -R && tmux clear-history
-      - sleep 5.0 && tmux selectw -t 2 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_bas
-      - sleep 5.5 && tmux selectw -t 2 && tmux selectp -t 2 && tmux send -R && tmux clear-history
+      -
+      -
+      -
   - window_name: fd
     start_directory: ~/Dev/fd
     layout: main-vertical
     panes:
-      - sleep 6.0 && tmux selectw -t 3 && tmux selectp -t 0 && tmux send -R && tmux clear-history
-      - sleep 6.5 && tmux selectw -t 3 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_fd
-      - sleep 7.0 && tmux selectw -t 3 && tmux selectp -t 2 && tmux send -R && tmux clear-history
+      -
+      -
+      -

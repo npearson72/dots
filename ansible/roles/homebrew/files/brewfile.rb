@@ -48,6 +48,7 @@ brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
 brew 'tmux'
+brew 'tmuxp'
 brew 'tree'
 brew 'unzip'
 brew 'watchman'

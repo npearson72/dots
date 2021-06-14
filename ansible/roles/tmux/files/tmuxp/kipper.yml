@@ -5,6 +5,6 @@ windows:
   - window_name: rails
     layout: main-vertical
     panes:
-      - sleep 0.5 && tmux selectw -t 1 && tmux selectp -t 0 && tmux send -R && tmux clear-history
-      - sleep 1.0 && tmux selectw -t 1 && tmux selectp -t 1 && tmux send -R && tmux clear-history && start_kipper
-      - sleep 1.5 && tmux selectw -t 1 && tmux selectp -t 2 && tmux send -R && tmux clear-history
+      -
+      -
+      -
