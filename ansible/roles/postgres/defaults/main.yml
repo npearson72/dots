@@ -1,2 +1,0 @@
-default_db_name: "{{ lookup('env', 'USER') }}"
-postgres_version: "{{ lookup('env', 'POSTGRES_VERSION') }}"

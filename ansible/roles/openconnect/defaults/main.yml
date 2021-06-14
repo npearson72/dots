@@ -1,5 +1,0 @@
-vpn_config_path: "{{ home }}/.config/openconnect"
-
-vpn:
-  user: "{{ lookup('env', 'VPN_USER') }}"
-  domain: "{{ lookup('env', 'VPN_DOMAIN') }}"

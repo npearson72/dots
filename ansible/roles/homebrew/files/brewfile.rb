@@ -29,6 +29,7 @@ brew 'findutils'
 brew 'fzf'
 brew 'gawk'
 brew 'gcc'
+brew 'ghostscript' if work
 brew 'git'
 brew 'gpg'
 brew 'gnu-sed'
@@ -41,8 +42,8 @@ brew 'kubectl'
 brew 'minikube'
 brew 'mas'
 brew 'neovim'
-brew 'openconnect' if work
 brew 'openssh'
+brew 'postgresql'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
