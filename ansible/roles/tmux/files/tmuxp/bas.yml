@@ -1,0 +1,10 @@
+session_name: bas
+start_directory: ~/Dev/bas
+windows:
+  - window_name: zsh
+  - window_name: rails
+    layout: main-vertical
+    panes:
+      -
+      -
+      -
