@@ -26,7 +26,7 @@
   "emmet.includeLanguages": { "javascript": "javascriptreact" },
   "emmet.showSuggestionsAsSnippets": true,
   "eslint.run": "onSave",
-  "explorer.file.autoReveal": false,
+  "explorer.file.reveal.auto": false,
   "explorer.file.child.template": "[git | 2][selection | clip | 1][indent][icon | 1] [diagnosticError & 1][filename omitCenter 1]",
   "explorer.file.root.template": "[icon] [fullpath]",
   "explorer.file.showHiddenFiles": true,
