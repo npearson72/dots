@@ -61,6 +61,7 @@
   "git.changeRemovedSign.hlGroup": "CocGitDeleteChange",
   "git.changedSign.text": "!",
   "javascript.suggestionActions.enabled": false,
+  "javascript.updateImportsOnFileMove.enable": false,
   "prettier.arrowParens": "avoid",
   "prettier.endOfLine": "auto",
   "prettier.printWidth": 80,
