@@ -39,6 +39,7 @@ Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'kana/vim-textobj-user', { 'for': 'ruby' } " Required for vim-textobj-rubyblock
 
 " Git
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
@@ -53,7 +54,6 @@ let g:coc_global_extensions=[
       \ 'coc-emoji',
       \ 'coc-eslint',
       \ 'coc-explorer',
-      \ 'coc-git',
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-prettier',
@@ -143,6 +143,9 @@ endfunction
 " Taboo
 let g:taboo_tab_format=' %f '
 
+" vim-gitgutter
+let g:gitgutter_map_keys=0
+
 " vim-visual-multi
 let g:VM_case_setting='sensitive'
 let g:VM_quit_after_leaving_insert_mode=1 " Quit insert mode immediately on <esc>
@@ -150,4 +153,4 @@ let g:VM_quit_after_leaving_insert_mode=1 " Quit insert mode immediately on <esc
 " Vim Polyglot
 " posa/vim-vue (included in vim-polyglot)
 " https://github.com/posva/vim-vue#vim-slows-down-when-using-this-plugin-how-can-i-fix-that
-let g:vue_pre_processors = 'detect_on_enter'
+let g:vue_pre_processors='detect_on_enter'
