@@ -44,54 +44,50 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <silent><space> @=(foldlevel('.')?'za':"\<space>")<CR>
 vnoremap <space> zf
 
-" Keep search matches in the middle of the window
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Keep indent selected
+" Drag block left/right/up/down
 vnoremap <s-l> >gv
 vnoremap <s-h> <gv
-vnoremap > >gv
-vnoremap < <gv
-
-" Make F1 useful
-nmap <F1> <esc>
-imap <F1> <esc>
+vnoremap <s-j> :m'>+<cr>gv
+vnoremap <s-k> :m-2<cr>gv
 
 " Select all
 nnoremap <c-a> ggVG
 
+" Modify command line cursor movement
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
 " Copy & paste to clipboard
 vnoremap <leader>y "*y
 nnoremap <leader>p "*p
-
-" Drag block up/down
-vnoremap <s-j> :m'>+<cr>gv
-vnoremap <s-k> :m-2<cr>gv
 
 " Toggle line wrapping
 nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>
 
 " Toggle relative line numbers in visual mode
-nnoremap <silent>v v:<c-u>RelativeLineNumbers on<cr>gv
-nnoremap <silent>V V0:<c-u>RelativeLineNumbers on<cr>gv
-nnoremap <silent><c-v> <c-v>:<c-u>RelativeLineNumbers on<cr>gv
-noremap <silent><esc> <esc>:RelativeLineNumbers off<cr>
-augroup RelativeLineNumbersOff
+nnoremap <silent>v v:<c-u>ToggleRelativeLineNumbers on<cr>gv
+nnoremap <silent>V V0:<c-u>ToggleRelativeLineNumbers on<cr>gv
+nnoremap <silent><c-v> <c-v>:<c-u>ToggleRelativeLineNumbers on<cr>gv
+noremap <silent><esc> <esc>:ToggleRelativeLineNumbers off<cr>
+augroup ToggleRelativeLineNumbersOff
   autocmd!
-  autocmd InsertEnter,TextYankPost,CmdlineLeave * RelativeLineNumbers off
+  autocmd InsertEnter,TextYankPost,CmdlineLeave * ToggleRelativeLineNumbers off
 augroup END
+
+" Keep search matches in the middle of the window
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Make F1 useful
+nmap <F1> <esc>
+imap <F1> <esc>
 
 " Change pwd to current file
 nnoremap <silent><leader>cd :lcd<space>%:p:h<cr>:pwd<cr>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
-
-" Modify command line cursor movement
-cnoremap <c-a> <home>
-cnoremap <c-e> <end>
 
 "=================================
 " Plugins
