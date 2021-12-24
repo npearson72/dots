@@ -8,6 +8,7 @@ Plug 'gcmt/taboo.vim'
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
 Plug 'kevinoid/vim-jsonc'
+Plug 'pantharshit00/vim-prisma'
 
 " File management, search, navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -39,7 +40,6 @@ Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'kana/vim-textobj-user', { 'for': 'ruby' } " Required for vim-textobj-rubyblock
 
 " Git
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
@@ -54,9 +54,11 @@ let g:coc_global_extensions=[
       \ 'coc-emoji',
       \ 'coc-eslint',
       \ 'coc-explorer',
+      \ 'coc-git',
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-prettier',
+      \ 'coc-prisma',
       \ 'coc-solargraph',
       \ 'coc-tsserver',
       \ 'coc-snippets',
@@ -142,9 +144,6 @@ endfunction
 
 " Taboo
 let g:taboo_tab_format=' %f '
-
-" vim-gitgutter
-let g:gitgutter_map_keys=0
 
 " vim-visual-multi
 let g:VM_case_setting='sensitive'

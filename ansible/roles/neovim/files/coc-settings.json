@@ -7,6 +7,7 @@
     "json",
     "jsonc",
     "markdown",
+    "prisma",
     "ruby",
     "scss",
     "typescript",
@@ -55,6 +56,12 @@
       "expand": true
     }
   ],
+  "git.addedSign.hlGroup": "CocGitAdd",
+  "git.changedSign.hlGroup": "CocGitChange",
+  "git.removedSign.hlGroup": "CocGitDelete",
+  "git.topRemovedSign.hlGroup": "CocGitDelete",
+  "git.changeRemovedSign.hlGroup": "CocGitDeleteChange",
+  "git.changedSign.text": "!",
   "javascript.suggestionActions.enabled": false,
   "javascript.updateImportsOnFileMove.enable": false,
   "prettier.arrowParens": "avoid",

@@ -47,13 +47,12 @@ highlight CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
 highlight link CocWarningFloat CocInfoFloat
 highlight link CocErrorFloat CocInfoFloat
 
+highlight CocGitAdd ctermfg=2 ctermbg=NONE guifg=#10a778 guibg=NONE
+highlight CocGitChange ctermfg=3 ctermbg=NONE guifg=#a89c14 guibg=NONE
+highlight CocGitDelete ctermfg=9 ctermbg=NONE guifg=#e32791 guibg=NONE
+highlight link CocGitDeleteChange CocGitDelete
+
 " Taboo
 highlight TabLineFill ctermfg=235 ctermbg=235 guifg=#262626 guibg=#262626
 highlight TabLine ctermfg=238 ctermbg=235 guifg=#444444 guibg=#262626
 highlight TabLineSel ctermfg=2 ctermbg=NONE guifg=#10a778 guibg=NONE
-
-" vim-gutter
-highlight GitGutterAdd ctermfg=2 ctermbg=NONE guifg=#10a778 guibg=NONE
-highlight GitGutterChange ctermfg=3 ctermbg=NONE guifg=#a89c14 guibg=NONE
-highlight GitGutterDelete ctermfg=9 ctermbg=NONE guifg=#e32791 guibg=NONE
-highlight link GitGutterChangeDelete GitGutterDelete
