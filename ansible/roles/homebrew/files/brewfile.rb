@@ -4,7 +4,6 @@ work = File.readlines("#{Dir.home}/.dots/.env").any? do |line|
   line.match?(/COMPUTER_TYPE.*work/)
 end
 
-tap 'getantibody/tap'
 tap 'elastic/tap'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
@@ -13,9 +12,9 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'knqyf263/pet'
-cask 'adoptopenjdk8'
 brew 'ansible'
 brew 'coreutils'
+brew 'antibody'
 brew 'asdf'
 brew 'awscli'
 brew 'bat'
@@ -56,13 +55,14 @@ brew 'watchman'
 brew 'wget'
 brew 'zsh'
 brew 'zsh-history-substring-search'
-brew 'getantibody/tap/antibody'
 brew 'knqyf263/pet/pet'
 cask '1password'
 cask 'alacritty'
+cask 'adoptopenjdk8'
 cask 'authy'
 cask 'docker'
 cask 'dropbox'
+cask 'figma' unless work
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'hammerspoon'
@@ -72,5 +72,6 @@ cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
 cask 'slack'
+cask 'telegram' unless work
 cask 'transmission' unless work
 mas 'Bear', id: '1091189122'.to_i
