@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias cat="bat -p"
+alias cat="bat"
 alias be="bundle exec"
 alias ls="gls -lhN --color --group-directories-first --classify"
 alias ll="ls -lhAN"
