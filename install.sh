@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -o nounset -o pipefail -o errexit
 
 # Load all variables from .env and export them all for Ansible to read
@@ -10,7 +10,7 @@ installHomeBrew() {
   if ! [[ $(which brew) ]]; then
     echo "\n=> Installing Homebrew\n"
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 }
 

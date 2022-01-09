@@ -3,7 +3,8 @@ windows:
   - window_name: uw
     start_directory: ~/Dev/uw
     layout: main-vertical
-    focus: true
+    options:
+      main-pane-width: 50%
     panes:
       -
       -
@@ -11,6 +12,8 @@ windows:
   - window_name: gcrs
     start_directory: ~/Dev/gcrs
     layout: main-vertical
+    options:
+      main-pane-width: 50%
     panes:
       -
       -
@@ -18,6 +21,8 @@ windows:
   - window_name: bas
     start_directory: ~/Dev/bas
     layout: main-vertical
+    options:
+      main-pane-width: 50%
     panes:
       -
       -

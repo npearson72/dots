@@ -3,6 +3,8 @@ start_directory: ~/Dev/kipper
 windows:
   - window_name: kipper
     layout: main-vertical
+    options:
+      main-pane-width: 50%
     panes:
       -
       -

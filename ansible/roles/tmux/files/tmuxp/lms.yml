@@ -4,10 +4,10 @@ windows:
   - window_name: zsh
   - window_name: rails
     layout: main-vertical
+    options:
+      main-pane-width: 50%
     panes:
       -
       -
       -
   - window_name: background
-    panes:
-      -
