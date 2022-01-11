@@ -40,9 +40,9 @@ let g:terminal_color_15='#ffffff' " white
 highlight CocInfoSign ctermfg=03 ctermbg=NONE guifg=#a89c14 guibg=NONE
 highlight CocWarningSign ctermfg=167 ctermbg=NONE guifg=#d75f5f guibg=NONE
 highlight CocErrorSign ctermfg=01 ctermbg=NONE guifg=#c30771 guibg=NONE
-highlight CocInfoHighlight ctermfg=NONE ctermbg=16 guifg=NONE guibg=#000000
-highlight link CocWarningHighlight CocInfoHighlight
-highlight link CocErrorHighlight CocInfoHighlight
+highlight CocInfoHighlight guisp=#a89c14 gui=undercurl
+highlight CocWarningHighlight guisp=#d75f5f gui=undercurl
+highlight CocErrorHighlight guisp=#e32791 gui=undercurl
 highlight CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
 highlight link CocWarningFloat CocInfoFloat
 highlight link CocErrorFloat CocInfoFloat

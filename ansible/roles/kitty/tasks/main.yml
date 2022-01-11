@@ -1,0 +1,11 @@
+- name: check if kitty was brewed
+  shell: brew info kitty
+  register: kitty_brewed
+  ignore_errors: true
+
+- name: symlink kitty directory
+  file:
+    src: '{{ role_path }}/files/kitty'
+    dest: '{{ kitty_config_path }}'
+    state: link
+  when: kitty_brewed is successful

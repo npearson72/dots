@@ -1,8 +1,8 @@
 hs.hotkey.bind({'cmd'}, 'escape', function()
-  local alacritty = hs.application.find('Alacritty')
-  if alacritty:isFrontmost() then
-    alacritty:hide()
+  local app = hs.application.find('kitty')
+  if app:isFrontmost() then
+    app:hide()
   else
-    hs.application.launchOrFocus('/Applications/Alacritty.app')
+    hs.application.launchOrFocus('/Applications/kitty.app')
   end
 end)
