@@ -21,6 +21,7 @@
     ".env",
     ".git"
   ],
+  "coc.preferences.willSaveHandlerTimeout": 5000,
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
