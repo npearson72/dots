@@ -26,7 +26,10 @@
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
-  "emmet.includeLanguages": { "javascript": "javascriptreact" },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "eruby": "html"
+  },
   "emmet.showSuggestionsAsSnippets": true,
   "eslint.run": "onSave",
   "explorer.file.reveal.auto": false,
