@@ -7,7 +7,7 @@ source <(antibody init)
 antibody bundle < $ZSH_FILES/zsh_plugins.txt
 
 # ASDF
-source $BREW_PREFIX_DIR/opt/asdf/asdf.sh
+source $BREW_PREFIX_DIR/opt/asdf/libexec/asdf.sh
 source $BREW_PREFIX_DIR/share/zsh/site-functions
 
 # Brew
