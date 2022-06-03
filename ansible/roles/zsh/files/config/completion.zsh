@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Only check once a day
 # https://htr3n.github.io/2018/07/faster-zsh/
 autoload -Uz compinit

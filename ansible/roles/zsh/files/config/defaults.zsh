@@ -1,7 +1,4 @@
-#!/bin/sh
-
 # ZSH history
-HISTFILE=$XDG_CACHE_HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 

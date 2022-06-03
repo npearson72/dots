@@ -1,5 +1,3 @@
-#!/bin/sh
-
 BREW_PREFIX_DIR=/usr/local
 
 # Antibody (zsh plugin manager)
@@ -9,10 +7,6 @@ antibody bundle < $ZSH_FILES/zsh_plugins.txt
 # ASDF
 source $BREW_PREFIX_DIR/opt/asdf/libexec/asdf.sh
 source $BREW_PREFIX_DIR/share/zsh/site-functions
-
-# Brew
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=1
 
 # fasd
 eval "$(fasd --init posix-alias zsh-hook)"

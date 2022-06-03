@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
@@ -7,9 +5,15 @@ export XDG_DATA_HOME=$HOME/.local/share
 
 export BAT_THEME=zenburn
 
+# Brew
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
+
 # Brew bundle
 export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/Brewfile
-export HOMEBREW_BUNDLE_NO_LOCK=false
+export HOMEBREW_BUNDLE_NO_LOCK=1
 
 # Editor
 export VISUAL=nvim
@@ -24,12 +28,20 @@ export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
 export FZF_DEFAULT_COMMAND='rg --follow --hidden -l "" --glob "!.git/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
-# OpenSSL
-# For compilers to find openssl you may need to set:
+# Less
+export LESSHISTFILE=$XDG_CACHE_HOME/.lesshst
+
+# MySQL
+export MYSQL_HISTFILE=$XDG_CACHE_HOME/.mysql_history
+
+# Node
+export NODE_REPL_HISTORY=$XDG_CACHE_HOME/.node_repl_history
+
+# OpenSSL - for compilers to find openssl:
 export LDFLAGS='-L/usr/local/opt/openssl/lib'
 export CPPFLAGS='-I/usr/local/opt/openssl/include'
 
-# For pkg-config to find openssl you may need to set:
+# OpenSSL - for pkg-config to find openssl:
 export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 
 # Postgres
@@ -40,3 +52,6 @@ export LANG=en_US.UTF-8
 
 # Ripgrep (aka: rg)
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc
+
+# ZSH
+export HISTFILE=$XDG_CACHE_HOME/.zsh_history

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 CONFIG_DIR=$(dirname "$0")/config
 
 source $CONFIG_DIR/path.zsh

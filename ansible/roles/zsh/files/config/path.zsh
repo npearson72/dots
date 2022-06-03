@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Base
 PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
 STTY_HACK='/usr/local/sbin'
