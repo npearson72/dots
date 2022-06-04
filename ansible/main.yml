@@ -7,7 +7,7 @@
     computer_type: "{{ lookup('env', 'COMPUTER_TYPE') }}"
   roles:
     - { role: pre_build, tags: pre_build }
-    - { role: homebrew, tags: homebrew }
+    - { role: homebrew, tags: homebrew, become: yes, become_user: homebrew }
     - { role: kitty, tags: kitty }
     - { role: git, tags: git }
     - { role: hammerspoon, tags: hammerspoon }

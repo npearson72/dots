@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-work = File.readlines("#{Dir.home}/.dots/.env").any? do |line|
-  line.match?(/COMPUTER_TYPE.*work/)
-end
-
 tap 'elastic/tap'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
@@ -21,14 +17,14 @@ brew 'bat'
 brew 'cmake'
 brew 'diff-so-fancy'
 # brew 'dockutil'
-brew 'elastic/tap/elasticsearch-full', restart_service: true if work
-brew 'elastic/tap/kibana-full' if work
+brew 'elastic/tap/elasticsearch-full', restart_service: true
+brew 'elastic/tap/kibana-full'
 brew 'fasd'
 brew 'findutils'
 brew 'fzf'
 brew 'gawk'
 brew 'gcc'
-brew 'ghostscript' if work
+brew 'ghostscript'
 brew 'git'
 brew 'gpg'
 brew 'gnu-sed'
@@ -43,7 +39,7 @@ brew 'mas'
 brew 'neovim'
 brew 'openssh'
 brew 'postgresql'
-brew 'postgis' if work
+brew 'postgis'
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
@@ -62,7 +58,7 @@ cask 'authy'
 cask 'docker'
 cask 'hpedrorodrigues/tools/dockutil' # Temp fix https://github.com/kcrawford/dockutil/issues/127
 cask 'dropbox'
-cask 'figma' unless work
+cask 'figma'
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'hammerspoon'
@@ -73,6 +69,5 @@ cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
 cask 'slack'
-cask 'telegram' unless work
-cask 'transmission' unless work
+cask 'transmission'
 mas 'Bear', id: '1091189122'.to_i
