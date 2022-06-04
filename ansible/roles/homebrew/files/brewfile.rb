@@ -20,7 +20,7 @@ brew 'awscli'
 brew 'bat'
 brew 'cmake'
 brew 'diff-so-fancy'
-brew 'dockutil'
+# brew 'dockutil'
 brew 'elastic/tap/elasticsearch-full', restart_service: true if work
 brew 'elastic/tap/kibana-full' if work
 brew 'fasd'
@@ -60,6 +60,7 @@ cask '1password'
 cask 'adoptopenjdk8'
 cask 'authy'
 cask 'docker'
+cask 'hpedrorodrigues/tools/dockutil' # Temp fix https://github.com/kcrawford/dockutil/issues/127
 cask 'dropbox'
 cask 'figma' unless work
 cask 'font-hack-nerd-font'
