@@ -22,7 +22,7 @@
     - /Applications/Bear.app
     - /System/Applications/Books.app
     - /Applications/Authy Desktop.app
-    - /Applications/Alacritty.app
+    - /Applications/kitty.app
     - /System/Applications/Utilities/Activity Monitor.app
     - /System/Applications/System Preferences.app
   when: computer_type == "home"
@@ -36,7 +36,7 @@
     - /Applications/Bear.app
     - /Applications/Slack.app
     - /Applications/Authy Desktop.app
-    - /Applications/Alacritty.app
+    - /Applications/kitty.app
     - /System/Applications/Utilities/Activity Monitor.app
     - /System/Applications/System Preferences.app
   when: computer_type == "work"

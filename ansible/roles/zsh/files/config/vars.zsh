@@ -9,7 +9,6 @@ export BAT_THEME=zenburn
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications"
 
 # Brew bundle
 export HOMEBREW_BUNDLE_FILE=$XDG_CONFIG_HOME/Brewfile
