@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-work = File.readlines("#{Dir.home}/.dots/.env").any? do |line|
-  line.match?(/COMPUTER_TYPE.*work/)
-end
+work = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(work|hybrid)/)
+home = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(home|hybrid)/)
 
 tap 'elastic/tap'
 tap 'homebrew/bundle'
@@ -62,7 +61,7 @@ cask 'authy'
 cask 'docker'
 cask 'hpedrorodrigues/tools/dockutil' # Temp fix https://github.com/kcrawford/dockutil/issues/127
 cask 'dropbox'
-cask 'figma' unless work
+cask 'figma' if home
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'hammerspoon'
@@ -72,7 +71,6 @@ cask 'ngrok'
 cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
-cask 'slack'
-cask 'telegram' unless work
-cask 'transmission' unless work
+cask 'slack' if work
+cask 'transmission' if home
 mas 'Bear', id: '1091189122'.to_i

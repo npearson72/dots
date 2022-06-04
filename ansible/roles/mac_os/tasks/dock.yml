@@ -25,19 +25,4 @@
     - /Applications/kitty.app
     - /System/Applications/Utilities/Activity Monitor.app
     - /System/Applications/System Preferences.app
-  when: computer_type == "home"
-  tags: mac_os_dock
-
-- name: add icons to work dock
-  command: dockutil --add "{{ item }}"
-  with_items:
-    - /System/Applications/Launchpad.app
-    - /Applications/Google Chrome.app
-    - /Applications/Bear.app
-    - /Applications/Slack.app
-    - /Applications/Authy Desktop.app
-    - /Applications/kitty.app
-    - /System/Applications/Utilities/Activity Monitor.app
-    - /System/Applications/System Preferences.app
-  when: computer_type == "work"
   tags: mac_os_dock
