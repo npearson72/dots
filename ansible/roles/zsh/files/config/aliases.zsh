@@ -9,3 +9,6 @@ fi
 alias reload!="exec zsh -l"
 alias start_rails="bundle exec rails s -b 0.0.0.0"
 alias j="fasd_cd -d"
+
+# Remove default fasd aliases
+unalias a d f s sd sf z zz
