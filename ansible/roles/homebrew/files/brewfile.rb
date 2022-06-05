@@ -40,6 +40,7 @@ brew 'kubectl'
 brew 'minikube'
 brew 'mas'
 brew 'neovim'
+brew 'openconnect' if work
 brew 'openssh'
 brew 'postgresql'
 brew 'postgis' if work
