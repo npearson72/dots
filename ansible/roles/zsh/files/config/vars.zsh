@@ -52,5 +52,8 @@ export LANG=en_US.UTF-8
 # Ripgrep (aka: rg)
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc
 
+# Wget
+export WGETRC=$XDG_CONFIG_HOME/.wgetrc
+
 # ZSH
 export HISTFILE=$XDG_CACHE_HOME/.zsh_history

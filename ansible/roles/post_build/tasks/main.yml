@@ -1,7 +1,7 @@
 - name: find garbage files
   find:
-    paths: "{{ home }}"
-    patterns: "^.*(bash|DS_Store|oracle|vim).*$"
+    paths: '{{ home }}'
+    patterns: '^.*(bash|DS_Store|oracle|vim).*$'
     use_regex: true
     hidden: true
     file_type: any
@@ -9,6 +9,12 @@
 
 - name: delete garbage files
   file:
-    path: "{{ item.path }}"
+    path: '{{ item.path }}'
     state: absent
-  with_items: "{{ garbage_files.files }}"
+  with_items: '{{ garbage_files.files }}'
+
+- name: link .wgetrc file
+  file:
+    src: '{{ role_path }}/files/wgetrc'
+    dest: '{{ config_path }}/.wgetrc'
+    state: link

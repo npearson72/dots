@@ -22,12 +22,12 @@
     dest: /usr/local/sbin/stty
     state: link
 
-- name: make sure {{ home }}/.config" dir exists
+- name: make sure "{{ config_path }}" dir exists
   file:
-    path: "{{ home }}/.config"
+    path: '{{ config_path }}'
     state: directory
 
 - name: make sure "{{ cache_path }}" dir exists
   file:
-    path: "{{ cache_path }}"
+    path: '{{ cache_path }}'
     state: directory
