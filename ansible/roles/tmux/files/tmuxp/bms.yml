@@ -1,5 +1,5 @@
 session_name: bms
-start_directory: ~/Dev/bms
+start_directory: ~/Dev/acima/bms
 windows:
   - window_name: zsh
   - window_name: rails

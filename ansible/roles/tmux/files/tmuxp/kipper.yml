@@ -1,5 +1,5 @@
 session_name: kipper
-start_directory: ~/Dev/kipper
+start_directory: ~/Dev/acima/kipper
 windows:
   - window_name: kipper
     layout: main-vertical

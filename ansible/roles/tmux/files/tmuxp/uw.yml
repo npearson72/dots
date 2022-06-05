@@ -1,7 +1,7 @@
 session_name: uw
 windows:
   - window_name: uw
-    start_directory: ~/Dev/uw
+    start_directory: ~/Dev/acima/uw
     layout: main-vertical
     options:
       main-pane-width: 50%
@@ -10,7 +10,7 @@ windows:
       -
       -
   - window_name: gcrs
-    start_directory: ~/Dev/gcrs
+    start_directory: ~/Dev/acima/gcrs
     layout: main-vertical
     options:
       main-pane-width: 50%
@@ -19,7 +19,7 @@ windows:
       -
       -
   - window_name: bas
-    start_directory: ~/Dev/bas
+    start_directory: ~/Dev/acima/bas
     layout: main-vertical
     options:
       main-pane-width: 50%
