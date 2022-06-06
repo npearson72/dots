@@ -9,7 +9,7 @@
 
 - name: symlink hammerspoon directory
   file:
-    src: "{{ role_path }}/files/hammerspoon"
-    dest: "{{ hammerspoon_config_path }}"
+    src: '{{ role_path }}/files/hammerspoon'
+    dest: '{{ hammerspoon_config_path }}'
     state: link
   when: hammerspoon_brewed is successful

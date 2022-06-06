@@ -1,1 +1,1 @@
-alacritty_config_path: "{{ home }}/.config/alacritty"
+alacritty_config_path: '{{ home }}/.config/alacritty'
