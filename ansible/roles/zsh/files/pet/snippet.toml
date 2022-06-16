@@ -49,6 +49,11 @@
   output = ""
 
 [[snippets]]
+  description = "Open all files in vim"
+  command = "find <directory> -type f -print | xargs echo | xargs -I {} sh -c 'nvim -p {}'"
+  output = ""
+
+[[snippets]]
   description = "Print terminal colors"
   command = "curl -s https://gist.githubusercontent.com/npearson72/e36bfb70f70bb908edb6f0148a43249f/raw/colortest.py | python3"
   output = ""
