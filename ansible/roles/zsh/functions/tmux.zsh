@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _tmux_sessions() {
-  tmux ls -F '#{session_created} #{session_name}: #{session_windows} windows (created #{t:session_created})#{?session_attached, (attached),}' | sort | cut -d' ' -f2- 2> /dev/null
+  tmux ls -F '#{session_created} #{session_name}: #{session_windows} windows (created #{t:session_created})' | sort | cut -d' ' -f2- 2> /dev/null
 }
 
 # This function will present a menu of active TMUX sesssions
