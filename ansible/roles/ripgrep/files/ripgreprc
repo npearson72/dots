@@ -17,10 +17,10 @@
 --sort=path
 
 # Exclude .dot directories
---glob=!{.cache,.expo*,.git,.svn,.tldr,.terraform,.webpack}
+--glob=!{.cache,.expo*,.git,.next,.svn,.tldr,.terraform,.webpack}
 
 # Exclude dev directories
---glob=!{cache,dist*,log,node_modules,tmp,public/packs}
+--glob=!{**/node_modules,cache,dist,log,tmp,public/packs}
 
 # Exclude dev files
 --glob=!{package-lock.json,yarn-error*,yarn.lock}
