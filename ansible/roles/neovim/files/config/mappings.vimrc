@@ -61,6 +61,9 @@ cnoremap <c-e> <end>
 vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
+" Do not yank text when pasting on top of it
+vnoremap p "_dP
+
 " Toggle line wrapping
 nnoremap <leader>w :set wrap!<cr>
 nnoremap <leader>i :set list!<cr>

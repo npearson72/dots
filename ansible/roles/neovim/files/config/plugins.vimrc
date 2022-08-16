@@ -9,6 +9,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'kevinoid/vim-jsonc'
 Plug 'pantharshit00/vim-prisma'
+Plug 'styled-components/vim-styled-components'
 
 " File management, search, navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -59,9 +60,11 @@ let g:coc_global_extensions=[
       \ 'coc-json',
       \ 'coc-prettier',
       \ 'coc-prisma',
+      \ 'coc-rust-analyzer',
       \ 'coc-solargraph',
-      \ 'coc-tsserver',
+      \ 'coc-styled-components',
       \ 'coc-snippets',
+      \ 'coc-tsserver',
       \ 'coc-vetur'
       \]
 
