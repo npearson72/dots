@@ -7,7 +7,6 @@ Plug 'gcmt/taboo.vim'
 
 " Syntax highlighting
 Plug 'sheerun/vim-polyglot'
-Plug 'kevinoid/vim-jsonc'
 Plug 'pantharshit00/vim-prisma'
 Plug 'styled-components/vim-styled-components'
 
