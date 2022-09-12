@@ -82,6 +82,7 @@
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "suggest.snippetIndicator": " ",
+  "suggest.maxCompleteItemCount": 500,
   "typescript.updateImportsOnFileMove.enable": false,
   "vetur.validation.template": false
 }
