@@ -96,9 +96,18 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Plugins
 "=================================
 " Coc
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-inoremap <silent><expr><c-j> pumvisible() ? "\<c-y>" : "\<c-j>"
+inoremap <silent><expr> <tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<tab>" :
+      \ coc#refresh()
+inoremap <expr><s-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<c-h>"
+inoremap <silent><expr> <c-j> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<c-g>u\<CR>\<c-r>=coc#on_enter()\<cr>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 inoremap <silent><expr> <c-k> coc#refresh()
 
@@ -107,7 +116,7 @@ nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
 
-nmap <silent><leader>a <Plug>(coc-codeaction)<cr>
+nmap <silent><leader>a <Plug>(coc-codeaction)
 
 nnoremap <silent><leader>d :CocShowDocumentation<cr>
 
