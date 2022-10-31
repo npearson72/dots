@@ -2,6 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "html",
+    "go",
     "javascript",
     "javascriptreact",
     "json",
