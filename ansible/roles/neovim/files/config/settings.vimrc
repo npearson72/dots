@@ -6,6 +6,7 @@ set linebreak
 set listchars=tab:▸\ ,trail:·,eol:¬,space:·
 set nosplitright
 set noswapfile
+set mouse= " Disable mouse
 set number
 set numberwidth=1 " Reduce width of number line
 set smartindent
