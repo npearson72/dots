@@ -1,35 +1,29 @@
 - name: make sure "{{ neovim_config_path }}" dir exists
   file:
-    path: "{{ neovim_config_path }}"
+    path: '{{ neovim_config_path }}'
     state: directory
 
 - name: symlink config directory
   file:
-    src: "{{ role_path }}/files/config"
-    dest: "{{ neovim_config_path }}/config"
+    src: '{{ role_path }}/files/config'
+    dest: '{{ neovim_config_path }}/config'
     state: link
 
 - name: symlink init.vim
   file:
-    src: "{{ role_path }}/files/init.vim"
-    dest: "{{ neovim_config_path }}/init.vim"
-    state: link
-
-- name: symlink coc-settings.json
-  file:
-    src: "{{ role_path }}/files/coc-settings.json"
-    dest: "{{ neovim_config_path }}/coc-settings.json"
+    src: '{{ role_path }}/files/init.vim'
+    dest: '{{ neovim_config_path }}/init.vim'
     state: link
 
 - name: make sure "{{ neovim_config_path }}/autoload" dir exists
   file:
-    path: "{{ neovim_config_path }}/autoload"
+    path: '{{ neovim_config_path }}/autoload'
     state: directory
 
 - name: install vim-plug
   get_url:
-    url: "{{ vim_plug_repo }}"
-    dest: "{{ neovim_config_path }}/autoload/plug.vim"
+    url: '{{ vim_plug_repo }}'
+    dest: '{{ neovim_config_path }}/autoload/plug.vim'
     force: yes
 
 - name: install neovim plugins

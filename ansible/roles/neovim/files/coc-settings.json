@@ -1,28 +1,6 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "html",
-    "go",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "jsonc",
-    "markdown",
-    "prisma",
-    "ruby",
-    "rust",
-    "scss",
-    "typescript",
-    "typescriptreact",
-    "yaml"
-  ],
+  "coc.preferences.formatOnSave": true,
   "coc.preferences.jumpCommand": "tabe",
-  "coc.preferences.rootPatterns": [
-    "package.json",
-    ".gitignore",
-    ".env",
-    ".git"
-  ],
   "coc.preferences.willSaveHandlerTimeout": 5000,
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
@@ -70,7 +48,6 @@
   "git.changeRemovedSign.hlGroup": "CocGitDeleteChange",
   "git.changedSign.text": "!",
   "javascript.suggestionActions.enabled": false,
-  "javascript.updateImportsOnFileMove.enable": false,
   "prettier.arrowParens": "avoid",
   "prettier.endOfLine": "auto",
   "prettier.printWidth": 80,
@@ -85,6 +62,6 @@
   "suggest.snippetIndicator": " ",
   "suggest.maxCompleteItemCount": 500,
   "suggest.noselect": true,
-  "typescript.updateImportsOnFileMove.enable": false,
-  "vetur.validation.template": false
+  "vetur.validation.template": false,
+  "workspace.rootPatterns": ["package.json", ".gitignore", ".env", ".git"]
 }

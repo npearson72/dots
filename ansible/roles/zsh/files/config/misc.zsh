@@ -20,9 +20,6 @@ source $BREW_PREFIX_DIR/opt/fzf/shell/key-bindings.zsh
 # Pet
 bindkey '^s' pet-select
 
-# Rust (Rustup - https://rustup.rs)
-. "$HOME/.cargo/env"
-
 # Tmux
 tmux menu
 

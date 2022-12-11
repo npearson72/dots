@@ -19,6 +19,7 @@ Plug 'skwp/greplace.vim'
 Plug 'npearson72/vim-personal-snippets'
 
 " Autocompletion
+Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Formatters, selectors, accelerators
@@ -45,6 +46,8 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Coc
+let g:coc_config_home="$HOME/.dots/ansible/roles/neovim/files"
+
 let g:python_host_prog='/usr/bin/python'
 let g:python_host_prog3='/usr/local/bin/python3'
 
@@ -55,12 +58,10 @@ let g:coc_global_extensions=[
       \ 'coc-eslint',
       \ 'coc-explorer',
       \ 'coc-git',
-      \ 'coc-go',
       \ 'coc-html',
       \ 'coc-json',
       \ 'coc-prettier',
       \ 'coc-prisma',
-      \ 'coc-rust-analyzer',
       \ 'coc-solargraph',
       \ 'coc-styled-components',
       \ 'coc-snippets',
@@ -75,6 +76,9 @@ let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \}
+
+" Github Copilot
+let g:copilot_no_tab_map=1
 
 " Gsearch
 let g:grep_cmd_opts='--line-number --no-heading --glob "!tmp/*"'

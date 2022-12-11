@@ -123,6 +123,9 @@ nnoremap <silent><leader>d :CocShowDocumentation<cr>
 " Coc - Explorer
 nnoremap <silent><leader>e :CocCommand explorer<cr>
 
+" Copilot
+inoremap <silent><script><expr> <c-l> copilot#Accept('\<cr>')
+
 " FZF
 nnoremap <c-p> :FZFCtrlp<cr>
 nnoremap <leader>b :Buffers<cr>
