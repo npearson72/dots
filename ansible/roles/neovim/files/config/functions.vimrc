@@ -93,13 +93,45 @@ command! BD call fzf#run(fzf#wrap({
 
 " FZF display preview window while searching (ctrl-p)
 command! -bang -nargs=? -complete=dir Files
-      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'), <bang>0)
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', 'ctrl-p'), <bang>0)
 
 command! -bang -nargs=? -complete=dir Buffers
-      \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'))
+      \ call fzf#vim#buffers(fzf#vim#with_preview('right:50%', 'ctrl-p'))
 
-command! -bang -nargs=? -complete=dir History
-      \ call fzf#vim#history(fzf#vim#with_preview('right:50%:hidden', 'ctrl-p'))
+" command! -bang -nargs=? -complete=dir History
+"       \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
+
+command! -bang History call fzf#run(fzf#wrap(s:preview(<bang>0, {
+  \ 'source': s:file_history_from_directory(s:get_git_root()),
+  \ 'options': [
+  \   '--prompt', 'History> ',
+  \   '--bind',  'ctrl-p:toggle-preview',
+  \   '--multi',
+  \ ]}), <bang>0))
+
+" Alternative source
+" s:file_history_from_directory(getcwd())
+
+function! s:file_history_from_directory(directory)
+  return fzf#vim#_uniq(filter(fzf#vim#_recent_files(), "s:file_is_in_directory(fnamemodify(v:val, ':p'), a:directory)"))
+endfunction
+
+function! s:file_is_in_directory(file, directory)
+  return filereadable(a:file) && match(a:file, a:directory . '/') == 0
+endfunction
+
+function! s:preview(bang, ...)
+  let preview_window = get(g:, 'fzf_preview_window', a:bang && &columns >= 80 || &columns >= 120 ? 'right': '')
+  if len(preview_window)
+    return call('fzf#vim#with_preview', add(copy(a:000), preview_window))
+  endif
+  return {}
+endfunction
+
+function! s:get_git_root()
+  let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
+  return v:shell_error ? '' : root
+endfunction
 
 " FZF as grep (Using ripgrep)
 command! -bang -nargs=* Rg

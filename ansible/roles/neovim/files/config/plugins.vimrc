@@ -70,7 +70,7 @@ let g:coc_global_extensions=[
       \]
 
 " FZF
-let g:fzf_layout={ 'down': '50%' }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
