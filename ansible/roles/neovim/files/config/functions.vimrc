@@ -101,31 +101,21 @@ command! -bang -nargs=? -complete=dir Buffers
 " command! -bang -nargs=? -complete=dir History
 "       \ call fzf#vim#history(fzf#vim#with_preview('right:50%', 'ctrl-p'))
 
-command! -bang History call fzf#run(fzf#wrap(s:preview(<bang>0, {
-  \ 'source': s:file_history_from_directory(s:get_git_root()),
-  \ 'options': [
-  \   '--prompt', 'History> ',
-  \   '--bind',  'ctrl-p:toggle-preview',
-  \   '--multi',
-  \ ]}), <bang>0))
-
-" Alternative source
-" s:file_history_from_directory(getcwd())
+command! -bang History call fzf#run(fzf#wrap(fzf#vim#with_preview({
+      \ 'source': s:file_history_from_directory(s:get_git_root()),
+      \ 'options': [
+      \   '--prompt', 'Hist> ',
+      \   '--bind',  'ctrl-p:toggle-preview',
+      \   '--multi',
+      \ ]}), <bang>0))
 
 function! s:file_history_from_directory(directory)
-  return fzf#vim#_uniq(filter(fzf#vim#_recent_files(), "s:file_is_in_directory(fnamemodify(v:val, ':p'), a:directory)"))
+  return fzf#vim#_uniq(filter(fzf#vim#_recent_files(),
+        \ "s:file_is_in_directory(fnamemodify(v:val, ':p'), a:directory)"))
 endfunction
 
 function! s:file_is_in_directory(file, directory)
   return filereadable(a:file) && match(a:file, a:directory . '/') == 0
-endfunction
-
-function! s:preview(bang, ...)
-  let preview_window = get(g:, 'fzf_preview_window', a:bang && &columns >= 80 || &columns >= 120 ? 'right': '')
-  if len(preview_window)
-    return call('fzf#vim#with_preview', add(copy(a:000), preview_window))
-  endif
-  return {}
 endfunction
 
 function! s:get_git_root()
