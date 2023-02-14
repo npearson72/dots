@@ -36,7 +36,6 @@ brew 'gnu-which'
 brew 'gzip'
 brew 'htop'
 brew 'imagemagick'
-brew 'kubectl@1.22'
 brew 'minikube'
 brew 'mas'
 brew 'neovim'
@@ -46,13 +45,11 @@ brew 'postgresql'
 brew 'postgis' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
-brew 'swiftbar' if work
 brew 'tldr'
 brew 'tmux'
 brew 'tmuxp'
 brew 'tree'
 brew 'unzip'
-brew 'wget'
 brew 'zsh'
 brew 'zsh-history-substring-search'
 brew 'knqyf263/pet/pet'
@@ -73,5 +70,6 @@ cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
 cask 'slack' if work
+cask 'swiftbar' if work
 cask 'transmission' if home
 mas 'Bear', id: '1091189122'.to_i
