@@ -46,6 +46,7 @@ brew 'postgresql'
 brew 'postgis' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
+brew 'swiftbar' if work
 brew 'tldr'
 brew 'tmux'
 brew 'tmuxp'
