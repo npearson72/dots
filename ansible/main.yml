@@ -12,7 +12,6 @@
     - { role: hammerspoon, tags: hammerspoon }
     - { role: ripgrep, tags: ripgrep }
     - { role: ssh, tags: ssh }
-    - { role: elasticsearch, tags: elasticsearch }
     - { role: tmux, tags: tmux }
     - { role: zsh, tags: zsh }
     - { role: nodejs, tags: nodejs }

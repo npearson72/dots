@@ -1,1 +1,0 @@
-jvm_heap_size: "{{ lookup('env', 'ELASTICSEARCH_JVM_HEAP_SIZE') }}"

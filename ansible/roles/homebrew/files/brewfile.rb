@@ -3,7 +3,6 @@
 work = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(work|hybrid)/)
 home = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(home|hybrid)/)
 
-tap 'elastic/tap'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
@@ -20,8 +19,6 @@ brew 'bat'
 brew 'cmake'
 brew 'diff-so-fancy'
 # brew 'dockutil'
-brew 'elastic/tap/elasticsearch-full', restart_service: true if work
-brew 'elastic/tap/kibana-full' if work
 brew 'fasd'
 brew 'findutils'
 brew 'fzf'
@@ -54,7 +51,6 @@ brew 'zsh'
 brew 'zsh-history-substring-search'
 brew 'knqyf263/pet/pet'
 cask '1password'
-cask 'adoptopenjdk8'
 cask 'authy'
 cask 'docker'
 cask 'hpedrorodrigues/tools/dockutil' # Temp fix https://github.com/kcrawford/dockutil/issues/127
