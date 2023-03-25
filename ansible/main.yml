@@ -7,7 +7,7 @@
   roles:
     - { role: pre_build, tags: pre_build }
     - { role: homebrew, tags: homebrew }
-    - { role: kitty, tags: kitty }
+    - { role: alacritty, tags: alacritty }
     - { role: git, tags: git }
     - { role: hammerspoon, tags: hammerspoon }
     - { role: ripgrep, tags: ripgrep }

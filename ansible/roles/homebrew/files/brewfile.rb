@@ -60,7 +60,6 @@ cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
 cask 'hammerspoon'
 cask 'iina'
-cask 'kitty'
 cask 'ngrok'
 cask 'phantomjs'
 cask 'postman'

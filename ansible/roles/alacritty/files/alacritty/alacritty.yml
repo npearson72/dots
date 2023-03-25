@@ -1,12 +1,21 @@
 env:
-  TERM: xterm-256color
+  TERM: alacritty
+
+shell:
+  program: /usr/local/bin/zsh
 
 window:
   startup_mode: SimpleFullscreen
-  decorations: none
+  dynamic_padding: true
+  padding:
+    x: 0
+    y: 0
+  dimensions:
+    columns: 120
+    lines: 40
 
 font:
-  size: 14
+  size: 15.5
   normal:
     family: Hack Nerd Font Mono
     style: Regular
@@ -19,8 +28,9 @@ font:
   offset:
     x: 0
     y: 3
-
-  use_thin_strokes: true
+  glyph_offset:
+    x: 0
+    y: 3
 
 colors:
  # Default Colors
@@ -51,31 +61,29 @@ colors:
  cursor:
    cursor: '#1ac7fc'
 
-# background_opacity: 0.99
-
 bell:
   duration: 10
   color: '#626262'
 
 # Use `xxd -psd` to discover other chars hex values
 key_bindings:
-  - { key: H,         mods: Alt,        chars: "\x1b\x68" }
-  - { key: J,         mods: Alt,        chars: "\x1b\x6a" }
-  - { key: K,         mods: Alt,        chars: "\x1b\x6b" }
-  - { key: K,         mods: Command,    chars: "\x1C"     } # See .tmux.conf
-  - { key: L,         mods: Alt,        chars: "\x1b\x6c" }
-  - { key: O,         mods: Alt,        chars: "\x1b\x6f" }
-  - { key: R,         mods: Shift|Alt,  chars: "\x1b\x52" }
-  - { key: R,         mods: Alt,        chars: "\x1b\x72" }
-  - { key: S,         mods: Alt,        chars: "\x1b\x73" }
-  - { key: T,         mods: Alt,        chars: "\x1b\x74" }
-  - { key: W,         mods: Alt,        chars: "\x1b\x77" }
-  - { key: Backslash, mods: Shift|Alt,  chars: "\x1b\x7c" }
-  - { key: Minus,     mods: Shift|Alt,  chars: "\x1b\x5f" }
-  - { key: LBracket,  mods: Alt,        chars: "\x1b\x5b" }
-  - { key: RBracket,  mods: Alt,        chars: "\x1b\x5d" }
-  - { key: Semicolon, mods: Shift|Alt,  chars: "\x1b\x3a" }
-  - { key: Slash,     mods: Alt,        chars: "\x1b\x2f" }
+  - { key: H,         mods: Alt,       chars: "\x1b\x68" }
+  - { key: J,         mods: Alt,       chars: "\x1b\x6a" }
+  - { key: K,         mods: Alt,       chars: "\x1b\x6b" }
+  - { key: K,         mods: Command,   chars: "\x1C"     } # See .tmux.conf
+  - { key: L,         mods: Alt,       chars: "\x1b\x6c" }
+  - { key: O,         mods: Alt,       chars: "\x1b\x6f" }
+  - { key: R,         mods: Shift|Alt, chars: "\x1b\x52" }
+  - { key: R,         mods: Alt,       chars: "\x1b\x72" }
+  - { key: S,         mods: Alt,       chars: "\x1b\x73" }
+  - { key: T,         mods: Alt,       chars: "\x1b\x74" }
+  - { key: W,         mods: Alt,       chars: "\x1b\x77" }
+  - { key: Backslash, mods: Shift|Alt, chars: "\x1b\x7c" }
+  - { key: Minus,     mods: Shift|Alt, chars: "\x1b\x5f" }
+  - { key: LBracket,  mods: Alt,       chars: "\x1b\x5b" }
+  - { key: RBracket,  mods: Alt,       chars: "\x1b\x5d" }
+  - { key: Semicolon, mods: Shift|Alt, chars: "\x1b\x3a" }
+  - { key: Slash,     mods: Alt,       chars: "\x1b\x2f" }
 
   - {
       key: N,
