@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mux() {
-  tmuxp_configs=("ams" "bms" "cp" "mp" "lms" "uw" "kipper")
+  tmuxp_configs=("amc" "ams" "bms" "cp" "mp" "lms" "uw" "kipper")
 
   if [[ $1 = "kill" ]]; then
     if [[ $2 = "acima" ]]; then

@@ -53,6 +53,7 @@ let g:python_host_prog3='/usr/local/bin/python3'
 
 let g:coc_global_extensions=[
       \ 'coc-css',
+      \ 'coc-deno',
       \ 'coc-emmet',
       \ 'coc-emoji',
       \ 'coc-eslint',

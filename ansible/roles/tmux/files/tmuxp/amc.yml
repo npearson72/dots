@@ -1,0 +1,12 @@
+session_name: amc
+start_directory: ~/Dev/acima/amc
+windows:
+  - window_name: zsh
+  - window_name: apps
+    layout: main-vertical
+    options:
+      main-pane-width: 50%
+    panes:
+      -
+      -
+      -
