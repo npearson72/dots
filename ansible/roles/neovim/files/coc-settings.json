@@ -48,6 +48,15 @@
   "git.changeRemovedSign.hlGroup": "CocGitDeleteChange",
   "git.changedSign.text": "!",
   "javascript.suggestionActions.enabled": false,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
   "prettier.arrowParens": "avoid",
   "prettier.endOfLine": "auto",
   "prettier.printWidth": 80,
