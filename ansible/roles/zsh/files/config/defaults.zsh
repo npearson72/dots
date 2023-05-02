@@ -6,6 +6,7 @@ SAVEHIST=10000
 setopt HIST_VERIFY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE
 
 # Run background jobs at higher priority
 setopt NO_BG_NICE
