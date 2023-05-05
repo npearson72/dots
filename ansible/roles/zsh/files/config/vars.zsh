@@ -49,6 +49,9 @@ export PSQL_HISTORY=$XDG_CACHE_HOME/.psql_history
 # Python Fix
 export LANG=en_US.UTF-8
 
+# Redis
+export REDISCLI_HISTFILE=$XDG_CACHE_HOME/.rediscli_history
+
 # Ripgrep (aka: rg)
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/.ripgreprc
 
