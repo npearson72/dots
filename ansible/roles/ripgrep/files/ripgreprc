@@ -26,7 +26,7 @@
 --glob=!{**/ios,**/android}
 
 # Exclude build directories
---glob=!{**/dist,**/build,**/public/packs}
+--glob=!{**/dist,**/build,**/public/packs,**/public/vite-dev}
 
 # Exclude dev files
 --glob=!{package-lock.json,yarn-error*,yarn.lock}
