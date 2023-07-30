@@ -5,8 +5,8 @@
   "coc.source.emoji.filetypes": null,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
-  "diagnostic.infoSign": "",
-  "diagnostic.hintSign": "",
+  "diagnostic.infoSign": "󰀨",
+  "diagnostic.hintSign": "󰅽",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "eruby": "html"
