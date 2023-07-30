@@ -36,9 +36,8 @@ brew 'imagemagick'
 brew 'minikube'
 brew 'mas'
 brew 'neovim'
-brew 'openconnect' if work
 brew 'openssh'
-brew 'postgresql'
+brew 'postgresql@14'
 brew 'postgis' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
@@ -65,6 +64,5 @@ cask 'phantomjs'
 cask 'postman'
 cask 'rectangle'
 cask 'slack' if work
-cask 'swiftbar' if work
 cask 'transmission' if home
 mas 'Bear', id: '1091189122'.to_i
