@@ -11,12 +11,18 @@ fpath=($ZSH_FUNCTIONS "${fpath[@]}")
 
 # Load custom functions
 for file in $ZSH_FUNCTIONS/*.zsh; do
-  autoload -Uz $file
-  source $file
+autoload -Uz $file
+source $file
 done
 
 # Load config files
 source $ZSH_FILES/config.zsh
 
-# Local configs
+# Disable underlines in zsh highlighting
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# Source additional configs
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
+[[ -f $HOME/.config/op/plugins.sh ]] && source $HOME/.config/op/plugins.sh
