@@ -1,3 +1,4 @@
 git:
   email: "{{ lookup('env', 'GIT_EMAIL') }}"
   full_name: "{{ lookup('env', 'FIRST_NAME') }} {{ lookup('env', 'LAST_NAME') }}"
+  signingkey: "{{ lookup('env', 'GIT_SIGNING_KEY') }}"

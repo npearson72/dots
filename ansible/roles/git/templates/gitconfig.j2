@@ -1,6 +1,13 @@
 [user]
     name = {{ git.full_name }}
     email = {{ git.email }}
+    signingkey = {{ git.signingkey }}
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = false
 [hub]
     protocol = https
 [alias]
@@ -19,8 +26,6 @@
     excludesfile = ~/.gitignore
     editor = nvim
     pager = diff-so-fancy | less --tabs=4 -RFX
-[credential]
-    helper = osxkeychain
 [diff-so-fancy]
     stripLeadingSymbols = false
 [help]
