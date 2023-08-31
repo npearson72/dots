@@ -49,6 +49,7 @@ autocmd Filetype markdown setlocal spell
 augroup CodeFormatting
   autocmd!
   autocmd BufWritePre *.prisma Format
+  autocmd BufWritePre *.tf Format
   autocmd BufWritePre *.vue Prettier " Because Vue is a special snowflake
 augroup END
 
