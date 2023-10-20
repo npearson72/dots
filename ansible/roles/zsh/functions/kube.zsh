@@ -5,12 +5,14 @@ _kube_list() {
   app=${*: 3:1}
 
   if [ $env = "production" ]; then
-    export AWS_PROFILE=acima-production
-    export KUBECONFIG=~/.kube/prod/$env
+    export AWS_PROFILE=AcimaProduction-ProductionDeveloperAccess
+    export KUBECONFIG=~/.kube/config-production
+    kubectl config use-context production
     acimos images get $app
   else
-    export AWS_PROFILE=acima-nonprod
-    export KUBECONFIG=~/.kube/nonprod/$env
+    export AWS_PROFILE=AcimaNonprod-NonProdDeveloperAccess
+    export KUBECONFIG=~/.kube/config
+    kubectl config use-context $env
     kubectl get pods --context $env | grep $app
   fi
 }
@@ -20,13 +22,15 @@ _kube_console() {
   app=${*: 3:1}
 
   if [ $env = "production" ]; then
-    export AWS_PROFILE=acima-production
-    export KUBECONFIG=~/.kube/prod/$env
+    export AWS_PROFILE=AcimaProduction-ProductionDeveloperAccess
+    export KUBECONFIG=~/.kube/config-production
+    kubectl config use-context production
     image_run_cmd=$(acimos run $app -i latest)
     eval $image_run_cmd
   else
-    export AWS_PROFILE=acima-nonprod
-    export KUBECONFIG=~/.kube/nonprod/$env
+    export AWS_PROFILE=AcimaNonprod-NonProdDeveloperAccess
+    export KUBECONFIG=~/.kube/config
+    kubectl config use-context $env
     image_run_cmd=$(acimos run $app -e $env)
     eval $image_run_cmd
   fi
