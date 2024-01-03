@@ -48,7 +48,7 @@ kube() {
     return 0
   fi
 
-  if [[  ! $2 =~ ^(production|dev|learning|preflight|sandbox|staging)$ ]]; then
+  if [[  ! $2 =~ ^(production|dev|learning|preflight|qa|sandbox|staging)$ ]]; then
     echo "Usage:";
     echo "  kube $1 [commands]";
     echo ""
@@ -57,6 +57,7 @@ kube() {
     echo "  dev";
     echo "  learning";
     echo "  preflight";
+    echo "  qa";
     echo "  sandbox";
     echo "  staging";
 
