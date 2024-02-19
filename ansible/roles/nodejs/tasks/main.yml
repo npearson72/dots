@@ -7,10 +7,6 @@
   shell: asdf plugin-add nodejs
   when: nodejs_plugin_exists is not successful
 
-- name: import pgp keys
-  shell: bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-  when: nodejs_plugin_exists is not successful
-
 - name: check installed nodejs version
   shell: "asdf list nodejs | grep {{ nodejs_version }}"
   register: nodejs_version_exists

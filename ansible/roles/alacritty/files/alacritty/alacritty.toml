@@ -1,0 +1,176 @@
+[env]
+TERM = "alacritty"
+
+[shell]
+program = "/opt/homebrew/bin/zsh"
+
+[window]
+dynamic_padding = true
+# startup_mode = "Maximized"
+startup_mode = "SimpleFullscreen"
+decorations = "Buttonless"
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 120
+lines = 40
+
+[window.padding]
+x = 0
+y = 0
+
+[font]
+size = 15.5
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 3
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 3
+
+ # Default Colors
+[colors.primary]
+background = "#212121"
+foreground = "#f1f1f1"
+
+ # Normal colors
+[colors.normal]
+black = "#212121"
+blue = "#008ec4"
+cyan = "#20a5ba"
+green = "#10a778"
+magenta = "#523c79"
+red = "#c30771"
+white = "#f1f1f1"
+yellow = "#a89c14"
+
+# Bright colors
+[colors.bright]
+black = "#424242"
+blue = "#b6d6fd"
+cyan = "#4fb8cc"
+green = "#5fd7a7"
+magenta = "#6855de"
+red = "#e32791"
+white = "#ffffff"
+yellow = "#f3e430"
+
+[colors.cursor]
+cursor = "#1ac7fc"
+
+[bell]
+color = "#626262"
+duration = 10
+
+# Use `xxd -psd` to discover other chars hex values
+[[keyboard.bindings]]
+chars = "\u001Bh"
+key = "H"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bj"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bk"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001C"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001Bl"
+key = "L"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bo"
+key = "O"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BR"
+key = "R"
+mods = "Shift|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Br"
+key = "R"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bs"
+key = "S"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bt"
+key = "T"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bw"
+key = "W"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B|"
+key = "Backslash"
+mods = "Shift|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B_"
+key = "Minus"
+mods = "Shift|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B["
+key = "LBracket"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B]"
+key = "RBracket"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B:"
+key = "Semicolon"
+mods = "Shift|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B/"
+key = "Slash"
+mods = "Alt"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["-n", "/Applications/Alacritty.app"]
+program = "open"
+
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "Return"
+mods = "Command"

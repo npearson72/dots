@@ -1,5 +1,5 @@
 session_name: cp
-start_directory: ~/Dev/acima/cp
+start_directory: ~/Dev/cp
 windows:
   - window_name: zsh
   - window_name: rails

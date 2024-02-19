@@ -1,21 +1,25 @@
-BREW_PREFIX_DIR=/usr/local
-
-# Antibody (zsh plugin manager)
-source <(antibody init)
-antibody bundle < $ZSH_FILES/zsh_plugins.txt
+# Antidote (zsh plugin manager)
+source $HOMEBREW_PREFIX_DIR/opt/antidote/share/antidote/antidote.zsh
+source <(antidote init)
+antidote bundle < $ZSH_FILES/zsh_plugins.txt
 
 # ASDF
-source $BREW_PREFIX_DIR/opt/asdf/libexec/asdf.sh
-source $BREW_PREFIX_DIR/share/zsh/site-functions
+source $HOMEBREW_PREFIX_DIR/opt/asdf/libexec/asdf.sh
+source $HOMEBREW_PREFIX_DIR/share/zsh/site-functions
 
-# fasd
-eval "$(fasd --init posix-alias zsh-hook)"
+# Autojump
+if [ -f $HOMEBREW_PREFIX_DIR/etc/profile.d/autojump.sh ]; then
+  source $HOMEBREW_PREFIX_DIR/etc/profile.d/autojump.sh
+fi
 
 # FZF auto-completion
-[[ $- == *i* ]] && source $BREW_PREFIX_DIR/opt/fzf/shell/completion.zsh 2> /dev/null
+[[ $- == *i* ]] && source $HOMEBREW_PREFIX_DIR/opt/fzf/shell/completion.zsh 2> /dev/null
 
 # FZF key bindings
-source $BREW_PREFIX_DIR/opt/fzf/shell/key-bindings.zsh
+source $HOMEBREW_PREFIX_DIR/opt/fzf/shell/key-bindings.zsh
+
+# Homebrew
+eval "$($HOMEBREW_PREFIX_DIR/bin/brew shellenv)"
 
 # Pet
 bindkey '^s' pet-select
@@ -24,4 +28,4 @@ bindkey '^s' pet-select
 tmux menu
 
 # ZSH history substring search
-source $BREW_PREFIX_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $HOMEBREW_PREFIX_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh

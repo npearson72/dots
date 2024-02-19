@@ -1,5 +1,5 @@
 session_name: ams
-start_directory: ~/Dev/acima/ams
+start_directory: ~/Dev/ams
 windows:
   - window_name: zsh
   - window_name: rails

@@ -1,20 +1,25 @@
-# Base
+# Path
 PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
+
 STTY_HACK='/usr/local/sbin'
-GNU_PATH="/usr/local/opt/coreutils/libexec/gnubin:\
-/usr/local/opt/findutils/libexec/gnubin:\
-/usr/local/opt/gnu-tar/libexec/gnubin:\
-/usr/local/opt/gnu-which/libexec/gnubin"
-SSL_PATH='/usr/local/opt/openssl/bin'
+
+GNU_PATH="$HOMEBREW_PREFIX_DIR/opt/opt/coreutils/libexec/gnubin:\
+$HOMEBREW_PREFIX_DIR/opt/opt/findutils/libexec/gnubin:\
+$HOMEBREW_PREFIX_DIR/opt/opt/gnu-tar/libexec/gnubin:\
+$HOMEBREW_PREFIX_DIR/opt/opt/gnu-which/libexec/gnubin"
+
+SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/opt/openssl/bin"
+
 ASDF_PATH="$HOME/.asdf/bin"
+
 ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 
 export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$ANDROID_PATH:$PATH"
 
-# FZF
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/usr/local/opt/fzf/bin"
-fi
+# Manpath
+GNU_MANPATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnuman:\
+$HOMEBREW_PREFIX_DIR/opt/gnu-sed/libexec/gnuman:\
+$HOMEBREW_PREFIX_DIR/opt/gnu-tar/libexec/gnuman:\
+$HOMEBREW_PREFIX_DIR/opt/gnu-which/libexec/gnuman"
 
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export MANPATH
+export MANPATH="$GNU_MANPATH:$MANPATH"

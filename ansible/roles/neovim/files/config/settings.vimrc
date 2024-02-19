@@ -42,3 +42,10 @@ set updatetime=300
 
 " Ripgrep as grep
 if executable('rg') | set grepprg=rg | endif
+
+"=================================
+" Misc
+"=================================
+" Disable adding Perl provider to Neovim
+let g:loaded_perl_provider=0
+

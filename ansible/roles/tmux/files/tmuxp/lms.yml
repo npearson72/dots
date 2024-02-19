@@ -1,5 +1,5 @@
 session_name: lms
-start_directory: ~/Dev/acima/lms
+start_directory: ~/Dev/lms
 windows:
   - window_name: zsh
   - window_name: rails
