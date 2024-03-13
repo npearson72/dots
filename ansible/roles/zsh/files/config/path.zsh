@@ -14,7 +14,9 @@ ASDF_PATH="$HOME/.asdf/bin"
 
 ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 
-export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$ANDROID_PATH:$PATH"
+YARN_PATH="$HOME/.yarn/bin"
+
+export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$ANDROID_PATH:$YARN_PATH:$PATH"
 
 # Manpath
 GNU_MANPATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnuman:\
