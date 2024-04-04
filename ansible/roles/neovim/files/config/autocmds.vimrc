@@ -29,6 +29,9 @@ augroup END
 "=================================
 autocmd Filetype * setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 
+" .env files
+autocmd BufEnter,BufNewFile * if bufname("%") =~ "\.env\..*" | setlocal filetype=sh | endif
+
 " FZF
 autocmd! FileType fzf tnoremap <buffer> <esc> <esc>
 
