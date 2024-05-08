@@ -23,6 +23,11 @@
     "git": false
   },
   "explorer.git.showIgnored": false,
+  "explorer.icon.customIcons": {
+    "extensions": {
+      "mts": "typescript"
+    }
+  },
   "explorer.icon.enableNerdfont": true,
   "explorer.keyMappings.global": {
     "<2-LeftMouse>": "null",
