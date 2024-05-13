@@ -13,6 +13,7 @@
   },
   "emmet.showSuggestionsAsSnippets": true,
   "eslint.run": "onType",
+  "eslint.workingDirectories": [{ "mode": "auto" }],
   "explorer.file.reveal.auto": false,
   "explorer.file.child.template": "[git | 2][selection | clip | 1][indent][icon | 1] [diagnosticError & 1][filename omitCenter 1] [readonly & 1][linkIcon & 1][link]",
   "explorer.file.root.template": "[icon] [fullpath]",
