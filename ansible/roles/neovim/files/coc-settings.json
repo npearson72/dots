@@ -24,6 +24,15 @@
   },
   "explorer.git.showIgnored": false,
   "explorer.icon.customIcons": {
+    "icons": {
+      "jenkins": {
+        "code": "",
+        "color": "#b73850"
+      }
+    },
+    "filenames": {
+      "Jenkinsfile": "jenkins"
+    },
     "extensions": {
       "mts": "typescript"
     }
