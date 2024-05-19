@@ -3,12 +3,12 @@ PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
 
 STTY_HACK='/usr/local/sbin'
 
-GNU_PATH="$HOMEBREW_PREFIX_DIR/opt/opt/coreutils/libexec/gnubin:\
-$HOMEBREW_PREFIX_DIR/opt/opt/findutils/libexec/gnubin:\
-$HOMEBREW_PREFIX_DIR/opt/opt/gnu-tar/libexec/gnubin:\
-$HOMEBREW_PREFIX_DIR/opt/opt/gnu-which/libexec/gnubin"
+GNU_PATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnubin:\
+$HOMEBREW_PREFIX_DIR/opt/findutils/libexec/gnubin:\
+$HOMEBREW_PREFIX_DIR/opt/gnu-tar/libexec/gnubin:\
+$HOMEBREW_PREFIX_DIR/opt/gnu-which/libexec/gnubin"
 
-SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/opt/openssl/bin"
+SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/openssl/bin"
 
 ASDF_PATH="$HOME/.asdf/bin"
 

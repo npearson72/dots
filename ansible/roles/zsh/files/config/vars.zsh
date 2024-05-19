@@ -7,7 +7,13 @@ export XDG_DATA_HOME=$HOME/.local/share
 export BAT_THEME=zenburn
 
 # Brew
-export HOMEBREW_PREFIX_DIR=/opt/homebrew
+if [[ $(uname -m) == 'x86_64' ]]; then
+  export BREW_PREFIX_DIR=/usr/local
+  export HOMEBREW_PREFIX_DIR=/usr/local
+elif [[ $(uname -m) == 'arm64' ]]; then
+  export BREW_PREFIX_DIR=/opt/homebrew
+  export HOMEBREW_PREFIX_DIR=/opt/homebrew
+fi
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1

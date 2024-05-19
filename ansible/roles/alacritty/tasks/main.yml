@@ -3,9 +3,20 @@
   register: alacritty_brewed
   ignore_errors: true
 
-- name: symlink alacritty directory
+- name: symlink alacritty directory (arm)
   file:
-    src: "{{ role_path }}/files/alacritty"
-    dest: "{{ alacritty_config_path }}"
+    src: '{{ role_path }}/files/arm'
+    dest: '{{ alacritty_config_path }}'
     state: link
-  when: alacritty_brewed is successful
+  when:
+    - alacritty_brewed is successful
+    - architecture == 'arm64'
+
+- name: symlink alacritty directory (intel)
+  file:
+    src: '{{ role_path }}/files/intel'
+    dest: '{{ alacritty_config_path }}'
+    state: link
+  when:
+    - alacritty_brewed is successful
+    - architecture == 'intel'
