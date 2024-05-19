@@ -65,6 +65,7 @@ let g:coc_global_extensions=[
       \ 'coc-prisma',
       \ 'coc-solargraph',
       \ 'coc-styled-components',
+      \ 'coc-pretty-ts-errors',
       \ 'coc-snippets',
       \ 'coc-tsserver',
       \ 'coc-vetur'
