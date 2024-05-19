@@ -10,7 +10,7 @@ $HOMEBREW_PREFIX_DIR/opt/gnu-which/libexec/gnubin"
 
 SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/openssl/bin"
 
-ASDF_PATH="$HOME/.asdf/bin"
+ASDF_PATH="$HOME/.asdf/shims"
 
 ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 

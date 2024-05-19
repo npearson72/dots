@@ -48,4 +48,6 @@ if executable('rg') | set grepprg=rg | endif
 "=================================
 " Disable adding Perl provider to Neovim
 let g:loaded_perl_provider=0
-
+let g:python_host_prog="$HOME/.venv/bin/python"
+let g:python3_host_prog="$HOME/.venv/bin/python3"
+let g:ruby_host_prog="$HOME/.asdf/shims/neovim-ruby-host"

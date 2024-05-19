@@ -6,13 +6,14 @@ set termguicolors
 " Color scheme
 silent! colorscheme pencil
 set background=dark
-highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
+" highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
 " Color column
 set colorcolumn=80
 highlight ColorColumn ctermfg=NONE ctermbg=235 guifg=NONE guibg=#262626
-highlight link CursorColumn ColorColumn
-highlight link CursorLine ColorColumn
+" highlight link CursorColumn ColorColumn
+" highlight link CursorLine ColorColumn
+highlight WinSeparator ctermfg=235 ctermbg=NONE guifg=#262626 guibg=NONE
 
 " Keep neovim terminal colors consistent with shell
 
@@ -24,17 +25,17 @@ let g:terminal_color_3='#a89c14' " yellow
 let g:terminal_color_4='#008ec4' " blue
 let g:terminal_color_5='#523c79' " magenta
 let g:terminal_color_6='#20a5ba' " cyan
-let g:terminal_color_7='#f1f1f1' " white
+let g:terminal_color_7='#e0e0e0' " white
 
 " Bright colors
-let g:terminal_color_8='#424242'  " black
-let g:terminal_color_9='#e32791'  " red
-let g:terminal_color_10='#5fd7a7' " green
+let g:terminal_color_8='#818181'  " black
+let g:terminal_color_9='#fb007a'  " red
+let g:terminal_color_10='#5fd7af' " green
 let g:terminal_color_11='#f3e430' " yellow
-let g:terminal_color_12='#b6d6fd' " blue
+let g:terminal_color_12='#20bbfc' " blue
 let g:terminal_color_13='#6855de' " magenta
 let g:terminal_color_14='#4fb8cc' " cyan
-let g:terminal_color_15='#ffffff' " white
+let g:terminal_color_15='#f1f1f1' " white
 
 "=================================
 " Plugins
@@ -48,6 +49,7 @@ highlight CocInfoHighlight guisp=#a89c14 gui=undercurl
 highlight CocWarningHighlight guisp=#d75f5f gui=undercurl
 highlight CocErrorHighlight guisp=#e32791 gui=undercurl
 highlight CocHintHighlight guisp=#008ec4 gui=undercurl
+highlight CocFloating ctermfg=NONE ctermbg=237 guifg=NONE guibg=#3a3a3a
 highlight CocInfoFloat ctermfg=251 ctermbg=NONE guifg=#c6c6c6 guibg=NONE
 highlight link CocWarningFloat CocInfoFloat
 highlight link CocErrorFloat CocInfoFloat

@@ -48,9 +48,6 @@ call plug#end()
 " Coc
 let g:coc_config_home="$HOME/.dots/ansible/roles/neovim/files"
 
-let g:python_host_prog='/usr/bin/python'
-let g:python_host_prog3='/usr/local/bin/python3'
-
 let g:coc_global_extensions=[
       \ 'coc-css',
       \ 'coc-deno',
