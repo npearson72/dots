@@ -1,8 +1,8 @@
 env:
   TERM: alacritty
 
-shell:
-  program: /opt/homebrew/bin/zsh
+# shell:
+#   program: /opt/homebrew/bin/zsh
 
 window:
   startup_mode: SimpleFullscreen
