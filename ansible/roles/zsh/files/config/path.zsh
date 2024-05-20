@@ -10,13 +10,9 @@ $HOMEBREW_PREFIX_DIR/opt/gnu-which/libexec/gnubin"
 
 SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/openssl/bin"
 
-ASDF_PATH="$HOME/.asdf/shims"
-
 ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 
-YARN_PATH="$HOME/.yarn/bin"
-
-export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ASDF_PATH:$ANDROID_PATH:$YARN_PATH:$PATH"
+export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ANDROID_PATH:$PATH"
 
 # Manpath
 GNU_MANPATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnuman:\
