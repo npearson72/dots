@@ -51,8 +51,10 @@ user_and_host() {
   echo "%{$fg[green]%}$USER@$HOST%{$reset_color%} "
 }
 
-directory_name() {
-  echo "%{$fg[blue]%}%d%{$reset_color%}"
+user_path() {
+  path=$(print -rD $PWD)
+
+  echo "%{$fg[blue]%}$path%{$reset_color%}"
 }
 
 prompt_symbol() {
@@ -60,5 +62,5 @@ prompt_symbol() {
 }
 
 # Prompts
-export PROMPT=$'\n$(user_and_host)in $(directory_name) $(git_dirty)$(need_push)\n$(prompt_symbol) '
+export PROMPT=$'\n$(user_and_host)in $(user_path) $(git_dirty)$(need_push)\n$(prompt_symbol) '
 export RPROMPT=""
