@@ -96,29 +96,34 @@ cnoremap w!! w !sudo tee % >/dev/null
 " Plugins
 "=================================
 " Coc
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 inoremap <silent><expr> <tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<tab>" :
       \ coc#refresh()
 inoremap <expr><s-tab> coc#pum#visible() ? coc#pum#prev(1) : "\<c-h>"
 inoremap <silent><expr> <c-j> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<c-g>u\<CR>\<c-r>=coc#on_enter()\<cr>"
+      \: "\<c-g>u\<CR>\<c-r>=coc#on_enter()\<cr>"
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+nnoremap <nowait><expr> <c-j> coc#float#has_scroll() ? coc#float#scroll(1)
+      \: "\<C-f>"
+nnoremap <nowait><expr> <c-k> coc#float#has_scroll() ? coc#float#scroll(0)
+      \: "\<C-b>"
 
 inoremap <silent><expr> <c-k> coc#refresh()
+
+nmap <silent><leader>a <Plug>(coc-codeaction)
+
+nnoremap <silent><leader>d :CocShowDocumentation<cr>
 
 nmap <silent>gd <Plug>(coc-definition)
 nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>gr <Plug>(coc-references)
-
-nmap <silent><leader>a <Plug>(coc-codeaction)
-
-nnoremap <silent><leader>d :CocShowDocumentation<cr>
 
 " Coc - Explorer
 nnoremap <silent><leader>e :CocCommand explorer<cr>
