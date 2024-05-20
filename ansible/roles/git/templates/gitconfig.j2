@@ -1,38 +1,38 @@
 [user]
-    name = {{ git.full_name }}
-    email = {{ git.email }}
-    signingkey = {{ git.signingkey }}
+  name = {{ git.full_name }}
+  email = {{ git.email }}
+  signingkey = {{ git.signingkey }}
 [gpg]
-    format = ssh
+  format = ssh
 [gpg "ssh"]
-    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-[commit]
-    gpgsign = false
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [hub]
-    protocol = https
+  protocol = https
 [alias]
-    aa = add -A
-    st = status
-    co = checkout
-    count = !git shortlog -sn
+  aa = add -A
+  st = status
+  co = checkout
+  count = !git shortlog -sn
 [apply]
-    whitespace = nowarn
+  whitespace = nowarn
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [core]
-    excludesfile = ~/.gitignore
-    editor = nvim
-    pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = ~/.gitignore
+  editor = nvim
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [diff-so-fancy]
-    stripLeadingSymbols = false
+  stripLeadingSymbols = false
 [help]
-    autocorrect = 1
+  autocorrect = 1
+[commit]
+  gpgsign = false
 [push]
-    default = simple
+  default = simple
 [pull]
-    default = current
+  default = current
 [init]
-    defaultBranch = master
+  defaultBranch = master
