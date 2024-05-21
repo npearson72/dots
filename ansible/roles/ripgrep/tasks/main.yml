@@ -1,5 +1,5 @@
 - name: symlink ripgreprc
   file:
-    src: "{{ role_path }}/files/ripgreprc"
-    dest: "{{ config_path }}/.ripgreprc"
+    src: '{{ role_path }}/files/ripgreprc'
+    dest: '{{ config_path }}/.ripgreprc'
     state: link

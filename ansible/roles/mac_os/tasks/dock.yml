@@ -20,6 +20,6 @@
     - /System/Applications/Launchpad.app
     - /Applications/Google Chrome.app
     - /Applications/Bear.app
-    - /System/Applications/Utilities/Activity Monitor.app
+    - '/System/Applications/Utilities/Activity Monitor.app'
     - /System/Applications/System Settings.app
   tags: mac_os_dock

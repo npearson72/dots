@@ -31,7 +31,7 @@
   tags: mac_os_misc
 
 - name: require password immediately after sleep or screen saver begins
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - defaults write com.apple.screensaver askForPassword -int 1
     - defaults write com.apple.screensaver askForPasswordDelay -int 0
@@ -42,7 +42,7 @@
   tags: mac_os_misc
 
 - name: set hot corners
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - defaults write com.apple.dock wvous-bl-corner -int 2
     - defaults write com.apple.dock wvous-bl-modifier -int 0

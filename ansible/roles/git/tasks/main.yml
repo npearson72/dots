@@ -1,9 +1,9 @@
 - name: copy .gitconfig
   template:
-    src: "{{ role_path }}/templates/gitconfig.j2"
-    dest: "{{ home }}/.gitconfig"
+    src: '{{ role_path }}/templates/gitconfig.j2'
+    dest: '{{ home }}/.gitconfig'
 
 - name: copy .gitignore
   copy:
-    src: "{{ role_path }}/files/gitignore"
-    dest: "{{ home }}/.gitignore"
+    src: '{{ role_path }}/files/gitignore'
+    dest: '{{ home }}/.gitignore'

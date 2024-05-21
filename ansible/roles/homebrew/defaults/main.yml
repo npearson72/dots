@@ -1,1 +1,1 @@
-brewfile_path: "{{ home }}/.config"
+brewfile_path: '{{ home }}/.config'

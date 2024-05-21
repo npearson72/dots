@@ -1,1 +1,1 @@
-tmuxp_path: "{{ home }}/.config/tmuxp"
+tmuxp_path: '{{ home }}/.config/tmuxp'

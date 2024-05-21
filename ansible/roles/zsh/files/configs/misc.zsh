@@ -26,6 +26,3 @@ bindkey '^s' pet-select
 
 # Tmux
 tmux menu
-
-# ZSH history substring search
-source $HOMEBREW_PREFIX_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh

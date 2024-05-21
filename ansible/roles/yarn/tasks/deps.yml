@@ -1,8 +1,0 @@
-- name: install global yarn dependencies
-  yarn:
-    name: "{{ item }}"
-    global: yes
-    state: latest
-  with_items:
-    - eslint
-    - neovim

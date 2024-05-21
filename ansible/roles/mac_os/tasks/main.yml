@@ -3,7 +3,7 @@
 
 - name: set computer name, hostname, etc
   become: yes
-  shell: "scutil --set {{ item }} {{ computer_name }}"
+  shell: 'scutil --set {{ item }} {{ computer_name }}'
   with_items:
     - ComputerName
     - HostName
@@ -11,7 +11,8 @@
 
 - name: set NetBIOSName
   become: yes
-  shell: "defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server \
+  shell:
+    "defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server \
     NetBIOSName -string {{ computer_name }}"
 
 - include_tasks: menu.yml
@@ -29,8 +30,8 @@
 
 - name: kill services
   become: yes
-  command: "killall {{ item }}"
+  command: 'killall {{ item }}'
   with_items:
-    - "-KILL SystemUIServer"
+    - '-KILL SystemUIServer'
     - Dock
     - Finder

@@ -1,5 +1,5 @@
 session_name: amc
-start_directory: ~/Dev/amc
+start_directory: ~/Dev/acima/amc
 windows:
   - window_name: zsh
   - window_name: apps

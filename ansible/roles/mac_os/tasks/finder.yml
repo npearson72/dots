@@ -7,21 +7,21 @@
   tags: mac_os_finder
 
 - name: set home as the default location for new finder windows
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - defaults write com.apple.finder NewWindowTarget -string "PfHm"
     - defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
   tags: mac_os_finder
 
 - name: enable snap-to-grid for icons on the desktop and in other icon views
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
     - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
   tags: mac_os_finder
 
 - name: show icons for hard drives, servers, and removable media on the desktop
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
     - defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
@@ -30,14 +30,14 @@
   tags: mac_os_finder
 
 - name: increase size of desktop icons
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 120" ~/Library/Preferences/com.apple.finder.plist
     - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 120" ~/Library/Preferences/com.apple.finder.plist
   tags: mac_os_finder
 
 - name: show the ~/Library folder
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - chflags nohidden ~/Library
   tags: mac_os_finder

@@ -3,7 +3,7 @@
   tags: mac_os_trackpad
 
 - name: disable trackpad gestures
-  command: "defaults write com.apple.dock {{ item }} -int 0"
+  command: 'defaults write com.apple.dock {{ item }} -int 0'
   with_items:
     - showLaunchpadGestureEnabled
     - showDesktopGestureEnabled
@@ -11,7 +11,7 @@
   tags: mac_os_trackpad
 
 - name: set trackpad right corner as right click
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
     - defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true

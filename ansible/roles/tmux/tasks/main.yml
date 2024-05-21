@@ -1,22 +1,22 @@
 - name: copy tmux.config
   file:
-    src: "{{ role_path }}/files/tmux.conf"
-    dest: "{{ home }}/.config/.tmux.conf"
+    src: '{{ role_path }}/files/tmux.conf'
+    dest: '{{ home }}/.config/.tmux.conf'
     state: link
 
 - name: make sure "{{ tmuxp_path }}" dir exists
   file:
-    path: "{{ tmuxp_path }}"
+    path: '{{ tmuxp_path }}'
     state: directory
 
 - name: link tmuxp config dir
   file:
-    src: "{{ role_path }}/files/tmuxp"
-    dest: "{{ tmuxp_path }}"
+    src: '{{ role_path }}/files/tmuxp'
+    dest: '{{ tmuxp_path }}'
     state: link
     force: yes
 
 - name: install tmux plugin manager
   git:
-    repo: "https://github.com/tmux-plugins/tpm.git"
-    dest: "{{ home }}/.tmux/plugins/tpm"
+    repo: 'https://github.com/tmux-plugins/tpm.git'
+    dest: '{{ home }}/.tmux/plugins/tpm'

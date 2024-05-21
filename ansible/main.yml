@@ -14,9 +14,6 @@
     - { role: ssh, tags: ssh }
     - { role: tmux, tags: tmux }
     - { role: zsh, tags: zsh }
-    # - { role: nodejs, tags: nodejs }
-    # - { role: yarn, tags: yarn }
-    # - { role: ruby, tags: ruby }
     - { role: neovim, tags: neovim }
     - { role: mac_os, tags: mac_os }
     - { role: post_build, tags: post_build }

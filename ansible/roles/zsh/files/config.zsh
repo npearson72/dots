@@ -1,4 +1,4 @@
-CONFIG_DIR=$(dirname "$0")/config
+CONFIG_DIR=$(dirname "$0")/configs
 
 source $CONFIG_DIR/vars.zsh
 source $CONFIG_DIR/path.zsh

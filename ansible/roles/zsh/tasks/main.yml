@@ -5,7 +5,7 @@
 
 - name: get brewed zsh binary path
   stat:
-    path: "{{ zsh_path }}"
+    path: '{{ zsh_path }}'
   register: brewed_zsh_path
   ignore_errors: true
   when: zsh_brewed is successful
@@ -16,50 +16,50 @@
   lineinfile:
     path: /etc/shells
     regexp: '.*zsh$'
-    line: "{{ zsh_path }}"
+    line: '{{ zsh_path }}'
   when: brewed_zsh_path.stat.exists
 
 - name: switch user "{{ user }}" shell to zsh
   become: yes
   become_user: root
   user:
-    name: "{{ user }}"
-    shell: "{{ zsh_path }}"
+    name: '{{ user }}'
+    shell: '{{ zsh_path }}'
   register: zsh_installed
   when: brewed_zsh_path.stat.exists
 
 - name: check if .zshrc exists
   stat:
-    path: "{{ home }}/.zshrc"
+    path: '{{ home }}/.zshrc'
   register: zshrc_path
   ignore_errors: true
   when: zsh_installed is successful
 
 - name: copy .zshrc
   template:
-    src: "{{ role_path }}/templates/zshrc.j2"
-    dest: "{{ home }}/.zshrc"
+    src: '{{ role_path }}/templates/zshrc.j2'
+    dest: '{{ home }}/.zshrc'
   when: zsh_installed is successful
 
 - name: create .zshrc.local
   become: true
   file:
-    path: "{{ home }}/.zshrc.local"
+    path: '{{ home }}/.zshrc.local'
     state: touch
-    owner: "{{ user }}"
+    owner: '{{ user }}'
   when: zsh_installed is successful
 
 - name: create a .zsh_history file
   file:
-    path: "{{ cache_path }}/.zsh_history"
+    path: '{{ cache_path }}/.zsh_history'
     state: touch
     mode: u=rw,g=rw,o=rw
   when: zsh_installed is successful
 
 - name: symlink pet files (config and snippets)
   file:
-    src: "{{ role_path }}/files/pet"
-    dest: "{{ pet_config_path }}"
+    src: '{{ role_path }}/files/pet'
+    dest: '{{ pet_config_path }}'
     state: link
   when: zsh_installed is successful
 

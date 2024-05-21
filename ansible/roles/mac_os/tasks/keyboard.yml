@@ -3,14 +3,15 @@
   tags: mac_os_keyboard
 
 - name: set fast keyboard repeat rate
-  command: "{{ item }}"
+  command: '{{ item }}'
   with_items:
     - defaults write NSGlobalDomain KeyRepeat -int 2
     - defaults write NSGlobalDomain InitialKeyRepeat -int 15
   tags: mac_os_keyboard
 
 - name: disable shortcuts for mission control
-  command: "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add {{ item.key_number }} '
+  command:
+    "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add {{ item.key_number }} '
     <dict>
       <key>enabled</key><false/>
       <key>value</key><dict>
