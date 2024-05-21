@@ -20,7 +20,7 @@ AGKOZAK_CUSTOM_PROMPT+='%(1j. %F{magenta}%jj%f.)'
 # Git status and newline
 AGKOZAK_CUSTOM_PROMPT+=$' %(3V.%F{243}(%6v%f%(7V. ${psvar[7]}.)%F{243}%)%f.)\n'
 # Prompt character
-AGKOZAK_CUSTOM_PROMPT+='%F{blue}➜%f '
+AGKOZAK_CUSTOM_PROMPT+='%F{blue}󰁔%f '
 
 AGKOZAK_LEFT_PROMPT_ONLY=1
 AGKOZAK_SHOW_STASH=0
