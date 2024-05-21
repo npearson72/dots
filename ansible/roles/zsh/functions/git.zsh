@@ -9,7 +9,6 @@ _git_print_legend() {
   echo "${(%):-%F{243\}}Modified ${(%):-%f} ${(%):-%F{yellow\}}!${(%):-%f}"
   echo "${(%):-%F{243\}}Renamed  ${(%):-%f} ${(%):-%F{yellow\}}~${(%):-%f}"
   echo "${(%):-%F{243\}}Unstaged ${(%):-%f} ${(%):-%F{yellow\}}+${(%):-%f}"
-  echo "${(%):-%F{243\}}Stashed  ${(%):-%f} ${(%):-%F{yellow\}}*${(%):-%f}"
 }
 
 _git_fzf_add() {
