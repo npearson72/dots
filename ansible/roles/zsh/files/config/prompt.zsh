@@ -11,9 +11,9 @@ AGKOZAK_CUSTOM_SYMBOLS=(
 )
 
 # Username and hostname
-AGKOZAK_CUSTOM_PROMPT='%(!.%S%B.%B%F{green})%n%1v%(!.%b%s.%f%b) '
+AGKOZAK_CUSTOM_PROMPT='%(!.%S%B.%F{green})%n%1v%(!.%b%s.%f%b) '
 # Path
-AGKOZAK_CUSTOM_PROMPT+='%B%F{blue}%2v%f%b'
+AGKOZAK_CUSTOM_PROMPT+='%F{blue}%2v%f%b'
 # Virtual environment
 AGKOZAK_CUSTOM_PROMPT+='%(10V. %F{green}[%10v]%f.)'
 # Background jobs indicator and newline
