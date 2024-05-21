@@ -57,6 +57,7 @@ cask 'hammerspoon'
 cask 'iina'
 cask 'microsoft-teams' if work
 cask 'ngrok'
+cask 'notunes'
 cask 'postman'
 cask 'rectangle'
 cask 'slack' if work
