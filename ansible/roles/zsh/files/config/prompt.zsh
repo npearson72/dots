@@ -1,66 +1,27 @@
-# Turns on parameter expansion, command substitution and arithmetic expansion in prompts
-setopt PROMPT_SUBST
-autoload colors && colors
+AGKOZAK_CUSTOM_SYMBOLS=(
+  '%F{yellow}▾%f%F{green}▴%f' # Diverged
+  '%F{yellow}▾%f'             # Behind
+  '%F{green}▴%f'              # Ahead
+  '%F{green}+%f'              # Staged
+  '%F{yellow}-%f'             # Deleted
+  '%F{yellow}!%f'             # Modified
+  '%F{yellow}~%f'             # Renamed
+  '%F{yellow}+%f'             # Unstaged
+  '%F{yellow}*%f'             # Stashed
+)
 
-# Git functions
-if (( $+commands[git] ))
-then
-  git="$commands[git]"
-else
-  git="/usr/bin/git"
-fi
+# Username and hostname
+AGKOZAK_CUSTOM_PROMPT='%(!.%S%B.%B%F{green})%n%1v%(!.%b%s.%f%b) '
+# Path
+AGKOZAK_CUSTOM_PROMPT+='%B%F{blue}%2v%f%b'
+# Virtual environment
+AGKOZAK_CUSTOM_PROMPT+='%(10V. %F{green}[%10v]%f.)'
+# Background jobs indicator and newline
+AGKOZAK_CUSTOM_PROMPT+='%(1j. %F{magenta}%jj%f.)'
+# Git status and newline
+AGKOZAK_CUSTOM_PROMPT+=$' %(3V.%F{243}(%6v%f%(7V. ${psvar[7]}.)%F{243}%)%f.)\n'
+# Prompt character
+AGKOZAK_CUSTOM_PROMPT+='%F{blue}➜%f '
 
-git_branch() {
-  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
+AGKOZAK_LEFT_PROMPT_ONLY=1
 
-git_dirty() {
-  if $(! $git status -s &> /dev/null)
-  then
-    echo ""
-  else
-    if [[ $($git status --porcelain) == "" ]]
-    then
-      echo "on %{$fg[green]%}$(git_prompt_info)%{$reset_color%}"
-    else
-      echo "on %{$fg[red]%}$(git_prompt_info)*%{$reset_color%}"
-    fi
-  fi
-}
-
-git_prompt_info () {
-  ref=$($git symbolic-ref HEAD 2>/dev/null) || return
-  echo "${ref#refs/heads/}"
-}
-
-unpushed () {
-  $git cherry -v @{upstream} 2>/dev/null
-}
-
-need_push () {
-  if [[ $(unpushed) == "" ]]
-  then
-    echo " "
-  else
-    echo " with %{$fg[magenta]%}unpushed%{$reset_color%} "
-  fi
-}
-
-# Other functions
-user_and_host() {
-  echo "%{$fg[green]%}$USER@$HOST%{$reset_color%} "
-}
-
-user_path() {
-  path=$(print -rD $PWD)
-
-  echo "%{$fg[blue]%}$path%{$reset_color%}"
-}
-
-prompt_symbol() {
-  echo "%{$fg[blue]%}➜%{$reset_color%}"
-}
-
-# Prompts
-export PROMPT=$'\n$(user_and_host)in $(user_path) $(git_dirty)$(need_push)\n$(prompt_symbol) '
-export RPROMPT=""

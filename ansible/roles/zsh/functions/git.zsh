@@ -1,5 +1,17 @@
 #!/bin/sh
 
+_git_print_legend() {
+  echo "${(%):-%F{243\}}Diverged ${(%):-%f} ${(%):-%F{yellow\}}▾${(%):-%f}${(%):-%F{green\}}▴${(%):-%f}"
+  echo "${(%):-%F{243\}}Behind   ${(%):-%f} ${(%):-%F{yellow\}}▾${(%):-%f}"
+  echo "${(%):-%F{243\}}Ahead    ${(%):-%f} ${(%):-%F{green\}}▴${(%):-%f}"
+  echo "${(%):-%F{243\}}Staged   ${(%):-%f} ${(%):-%F{green\}}+${(%):-%f}"
+  echo "${(%):-%F{243\}}Deleted  ${(%):-%f} ${(%):-%F{yellow\}}-${(%):-%f}"
+  echo "${(%):-%F{243\}}Modified ${(%):-%f} ${(%):-%F{yellow\}}!${(%):-%f}"
+  echo "${(%):-%F{243\}}Renamed  ${(%):-%f} ${(%):-%F{yellow\}}~${(%):-%f}"
+  echo "${(%):-%F{243\}}Unstaged ${(%):-%f} ${(%):-%F{yellow\}}+${(%):-%f}"
+  echo "${(%):-%F{243\}}Stashed  ${(%):-%f} ${(%):-%F{yellow\}}*${(%):-%f}"
+}
+
 _git_fzf_add() {
   command git ls-files -m -o --exclude-standard | fzf -m | xargs git add
 }
@@ -93,6 +105,9 @@ git() {
         ;;
       co)
         _git_fzf_checkout_branch
+        ;;
+      legend)
+        _git_print_legend
         ;;
       *)
         command git $@

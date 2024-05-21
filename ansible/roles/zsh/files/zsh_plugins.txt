@@ -1,2 +1,3 @@
+agkozak/agkozak-zsh-prompt
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
