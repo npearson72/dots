@@ -1,6 +1,6 @@
 set termguicolors
 
- " Avoid strangeness with syntax highlighting breaking
+" Avoid strangeness with syntax highlighting breaking
 " syntax sync minlines=10000
 
 " Color scheme

@@ -62,7 +62,7 @@ vnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
 " Do not yank text when pasting on top of it
-" xnoremap p "_dP
+xnoremap p P
 
 " Toggle line wrapping
 nnoremap <leader>w :set wrap!<cr>
