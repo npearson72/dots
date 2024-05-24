@@ -1,4 +1,4 @@
-alias cat="bat"
+alias cat="bat --plain"
 alias be="bundle exec"
 alias ls="gls -lhN --color --group-directories-first --classify"
 alias ll="ls -lhAN"
