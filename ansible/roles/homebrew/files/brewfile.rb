@@ -57,6 +57,7 @@ cask 'iina'
 cask 'microsoft-teams' if work
 cask 'ngrok'
 cask 'notunes'
+cask 'pgadmin4'
 cask 'postman'
 cask 'rectangle'
 cask 'slack' if work
