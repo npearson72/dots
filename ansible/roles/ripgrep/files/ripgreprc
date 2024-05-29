@@ -16,6 +16,9 @@
 # Sort by file path
 --sort=path
 
+# Exclude .dot files
+--glob=!{.DS_Store}
+
 # Exclude .dot directories
 --glob=!{.cache,.expo*,.git,.next,.svn,.tldr,.terraform,.turbo,.webpack}
 
@@ -29,4 +32,4 @@
 --glob=!{**/dist,**/build,**/public/packs,**/public/vite-dev}
 
 # Exclude dev files
---glob=!{package-lock.json,yarn-error*,yarn.lock}
+--glob=!{pnpm-lock.yaml,package-lock.json,yarn-error*,yarn.lock}
