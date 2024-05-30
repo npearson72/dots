@@ -1,9 +1,8 @@
 vim.filetype.add({
   filename = {
-    ['Jenkinsfile'] = 'groovy',
-    ['.env'] = 'text',
+    ['Jenkinsfile'] = 'groovy'
   },
   pattern = {
-    ['.env.*'] = 'text',
+    ['.*.env.*'] = 'sh'
   }
 })
