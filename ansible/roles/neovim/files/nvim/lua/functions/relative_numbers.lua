@@ -1,5 +1,11 @@
-vim.api.nvim_create_user_command(
-  'ToggleRelativeLineNumbers',
+local create_augroup = vim.api.nvim_create_augroup
+local create_autocmd = vim.api.nvim_create_autocmd
+local create_user_command = vim.api.nvim_create_user_command
+
+local command_name = 'ToggleRelativeLineNumbers'
+
+create_user_command(
+  command_name,
   function(params)
     if vim.bo.filetype ~= 'coc-explorer' then
       if params.args == 'on' then
@@ -14,26 +20,25 @@ vim.api.nvim_create_user_command(
   { nargs = '*' }
 )
 
-vim.keymap.set('n', 'v', 'v:<c-u>ToggleRelativeLineNumbers on<cr>gv', {
+create_autocmd({ 'InsertEnter', 'TextYankPost', 'CmdlineLeave' }, {
+  group = create_augroup('CursorTracker', { clear = false }),
+  pattern = '*',
+  command = command_name .. ' off'
+})
+
+vim.keymap.set('n', 'v', 'v:<c-u>' .. command_name .. ' on<cr>gv', {
   silent = true
 })
 
-vim.keymap.set('n', 'V', 'V0:<c-u>ToggleRelativeLineNumbers on<cr>gv', {
+vim.keymap.set('n', 'V', 'V0:<c-u>' .. command_name .. ' on<cr>gv', {
   silent = true
 })
 
-vim.keymap.set('n', '<c-v>', '<c-v>:<c-u>ToggleRelativeLineNumbers on<cr>gv', {
+vim.keymap.set('n', '<c-v>', '<c-v>:<c-u>' .. command_name .. ' on<cr>gv', {
   silent = true
 })
 
-vim.keymap.set('', '<esc>', '<esc>:ToggleRelativeLineNumbers off<cr>', {
+vim.keymap.set('', '<esc>', '<esc>:' .. command_name .. ' off<cr>', {
   silent = true,
   noremap = true
 })
-
-vim.cmd([[
-augroup ToggleRelativeLineNumbersOff
-  autocmd!
-  autocmd InsertEnter,TextYankPost,CmdlineLeave * ToggleRelativeLineNumbers off
-augroup END
-]])
