@@ -116,28 +116,6 @@ local options = {
 
   -- Treesitter syntax highlighting
   -- Use :TSHighlightCapturesUnderCursor to identify the tag
-  -- Bash
-  ['@variable.bash'] = {
-    link = 'Constant'
-  },
-
-  ['@constant.bash'] = {
-    link = 'Constant'
-  },
-
-  ['@string.bash'] = {
-    link = 'Normal'
-  },
-
-  ['@boolean.bash'] = {
-    link = 'Normal'
-  },
-
-  ['@operator.bash'] = {
-    link = 'Statement'
-  },
-
-  -- TSX
   tsxTag = {
     fg = '#767676'
   },
@@ -148,7 +126,7 @@ local options = {
 
   tsxCloseString = {
     link = 'tsxTag'
-  },
+  }
 }
 
 local function set_highlight(opts)
