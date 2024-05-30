@@ -3,23 +3,12 @@ vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<s-j>', '<c-d>')
 vim.keymap.set('n', '<s-k>', '<c-u>')
--- vim.keymap.set('n', '<c-j>', '}')
--- vim.keymap.set('n', '<c-k>', '{')
+vim.keymap.set('n', '<c-j>', '}')
+vim.keymap.set('n', '<c-k>', '{')
 vim.keymap.set('n', '<c-h>', '^')
 vim.keymap.set('n', '<c-l>', '$')
 vim.keymap.set('v', '<c-h>', '^')
 vim.keymap.set('v', '<c-l>', '$')
-
--- For some reason remapping <c-j> and <c-k> only works in an autocommand group
-vim.cmd([[
-augroup vimrc
-  autocmd!
-  autocmd VimEnter * unmap <c-j>
-  autocmd VimEnter * unmap <c-k>
-  autocmd VimEnter * noremap <c-j> }
-  autocmd VimEnter * noremap <c-k> {
-augroup END
-]])
 
 -- Windows
 vim.keymap.set('n', 'wl', '<c-w>l')

@@ -97,16 +97,16 @@ local config = function()
   -- Scroll in floating window
   vim.keymap.set(
     'n',
-    '<c-j>',
+    '<down>',
     [[coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"]],
-    { nowait = true, expr = true }
+    { silent = true, nowait = true, expr = true }
   )
 
   vim.keymap.set(
     'n',
-    '<c-k>',
-    [[coc#float#has_scroll() ? coc#float#scroll() : "\<c-b>"]],
-    { nowait = true, expr = true }
+    '<up>',
+    [[coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"]],
+    { silent = true, nowait = true, expr = true }
   )
 
   -- Other settings
