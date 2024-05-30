@@ -39,6 +39,7 @@
     }
   },
   "explorer.icon.enableNerdfont": true,
+  "explorer.icon.readonly": "",
   "explorer.keyMappings.global": {
     "<2-LeftMouse>": "null",
     "<Leader>e": "reveal:select",
