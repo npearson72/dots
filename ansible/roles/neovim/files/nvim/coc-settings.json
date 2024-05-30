@@ -1,0 +1,94 @@
+{
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.jumpCommand": "tabe",
+  "coc.preferences.willSaveHandlerTimeout": 5000,
+  "coc.source.emoji.filetypes": null,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "󰀨",
+  "diagnostic.hintSign": "󰅽",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "eruby": "html"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "eslint.run": "onType",
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "explorer.file.reveal.auto": false,
+  "explorer.file.child.template": "[git | 2][selection | clip | 1][indent][icon | 1] [diagnosticError & 1][filename omitCenter 1] [readonly & 1][linkIcon & 1][link]",
+  "explorer.file.root.template": "[icon] [fullpath]",
+  "explorer.file.showHiddenFiles": true,
+  "explorer.filename.colored.enable": {
+    "diagnosticError": true,
+    "diagnosticWarning": false,
+    "git": false
+  },
+  "explorer.git.showIgnored": false,
+  "explorer.icon.customIcons": {
+    "icons": {
+      "jenkins": {
+        "code": "",
+        "color": "#b73850"
+      }
+    },
+    "filenames": {
+      "Jenkinsfile": "jenkins"
+    },
+    "extensions": {
+      "mts": "typescript"
+    }
+  },
+  "explorer.icon.enableNerdfont": true,
+  "explorer.keyMappings.global": {
+    "<2-LeftMouse>": "null",
+    "<Leader>e": "reveal:select",
+    "l": "null",
+    "E": "null",
+    "v": "open:vsplit"
+  },
+  "explorer.openAction.relativePath": true,
+  "explorer.openAction.strategy": "sourceWindow",
+  "explorer.previewAction.onHover": false,
+  "explorer.quitOnOpen": true,
+  "explorer.sources": [
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "git.addedSign.hlGroup": "CocGitAdd",
+  "git.changedSign.hlGroup": "CocGitChange",
+  "git.removedSign.hlGroup": "CocGitDelete",
+  "git.topRemovedSign.hlGroup": "CocGitDelete",
+  "git.changeRemovedSign.hlGroup": "CocGitDeleteChange",
+  "git.changedSign.text": "!",
+  "javascript.suggestionActions.enabled": false,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
+  "prettier.arrowParens": "avoid",
+  "prettier.endOfLine": "auto",
+  "prettier.printWidth": 80,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "snippets.extends": {
+    "typescriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "suggest.snippetIndicator": " ",
+  "suggest.maxCompleteItemCount": 500,
+  "suggest.noselect": true,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.hint.enable": false,
+  "vetur.validation.template": false,
+  "workspace.rootPatterns": ["package.json", ".gitignore", ".env", ".git"],
+  "snippets.ultisnips.pythonPrompt": false
+}

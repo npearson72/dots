@@ -1,30 +1,10 @@
-- name: make sure "{{ neovim_config_path }}" dir exists
+- name: make sure "{{ config_path }}" dir exists
   file:
-    path: '{{ neovim_config_path }}'
+    path: '{{ config_path }}'
     state: directory
 
-- name: symlink config directory
+- name: symlink nvim directory
   file:
-    src: '{{ role_path }}/files/config'
-    dest: '{{ neovim_config_path }}/config'
+    src: '{{ role_path }}/files/nvim'
+    dest: '{{ config_path }}/nvim'
     state: link
-
-- name: symlink init.vim
-  file:
-    src: '{{ role_path }}/files/init.vim'
-    dest: '{{ neovim_config_path }}/init.vim'
-    state: link
-
-- name: make sure "{{ neovim_config_path }}/autoload" dir exists
-  file:
-    path: '{{ neovim_config_path }}/autoload'
-    state: directory
-
-- name: install vim-plug
-  get_url:
-    url: '{{ vim_plug_repo }}'
-    dest: '{{ neovim_config_path }}/autoload/plug.vim'
-    force: yes
-
-- name: install neovim plugins
-  command: nvim --headless "+silent! PlugInstall!" +qall!
