@@ -29,10 +29,22 @@
       "jenkins": {
         "code": "",
         "color": "#b73850"
+      },
+      "node_modules": {
+        "code": "",
+        "color": "#3c873a"
+      },
+      "npm": {
+        "code": "",
+        "color": "#d42647"
       }
     },
+    "dirnames": {
+      "node_modules": "node_modules"
+    },
     "filenames": {
-      "Jenkinsfile": "jenkins"
+      "Jenkinsfile": "jenkins",
+      ".npmrc": "npm"
     },
     "extensions": {
       "mts": "typescript"
