@@ -1,37 +1,28 @@
 local config = function()
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
+  require('nvim-treesitter.configs').setup({
+    ensure_installed = { 'tsx', 'typescript' },
     sync_install = false,
-    auto_install = true,
-    ignore_install = {
-      'dockerfile',
-      'javascript',
-      'json',
-      'jsonc',
-      'ruby',
-      'tmux',
-      'tsx',
-      'typescript',
-      'yaml'
-    },
+    auto_install = false,
+    ignore_install = {},
 
     highlight = {
-      enable = true,
+      enable = false,
       disable = {},
       additional_vim_regex_highlighting = false,
     },
     playground = {
       enable = true,
     }
-  }
+  })
 end
 
 return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
+      require('nvim-treesitter.install').update({
+        with_sync = true
+      })
     end,
 
     dependencies = { 'nvim-treesitter/playground' },
