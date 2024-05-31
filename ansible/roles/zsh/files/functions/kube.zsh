@@ -31,7 +31,7 @@ _kube_console() {
     export AWS_PROFILE=AcimaNonprod-NonProdDeveloperAccess
     export KUBECONFIG=~/.kube/config
     kubectl config use-context $env
-    image_run_cmd=$(acimos run $app -e $env)
+    image_run_cmd=$(acimos run $app -i $env)
     eval $image_run_cmd
   fi
 }
