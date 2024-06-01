@@ -1,4 +1,9 @@
 [[snippets]]
+  description = "AWS SSO Login"
+  command = "aws sso login"
+  output = ""
+
+[[snippets]]
   description = "Clear ZSH history"
   command = "rm $HISTFILE; reload!"
   output = ""
