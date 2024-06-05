@@ -113,7 +113,11 @@ local config = function()
 
   local grep_string = function()
     vim.ui.input({ prompt = 'Rg > ' }, function(value)
-      builtin.grep_string({ default_text = value, search = value })
+      if value and string.len(value) > 0 then
+        builtin.grep_string({ default_text = value, search = value })
+      else
+        vim.defer_fn(function() vim.cmd('echom ""') end, 5000)
+      end
     end)
   end
 
