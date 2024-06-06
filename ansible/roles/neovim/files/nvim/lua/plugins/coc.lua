@@ -51,6 +51,10 @@ local config = function()
     return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
   end
 
+  function _G.copilot_exists()
+    return vim.fn.exists('b:_copilot.suggestions')
+  end
+
   ------------------------------------
   -- Commands
   ------------------------------------
@@ -76,7 +80,7 @@ local config = function()
   vim.keymap.set(
     'i',
     '<tab>',
-    'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<tab>" : coc#refresh()',
+    'coc#pum#visible() ? coc#pum#next(1) : v:lua.copilot_exists() ? copilot#Accept("<cr>") : v:lua.check_back_space() ? "<tab>" : coc#refresh()',
     opts
   )
 
