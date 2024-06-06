@@ -47,6 +47,7 @@
       ".npmrc": "npm"
     },
     "extensions": {
+      "jsonc": "json",
       "mts": "typescript"
     }
   },
