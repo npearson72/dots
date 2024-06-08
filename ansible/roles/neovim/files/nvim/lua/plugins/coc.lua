@@ -80,7 +80,7 @@ local config = function()
   vim.keymap.set(
     'i',
     '<tab>',
-    'coc#pum#visible() ? coc#pum#next(1) : v:lua.copilot_exists() ? copilot#Accept("<cr>") : v:lua.check_back_space() ? "<tab>" : coc#refresh()',
+    [[coc#pum#visible() ? coc#pum#next(1) : v:lua.copilot_exists() ? "\<tab>" : v:lua.check_back_space() ? "\<tab>" : coc#refresh()]],
     opts
   )
 
