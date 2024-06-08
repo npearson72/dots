@@ -25,7 +25,7 @@ local config = function()
     'filename',
     path = 1,
     symbols = {
-      readonly = ''
+      readonly = '',
     }
   }
 
