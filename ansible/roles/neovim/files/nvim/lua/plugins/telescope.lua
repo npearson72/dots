@@ -111,10 +111,10 @@ local config = function()
 
   telescope.load_extension('fzf')
 
-  local grep_string = function()
+  local live_grep = function()
     vim.ui.input({ prompt = 'Rg > ' }, function(value)
       if value and string.len(value) > 0 then
-        builtin.grep_string({ default_text = value, search = value })
+        builtin.live_grep({ default_text = value, search = value })
       else
         vim.defer_fn(function() vim.cmd('echom ""') end, 5000)
       end
@@ -123,7 +123,7 @@ local config = function()
 
   vim.keymap.set('n', '<c-p>', builtin.find_files, {})
   vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-  vim.keymap.set('n', '<leader>s', grep_string, {})
+  vim.keymap.set('n', '<leader>s', live_grep, {})
 end
 
 return {
