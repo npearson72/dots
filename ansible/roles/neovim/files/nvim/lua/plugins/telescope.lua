@@ -23,6 +23,9 @@ local config = function()
           width = 0.9
         },
       },
+      preview = {
+        treesitter = false
+      },
       prompt_prefix = '',
       mappings = {
         i = {

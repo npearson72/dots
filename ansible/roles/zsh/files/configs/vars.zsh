@@ -32,12 +32,12 @@ export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --no-mouse --tie
 export FZF_CTRL_T_OPTS=$FZF_DEFAULT_OPTS
 
 # FZF config to use fd
-export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # FZF config to use ripgrep
-# export FZF_DEFAULT_COMMAND='rg --follow --hidden -l "" --glob "!.git/*" 2> /dev/null'
-# export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_DEFAULT_COMMAND='rg --follow --hidden -l "" --glob "!.git/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
 # Less
 export LESSHISTFILE=$XDG_CACHE_HOME/.lesshst

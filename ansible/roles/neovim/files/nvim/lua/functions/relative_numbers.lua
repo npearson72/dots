@@ -7,7 +7,10 @@ local command_name = 'ToggleRelativeLineNumbers'
 create_user_command(
   command_name,
   function(params)
-    if vim.bo.filetype ~= 'coc-explorer' then
+    if not (
+          vim.bo.filetype == 'coc-explorer' or
+          vim.bo.filetype == 'TelescopePrompt'
+        ) then
       if params.args == 'on' then
         vim.opt.number = false
         vim.opt.relativenumber = true
