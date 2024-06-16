@@ -14,6 +14,11 @@
   output = ""
 
 [[snippets]]
+  description = "Kill all tcp processes matching port"
+  command = "kill $(lsof -i :<pattern> | awk 'FNR == 2 {print $2}')"
+  output = ""
+
+[[snippets]]
   description = "Create a gzipped archive"
   command = "tar -czvf <file name>.tar.gz <file(s) to archive>"
   output = ""
