@@ -59,6 +59,11 @@
   output = ""
 
 [[snippets]]
+  description = "Git reset and clean"
+  command = "git reset --hard && git clean -fd"
+  output = ""
+
+[[snippets]]
   description = "Open all files in vim"
   command = "find <directory> -type f -print | xargs echo | xargs -I {} sh -c 'nvim -p {}'"
   output = ""
