@@ -23,7 +23,7 @@
 --glob=!{.cache,.expo*,.git,.next,.svn,.tldr,.terraform,.turbo,.webpack}
 
 # Exclude dev directories
---glob=!{**/node_modules,**/cache,**/debug,**/log,**/tmp}
+--glob=!{**/node_modules,**/cache,**/debug,**/log,**/tmp,**/.tmp}
 
 # Exclude mobile dev directories
 --glob=!{**/ios,**/android}
