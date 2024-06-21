@@ -3,6 +3,7 @@ local config = function()
   -- Globals
   ------------------------------------
   vim.g.coc_global_extensions = {
+    '@yaegassy/coc-volar',
     'coc-css',
     'coc-deno',
     'coc-emmet',
@@ -20,7 +21,6 @@ local config = function()
     'coc-styled-components',
     'coc-sumneko-lua',
     'coc-tsserver',
-    'coc-vetur',
   }
 
   vim.g.coc_config_home = vim.env.HOME .. '/.config/nvim'

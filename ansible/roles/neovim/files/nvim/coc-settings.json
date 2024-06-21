@@ -102,7 +102,6 @@
   "suggest.noselect": true,
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.hint.enable": false,
-  "vetur.validation.template": false,
   "workspace.rootPatterns": ["package.json", ".gitignore", ".env", ".git"],
   "snippets.ultisnips.pythonPrompt": false
 }
