@@ -91,6 +91,8 @@
   "prettier.printWidth": 80,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "none",
+  "pretty-ts-errors.mode": 0,
+  "pretty-ts-errors.codeBlockHighlightType": "typescript",
   "snippets.extends": {
     "typescriptreact": ["javascript"],
     "typescript": ["javascript"]
