@@ -6,14 +6,11 @@
 
 local config = function()
   require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua' },
-    sync_install = false,
-    auto_install = false,
-    ignore_install = {},
+    sync_install = true,
+    auto_install = true,
 
     highlight = {
-      enable = true,
-      disable = { 'bash' },
+      enable = false,
       additional_vim_regex_highlighting = false,
     },
   })

@@ -6,8 +6,8 @@ TERM = "alacritty"
 
 [window]
 dynamic_padding = true
-# startup_mode = "Maximized"
-startup_mode = "SimpleFullscreen"
+startup_mode = "Maximized"
+# startup_mode = "SimpleFullscreen"
 decorations = "Buttonless"
 option_as_alt = "Both"
 
@@ -20,7 +20,7 @@ x = 0
 y = 0
 
 [font]
-size = 15.5
+size = 17
 
 [font.bold]
 family = "Hack Nerd Font Mono"
