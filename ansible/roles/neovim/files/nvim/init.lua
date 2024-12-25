@@ -19,6 +19,7 @@ vim.g.mapleader = ','
 
 require('lazy').setup({
   { import = "plugins" },
+  'sheerun/vim-polyglot',
   'tpope/vim-commentary',
   'tpope/vim-endwise',
   'tpope/vim-projectionist',
