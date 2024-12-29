@@ -97,3 +97,13 @@
   description = "Uninstall all ruby gems"
   command = "for g in `gem list --no-versions`; do gem uninstall $g -a -x -I; done"
   output = ""
+
+[[snippets]]
+  description = "Look up private IP of current machine"
+  command = "ifconfig -a | grep -A2 en0 | grep inet | awk '{print $2}' | sed 's#/.*##g' | grep '\\.'"
+  output = ""
+
+[[snippets]]
+  description = "Look up public IP of current machine"
+  command = "curl ifconfig.me; echo"
+  output = ""

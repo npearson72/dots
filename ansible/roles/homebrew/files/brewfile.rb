@@ -41,6 +41,8 @@ brew 'postgis' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
 brew 'tldr'
+brew 'terraform'
+brew 'terraform-ls'
 brew 'tmux'
 brew 'tmuxp'
 brew 'tree'
