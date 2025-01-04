@@ -1,5 +1,5 @@
 [General]
-  snippetfile = "$XDG_CONFIG_HOME/pet/snippet.toml"
+  snippetfile = "~/.config/pet/snippet.toml"
   editor = "nvim"
   column = 40
   selectcmd = "fzf"

@@ -24,6 +24,7 @@ brew 'gawk'
 brew 'gcc'
 brew 'ghostscript' if work
 brew 'git'
+brew 'go'
 brew 'gpg'
 brew 'gnu-sed'
 brew 'gnu-tar'
