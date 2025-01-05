@@ -61,7 +61,7 @@ kube() {
     echo "  sandbox";
     echo "  staging";
 
-    return 0
+    return 1
   fi
 
   if [[  ! $3 =~ ^(ams|amc|bms|customer-portal|lms|merchant-portal)$ ]]; then
@@ -76,7 +76,7 @@ kube() {
     echo "  lms";
     echo "  merchant-portal";
 
-    return 0
+    return 1
   fi
 
   case $1 in

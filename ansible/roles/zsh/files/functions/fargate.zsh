@@ -1,5 +1,4 @@
 #!/bin/sh
-
 _aws() {
   command op plugin run -- aws $@
 }
@@ -18,7 +17,7 @@ _get_arn() {
   fi
 
   if [[ -z $arn ]]; then
-    echo "\nARN not provided, fetching latest task ARN from ECS service...\n"
+    echo "\nARN not provided, fetching latest task ARN from ECS service..." >&2
     export task_arn=$(_aws ecs list-tasks \
       --cluster app-$env-ecs-cluster \
       --service app-$env-ecs-service \
@@ -47,13 +46,10 @@ _force_new_deployment() {
 _login_into_fargate_container_shell() {
   env=${*: 2:1}
 
-  result=$(_get_arn $@)
-
-
-  task_arn=$(echo $result | tail -n 1)
+  task_arn=$(_get_arn $@)
 
   if [[ -z $task_arn || $task_arn == None ]]; then
-    echo "\nNo task ARN found. Exiting...\n"
+    echo "\nNo task ARN found. Exiting..."
     return 1
   fi
 
@@ -71,12 +67,10 @@ _login_into_fargate_container_shell() {
 _describe_task() {
   env=${*: 2:1}
 
-  result=$(_get_arn $@)
-
-  task_arn=$(echo $result | tail -n 1)
+  task_arn=$(_get_arn $@)
 
   if [[ -z $task_arn || $task_arn == None ]]; then
-    echo "\nNo task ARN found. Exiting...\n"
+    echo "\nNo task ARN found. Exiting..."
     return 1
   fi
 
@@ -98,7 +92,7 @@ fargate() {
     echo "  desc|dt   Describe task";
     echo "  force|fd  Force new deployment";
 
-    return 0
+    return 1
   fi
 
   if [[  ! $2 =~ ^(production|preflight)$ ]]; then
@@ -109,7 +103,7 @@ fargate() {
     echo "  production";
     echo "  preflight";
 
-    return 0
+    return 1
   fi
 
   case $1 in
