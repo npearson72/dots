@@ -82,10 +82,10 @@ _describe_task() {
   unset env task_arn
 }
 
-fargate() {
+denote() {
   if [[  ! $1 =~ ^(sh|shell|desc|dt|forc|fd)$ ]]; then
     echo "Usage:";
-    echo "  fargate [commands]";
+    echo "  denote [commands]";
     echo ""
     echo "Available commands:";
     echo "  shell|sh  Connect to shell in container";
@@ -97,7 +97,7 @@ fargate() {
 
   if [[  ! $2 =~ ^(production|preflight)$ ]]; then
     echo "Usage:";
-    echo "  fargate $1 [commands]";
+    echo "  denote $1 [commands]";
     echo ""
     echo "Available commands:";
     echo "  production";
