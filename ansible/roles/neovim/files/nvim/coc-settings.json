@@ -7,7 +7,7 @@
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "󰀨",
-  "diagnostic.hintSign": "󰅽",
+  "diagnostic.hintSign": "",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "eruby": "html"
@@ -31,8 +31,8 @@
         "code": "",
         "color": "#7b42bc"
       },
-      "terraform_vars": {
-        "code": "",
+      "hcl": {
+        "code": "",
         "color": "#878790"
       },
       "jenkins": {
@@ -57,7 +57,8 @@
     },
     "extensions": {
       "tf": "terraform",
-      "tfvars": "terraform_vars",
+      "tfvars": "hcl",
+      "hcl": "hcl",
       "jsonc": "json",
       "mts": "typescript"
     }
@@ -92,7 +93,7 @@
     "terraform": {
       "command": "terraform-ls",
       "args": ["serve"],
-      "filetypes": ["terraform", "tf", "tfvars"],
+      "filetypes": ["hcl", "terraform", "tf", "tfvars"],
       "initializationOptions": {},
       "settings": {}
     }

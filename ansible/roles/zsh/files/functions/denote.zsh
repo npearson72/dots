@@ -1,8 +1,4 @@
 #!/bin/sh
-_aws() {
-  command op plugin run -- aws $@
-}
-
 _get_arn() {
   opts=(${*: 3})
   env=${*: 2:1}
@@ -18,10 +14,10 @@ _get_arn() {
 
   if [[ -z $arn ]]; then
     echo "\nARN not provided, fetching latest task ARN from ECS service..." >&2
-    export task_arn=$(_aws ecs list-tasks \
-      --cluster app-$env-ecs-cluster \
-      --service app-$env-ecs-service \
-      --region us-west-2 \
+    export task_arn=$(command aws ecs list-tasks \
+      --cluster web-app-$env-ecs-cluster \
+      --service web-app-$env-ecs-service \
+      --region $AWS_REGION \
       --output text \
       --query 'taskArns[0]'
     )
@@ -35,10 +31,10 @@ _get_arn() {
 _force_new_deployment() {
   env=${*: 2:1}
 
-  _aws ecs update-service \
-    --cluster app-$env-ecs-cluster \
-    --service app-$env-ecs-service \
-    --region us-west-2 \
+  command aws ecs update-service \
+    --cluster web-app-$env-ecs-cluster \
+    --service web-app-$env-ecs-service \
+    --region $AWS_REGION \
     --enable-execute-command \
     --force-new-deployment
 }
@@ -53,11 +49,11 @@ _login_into_fargate_container_shell() {
     return 1
   fi
 
-  _aws ecs execute-command \
-    --region us-west-2 \
-    --cluster app-$env-ecs-cluster \
+  command aws ecs execute-command \
+    --region $AWS_REGION \
+    --cluster web-app-$env-ecs-cluster \
     --task $task_arn \
-    --container app-$env-ecs-container \
+    --container web-app-$env-ecs-container \
     --command "sh" \
     --interactive
 
@@ -74,9 +70,9 @@ _describe_task() {
     return 1
   fi
 
-  _aws ecs describe-tasks \
-    --cluster app-$env-ecs-cluster \
-    --region us-west-2 \
+  command aws ecs describe-tasks \
+    --cluster web-app-$env-ecs-cluster \
+    --region $AWS_REGION \
     --tasks $task_arn
 
   unset env task_arn
