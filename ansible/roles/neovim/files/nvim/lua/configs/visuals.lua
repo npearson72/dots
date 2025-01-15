@@ -40,11 +40,11 @@ local options = {
   },
 
   CocHintSign = {
-    fg = '#008ec4',
+    fg = '#a89c14',
   },
 
   CocHintHighlight = {
-    sp = '#008ec4',
+    sp = '#a89c14',
     undercurl = true
   },
 
