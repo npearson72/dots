@@ -15,8 +15,8 @@ _get_arn() {
   if [[ -z $arn ]]; then
     echo "\nARN not provided, fetching latest task ARN from ECS service..." >&2
     export task_arn=$(command aws ecs list-tasks \
-      --cluster web-app-$env-ecs-cluster \
-      --service web-app-$env-ecs-service \
+      --cluster $env-api-ecs-cluster \
+      --service $env-api-ecs-service \
       --region $AWS_REGION \
       --output text \
       --query 'taskArns[0]'
@@ -32,8 +32,8 @@ _force_new_deployment() {
   env=${*: 2:1}
 
   command aws ecs update-service \
-    --cluster web-app-$env-ecs-cluster \
-    --service web-app-$env-ecs-service \
+    --cluster $env-api-ecs-cluster \
+    --service $env-api-ecs-service \
     --region $AWS_REGION \
     --enable-execute-command \
     --force-new-deployment
@@ -51,9 +51,9 @@ _login_into_fargate_container_shell() {
 
   command aws ecs execute-command \
     --region $AWS_REGION \
-    --cluster web-app-$env-ecs-cluster \
+    --cluster $env-api-ecs-cluster \
     --task $task_arn \
-    --container web-app-$env-ecs-container \
+    --container $env-api-ecs-container \
     --command "sh" \
     --interactive
 
@@ -71,7 +71,7 @@ _describe_task() {
   fi
 
   command aws ecs describe-tasks \
-    --cluster web-app-$env-ecs-cluster \
+    --cluster $env-api-ecs-cluster \
     --region $AWS_REGION \
     --tasks $task_arn
 
@@ -91,13 +91,13 @@ denote() {
     return 1
   fi
 
-  if [[  ! $2 =~ ^(production|preflight)$ ]]; then
+  if [[  ! $2 =~ ^(prod|stage)$ ]]; then
     echo "Usage:";
     echo "  denote $1 [commands]";
     echo ""
     echo "Available commands:";
-    echo "  production";
-    echo "  preflight";
+    echo "  prod";
+    echo "  stage";
 
     return 1
   fi

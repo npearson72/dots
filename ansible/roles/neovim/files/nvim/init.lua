@@ -25,6 +25,7 @@ require('lazy').setup({
   'tpope/vim-projectionist',
   'tpope/vim-surround',
   'tpope/vim-fugitive',
+  'vim-scripts/greplace.vim',
 }, {
   change_detection = { enabled = false },
   lockfile = lazy_lock_path

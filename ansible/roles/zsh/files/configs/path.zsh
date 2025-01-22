@@ -1,6 +1,8 @@
 # Path
 PATH='/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin'
 
+LOCAL_BIN="$HOME/.local/bin"
+
 STTY_HACK='/usr/local/sbin'
 
 GNU_PATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnubin:\
@@ -12,7 +14,7 @@ SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/openssl/bin"
 
 ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 
-export PATH="$STTY_HACK:$GNU_PATH:$SSL_PATH:$ANDROID_PATH:$PATH"
+export PATH="$LOCAL_BIN:$STTY_HACK:$GNU_PATH:$SSL_PATH:$ANDROID_PATH:$PATH"
 
 # Manpath
 GNU_MANPATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnuman:\
