@@ -4,6 +4,7 @@ local config = function()
   ------------------------------------
   vim.g.coc_global_extensions = {
     '@yaegassy/coc-volar',
+    'coc-biome',
     'coc-css',
     'coc-deno',
     'coc-emmet',
