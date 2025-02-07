@@ -64,7 +64,7 @@ cask 'ngrok'
 cask 'notunes'
 # cask 'pgadmin4'
 cask 'postman'
-# cask 'rectangle'
+cask 'rectangle'
 cask 'slack' if work
 cask 'transmission' if home
 mas 'Bear', id: '1091189122'.to_i
