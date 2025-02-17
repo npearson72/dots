@@ -46,6 +46,10 @@
       "npm": {
         "code": "",
         "color": "#d42647"
+      },
+      "pnpm": {
+        "code": "",
+        "color": "#f1a703"
       }
     },
     "dirnames": {
@@ -53,7 +57,9 @@
     },
     "filenames": {
       "Jenkinsfile": "jenkins",
-      ".npmrc": "npm"
+      ".npmrc": "npm",
+      "pnpm-lock.yaml": "pnpm",
+      "pnpm-workspace.yaml": "pnpm"
     },
     "extensions": {
       "tf": "terraform",
