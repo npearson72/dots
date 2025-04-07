@@ -35,6 +35,10 @@
         "code": "",
         "color": "#f48120"
       },
+      "eslint": {
+        "code": "",
+        "color": "#4b32c3"
+      },
       "fly": {
         "code": "",
         "color": "#a16fed"
@@ -76,11 +80,18 @@
     "filenames": {
       ".npmrc": "npm",
       "bun.lock": "bun",
-      "wrangler.toml": "cloudflare",
+      "eslint.config.js": "eslint",
+      "eslint-base.config.js": "eslint",
+      "eslint-node.config.js": "eslint",
+      "eslint-react.config.js": "eslint",
+      "eslint-wxt-auto-imports.config.js": "eslint",
+      "fly.json": "fly",
       "fly.toml": "fly",
       "Jenkinsfile": "jenkins",
       "pnpm-lock.yaml": "pnpm",
-      "pnpm-workspace.yaml": "pnpm"
+      "pnpm-workspace.yaml": "pnpm",
+      "wrangler.json": "cloudflare",
+      "wrangler.toml": "cloudflare"
     },
     "extensions": {
       "tf": "terraform",
