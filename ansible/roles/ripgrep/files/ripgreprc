@@ -31,5 +31,8 @@
 # Exclude build directories
 --glob=!{**/dist,**/build,**/public/packs,**/public/vite-dev}
 
+# Exclude build files
+--glob=!{**/stats/index.html}
+
 # Exclude dev files
 --glob=!{pnpm-lock.yaml,package-lock.json,yarn-error*,yarn.lock}
