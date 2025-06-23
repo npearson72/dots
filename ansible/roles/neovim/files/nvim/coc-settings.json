@@ -13,6 +13,7 @@
     "eruby": "html"
   },
   "emmet.showSuggestionsAsSnippets": true,
+  "eslint.packageManager": "pnpm",
   "eslint.run": "onType",
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "explorer.file.reveal.auto": false,
