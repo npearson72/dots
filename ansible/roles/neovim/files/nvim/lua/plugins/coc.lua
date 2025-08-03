@@ -13,6 +13,7 @@ local config = function()
     'coc-git',
     'coc-html',
     'coc-json',
+    'coc-oxc',
     'coc-prettier',
     'coc-pretty-ts-errors',
     'coc-prisma',

@@ -37,7 +37,7 @@ brew 'minikube'
 brew 'mas'
 brew 'neovim'
 brew 'openssh'
-brew 'postgresql@14'
+brew 'postgresql@17'
 # brew 'postgis' if work
 brew 'redis', restart_service: true
 brew 'ripgrep'
