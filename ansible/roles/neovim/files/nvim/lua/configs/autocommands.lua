@@ -15,7 +15,17 @@ create_autocmd('WinLeave', {
   command = 'setlocal nocursorcolumn nocursorline'
 })
 
+
+local filetype_group = create_augroup('FileTypeSettings', { clear = true })
+
 create_autocmd('Filetype', {
+  group = filetype_group,
   pattern = 'gitcommit',
   command = 'setlocal spell textwidth=80 colorcolumn=80'
+})
+
+create_autocmd('Filetype', {
+  group = filetype_group,
+  pattern = 'css',
+  command = 'setlocal commentstring=/*\\ %s\\ */'
 })
