@@ -1,7 +1,6 @@
 local config = function()
   local cmp = require('cmp')
   local lspkind = require('lspkind')
-  local luasnip = require('luasnip')
 
   cmp.setup({
     completion = {
@@ -11,17 +10,25 @@ local config = function()
 
     sources = cmp.config.sources({
       { name = 'css-variables' },
-      { name = 'buffer' },
-      { name = 'path' },
-      { name = 'luasnip' },
       { name = 'nvim_lsp' },
+    }, {
+      { name = 'buffer' },
     }),
 
     formatting = {
       format = lspkind.cmp_format({
-        mode = 'symbol_text',
+        mode = 'symbol',
         maxwidth = 50,
         ellipsis_char = '...',
+
+        -- https://www.nerdfonts.com/cheat-sheet
+        symbol_map = {
+          Color = '',
+          Constructor = '',
+          Module = '',
+          Snippet = '',
+          Variable = '',
+        },
       })
     },
 
@@ -32,13 +39,8 @@ local config = function()
           return
         end
 
-        if luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-          return
-        end
-
         fallback()
-      end, { 'i', 's' }),
+      end),
 
       ['<S-Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
@@ -46,36 +48,21 @@ local config = function()
           return
         end
 
-        if luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-          return
-        end
-
         fallback()
-      end, { 'i', 's' }),
+      end),
 
       ['<C-j>'] = cmp.mapping({
         i = function(fallback)
-          -- if cmp.visible() and cmp.select_next_item({ behavior = cmp.ConfirmBehavior.Replace }) then
-          --   return
-          -- end
-
-          -- if luasnip.jumpable() then
-          --   luasnip.jump()
-          --   return
-          -- end
+          if cmp.visible() and cmp.get_active_entry() then
+            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            return
+          end
 
           fallback()
         end,
 
-        s = function(fallback)
-          -- if luasnip.jumpable() then
-          --   luasnip.jump()
-          --   return
-          -- end
-
-          fallback()
-        end,
+        s = cmp.mapping.confirm({ select = true }),
+        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
       }),
       ['<C-Space>'] = cmp.mapping.complete(),
     }),
@@ -91,10 +78,8 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
-      'onsails/lspkind.nvim',
-      'saadparwaiz1/cmp_luasnip',
-      'L3MON4D3/LuaSnip',
       'npearson72/cmp-css-variables',
+      'onsails/lspkind.nvim',
     },
     config = config,
     event = 'InsertEnter',

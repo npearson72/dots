@@ -1,8 +1,7 @@
 local M = {}
 
-local cmp_active_in_css_var_context = false
-
-local function should_cmp_be_active()
+local function check_cmp_should_be_active()
+  local cmp = require('cmp')
   local current_filetype = vim.bo.filetype
 
   if current_filetype ~= "css" then
@@ -13,6 +12,16 @@ local function should_cmp_be_active()
   local cursor_col = vim.api.nvim_win_get_cursor(0)[2] + 1
   local text_before_cursor = string.sub(cursor_line, 1, cursor_col - 1)
 
+  -- When using cmp, disable coc.nvim's completion
+  cmp.event:on('menu_opened', function()
+    vim.api.nvim_eval('coc#pum#close()')
+    vim.b.coc_suggest_disable = 1
+  end)
+
+  cmp.event:on('menu_closed', function()
+    vim.b.coc_suggest_disable = nil
+  end)
+
   if string.find(text_before_cursor, "var%(") then
     return true
   end
@@ -21,26 +30,10 @@ local function should_cmp_be_active()
 end
 
 local function check_css_var_context_and_toggle()
-  local should_be_active = should_cmp_be_active()
+  local should_be_active = check_cmp_should_be_active()
 
   if should_be_active then
-    if not cmp_active_in_css_var_context then
-      vim.b.coc_suggest_disable = 1
-      cmp_active_in_css_var_context = true
-
-      vim.schedule(function()
-        require('cmp').complete()
-      end)
-    end
-  else
-    if cmp_active_in_css_var_context then
-      vim.b.coc_suggest_disable = nil
-      cmp_active_in_css_var_context = false
-
-      vim.schedule(function()
-        require('cmp').close()
-      end)
-    end
+    require('cmp').complete()
   end
 end
 
