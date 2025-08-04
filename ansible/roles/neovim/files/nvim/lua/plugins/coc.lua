@@ -11,6 +11,7 @@ local config = function()
     'coc-eslint',
     'coc-explorer',
     'coc-git',
+    'coc-highlight',
     'coc-html',
     'coc-json',
     'coc-oxc',
@@ -47,6 +48,12 @@ local config = function()
     end
   end
 
+  local organize_imports = function()
+    vim.fn.CocAction('runCommand', 'editor.action.organizeImport')
+    vim.fn.CocAction('runCommand', 'prettier.formatFile')
+    vim.cmd('write')
+  end
+
   function _G.check_back_space()
     local col = vim.fn.col('.') - 1
     return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
@@ -59,12 +66,11 @@ local config = function()
   ------------------------------------
   -- Commands
   ------------------------------------
-  vim.api.nvim_create_user_command('Format', [[call CocAction('format')]], {})
   vim.api.nvim_create_user_command(
-    'OrganizeImports',
-    [[call CocActionAsync('runCommand', 'editor.action.organizeImport')]],
-    {}
+    "Prettier", "call CocActionAsync('runCommand', 'prettier.forceFormatDocument')", { nargs = 0 }
   )
+
+  vim.api.nvim_create_user_command('OrganizeImports', organize_imports, { nargs = 0 })
 
   ------------------------------------
   -- Mappings
@@ -127,6 +133,11 @@ local config = function()
     silent = true,
     nowait = true
   })
+
+  vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', { silent = true })
+
+  vim.keymap.set('n', '<leader>c', '<cmd>CocCommand editor.action.pickColor<cr>', { silent = true })
+  vim.keymap.set('n', '<leader>cc', '<cmd>CocCommand editor.action.colorPresentation<cr>', { silent = true })
 
   -- Coc Explorer
   vim.keymap.set('n', '<leader>e', '<cmd>CocCommand explorer<cr>', {

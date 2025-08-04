@@ -33,7 +33,7 @@ require('lazy').setup({
 })
 
 require('configs/mappings')
-require('configs/settings')
+require('configs/options')
 require('configs/autocommands')
 require('configs/filetypes')
 require('configs/visuals')

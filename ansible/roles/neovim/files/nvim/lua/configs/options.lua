@@ -10,7 +10,9 @@ vim.g.python3_host_prog = vim.env.HOME .. '/.venv/bin/python3'
 vim.opt.autoindent = true
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.completeopt = 'longest,menuone,preview'
+vim.opt.exrc = true
 vim.opt.history = 1000
+vim.opt.iskeyword:append('-')
 vim.opt.mouse = ""
 vim.opt.number = true
 vim.opt.tabstop = 2

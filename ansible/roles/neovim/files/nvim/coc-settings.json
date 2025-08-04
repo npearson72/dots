@@ -4,6 +4,7 @@
   "coc.preferences.jumpCommand": "tabe",
   "coc.preferences.willSaveHandlerTimeout": 5000,
   "coc.source.emoji.filetypes": null,
+  "colors.enable": true,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "󰀨",
@@ -129,6 +130,18 @@
   "git.changedSign.text": "!",
   "javascript.suggestionActions.enabled": false,
   "languageserver": {
+    "cssmodules": {
+      "command": "cssmodules-language-server",
+      "args": ["--stdio"],
+      "filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+      ],
+      "initializationOptions": {},
+      "settings": {}
+    },
     "terraform": {
       "command": "terraform-ls",
       "args": ["serve"],
