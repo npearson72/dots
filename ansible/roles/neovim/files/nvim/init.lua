@@ -35,8 +35,8 @@ require('lazy').setup({
 require('configs/mappings')
 require('configs/options')
 require('configs/autocommands')
-require('configs/filetypes')
-require('configs/visuals')
+require('configs/highlights')
+require('configs/diagnostics')
 
 require('functions/relative_numbers')
 require('functions/zoom')

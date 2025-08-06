@@ -11,45 +11,45 @@ local options = {
     fg = '#262626'
   },
 
+  NormalFloat = {
+    bg = '#3a3a3a'
+  },
+
   -- Coc
   CocInfoSign = {
-    fg = '#a89c14'
+    link = 'DiagnosticSignInfo'
   },
 
   CocInfoHighlight = {
-    sp = '#a89c14',
-    undercurl = true
-  },
-
-  CocWarningSign = {
-    fg = '#d75f5f'
-  },
-
-  CocWarningHighlight = {
-    sp = '#d75f5f',
-    undercurl = true
-  },
-
-  CocErrorSign = {
-    fg = '#c30771'
-  },
-
-  CocErrorHighlight = {
-    sp = '#e32791',
-    undercurl = true
+    link = 'DiagnosticUnderlineInfo'
   },
 
   CocHintSign = {
-    fg = '#a89c14',
+    link = 'DiagnosticSignHint'
   },
 
   CocHintHighlight = {
-    sp = '#a89c14',
-    undercurl = true
+    link = 'DiagnosticUnderlineHint'
+  },
+
+  CocWarningSign = {
+    link = 'DiagnosticSignWarn'
+  },
+
+  CocWarningHighlight = {
+    link = 'DiagnosticUnderlineWarn'
+  },
+
+  CocErrorSign = {
+    link = 'DiagnosticSignError'
+  },
+
+  CocErrorHighlight = {
+    link = 'DiagnosticUnderlineError'
   },
 
   CocFloating = {
-    bg = '#3a3a3a'
+    link = 'NormalFloat'
   },
 
   CocMenuSel = {

@@ -15,6 +15,7 @@ create_autocmd('WinLeave', {
   command = 'setlocal nocursorcolumn nocursorline'
 })
 
+-- Filetypes
 
 local filetype_group = create_augroup('FileTypeSettings', { clear = true })
 
@@ -28,4 +29,30 @@ create_autocmd('Filetype', {
   group = filetype_group,
   pattern = 'css',
   command = 'setlocal commentstring=/*\\ %s\\ */'
+})
+
+create_autocmd("FileType", {
+  group = filetype_group,
+  pattern = 'json',
+  callback = function(args)
+    if vim.fn.bufname(args.buf) == '.oxlintrc.json' then
+      vim.bo[args.buf].filetype = 'jsonc'
+    end
+  end,
+})
+
+create_autocmd("FileType", {
+  group = filetype_group,
+  pattern = '.*.env.*',
+  callback = function(args)
+    vim.bo[args.buf].filetype = 'sh'
+  end,
+})
+
+create_autocmd("FileType", {
+  group = filetype_group,
+  pattern = 'Jenkinsfile',
+  callback = function(args)
+    vim.bo[args.buf].filetype = 'groovy'
+  end,
 })

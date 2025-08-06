@@ -150,8 +150,6 @@
       "settings": {}
     }
   },
-  "oxc.enable": true,
-  "oxc.configPath": ".oxlintrc.jsonc",
   "prettier.arrowParens": "avoid",
   "prettier.endOfLine": "auto",
   "prettier.printWidth": 80,
