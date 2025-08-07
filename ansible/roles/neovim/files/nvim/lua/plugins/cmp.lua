@@ -82,6 +82,5 @@ return {
       'onsails/lspkind.nvim',
     },
     config = config,
-    event = 'InsertEnter',
   }
 }
