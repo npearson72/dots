@@ -1,5 +1,5 @@
 {
-  "css.validate": false,
+  "css.validate": true,
   "coc.preferences.formatOnSave": true,
   "coc.preferences.jumpCommand": "tabe",
   "coc.preferences.willSaveHandlerTimeout": 5000,

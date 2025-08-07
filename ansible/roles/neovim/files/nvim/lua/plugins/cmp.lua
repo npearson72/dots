@@ -35,8 +35,8 @@ local config = function()
     mapping = cmp.mapping.preset.insert({
       ['<Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_next_item()
-          return
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+          return;
         end
 
         fallback()
@@ -44,7 +44,7 @@ local config = function()
 
       ['<S-Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_prev_item()
+          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
           return
         end
 
