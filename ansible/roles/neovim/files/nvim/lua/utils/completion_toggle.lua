@@ -11,6 +11,7 @@ local function check_cmp_should_be_active()
   local cursor_line = vim.api.nvim_get_current_line()
   local cursor_col = vim.api.nvim_win_get_cursor(0)[2] + 1
   local text_before_cursor = string.sub(cursor_line, 1, cursor_col - 1)
+  local text_after_cursor = string.sub(cursor_line, cursor_col, #cursor_line)
 
   -- When using cmp, disable coc.nvim's completion
   cmp.event:on('menu_opened', function()
@@ -22,7 +23,7 @@ local function check_cmp_should_be_active()
     vim.b.coc_suggest_disable = nil
   end)
 
-  if string.find(text_before_cursor, "var%(") then
+  if string.find(text_before_cursor, "var%(") and string.find(text_after_cursor, "%)") then
     return true
   end
 
