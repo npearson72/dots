@@ -8,16 +8,12 @@ local config = function()
   require('nvim-treesitter.configs').setup({
     ensure_installed = {
       'css',
-      'html',
+      'gitcommit',
       'javascript',
       'json',
       'lua',
-      'markdown',
       'tsx',
-      'typescript',
-      'vim',
-      'vimdoc',
-      'yaml',
+      'typescript'
     },
 
     sync_install = true,
