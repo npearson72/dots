@@ -5,28 +5,15 @@ return {
     dependencies = {
       { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
       { 'nvim-lua/plenary.nvim' },
-      {
-        'saghen/blink.cmp',
-        lazy = false,
-        version = '*',
-        auto_show = false,
-        opts = {
-          keymap = {
-            preset = 'enter',
-            ['<tab>'] = { 'select_next', 'fallback' },
-            ['<s-tab>'] = { 'select_prev', 'fallback' },
-          },
-          cmdline = { sources = { 'cmdline' } },
-          sources = {
-            default = { 'lsp', 'path', 'buffer', 'codecompanion' },
-          },
-        },
-      },
     },
+
+    --Refer to: https://github.com/olimorris/codecompanion.nvim/blob/main/lua/codecompanion/config.lua
     opts = {
-      --Refer to: https://github.com/olimorris/codecompanion.nvim/blob/main/lua/codecompanion/config.lua
       strategies = {
         chat = {
+          opts = {
+            completion_provider = "cmp"
+          },
           adapter = 'gemini',
         },
         inline = {

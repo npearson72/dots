@@ -113,20 +113,6 @@ local options = {
     fg = '#212121',
     bg = '#a89c14',
   },
-
-  -- Treesitter syntax highlighting
-  -- Use :TSHighlightCapturesUnderCursor to identify the tag
-  tsxTag = {
-    fg = '#767676'
-  },
-
-  tsxCloseTag = {
-    link = 'tsxTag'
-  },
-
-  tsxCloseString = {
-    link = 'tsxTag'
-  }
 }
 
 local function set_highlight(opts)

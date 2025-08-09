@@ -28,6 +28,7 @@
   },
   "explorer.git.showIgnored": false,
   "explorer.icon.customIcons": {
+    // https://www.nerdfonts.com/cheat-sheet
     "icons": {
       "bun": {
         "code": "",
