@@ -114,6 +114,9 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
+      -- To make cmp-css-variables work, add a .nvim.lua file to your project
+      -- root with a pointer to the CSS files containing variables
+      -- Ex: vim.g.css_variables_files = { "node_modules/example/styles.css" }
       'npearson72/cmp-css-variables',
       'onsails/lspkind.nvim',
     },
