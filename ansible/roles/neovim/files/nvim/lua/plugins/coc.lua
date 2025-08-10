@@ -142,9 +142,6 @@ local config = function()
   vim.keymap.set('n', '<leader>e', '<cmd>CocCommand explorer<cr>', {
     silent = true
   })
-
-  -- Nofifications
-  require('utils.coc_notifications').setup()
 end
 
 return {
