@@ -4,6 +4,7 @@ local config = function()
   ------------------------------------
   vim.g.coc_global_extensions = {
     '@yaegassy/coc-volar',
+    'coc-biome',
     'coc-css',
     'coc-deno',
     'coc-emmet',
@@ -128,7 +129,7 @@ local config = function()
   vim.keymap.set('n', 'gr', '<Plug>(coc-references)', { silent = true })
 
   vim.keymap.set('n', '<leader>d', show_docs, { silent = true })
-  vim.keymap.set('n', '<leader>ca', '<Plug>(coc-codeaction)', {
+  vim.keymap.set('n', '<leader>ca', '<Plug>(coc-codeaction-cursor)', {
     silent = true,
     nowait = true
   })
