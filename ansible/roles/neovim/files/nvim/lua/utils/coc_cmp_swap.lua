@@ -33,7 +33,7 @@ local function check_css_var_context_and_toggle()
 end
 
 
-M.setup_autocmd = function()
+M.setup = function()
   vim.api.nvim_create_augroup("CssCompletionToggle", { clear = true })
 
   -- https://neovim.io/doc/user/autocmd.html#TextChangedI

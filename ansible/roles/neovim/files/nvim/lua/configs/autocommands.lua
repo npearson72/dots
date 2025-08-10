@@ -1,18 +1,30 @@
 local create_augroup = vim.api.nvim_create_augroup
 local create_autocmd = vim.api.nvim_create_autocmd
 
-local group = create_augroup('CursorTracker', { clear = false })
+local cursor_tracker = create_augroup('CursorTracker', { clear = false })
 
 create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter', 'CursorMoved' }, {
-  group = group,
+  group = cursor_tracker,
   pattern = '*',
-  command = 'setlocal cursorcolumn cursorline'
+  callback = function()
+    local ft = vim.bo.filetype
+
+    if (ft == 'Avante') then
+      vim.opt_local.cursorline = true
+    else
+      vim.opt_local.cursorcolumn = true
+      vim.opt_local.cursorline = true
+    end
+  end,
 })
 
 create_autocmd('WinLeave', {
-  group = group,
+  group = cursor_tracker,
   pattern = '*',
-  command = 'setlocal nocursorcolumn nocursorline'
+  callback = function()
+    vim.opt_local.cursorcolumn = false
+    vim.opt_local.cursorline = false
+  end,
 })
 
 -- Filetypes

@@ -7,7 +7,7 @@
   "colors.enable": true,
   "diagnostic.errorSign": "",
   "diagnostic.warningSign": "",
-  "diagnostic.infoSign": "󰀨",
+  "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",

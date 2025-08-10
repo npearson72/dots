@@ -102,7 +102,7 @@ local config = function()
         vim.b.coc_suggest_disable = nil
       end)
 
-      require('utils.completion_toggle').setup_autocmd()
+      require('utils.coc_cmp_swap').setup()
     end,
   })
 end
