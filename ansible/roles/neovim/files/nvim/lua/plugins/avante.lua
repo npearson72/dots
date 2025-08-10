@@ -8,6 +8,7 @@ return {
       file_selector = {
         provider = 'telescope'
       },
+      hints = { enabled = false },
       input = {
         provider = 'telescrop',
         provider_opts = {
@@ -33,14 +34,6 @@ return {
       'nvim-telescope/telescope.nvim',
       'hrsh7th/nvim-cmp',
       'nvim-tree/nvim-web-devicons',
-      -- {
-      --   -- Make sure to set this up properly if you have lazy=true
-      --   'MeanderingProgrammer/render-markdown.nvim',
-      --   opts = {
-      --     file_types = { "markdown", "Avante" },
-      --   },
-      --   ft = { "markdown", "Avante" },
-      -- },
     },
   }
 }

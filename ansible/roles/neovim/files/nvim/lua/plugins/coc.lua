@@ -128,14 +128,14 @@ local config = function()
   vim.keymap.set('n', 'gr', '<Plug>(coc-references)', { silent = true })
 
   vim.keymap.set('n', '<leader>d', show_docs, { silent = true })
-  vim.keymap.set('n', '<leader>a', '<Plug>(coc-codeaction)', {
+  vim.keymap.set('n', '<leader>ca', '<Plug>(coc-codeaction)', {
     silent = true,
     nowait = true
   })
 
   vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', { silent = true })
 
-  vim.keymap.set('n', '<leader>c', '<cmd>CocCommand editor.action.pickColor<cr>', { silent = true })
+  vim.keymap.set('n', '<leader>cp', '<cmd>CocCommand editor.action.pickColor<cr>', { silent = true })
   vim.keymap.set('n', '<leader>cc', '<cmd>CocCommand editor.action.colorPresentation<cr>', { silent = true })
 
   -- Coc Explorer
