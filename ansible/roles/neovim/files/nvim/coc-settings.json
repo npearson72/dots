@@ -1,5 +1,4 @@
 {
-  "biome.enable": true,
   "css.validate": true,
   "oxc.configPath": ".oxlintrc.json",
   "coc.preferences.formatOnSave": true,
