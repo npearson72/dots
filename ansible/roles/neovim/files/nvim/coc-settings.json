@@ -1,4 +1,5 @@
 {
+  "biome.enable": true,
   "css.validate": true,
   "coc.preferences.formatOnSave": true,
   "coc.preferences.jumpCommand": "tabe",
@@ -9,6 +10,10 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": "",
+  "editor.codeActionsOnSave": {
+    "source.action.useSortedAttributes.biome": "always",
+    "source.fixAll.biome": "always"
+  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "eruby": "html"

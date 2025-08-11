@@ -73,24 +73,9 @@ local providers = {
   }
 }
 
-local current_provider = 'gemini_flash'
-
-local switch_provider = function(provider_name)
-  if providers[provider_name] then
-    current_provider = provider_name
-    require('avante').setup({
-      provider = current_provider,
-      providers = providers,
-    })
-    vim.notify('Avante provider switched to: ' .. provider_name, vim.log.levels.INFO)
-  else
-    vim.notify('Unknown Avante provider: ' .. provider_name, vim.log.levels.ERROR)
-  end
-end
-
 local config = function()
   require('avante').setup({
-    file_selector = {
+    selector = {
       provider = 'telescope'
     },
     hints = { enabled = false },
@@ -103,6 +88,9 @@ local config = function()
     },
     provider = 'gemini_flash',
     providers = providers,
+    web_search_engine = {
+      provider = "tavily",
+    }
   })
 end
 
