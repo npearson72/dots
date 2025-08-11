@@ -29,11 +29,8 @@ _git_fzf_checkout_branch() {
   command git branch | grep -v '^*' | fzf | xargs git checkout
 }
 
-_git_fzf_log() {
-  command git log\
-    --color=always\
-    --pretty=format:'%Cred%h%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' $@ |\
-  fzf\
+_fzf_for_log() {
+  command fzf\
     --ansi\
     --no-sort\
     --tiebreak=index\
@@ -46,6 +43,18 @@ _git_fzf_log() {
     --bind "enter:execute: (grep -o '[a-f0-9]\{7\}' | head -1 | xargs git show --color=always | diff-so-fancy | less -R) <<-FZF-EOF
   {}
   FZF-EOF"
+}
+
+_git_fzf_log() {
+  command git log\
+    --color=always\
+    --pretty=format:'%Cred%h%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' $@ | _fzf_for_log
+}
+
+_git_fzf_reflog() {
+  command git reflog\
+    --color=always\
+    --pretty=format:'%Cred%h%Creset %gd: %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)' $@ | _fzf_for_log
 }
 
 _git_fzf_stash_list() {
@@ -81,6 +90,8 @@ _git_fzf_stash_apply() {
 git() {
   if [[ $1 = lg ]]; then
     _git_fzf_log ${@:2}
+  elif [[ $1 = reflog ]]; then
+    _git_fzf_reflog ${@:2}
   elif [[ $1 = stash ]] && [[ -z $3 ]]; then
     case $2 in
       ls)

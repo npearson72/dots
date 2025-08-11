@@ -108,6 +108,6 @@ return {
       'hrsh7th/nvim-cmp',
       'nvim-tree/nvim-web-devicons',
     },
-    config = config -- Corrected from `confg` to `config`
+    config = config
   }
 }
