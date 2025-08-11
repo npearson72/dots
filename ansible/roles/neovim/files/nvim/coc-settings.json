@@ -1,6 +1,7 @@
 {
   "biome.enable": true,
   "css.validate": true,
+  "oxc.configPath": ".oxlintrc.json",
   "coc.preferences.formatOnSave": true,
   "coc.preferences.jumpCommand": "tabe",
   "coc.preferences.willSaveHandlerTimeout": 5000,
