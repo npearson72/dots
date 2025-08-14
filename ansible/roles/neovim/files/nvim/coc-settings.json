@@ -116,6 +116,7 @@
     "<Leader>e": "reveal:select",
     "l": "null",
     "E": "null",
+    "t": "null",
     "v": "open:vsplit"
   },
   "explorer.openAction.relativePath": true,

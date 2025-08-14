@@ -111,8 +111,6 @@ return {
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
       -- To make cmp-css-variables work, add a .nvim.lua file to your project
       -- root with a pointer to the CSS files containing variables

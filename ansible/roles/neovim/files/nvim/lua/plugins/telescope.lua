@@ -57,10 +57,10 @@ local config = function()
             actions.select_default(prompt_bufnr, 'default')
           end,
 
-          ['<c-t>'] = function(prompt_bufnr)
-            pickers.index = 1
-            actions.select_tab(prompt_bufnr, 'default')
-          end,
+          -- ['<c-t>'] = function(prompt_bufnr)
+          --   pickers.index = 1
+          --   actions.select_tab(prompt_bufnr, 'default')
+          -- end,
 
           ['<c-v>'] = function(prompt_bufnr)
             pickers.index = 1

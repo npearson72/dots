@@ -35,8 +35,8 @@ vim.keymap.set('v', '<leader>y', '"*y')
 vim.keymap.set('n', '<leader>p', '"*p')
 
 -- Tabs
-vim.keymap.set('n', 't', '<esc>:tabnew<cr>')
-vim.keymap.set('n', 'T', '<esc><c-w>T')
+-- vim.keymap.set('n', 't', '<esc>:tabnew<cr>')
+-- vim.keymap.set('n', 'T', '<esc><c-w>T')
 vim.keymap.set('n', '{', '<esc>gT')
 vim.keymap.set('n', '}', '<esc>gt')
 

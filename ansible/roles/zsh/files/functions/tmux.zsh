@@ -10,6 +10,12 @@ _tmux_sessions() {
 #
 # Note: Will only work outside of TMUX
 tmux() {
+if [ "$TERM_PROGRAM" = "vscode" ]; then
+    echo "Running in VSCode, no tmux for you..."
+
+    return
+  fi
+
   config=$XDG_CONFIG_HOME/.tmux.conf
 
   if [[ $1 = menu ]]; then
