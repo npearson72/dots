@@ -2,7 +2,7 @@
   "biome.requireConfiguration": true,
   "css.validate": true,
   "coc.preferences.formatOnSave": true,
-  "coc.preferences.jumpCommand": "tabe",
+  "coc.preferences.jumpCommand": "edit",
   "coc.preferences.willSaveHandlerTimeout": 5000,
   "coc.source.emoji.filetypes": null,
   "colors.enable": true,

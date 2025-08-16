@@ -130,7 +130,11 @@ local config = function()
   end
 
   vim.keymap.set('n', '<c-p>', builtin.find_files, {})
-  vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+  vim.keymap.set('n', '<leader>b', function()
+    builtin.buffers({
+      sort_lastused = true, -- This is the magic to pre-select prev buffer
+    })
+  end)
   vim.keymap.set('n', '<leader>s', grep_string, {})
 end
 
