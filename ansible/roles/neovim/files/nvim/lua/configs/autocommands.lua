@@ -70,6 +70,12 @@ create_autocmd("FileType", {
 })
 
 create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter', 'BufRead', 'BufNewFile' }, {
-  pattern = '*.ini.template',
-  command = 'setf dosini'
+  pattern = "*.template",
+  callback = function()
+    local filename = vim.fn.expand("%:t")
+    local filetype_match = filename:match("^(.*)%.template$")
+    if filetype_match then
+      vim.bo.filetype = filetype_match
+    end
+  end,
 })
