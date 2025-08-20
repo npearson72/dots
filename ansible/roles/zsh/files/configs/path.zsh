@@ -12,9 +12,11 @@ $HOMEBREW_PREFIX_DIR/opt/gnu-which/libexec/gnubin"
 
 SSL_PATH="$HOMEBREW_PREFIX_DIR/opt/openssl/bin"
 
+POSTGRESQL_PATH="$HOMEBREW_PREFIX_DIR/opt/postgresql@17/bin"
+
 ANDROID_PATH="$HOME/Library/Android/sdk/platform-tools"
 
-export PATH="$LOCAL_BIN:$STTY_HACK:$GNU_PATH:$SSL_PATH:$ANDROID_PATH:$PATH"
+export PATH="$LOCAL_BIN:$STTY_HACK:$GNU_PATH:$SSL_PATH:$POSTGRESQL_PATH:$ANDROID_PATH:$PATH"
 
 # Manpath
 GNU_MANPATH="$HOMEBREW_PREFIX_DIR/opt/coreutils/libexec/gnuman:\

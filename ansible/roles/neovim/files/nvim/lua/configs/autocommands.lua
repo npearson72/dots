@@ -68,3 +68,8 @@ create_autocmd("FileType", {
     vim.bo[args.buf].filetype = 'groovy'
   end,
 })
+
+create_autocmd({ 'VimEnter', 'WinEnter', 'BufWinEnter', 'BufRead', 'BufNewFile' }, {
+  pattern = '*.ini.template',
+  command = 'setf dosini'
+})
