@@ -8,3 +8,4 @@ if [ -f $HOMEBREW_PREFIX_DIR/bin/nvim ]; then
 fi
 alias reload!="exec zsh -l"
 alias start_rails="bundle exec rails s -b 0.0.0.0"
+alias tf=terraform
