@@ -3,8 +3,6 @@
 work = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(work|hybrid)/)
 home = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(home|hybrid)/)
 
-tap 'homebrew/bundle'
-tap 'homebrew/services'
 tap 'int128/kubelogin' if work
 tap 'knqyf263/pet'
 brew 'ansible'
