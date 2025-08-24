@@ -9,6 +9,7 @@ dynamic_padding = true
 startup_mode = "Maximized"
 # startup_mode = "SimpleFullscreen"
 decorations = "Buttonless"
+opacity=0.98
 option_as_alt = "Both"
 
 [window.dimensions]
@@ -43,6 +44,9 @@ x = 0
 y = 3
 
 # Colors (Pencil Dark)
+
+[colors]
+transparent_background_colors=true
 
 # Default Colors
 [colors.primary]
