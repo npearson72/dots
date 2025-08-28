@@ -1,3 +1,6 @@
+# Homebrew
+eval "$($HOMEBREW_PREFIX_DIR/bin/brew shellenv)"
+
 # Antidote (zsh plugin manager)
 source $HOMEBREW_PREFIX_DIR/opt/antidote/share/antidote/antidote.zsh
 source <(antidote init)
@@ -17,9 +20,6 @@ fi
 
 # FZF key bindings
 source $HOMEBREW_PREFIX_DIR/opt/fzf/shell/key-bindings.zsh
-
-# Homebrew
-eval "$($HOMEBREW_PREFIX_DIR/bin/brew shellenv)"
 
 # Pet
 bindkey '^s' pet-select

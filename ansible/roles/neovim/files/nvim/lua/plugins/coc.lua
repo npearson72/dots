@@ -18,6 +18,8 @@ local config = function()
     'coc-prettier',
     'coc-pretty-ts-errors',
     'coc-prisma',
+    'coc-pyright',
+    'coc-rust-analyzer',
     'coc-snippets',
     'coc-solargraph',
     'coc-styled-components',
