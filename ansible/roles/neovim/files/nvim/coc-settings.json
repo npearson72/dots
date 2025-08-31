@@ -164,6 +164,8 @@
   "prettier.trailingComma": "none",
   "pretty-ts-errors.mode": 0,
   "pretty-ts-errors.codeBlockHighlightType": "typescript",
+  "python.formatting.provider": "ruff",
+  "python.linting.ruffEnabled": true,
   "snippets.extends": {
     "typescriptreact": ["javascript"],
     "typescript": ["javascript"]

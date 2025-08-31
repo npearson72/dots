@@ -20,7 +20,6 @@ vim.g.mapleader = ','
 require('lazy').setup({
   { import = "plugins" },
   'prisma/vim-prisma',
-  'sheerun/vim-polyglot',
   'tpope/vim-commentary',
   'tpope/vim-endwise',
   'tpope/vim-projectionist',
