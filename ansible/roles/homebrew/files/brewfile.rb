@@ -12,10 +12,12 @@ brew 'asdf'
 brew 'autojump'
 brew 'awscli'
 brew 'bat'
+brew 'cloudflared'
 brew 'cmake'
 brew 'coreutils'
 brew 'diff-so-fancy'
 brew 'dockutil'
+brew 'doctl'
 brew 'fd'
 brew 'findutils'
 brew 'flyctl'
@@ -46,6 +48,9 @@ brew 'tree'
 brew 'unzip'
 brew 'zsh'
 brew 'knqyf263/pet/pet'
+cask '1password'
+cask '1password-cli'
+cask 'cloudflare-warp'
 cask 'docker-desktop'
 cask 'dropbox' if home
 cask 'figma'
@@ -62,4 +67,3 @@ cask 'rectangle'
 cask 'slack' if work
 cask 'transmission' if home
 mas 'Bear', id: '1091189122'.to_i
-mas 'Bitwarden', id: '1352778147'.to_i, restart_service: :changed
