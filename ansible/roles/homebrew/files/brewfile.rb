@@ -25,6 +25,7 @@ brew 'fzf'
 brew 'gawk'
 brew 'gcc'
 brew 'ghostscript' if work
+brew 'git-crypt'
 brew 'gnu-sed'
 brew 'gnu-tar'
 brew 'gnu-which'
@@ -56,6 +57,7 @@ cask 'dropbox' if home
 cask 'figma'
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
+cask 'gpg-suite'
 cask 'hammerspoon'
 cask 'iina'
 cask 'microsoft-teams' if work
