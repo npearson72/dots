@@ -64,13 +64,14 @@ kube() {
     return 1
   fi
 
-  if [[  ! $3 =~ ^(ams|amc|bms|customer-portal|kipper|lms|merchant-portal)$ ]]; then
+  if [[  ! $3 =~ ^(ams|amc|basic-access|bms|customer-portal|kipper|lms|merchant-portal)$ ]]; then
     echo "Usage:";
     echo "  kube $1 $2 [commands]";
     echo ""
     echo "Available commands:";
     echo "  amc";
     echo "  ams";
+    echo "  basic-access";
     echo "  bms";
     echo "  customer-portal";
     echo "  kipper";
