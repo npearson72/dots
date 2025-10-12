@@ -51,11 +51,6 @@ _git_fzf_log() {
     --pretty=format:'%Cred%h%Creset - %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset' $@ | _fzf_for_log
 }
 
-_git_fzf_reflog() {
-  command git reflog\
-    --color=always\
-    --pretty=format:'%Cred%h%Creset %gd: %s%C(yellow)%d%Creset %Cgreen(%cr) %C(bold blue)' $@ | _fzf_for_log
-}
 
 _git_fzf_stash_list() {
   command git stash list\
@@ -90,8 +85,6 @@ _git_fzf_stash_apply() {
 git() {
   if [[ $1 = lg ]]; then
     _git_fzf_log ${@:2}
-  elif [[ $1 = reflog ]]; then
-    _git_fzf_reflog ${@:2}
   elif [[ $1 = stash ]] && [[ -z $3 ]]; then
     case $2 in
       ls)
