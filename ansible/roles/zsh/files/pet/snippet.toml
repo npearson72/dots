@@ -59,6 +59,11 @@
   output = ""
 
 [[snippets]]
+  description = "DANGER: Git delete local branches that are 'gone' from remote"
+  command = "git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
+  output = ""
+
+[[snippets]]
   description = "Git reset and clean"
   command = "git reset --hard && git clean -fd"
   output = ""
