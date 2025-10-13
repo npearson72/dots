@@ -15,6 +15,7 @@ local config = function()
     'coc-highlight',
     'coc-html',
     'coc-json',
+    'coc-oxc',
     'coc-prettier',
     'coc-pretty-ts-errors',
     'coc-prisma',
