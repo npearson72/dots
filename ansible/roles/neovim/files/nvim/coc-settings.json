@@ -75,6 +75,10 @@
         "code": "",
         "color": "#f1a703"
       },
+      "prettier": {
+        "code": "",
+        "color": "#56adae"
+      },
       "terraform": {
         "code": "",
         "color": "#7b42bc"
@@ -88,6 +92,8 @@
     },
     "filenames": {
       ".npmrc": "npm",
+      ".prettierignore": "prettier",
+      ".prettierrc.json": "prettier",
       "bun.lock": "bun",
       "eslint.config.js": "eslint",
       "eslint-base.config.js": "eslint",
