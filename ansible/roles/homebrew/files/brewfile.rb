@@ -30,7 +30,7 @@ brew 'gnu-sed'
 brew 'gnu-tar'
 brew 'gnu-which'
 brew 'gnupg'
-brew 'gpg'
+brew 'gpg' if work
 brew 'gzip'
 brew 'htop'
 brew 'imagemagick'
@@ -57,7 +57,7 @@ cask 'dropbox' if home
 cask 'figma'
 cask 'font-hack-nerd-font'
 cask 'google-chrome', args: { appdir: '/Applications' }
-cask 'gpg-suite'
+cask 'gpg-suite' if work
 cask 'hammerspoon'
 cask 'iina'
 cask 'microsoft-teams' if work

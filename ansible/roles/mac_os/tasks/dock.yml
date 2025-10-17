@@ -17,7 +17,7 @@
 - name: add icons to home dock
   command: dockutil --add "{{ item }}"
   with_items:
-    - /System/Applications/Launchpad.app
+    - /System/Applications/Apps.app
     - /Applications/Google Chrome.app
     - /Applications/Bear.app
     - '/System/Applications/Utilities/Activity Monitor.app'

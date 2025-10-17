@@ -48,12 +48,13 @@ export MYSQL_HISTFILE=$XDG_CACHE_HOME/.mysql_history
 # Node
 export NODE_REPL_HISTORY=$XDG_CACHE_HOME/.node_repl_history
 
+# REMOVE: These are no longer needed for ARM based Macs
 # OpenSSL - for compilers to find openssl:
-export LDFLAGS='-L/usr/local/opt/openssl/lib'
-export CPPFLAGS='-I/usr/local/opt/openssl/include'
+# export LDFLAGS='-L/usr/local/opt/openssl/lib'
+# export CPPFLAGS='-I/usr/local/opt/openssl/include'
 
 # OpenSSL - for pkg-config to find openssl:
-export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
+# export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 
 # Postgres
 export PSQL_HISTORY=$XDG_CACHE_HOME/.psql_history

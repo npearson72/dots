@@ -1,11 +1,3 @@
-- name: copy stty
-  become: yes
-  become_user: root
-  file:
-    src: /bin/stty
-    dest: /usr/local/sbin/stty
-    state: link
-
 - name: make sure "{{ config_path }}" dir exists
   file:
     path: '{{ config_path }}'
