@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-work = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(work|hybrid)/)
-home = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(home|hybrid)/)
+work = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(work)/)
+home = File.read("#{Dir.home}/.dots/.env").match?(/COMPUTER_USE=(home)/)
 
 tap 'int128/kubelogin' if work
 tap 'knqyf263/pet'
@@ -36,7 +36,6 @@ brew 'htop'
 brew 'imagemagick'
 brew 'int128/kubelogin/kubelogin' if work
 brew 'mas'
-brew 'minikube'
 brew 'neovim'
 brew 'openssh'
 brew 'postgresql@17', restart_service: :changed
@@ -51,7 +50,6 @@ brew 'zsh'
 brew 'knqyf263/pet/pet'
 cask '1password'
 cask '1password-cli'
-cask 'cloudflare-warp'
 cask 'docker-desktop'
 cask 'dropbox' if home
 cask 'figma'
@@ -61,7 +59,7 @@ cask 'gpg-suite' if work
 cask 'hammerspoon'
 cask 'iina'
 cask 'microsoft-teams' if work
-cask 'ngrok'
+cask 'ngrok' if work
 cask 'notunes'
 cask 'pgadmin4'
 cask 'postman'

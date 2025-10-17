@@ -8,21 +8,21 @@
 
 - name: make sure "{{ brewfile_path }}" dir exists
   file:
-    path: "{{ brewfile_path }}"
+    path: '{{ brewfile_path }}'
     state: directory
 
 - name: link Brewfile
   file:
-    src: "{{ role_path }}/files/brewfile.rb"
-    dest: "{{ brewfile_path }}/Brewfile"
+    src: '{{ role_path }}/files/brewfile.rb'
+    dest: '{{ brewfile_path }}/Brewfile'
     state: link
 
 - name: bundle dependencies
-  command: "brew bundle --file={{ brewfile_path }}/Brewfile"
+  command: 'brew bundle --file={{ brewfile_path }}/Brewfile'
   args:
-    chdir: "{{ home }}"
+    chdir: '{{ home }}'
 
 - name: cleanup dependencies
-  command: "brew bundle cleanup --force --file={{ brewfile_path }}/Brewfile"
+  command: 'brew bundle cleanup --force --file={{ brewfile_path }}/Brewfile'
   args:
-    chdir: "{{ home }}"
+    chdir: '{{ home }}'

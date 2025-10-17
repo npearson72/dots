@@ -1,7 +1,0 @@
-*~
-*.swp
-.DS_Store
-.rubocop
-.solargraph.yml
-.tool-versions
-node_modules/

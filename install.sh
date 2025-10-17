@@ -7,11 +7,9 @@ source "$(dirname $0)/.env"
 set +o allexport
 
 installHomeBrew() {
-  if ! [[ $(which brew) ]]; then
-    echo "\n=> Installing Homebrew\n"
+  echo "\n=> Installing Homebrew\n"
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 installAnsible() {
