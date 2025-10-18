@@ -50,7 +50,7 @@ brew 'zsh'
 brew 'knqyf263/pet/pet'
 cask '1password'
 cask '1password-cli'
-cask 'docker-desktop'
+# cask 'docker-desktop'
 cask 'dropbox' if home
 cask 'figma'
 cask 'font-hack-nerd-font'
